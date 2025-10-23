@@ -244,13 +244,13 @@ overflow: hidden;
 #Info{
     margin-left: 4%;
     margin-bottom: 100px;
-    margin-top: 20px;
+    margin-top: 40px;
 
 }
 #divStartServ{
     width: 100%;
     text-align: center;
-    margin-top: 70px;
+    margin-top:100px;
    
 }
 #divStartServ button{
