@@ -241,7 +241,7 @@ overflow: hidden;
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 870px) {
     #menu_lateral {
   position: fixed;
   top: 50px;
@@ -255,7 +255,7 @@ overflow: hidden;
   overflow-y: auto;
 }
 }
-@media (max-width: 800px) {
+@media (max-width: 870px) {
 #MenuIMG{
     margin: auto;
     width: 43%;
