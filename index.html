@@ -29,7 +29,7 @@
    <div id="divRead">
     <div id="read1">
      <div id="logoName">
-      <img onclick="imgLogo()" src="src/rd_logo_png.png" alt=""> <h1> Reparos a Domicílio</h1> </div> <button title="Pesquisa"><i id="btnSetPesq"  onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i></button> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
+      <img  onclick="imgLogo()" src="src/rd_logo_png.png" alt=""> <h1> Reparos a Domicílio</h1> </div> <button title="Pesquisa"><i id="btnSetPesq"  onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i></button> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
 
     </div>
     <div id="read2">
@@ -47,7 +47,7 @@
         <div id="MenuIMG"> <img src="src/RD_logo.png" alt="" width="100%"></div> 
         <ul>
           <li><a id="a_inicio" href="#" onclick="init()"><i class="fa-solid fa-house"></i> Início</a></li>
-           <li><a  href="#" onclick="avaliar()">🌟Avaliar</a></li>
+           <li><a  href="#avaliação" onclick="avaliar()">🌟Avaliar</a></li>
            <li> <h3 id="red">🛠️ Áreas de Seviços: </h3></li>
           <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
           <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
@@ -135,11 +135,41 @@
        </div>
        </div>
     </div>
-    <div id="body2">
-        
+    <div id="body2">   
     </div>
    </div>
-
+   <div id="avaliação">
+               <div id="Stars">
+               <div class="estrelas">
+                 <h2>Avaliação</h2><label id="lblNotaAV" for="">Nota</label> 
+                 <br>
+                <input type="radio" id="estrela1" name="estrela" value="1">
+                <label for="estrela1" class="label-estrela">&#9733;</label>
+                <input type="radio" id="estrela2" name="estrela" value="2">
+                <label for="estrela2" class="label-estrela">&#9733;</label>    
+                <input type="radio" id="estrela3" name="estrela" value="3">
+                <label for="estrela3" class="label-estrela">&#9733;</label>           
+                <input type="radio" id="estrela4" name="estrela" value="4">
+                <label for="estrela4" class="label-estrela">&#9733;</label>
+                <input type="radio" id="estrela5" name="estrela" value="5">
+                <label for="estrela5" class="label-estrela">&#9733;</label>
+              </div>
+              <label id="avisoinfo" for="">🌟Nos avalie para ver os cometários!🌟</label>
+               <div id="user-info">
+                <button onclick="EntreGoogle()" id="btnGoogle"> <i id="i_google" class="fa-brands fa-google"></i> Entre com o  google</button><br>
+                <img id="user-photo" src="src/Profile-PNG-Images.png" alt="Foto do usuário"  title="Foto perfil">
+                <p id="user-email">E-mail</p>
+                <p id="user-name">Nome</p> <br> <p onclick="ParagrafoMSM()" id="user-mensagem"></p> <p onclick="mensagemInfo()" id="infoComent" for=""> Cometar <i class="fa-solid fa-pencil"></i></p>
+                <br>             
+                <label id="verlistInfo" onclick="verInfolist()" for="">Ver comentários <span id="spanInfo"> </span> <span id="spanInfoNumero"> </span></label>
+                <div id="div_listInfo">
+                   <div id="listInfo"></div>
+                </div>
+              </div>
+            
+            </div>
+            <a id="a_stars" href="#avaliação" title="stars"></a>
+           </div><br>
    <div id="divFooter">
     <div id="footer1">
             <img src="src/RD_logo2.png" alt="">
