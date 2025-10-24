@@ -277,7 +277,12 @@ overflow: hidden;
 }
 
 
-
+#iPint{
+    color: rgb(250, 233, 0);
+}
+#iPint_{
+    color: rgb(224, 165, 0);
+}
 
 #divFooter{
     width: 100%;
