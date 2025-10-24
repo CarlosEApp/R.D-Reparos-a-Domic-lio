@@ -249,6 +249,9 @@ overflow: hidden;
     margin-top: 40px;
 
 }
+#Info h3{
+    margin-bottom: 10px;
+}
 #divStartServ{
     width: 100%;
     text-align: center;
