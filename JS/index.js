@@ -68,3 +68,8 @@ function init(){
 function sobre(){
   Menu() 
 }
+
+//inicio btn footer
+function inicio(){
+ document.getElementById('aa_inicio').click()
+}

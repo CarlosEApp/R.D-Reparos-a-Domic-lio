@@ -49,9 +49,11 @@ color: rgb(255, 255, 255);
 
 }
 #logoName img{
-max-width: 43px ;
+max-width: 37px ;
 margin-left: 10px;
 margin-right: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
 }
 #r_d{
 color: rgb(255, 255, 255);
@@ -236,7 +238,7 @@ overflow: hidden;
  font-size: clamp(1.300rem, 1vw + 0.5rem, 1.800rem);
  margin-top: 10px;
 }
-#bodyB1 label,#bodyB2 label,#bodyB3 label,#bodyB4 label{
+#bodyB1 label,#bodyB2 label,#bodyB3 label,#bodyB4 label,#bodyB5 label{
     font-size: clamp(1.300rem, 1vw + 0.5rem, 1.800rem);
     color: rgb(255, 255, 255);
     
@@ -285,7 +287,7 @@ overflow: hidden;
     text-align: center;
     margin: auto;
     width: 50%;
-    max-width: 200px;
+    max-width: 250px;
     background-color: #ffffff00;
     padding: 20px;
     border-radius: 30px;
@@ -302,6 +304,50 @@ overflow: hidden;
    
     
 }
+#divFaleCom{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 70px;
+    padding-top: 50px;
+}
+#btnFalecom{
+   min-width: 170px;
+    border: 0cap;
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(0, 124, 17);
+    color: rgb(236, 197, 197);
+    border-radius: 30px;
+     box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
+    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+   
+}
+#btnFalecom:hover{
+    background-color: rgb(0, 167, 14);
+    color: aliceblue;
+}
+#zap{
+     font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
+}
+#homee{
+    min-width: 100px;
+    background-color: #c4c4c4;
+    color: rgb(41, 40, 40);
+    border: 0cap;
+    cursor: pointer;
+    padding: 12px;
+     box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
+    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+    border-radius: 10px;
+}
+#homee:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+
 
 @media (min-width: 870px) {
     #menu_lateral {
@@ -323,4 +369,11 @@ overflow: hidden;
     width: 43%;
     padding-top: 10px;
 }
+}
+
+#aa_inicio{
+    display: none;
+}
+#red{
+color: rgb(94, 2, 53);
 }

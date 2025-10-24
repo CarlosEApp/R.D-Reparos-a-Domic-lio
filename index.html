@@ -36,7 +36,7 @@
       <div id="divPesquisa"> 
           <div id="pesquisa">
              <div id="PSQ"><i onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" name="" id="input_pesquisa" placeholder="pesquisar...">  <i id="startPesq" class="fa-solid fa-check"></i>
+          <input type="text" name="" id="input_pesquisa" placeholder="Buscar por serviços...">  <i id="startPesq" class="fa-solid fa-check"></i>
           </div>
         </div>
       </div>
@@ -45,13 +45,18 @@
  <div id="menu_lateral">
         <div id="MenuIMG"> <img src="src/RD_logo.png" alt="" width="100%"></div> 
         <ul>
-          <li><a href="#" onclick="init()">🏠 Início</a></li>
-           <li><a  href="#" onclick="avaliar()">🌟 Avaliar</a></li>
-          <li><a onclick="face()"><img src="#" alt="" width="18"> Facebook</a></li>
-          <li><a onclick="INSTA()"><img src="#" alt="" width="18"> Instagran</a></li>
-          <li><a onclick=" ZAP()"><img src="#" alt="" width="20"> WhatsApp</a></li>
-          <li><a href="#" onclick="sobre()">📦 Sobre</a></li>
-           <li><a onclick="Config()">⚙️ Vibrar</a></li>
+          <li><a id="a_inicio" href="#" onclick="init()"><i class="fa-solid fa-house"></i> Início</a></li>
+           <li><a  href="#" onclick="avaliar()">🌟Avaliar</a></li>
+           <li> <h3 id="red">🛠️ Áreas de Seviços: </h3></li>
+          <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
+          <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
+          <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
+          <li><a href="#bodyB3" onclick="init()">🎨 Pintura </a></li>
+          <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
+         <li> <h3 id="red">📞 Contatos, Rede sociais, etx: </h3></li>
+          <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          
+          <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>
           <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
           <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
           <!-- Adicione mais itens se quiser -->
@@ -111,6 +116,22 @@
           <button id="desktopStart" onclick="desktop()">💻 Manutenção de Desktop 💻</button> 
          </div>
        </div>
+       <div id="bodyB5">
+        <img id="DSimg" src="src/DS00.png" alt="">
+               <div id="Info">
+        <label> <h2> 🔨 Alvenaria</h2>
+         Construção de paredes internas e externas. <br>    
+         Levantamento de muros e cercas. <br>
+         Execução de fundações rasas (como sapatas). <br>      
+         Reboco e acabamento de superfícies. <br>
+         Assentamento de blocos cerâmicos, de concreto ou tijolos. <br>
+         Construção de churrasqueiras, lareiras e bancadas. <br>
+         Reformas e demolições parciais de alvenaria. <br>
+         Instalação de revestimentos e impermeabilização...</label>
+         <div id="divStartServ">
+          <button id="alvenariaStart" onclick="desktop()">🔨Serviços de Alvenaria 🔨</button> 
+         </div>
+       </div>
        </div>
     </div>
     <div id="body2">
@@ -126,37 +147,58 @@
       <label for=""><h2>🛠️ R.D – Reparos a Domicílio</h2><br>
 <h3>Soluções práticas, rápidas e confiáveis para sua casa ou escritório em Itanhaém e região.</h3><br>
 
-<h4>Nossos Serviços:</h4>
-⚡ Elétrica
+<h4>Nossos Serviços:</h4><br>
+⚡<b> Elétrica</b>  <br>
 Instalação e troca de tomadas, interruptores e disjuntores <br>
 
 Identificação e correção de curtos e quedas de energia<br>
 
 Instalação de ventiladores de teto, luminárias e chuveiros<br><br>
 
-🚿 Hidráulica<br>
+🚿 <b>Hidráulica</b><br>
 Conserto de vazamentos em torneiras, registros e sifões<br>
 
 Desentupimento de pias, ralos e vasos sanitários<br>
 
 Instalação de torneiras, chuveiros e caixas acopladas<br><br>
 
-🎨 Pintura<br>
+🎨 <b>Pintura</b><br>
 Pintura interna e externa com acabamento profissional<br>
 
 Correção de trincas e imperfeições antes da pintura<br>
 
 Aplicação de texturas e efeitos decorativos<br><br>
 
-💻 Manutenção de Desktop<br>
+💻 <b>Manutenção de Desktop</b><br>
 Limpeza interna e externa de computadores<br>
 
 Formatação, instalação de programas e antivírus<br>
 
 Diagnóstico e troca de peças (HD, memória, fonte, etc.)<br><br>
 
-<h4>Entre em contato com a R.D – Reparos a Domicílio e agende seu orçamento sem compromisso!</h4> 📞 WhatsApp: (11 99550-1463) 📍 Atendemos Itanhaém e região. <br> 📆 Segunda a sexta, das 8h às 18h</label>
+🔨 <b>Alvenaria</b> <br>
+Construção de paredes internas e externas. <br>
+
+Levantamento de muros e cercas.<br>
+
+Execução de fundações rasas (como sapatas).<br>
+
+Reboco e acabamento de superfícies.<br>
+
+Assentamento de blocos cerâmicos, de concreto ou tijolos.<br>
+
+Construção de churrasqueiras, lareiras e bancadas.<br>
+
+Reformas e demolições parciais de alvenaria.<br>
+
+Instalação de revestimentos e impermeabilização.<br>
+<br><br>
+<h4>Entre em contato com a R.D – Reparos a Domicílio e agende seu orçamento sem compromisso!</h4><br> 📞 WhatsApp: (11 99550-1463) 📍 Atendemos Itanhaém e região. <br> 📆 Segunda a sexta, das 8h às 18h</label>
         
+    </div>
+    <br>
+    <div id="divFaleCom">
+      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Fale conosco</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
     </div>
    </div>
 
@@ -166,6 +208,7 @@ Diagnóstico e troca de peças (HD, memória, fonte, etc.)<br><br>
 
 
 <script src="JS/index.js"></script>
+<a id="aa_inicio" href="#" title="inicio"></a>
 
 
 
