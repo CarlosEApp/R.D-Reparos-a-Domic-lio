@@ -2,26 +2,21 @@
 
 
 
-
+//BTN Eletrica
+function Eletrica(){
+  window.open('html/eletrica.html','_blank')
+}
 
 
 //Pesquisa Header
-document.getElementById('read2').style.display='none'
-function pesquisar(){
-var cla= document.getElementById('btnSetPesq');
-var dplay=  document.getElementById('read2').style.display;
-if(dplay=='none'){
-document.getElementById('read2').style.display='block'
-cla.className='fa-solid fa-delete-left'
-sessionStorage.setItem('MENULateral','')
-document.getElementById("menu_lateral").classList.remove("menu-ativo");
-var BTN=document.getElementById('IMenu');
-BTN.className='fa-solid fa-bars'
-}else{
-document.getElementById('read2').style.display='none'
-cla.className='fa-solid fa-magnifying-glass'
+function ADMIN(){
+document.getElementById('read2').style.display='Block'
+Menu()
 }
+function ADMINFechar(){
+  document.getElementById('read2').style.display='none'
 }
+
 
 
 //logo click
