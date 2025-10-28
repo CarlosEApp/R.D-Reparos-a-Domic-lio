@@ -4,7 +4,7 @@ padding: 0%;
 }
 body{
 font-family: 'Poppins', sans-serif;
-background-color: rgb(255, 253, 253);
+background-color:  rgb(0, 19, 26);
 color: aliceblue;
 text-rendering: geometricPrecision;
 }
@@ -19,7 +19,7 @@ background-color: rgb(0, 0, 0);
 margin: auto;
 width: 100%;
 max-width: 1920px;
-background-color:  rgb(10, 122, 0);
+background-color:   rgb(0, 28, 39);
 position: fixed;
 z-index: 9999;
 color: aliceblue;
@@ -28,7 +28,6 @@ color: aliceblue;
 display: flex;
 justify-content: space-between;
 align-items: center;
-
 }
 #read1 button{
 border: 0cap;
@@ -46,7 +45,6 @@ align-items: center;
 margin-top: 5px;
 margin-bottom: 3px;
 color: rgb(255, 255, 255);
-
 }
 #logoName img{
 max-width: 37px ;
@@ -56,9 +54,9 @@ padding: 5px;
 cursor: pointer;
 }
 #logoName img:hover{
-    padding: 5px;
-    background-color: #3dff087b;
-    border-radius: 50%;
+padding: 5px;
+background-color: #3dff087b;
+border-radius: 50%;
 }
 #r_d{
 color: rgb(255, 255, 255);
@@ -67,7 +65,7 @@ font-size: clamp(1.300rem, 1vw + 0.5rem, 1.800rem);
 
 }
 #logoName h1{
-font-size: clamp(1rem, 1vw + 0.5rem, 1.300rem);
+font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
 }
 #read2{
 display: none;
@@ -113,14 +111,14 @@ color: rgb(27, 209, 3);
 border-left: 3px solid rgb(27, 209, 3);
 }
 #btnsetFechar{
-    color: #000000;
-    border: 0cap;
-    background-color: #00000000;
-    float: left;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-size: clamp(1rem, 1vw + 0.5rem, 1.300rem);
-    cursor: pointer;
+color: #000000;
+border: 0cap;
+background-color: #00000000;
+float: left;
+margin-left: 20px;
+margin-top: 20px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.300rem);
+cursor: pointer;
 }
 #btnsetFechar:hover{
     color: #850028;
@@ -155,7 +153,6 @@ outline: none;
 #read1 button:hover{
 color: rgb(0, 255, 242);
 }
-
 #divBody{
 width: 100%;
 overflow: auto;
@@ -220,7 +217,7 @@ left: 0 !important;
 #MenuIMG{
 margin: auto;
 width: 50%;
-padding-top: 20px;
+padding-top: 37px;
 }
 #bodyB1,#bodyB2,#bodyB3,#bodyB4{
 margin: auto;
@@ -561,7 +558,9 @@ display: none;
     color: #afce00;
 }
 
-
+#btnCad{
+    color: #000000;
+}
 
 
 @media (min-width: 870px) {
@@ -582,7 +581,7 @@ overflow-y: auto;
 #MenuIMG{
 margin: auto;
 width: 43%;
-padding-top: 10px;
+padding-top: 37px;
 }
 }
 

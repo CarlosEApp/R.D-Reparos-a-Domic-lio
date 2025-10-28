@@ -314,13 +314,11 @@ document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
   if(doc.Mensagem){
     //Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
     Swal.fire({
-title: `<h5 id='titeleh5'><i class="fa-solid fa-pen-to-square"></i> Comente</h5>`,
+title: `<h5 id='titeleh5'><i class="fa-solid fa-pen-to-square"></i> Comentário</h5>`,
 html:` 
 <br> <h4 id='PComent'></h4>
 <br><br>
- 
 <label id='lblBtn2' title='cancelar'>Sair, Exit</label>
-
 `,
 background: 'rgba(46, 82, 60, 1)', // Cor de fundo
 color: '#ffffffff', // Cor do texto
@@ -427,4 +425,9 @@ function verInfolist(){
 }
 function avaliar(){
   Menu()
+}
+
+//tela cad
+function Cad(){
+  window.open('html/cad.html','_blank')
 }

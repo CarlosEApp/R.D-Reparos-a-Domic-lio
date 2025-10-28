@@ -1,13 +1,112 @@
 
 
 *{
-    margin: 0%;
-    padding: 0%;
+margin: 0%;
+padding: 0%;
 }
-#titulo{
-    color: brown;
-    font-weight: bolder;
+body{
+font-family: 'Poppins', sans-serif;
+background-color: rgb(0, 19, 26);
+color: aliceblue;
+text-rendering: geometricPrecision;
 }
-#h1{
-    color: red;
+#DivGeral{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+background-color: aliceblue;
+min-height: 100vh;
+}
+#divHead{
+width: 100%;
+max-width: 1000px;
+min-height: 10vh;
+background-color: rgb(0, 19, 26);
+position: fixed;
+}
+#head1 h2{
+margin-top: 7px;
+margin-left: 10px;
+}
+#head2{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+#head2 button{
+border: 0cap;
+background-color: rgba(240, 248, 255, 0);
+color: aliceblue;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+cursor: pointer;
+margin-top: 15px;
+}
+#head2 button:hover{
+color: aqua;
+}
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 120px;
+}
+#body1{
+margin: auto;
+width: 95%;
+color: rgb(255, 255, 255);
+background-color: rgb(73, 71, 66);
+min-height: 100vh;
+border-top-left-radius: 40px;
+border-top-right-radius: 40px;
+border-top: 20px solid rgb(210, 210, 0);
+display: none;
+}
+#body1 h3{
+padding-top: 20px;
+text-align: center;
+}
+#lblFecharCad{
+float: left;
+margin-left: 20px;
+padding-top: 20px;
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+cursor: pointer;
+}
+#lblFecharCad:hover{
+color: rgb(221, 241, 0);
+}
+#DivCad{
+margin: auto;
+width: 90%;
+margin-top: 20px;
+padding: 10px;
+}
+#DivCad select{
+width: 250px;
+outline: none;
+border: 0cap;
+padding: 10px;
+}
+#imgcad {
+float: right;
+margin-right: 20px;
+}
+#DivCad input{
+width: 250px;
+padding: 10px;
+cursor: pointer;
+outline: none;
+border: 0cap;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+#DivCad label{
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+}
+#DivCad button{
+width: 230px;
+margin-left: 20px;
+padding: 10px;
+cursor: pointer;
 }

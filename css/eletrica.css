@@ -1,8 +1,8 @@
 
 
 *{
-    margin: 0%;
-    padding: 0%;
+margin: 0%;
+padding: 0%;
 }
 body{
 font-family: 'Poppins', sans-serif;
@@ -11,63 +11,62 @@ color: aliceblue;
 text-rendering: geometricPrecision;
 }
 #divGeral{
-    margin: auto;
-    width: 100%;
-    max-width: 1100px;
-    background-color: rgba(240, 248, 255, 0);
-    min-height: 200vh;
+margin: auto;
+width: 100%;
+max-width: 1100px;
+background-color: rgba(240, 248, 255, 0);
+min-height: 200vh;
 }
 #divHead{
-    width: 100%;
-     max-width: 1100px;
-    background-color:rgb(0, 19, 26);
-    min-height: 5vh;
-    position: fixed;
-        color: rgb(255, 255, 255);
+width: 100%;
+max-width: 1100px;
+background-color:rgb(0, 19, 26);
+min-height: 5vh;
+position: fixed;
+color: rgb(255, 255, 255);
 }
 #head1{
-        display: flex;
-    justify-content:space-between;
-       margin-top: 20px;
-       color: rgb(255, 255, 255);
-       padding-bottom: 5px;
+display: flex;
+justify-content:space-between;
+margin-top: 20px;
+color: rgb(255, 255, 255);
+padding-bottom: 5px;
 }
 #head1 button{
-    border: 0cap;
-    background-color: rgba(240, 248, 255, 0);
-    cursor: pointer;
-    color: aliceblue;
-    margin-right: 37px;
+border: 0cap;
+background-color: rgba(240, 248, 255, 0);
+cursor: pointer;
+color: aliceblue;
+margin-right: 37px;
 }
 #divBody{
-    width: 100%;
-    padding-top: 82px;
-   margin-bottom: 80px;
+width: 100%;
+padding-top: 82px;
+margin-bottom: 80px;
 }
 #body1{
-   background-color: rgb(255, 255, 255);
-    border-radius: 50px;
-    min-height: 100vh;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    padding: 20px;
-    border-top: 30px solid rgb(192, 182, 0);
-    background-image: url('../src/RD_logo.png');
-   background-size: 30%;
-   background-repeat: no-repeat;
-   background-position: center;
+background-color: rgb(255, 255, 255);
+border-radius: 50px;
+min-height: 100vh;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+padding: 20px;
+border-top: 30px solid rgb(192, 182, 0);
+background-image: url('../src/RD_logo.png');
+background-size: 30%;
+background-repeat: no-repeat;
+background-position: center;
 }
 #body1 h3{
-    max-width: 250px;
-    margin-left: 10px;
-    padding: 7px;
-     padding-left: 20px;
-    color: rgb(52, 52, 52);
-    background-color: rgb(236, 236, 236);
-    border-radius: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    
+max-width: 250px;
+margin-left: 10px;
+padding: 7px;
+padding-left: 20px;
+color: rgb(52, 52, 52);
+background-color: rgb(236, 236, 236);
+border-radius: 20px;
+margin-top: 20px;
+cursor: pointer;
 }
 #checkh3{
     margin-left: 15px;
@@ -83,15 +82,15 @@ text-rendering: geometricPrecision;
 
 
 #divFooter{
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgb(0, 0, 0);
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    margin-top: 30px;
-    border-top: 20px solid rgb(176, 167, 0);
-       background-image: url('../src/RD_logo2.png');
-   background-size: 30%;
-   background-repeat: no-repeat;
-   background-position: center;
+width: 100%;
+min-height: 100vh;
+background-color: rgb(0, 0, 0);
+border-top-left-radius: 40px;
+border-top-right-radius: 40px;
+margin-top: 30px;
+border-top: 20px solid rgb(176, 167, 0);
+background-image: url('../src/RD_logo2.png');
+background-size: 30%;
+background-repeat: no-repeat;
+background-position: center;
 }

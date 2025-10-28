@@ -26,10 +26,48 @@
 <body>
     <div id="DivGeral">
         <div id="divHead">
-
+            <div id="head1">
+            <h2>📝Cadastro</h2> 
+            </div>
+            <div id="head2">
+                <button onclick="Cadastro()">Cadastro</button> <button onclick="ProdCad()">Prod.Cadastrados</button>
+            </div>
         </div>
         <div id="divBody">
-
+            <div id="body1">
+                <label onclick="FecharCad()" id="lblFecharCad" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
+            <h3>📝Cadastro</h3>
+            <div id="DivCad">
+                <img id="imgcad" src="../src/RD.png" alt="" width="10%">
+                 <select title="Lista de Categoria de serviços" name="" id="ListaCategoria" id="selectListCategoria">
+                    <option value="">Serviços de:</option>
+                   <option value="Eletrica">⚡Elétrica</option>
+                   <option value="Hidraulica">🚿Hidraulica</option>
+                   <option value="Pintura">🖌️Pintura</option>
+                   <option value="ManuDesktop">💻M.Desktop</option>
+                   <option value="Auvenaria">🔨Alvenaria</option>
+                 </select> <br><br>
+                  <label  for="">Produto (ID) <br>
+                    <input id="Input_produto" type="text" placeholder="Produto...">
+                  </label> <br>
+                  <label for="">Titulo <br>
+                    <input id="Input_titulo" type="text" placeholder="Titulo...">
+                  </label> <br>
+                  <label for="">Sub-titulo <br>
+                    <input id="Input_Subtitulo" type="text" placeholder="Sub-titulo...">
+                  </label> <br>
+                   <label for="">Valor R$ <br>
+                    <input id="Input_Valor" type="text" placeholder="000,00">
+                  </label> <br>
+                  <label for="">Valor com desconto R$ <br>
+                    <input id="Input_ValorDesconto" type="text" placeholder="000,00">
+                  </label> <br>
+                   <label for="">Observação do Prod. <br>
+                    <input id="Input_OBS" type="text" placeholder="OBS">
+                  </label> <br> <br>
+                   <button>Salvar Cad.</button>
+            </div>
+             </div>
         </div>
         <div id="divfooter">
 
