@@ -62,7 +62,7 @@ border-top-right-radius: 40px;
 border-top: 20px solid rgb(210, 210, 0);
 display: none;
 }
-#body1 h3{
+#body1 h2{
 padding-top: 20px;
 text-align: center;
 }
@@ -83,14 +83,28 @@ margin-top: 20px;
 padding: 10px;
 }
 #DivCad select{
-width: 250px;
+width: 230px;
 outline: none;
 border: 0cap;
-padding: 10px;
+padding: 12px;
+border-radius: 7px;
+box-shadow: 0 3px 7px rgb(11, 11, 11);
+margin-top: 30px;
+}
+
+#DivCad select:hover{
+ box-shadow: 0 5px 10px rgb(129, 129, 129);
 }
 #imgcad {
 float: right;
-margin-right: 20px;
+margin-right: 2px;
+margin-top: 10px;
+border-radius: 7px;
+cursor: pointer;
+box-shadow: 0 3px 7px rgb(6, 8, 9);
+}
+#imgcad:hover{
+    box-shadow: 0 5px 10px rgb(129, 129, 129);
 }
 #DivCad input{
 width: 250px;
@@ -98,8 +112,12 @@ padding: 10px;
 cursor: pointer;
 outline: none;
 border: 0cap;
-border-radius: 10px;
+border-radius: 7px;
 margin-bottom: 10px;
+box-shadow: 0 3px 7px rgb(6, 8, 9);
+}
+#DivCad input:hover{
+ box-shadow: 0 5px 10px rgb(129, 129, 129);
 }
 #DivCad label{
 font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
@@ -107,6 +125,16 @@ font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
 #DivCad button{
 width: 230px;
 margin-left: 20px;
-padding: 10px;
+border: 0cap;
+padding: 15px;
 cursor: pointer;
+border-radius: 20px;
+box-shadow: 0 5px 10px rgb(0, 0, 0);
+font-size: 14px;
+font-weight: bolder;
+
+}
+#DivCad button:hover{
+     box-shadow: 0 5px 10px rgb(163, 163, 163);
+     background-color: aqua;
 }
