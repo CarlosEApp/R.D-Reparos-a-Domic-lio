@@ -20,7 +20,7 @@ min-height: 100vh;
 #divHead{
 width: 100%;
 max-width: 1000px;
-min-height: 10vh;
+min-height: 12vh;
 background-color: rgb(0, 19, 26);
 position: fixed;
 }
@@ -49,16 +49,16 @@ margin: auto;
 width: 100%;
 max-width: 1000px;
 min-height: 140vh;
-padding-top: 120px;
+padding-top: 140px;
 }
 #body1{
 margin: auto;
 width: 95%;
 color: rgb(255, 255, 255);
-background-color: rgb(73, 71, 66);
+background-color: rgb(78, 89, 90);
 min-height: 100vh;
-border-top-left-radius: 40px;
-border-top-right-radius: 40px;
+border-radius: 40px;
+
 border-top: 20px solid rgb(210, 210, 0);
 display: none;
 }
@@ -81,6 +81,7 @@ margin: auto;
 width: 90%;
 margin-top: 20px;
 padding: 10px;
+padding-bottom: 120px;
 }
 #DivCad select{
 width: 230px;
@@ -107,14 +108,16 @@ box-shadow: 0 3px 7px rgb(6, 8, 9);
     box-shadow: 0 5px 10px rgb(129, 129, 129);
 }
 #DivCad input{
-width: 250px;
-padding: 10px;
+width: 70%;
+max-width: 500px;
+padding: 12px;
 cursor: pointer;
 outline: none;
 border: 0cap;
 border-radius: 7px;
 margin-bottom: 10px;
 box-shadow: 0 3px 7px rgb(6, 8, 9);
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
 #DivCad input:hover{
  box-shadow: 0 5px 10px rgb(129, 129, 129);
@@ -132,9 +135,46 @@ border-radius: 20px;
 box-shadow: 0 5px 10px rgb(0, 0, 0);
 font-size: 14px;
 font-weight: bolder;
-
 }
 #DivCad button:hover{
      box-shadow: 0 5px 10px rgb(163, 163, 163);
      background-color: aqua;
+}
+#files{
+    display: none;
+}
+#clickImagem{
+    cursor: pointer;
+    font-size:55px;
+    margin-left: 20px;
+}
+#clickImagem:hover{
+    color: rgb(0, 204, 255);
+}
+#myProgress {
+width: 80%;
+background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#Input_produto{
+    color: rgb(0, 99, 53);
+    font-weight: bolder;
+    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
