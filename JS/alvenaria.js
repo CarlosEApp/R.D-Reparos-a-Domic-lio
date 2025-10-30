@@ -1,8 +1,5 @@
 
 
-
-
-
 // Lista Tabela
 var itens= 0
 var listTab = document.getElementById('ListTabela');
@@ -18,7 +15,7 @@ apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 };
 firebase.initializeApp(firebaseConfigure);
 var db = firebase.firestore()
-var produtosRef = db.collection(`Eletrica`);
+var produtosRef = db.collection(`Alvenaria`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();

@@ -1,11 +1,30 @@
 
 
+//btn alvenaria
+function alvenaria(){
+    window.open('html/alvenaria.html','_blank')
+}
+
+//btn desktop
+function desktop(){
+    window.open('html/desktop.html','_blank')
+}
+
+//btn pintura
+function pintura(){
+  window.open('html/pintura.html','_blank')
+}
+
+//btn hidráulica
+function hidraulica(){
+    window.open('html/hidraulica.html','_blank')
+};
 
 
 //BTN Eletrica
 function Eletrica(){
   window.open('html/eletrica.html','_blank')
-}
+};
 
 
 //Pesquisa Header
@@ -15,7 +34,7 @@ Menu()
 }
 function ADMINFechar(){
   document.getElementById('read2').style.display='none'
-}
+};
 
 
 
