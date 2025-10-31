@@ -38,6 +38,7 @@ background-color: rgba(240, 248, 255, 0);
 cursor: pointer;
 color: aliceblue;
 margin-right: 37px;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
 #divBody{
 width: 100%;
@@ -53,7 +54,7 @@ border-bottom-right-radius:10px;
 padding: 20px;
 border-top: 30px solid rgb(192, 182, 0);
 background-image: url('../src/RD_logo.png');
-background-size: 30%;
+background-size: 40%;
 background-repeat: no-repeat;
 background-position: center;
 }
@@ -64,11 +65,9 @@ color: rgb(46, 46, 46);
 background-color: #fefeff;
 min-height: 100vh;
 display: none;
-
 }
 #lblFecharTabela{
 float: left;
-margin-left: 20px;
 cursor: pointer;
 font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
 }
@@ -117,7 +116,6 @@ border: 0cap;
 outline: none;
 font-size: clamp(0.600rem, 1vw + 0.5rem, 0.700rem);
 }
-
 #divid #botaoid:hover,#paragrafo:hover{
 color: rgb(12, 102, 0);
 }
@@ -152,8 +150,6 @@ font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
     margin-top: 20px;
 }
 
-
-
 #body1 h3{
 max-width: 250px;
 margin-left: 10px;
@@ -176,7 +172,6 @@ cursor: pointer;
 #body1 h3:hover i{
     color: red;
 }
-
 
 #menu_lateral {
 position: fixed;

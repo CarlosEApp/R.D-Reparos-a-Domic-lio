@@ -2,17 +2,18 @@
 
 
 // Lista Tabela
+function listaPreços(){
 var itens= 0
 var listTab = document.getElementById('ListTabela');
 listTab.innerHTML = ''
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-  authDomain: "reparos-a-domicilio.firebaseapp.com",
-  projectId: "reparos-a-domicilio",
-  storageBucket: "reparos-a-domicilio.firebasestorage.app",
-  messagingSenderId: "2081562439",
-  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-  measurementId: "G-M7YCZXPYGM"
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigure);
 var db = firebase.firestore()
@@ -48,7 +49,7 @@ pr.id='paragrafo'
 pr2.id='paragrafo2'
 img.id='imgid'
 
- img.src=`../src/RD_logo.png`
+img.src=`../src/RD_logo.png`
 label.textContent=`${doc.Titulo}`;
 
 if(!doc.SubT||doc.SubT==''){
@@ -57,11 +58,10 @@ label2.textContent=``;
 label2.textContent=`${doc.SubT}`;
 }
 label3.textContent=`R$: ${doc.Valor}`;
-
 if(!doc.Desconto||doc.Desconto==''){
 label4.textContent=``;
 }else{
-    label4.textContent=`Promoção - R$: ${doc.Desconto}`;
+label4.textContent=`Promoção - Desc. de: ${doc.Desconto}`;
 }
 if(!doc.OBS||doc.OBS==''){
 label5.textContent=``;
@@ -71,7 +71,6 @@ label5.textContent=`${doc.OBS}`;
 botão.className='fa-brands fa-whatsapp';
 pr.textContent='WhatsApp';
 pr2.textContent=`ID: ${doc.ID}`;
-
 div2.appendChild(img)
 div2.appendChild(document.createElement('br'));
 div2.appendChild(label);
@@ -90,18 +89,13 @@ div3.appendChild(pr2);
 div.appendChild(div2);
 div.appendChild(div3);
 listTab.appendChild(div)
-
 //setTimeout(function(){
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
-
-
-
 })
 })
-
-
-
+};
+listaPreços()
 
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
@@ -118,25 +112,22 @@ BTN.className='fa-solid fa-bars'
 sessionStorage.setItem('MENULateral','')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 }
-
 };
 function fecharMenu() {
 Menu() 
 };
 
 function init(){
-    Menu() 
+Menu() 
 };
-
 //abrir tabela
 function tabela(){
-    document.getElementById('divTabela').style.display='block'
-    Menu() 
+document.getElementById('divTabela').style.display='block'
+listaPreços()
+Menu() 
 };
 
-
-//fechar tabela
-
+//fechar tabel
 function fecharTabela(){
- document.getElementById('divTabela').style.display='none'
+document.getElementById('divTabela').style.display='none'
 };

@@ -1,6 +1,8 @@
 
 
 // Lista Tabela
+
+function listaPreços(){
 var itens= 0
 var listTab = document.getElementById('ListTabela');
 listTab.innerHTML = ''
@@ -60,7 +62,7 @@ label3.textContent=`R$: ${doc.Valor}`;
 if(!doc.Desconto||doc.Desconto==''){
 label4.textContent=``;
 }else{
-    label4.textContent=`Promoção - R$: ${doc.Desconto}`;
+    label4.textContent=`Promoção - Desc. de: ${doc.Desconto}`;
 }
 if(!doc.OBS||doc.OBS==''){
 label5.textContent=``;
@@ -94,11 +96,10 @@ listTab.appendChild(div)
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
 
-
-
 })
 })
-
+};
+listaPreços()
 
 
 
@@ -130,6 +131,7 @@ function init(){
 //abrir tabela
 function tabela(){
     document.getElementById('divTabela').style.display='block'
+    listaPreços()
     Menu() 
 };
 
