@@ -33,6 +33,7 @@ var label5= document.createElement('p');
 var botão= document.createElement('button');
 var pr=document.createElement('p');
 var pr2=document.createElement('p');
+var pr3=document.createElement('p');
 div.id='divid',
 div2.id='divid2',
 div3.id='divid3',
@@ -44,8 +45,10 @@ label5.id='labelid5'
 botão.id='botaoid'
 pr.id='paragrafo'
 pr2.id='paragrafo2'
+pr3.id='paragrafo3'
 img.id='imgid'
 img.src=`../src/RD_logo.png`
+pr3.textContent='Atendemos em Itanhaém e região'
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
 label2.textContent=``;
@@ -66,6 +69,9 @@ label5.textContent=`${doc.OBS}`;
 botão.className='fa-brands fa-whatsapp';
 pr.textContent='WhatsApp';
 pr2.textContent=`ID: ${doc.ID}`;
+
+div2.appendChild(pr3);
+div2.appendChild(document.createElement('br'));
 div2.appendChild(img)
 div2.appendChild(document.createElement('br'));
 div2.appendChild(label);
