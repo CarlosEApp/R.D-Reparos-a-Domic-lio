@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💻 Manutenção de Desktop</title>
+     <link rel="shortcut icon" href="../src/rd_logo_png.png" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/desktop.css">
+</head>
+<body>
+    <div id="divGeral">
+        <div id="divHead">
+            <div id="head1">
+                <h2>💻 Desktop</h2> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+         <div id="menu_lateral">
+        <div id="MenuIMG"> <img src="../src/RD_logo.png" alt="" width="100%"></div> 
+        <ul>
+          <li><a id="a_inicio" href="#" onclick="init()"><i class="fa-solid fa-house"></i> Início</a></li>
+           <li><a id="tabela"  onclick="tabela()">📝Tabela de Preços</a></li>
+           <li> <h3 id="red">🛠️ Áreas de Seviços: </h3></li>
+          <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
+          <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
+          <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
+          <li><a href="#bodyB3" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+          <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
+         <li> <h3 id="red">📞 Contatos, Rede sociais, etx: </h3></li>
+          <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+          
+          <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>
+          <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
+          <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+          <!-- Adicione mais itens se quiser -->
+        </ul>
+      </div>
+        <div id="divBody">
+            <div id="body1">
+               
+                <div id="divTabela">
+                    <label id="lblFecharTabela" for="" onclick="fecharTabela()"><i class="fa-solid fa-delete-left"></i> Fechar</label><br>
+                    <h2>Tabela de preços</h2>
+                    <div id="Tabela">
+                        <div id="ListTabela"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="divFooter">
+            <div id="foote1">
+
+            </div>
+            <div id="foote1">
+
+            </div>
+        </div>
+
+    </div>
+     <script src="../JS/desktop.js"></script>
+</body>
+</html>
