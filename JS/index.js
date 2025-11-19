@@ -450,3 +450,13 @@ function avaliar(){
 function Cad(){
   window.open('html/cad.html','_blank')
 }
+
+
+//fale conosco
+var telefone= 11995501463
+
+function falecom(){
+  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+window.open(url, "_blank");
+}

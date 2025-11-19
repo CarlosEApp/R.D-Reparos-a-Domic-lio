@@ -3,6 +3,7 @@
 // Lista Tabela
 
 function listaPreços(){
+     var telefone= 11995501463
 var itens= 0
 var listTab = document.getElementById('ListTabela');
 listTab.innerHTML = ''
@@ -99,6 +100,17 @@ listTab.appendChild(div)
 //setTimeout(function(){
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
+
+botão.addEventListener('click',function(){
+      var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+window.open(url, "_blank");
+})
+pr.addEventListener('click',function(){
+      var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+window.open(url, "_blank");
+})
 
 })
 })
