@@ -6,38 +6,36 @@ sessionStorage.setItem('teladmin', telAdmim)
 var resp = sessionStorage.setItem('senha','gat980')
 var resp2=sessionStorage.setItem('RecPasswor','Carlos@gat@gmail');
 
-
-
 //btn alvenaria
 function alvenaria(){
-    window.open('html/alvenaria.html','_blank')
+window.open('html/alvenaria.html','_blank')
 }
 
 //btn desktop
 function desktop(){
-    window.open('html/desktop.html','_blank')
+window.open('html/desktop.html','_blank')
 }
 
 //btn pintura
 function pintura(){
-  window.open('html/pintura.html','_blank')
+window.open('html/pintura.html','_blank')
 }
 
 //btn hidráulica
 function hidraulica(){
-    window.open('html/hidraulica.html','_blank')
+window.open('html/hidraulica.html','_blank')
 };
 
 
 //BTN Eletrica
 function Eletrica(){
-  window.open('html/eletrica.html','_blank')
+window.open('html/eletrica.html','_blank')
 };
 
 //Pesquisa Header
 
 function ADMINFechar(){
-  document.getElementById('read2').style.display='none'
+document.getElementById('read2').style.display='none'
 };
 
 //logo click
@@ -77,14 +75,14 @@ function fecharMenu() {
 Menu() 
 }
 function init(){
-    Menu() 
+Menu() 
 }
 function sobre(){
-  Menu() 
+Menu() 
 }
 //inicio btn footer
 function inicio(){
- document.getElementById('aa_inicio').click()
+document.getElementById('aa_inicio').click()
 }
 
 //stars
@@ -120,12 +118,12 @@ document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
 //login google
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-  authDomain: "reparos-a-domicilio.firebaseapp.com",
-  projectId: "reparos-a-domicilio",
-  storageBucket: "reparos-a-domicilio.firebasestorage.app",
-  messagingSenderId: "2081562439",
-  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-  measurementId: "G-M7YCZXPYGM"
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
 };
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
@@ -189,12 +187,12 @@ console.error("Erro no login:", error);
 setTimeout(function(){
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-  authDomain: "reparos-a-domicilio.firebaseapp.com",
-  projectId: "reparos-a-domicilio",
-  storageBucket: "reparos-a-domicilio.firebasestorage.app",
-  messagingSenderId: "2081562439",
-  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-  measurementId: "G-M7YCZXPYGM"
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
 };
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
@@ -205,9 +203,9 @@ if (user) {
 var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
 var msm= localStorage.getItem('InfoMSM')
 if (msm) {
- // alert(msm);
-  var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
-  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+// alert(msm);
+var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
+document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 }
 // Usuário já está logado
 document.getElementById("user-photo").src = user.photoURL;
@@ -240,12 +238,12 @@ var list = document.getElementById('listInfo');
 list.innerHTML = ''
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-  authDomain: "reparos-a-domicilio.firebaseapp.com",
-  projectId: "reparos-a-domicilio",
-  storageBucket: "reparos-a-domicilio.firebasestorage.app",
-  messagingSenderId: "2081562439",
-  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-  measurementId: "G-M7YCZXPYGM"
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigures);
 var dbs = firebase.firestore()
@@ -283,7 +281,7 @@ label.textContent='🌟🌟🌟🌟🌟'
 }
 label2.textContent= doc.nome
 if(doc.Mensagem){
- var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
+var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
 label3.textContent= `#${textoFormatado}`
 }
 div2.appendChild(img)
@@ -299,10 +297,10 @@ setTimeout(function(){
 //Swal.fire(`${coment}`,'','')
 document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
 },2000)
- div.addEventListener('click',function(){
-  if(doc.Mensagem){
-    //Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
-    Swal.fire({
+div.addEventListener('click',function(){
+if(doc.Mensagem){
+//Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
+Swal.fire({
 title: `<h5 id='titeleh5'><i class="fa-solid fa-pen-to-square"></i> Comentário</h5>`,
 html:` 
 <br> <h4 id='PComent'></h4>
@@ -320,12 +318,12 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';        
 }
 });
- document.getElementById('PComent').innerHTML=`${doc.Mensagem}`
- document.getElementById('lblBtn2').addEventListener('click', function(){
-  Swal.close()
- });
-  }
- })
+document.getElementById('PComent').innerHTML=`${doc.Mensagem}`
+document.getElementById('lblBtn2').addEventListener('click', function(){
+Swal.close()
+});
+}
+})
 })
 });
 
@@ -377,46 +375,46 @@ if(resp){
 
 localStorage.setItem('InfoMSM', resp)
 
- // alert(msm);
-  var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
-  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+// alert(msm);
+var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
+document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 
 setTimeout(function(){
- window.location.reload()
+window.location.reload()
 },1500)
 }else{
 }
 })
 }
 function ParagrafoMSM(){
-  var msm= localStorage.getItem('InfoMSM')
-  Swal.fire('Comentário!',`${msm}`,'success')
+var msm= localStorage.getItem('InfoMSM')
+Swal.fire('Comentário!',`${msm}`,'success')
 }
 document.getElementById('div_listInfo').style.display='none'
- var span=document.getElementById('spanInfo');
-  span.className=`fa-solid fa-eye`
+var span=document.getElementById('spanInfo');
+span.className=`fa-solid fa-eye`
 function verInfolist(){
- var display=  document.getElementById('div_listInfo').style.display;
- var span=document.getElementById('spanInfo');
- if(display=='none'){
- document.getElementById('div_listInfo').style.display='block'
- span.className=`fa-solid fa-eye-low-vision`
- setTimeout(function(){
- document.getElementById('div_listInfo').style.display='none'
-  span.className=`fa-solid fa-eye`
-  //document.getElementById('a_stars').click()
- },70000)
- } else{
-  document.getElementById('div_listInfo').style.display='none'
-    span.className=`fa-solid fa-eye`
- }
+var display=  document.getElementById('div_listInfo').style.display;
+var span=document.getElementById('spanInfo');
+if(display=='none'){
+document.getElementById('div_listInfo').style.display='block'
+span.className=`fa-solid fa-eye-low-vision`
+setTimeout(function(){
+document.getElementById('div_listInfo').style.display='none'
+span.className=`fa-solid fa-eye`
+//document.getElementById('a_stars').click()
+},70000)
+} else{
+document.getElementById('div_listInfo').style.display='none'
+span.className=`fa-solid fa-eye`
+}
 }
 function avaliar(){
-  Menu()
+Menu()
 }
 //tela cad
 function Cad(){
-  window.open('html/cad.html','_blank')
+window.open('html/cad.html','_blank')
 }
 
 
@@ -424,12 +422,14 @@ function Cad(){
 var telefone= sessionStorage.getItem('teladmin')
 
 function falecom(){
-  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
-window.open(url, "_blank");
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var msm=` R.D - Reparos a Domicílio (pedido de contato) \n\n`
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)} Página web: ${url} `;
+window.open(Url, "_blank");
 }
 function ZAP(){
-  falecom()
+falecom()
 }
 function ADMIN(){
 if (navigator.vibrate) {

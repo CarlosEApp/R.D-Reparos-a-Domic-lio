@@ -13,12 +13,12 @@ var listTab = document.getElementById('ListTabela');
 listTab.innerHTML = ''
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-  authDomain: "reparos-a-domicilio.firebaseapp.com",
-  projectId: "reparos-a-domicilio",
-  storageBucket: "reparos-a-domicilio.firebasestorage.app",
-  messagingSenderId: "2081562439",
-  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-  measurementId: "G-M7YCZXPYGM"
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigure);
 var db = firebase.firestore()
@@ -54,7 +54,7 @@ pr.id='paragrafo'
 pr2.id='paragrafo2'
 img.id='imgid'
 pr3.id='paragrafo3'
- img.src=`../src/RD_logo.png`
+img.src=`../src/RD_logo.png`
 label.textContent=`${doc.Titulo}`;
 pr3.textContent='Atendemos em Itanhaém e região'
 if(!doc.SubT||doc.SubT==''){
@@ -67,7 +67,7 @@ label3.textContent=`R$: ${doc.Valor}`;
 if(!doc.Desconto||doc.Desconto==''){
 label4.textContent=``;
 }else{
-    label4.textContent=`Promoção: (R$: ${doc.Desconto})`;
+label4.textContent=`Promoção: (R$: ${doc.Desconto})`;
 }
 if(!doc.OBS||doc.OBS==''){
 label5.textContent=``;
@@ -104,19 +104,23 @@ listTab.appendChild(div)
 //},2000)
 
 botão.addEventListener('click',function(){
+var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')    
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
- var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
 pr.addEventListener('click',function(){
+var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')   
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
+var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
 })
@@ -125,15 +129,15 @@ window.open(url, "_blank");
 
 listaPreços()
 
- function gerarCodigo() {
-            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
-            let codigo = '';
-            for (let i = 0; i < 8; i++) {
-                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-            }
-            //document.getElementById('codigo').innerText = codigo;
-            sessionStorage.setItem('codigo',codigo)
-        }
+function gerarCodigo() {
+const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+let codigo = '';
+for (let i = 0; i < 8; i++) {
+  codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+}
+//document.getElementById('codigo').innerText = codigo;
+sessionStorage.setItem('codigo',codigo)
+}
 
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
@@ -157,66 +161,68 @@ Menu()
 };
 
 function init(){
-    Menu() 
+Menu() 
 };
 
 //abrir tabela
 function tabela(){
-    document.getElementById('divTabela').style.display='block'
-    listaPreços()
-    Menu() 
+document.getElementById('divTabela').style.display='block'
+listaPreços()
+Menu() 
 };
 
 
 //fechar tabela
 
 function fecharTabela(){
- document.getElementById('divTabela').style.display='none'
+document.getElementById('divTabela').style.display='none'
 };
 
 var telefone= sessionStorage.getItem('teladmin')
 function ZAP(){
-  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
-window.open(url, "_blank");
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var msm=` R.D - Reparos a Domicílio (pedido de contato) \n\n`
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)} Página web: ${url} `;
+window.open(Url, "_blank");
 }
 
 //Orçamento
 function falecom(){
-   var sev= 'Elétrica'
- var telefone= sessionStorage.getItem('teladmin')
-  gerarCodigo()
+var sev= 'Elétrica'
+var telefone= sessionStorage.getItem('teladmin')
+gerarCodigo()
 
 setTimeout(function(){
+var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de orçamentro / ${sev}) - Protocólo: (${codigo}_${data}_${hora})`;
-;
-window.open(url, "_blank");
+var text=` R.D - Reparos a Domicílio (pedido de orçamentro de ${sev})\n\nProtocólo: (${codigo}_${data}_${hora})\n\n`
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} Página web: ${pag}`;
 },1500)
 }
 function inicio(){
-      document.getElementById('a_inicio').click()
+document.getElementById('a_inicio').click()
 }
 
 //Data e Hora
 
-   setInterval(function() {
-        
- const newDate = new Date()
- var dia = String(newDate.getDate()).padStart(2, '0');
- var mes = String(newDate.getMonth() + 1).padStart(2, '0');
- var ano = String(newDate.getFullYear()).padStart(2, '0')
- var data = `${dia}/${mes}/${ano}`
- const now = new Date();
- const hours = now.getHours().toString().padStart(2, '0');
- const minutes = now.getMinutes().toString().padStart(2, '0');
- const seconds = now.getSeconds().toString().padStart(2, '0');
- const timeString = `${hours}:${minutes}:${seconds}`;
+setInterval(function() {
 
- sessionStorage.setItem('data', data)
- sessionStorage.setItem('hora', timeString)
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+
+sessionStorage.setItem('data', data)
+sessionStorage.setItem('hora', timeString)
 
 }, 1000)

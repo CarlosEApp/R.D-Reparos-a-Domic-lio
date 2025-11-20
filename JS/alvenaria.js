@@ -103,19 +103,23 @@ listTab.appendChild(div)
 //},2000)
 
 botão.addEventListener('click',function(){
+   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')    
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
+ var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
 pr.addEventListener('click',function(){
+   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')   
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
+ var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
 })
@@ -177,9 +181,11 @@ function fecharTabela(){
 
 var telefone= sessionStorage.getItem('teladmin')
 function ZAP(){
+   var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
   var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
-window.open(url, "_blank");
+  var msm=` R.D - Reparos a Domicílio (pedido de contato) \n\n`
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)} Página web: ${url} `;
+window.open(Url, "_blank");
 }
 
 //Orçamento
@@ -189,11 +195,13 @@ function falecom(){
   gerarCodigo()
 
 setTimeout(function(){
+var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
+  var text=` R.D - Reparos a Domicílio (pedido de orçamentro de ${sev})\n\nProtocólo: (${codigo}_${data}_${hora})\n\n`
   var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de orçamentro / ${sev}) - Protocólo: (${codigo}_${data}_${hora})`;
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 },1000)
 }
