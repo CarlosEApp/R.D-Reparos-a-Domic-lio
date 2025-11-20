@@ -3,6 +3,8 @@
 // dados admim tel
 var telAdmim= 11995501463
 sessionStorage.setItem('teladmin', telAdmim)
+var resp = sessionStorage.setItem('senha','gat980')
+var resp2=sessionStorage.setItem('RecPasswor','Carlos@gat@gmail');
 
 
 
@@ -32,21 +34,15 @@ function Eletrica(){
   window.open('html/eletrica.html','_blank')
 };
 
-
 //Pesquisa Header
-function ADMIN(){
-document.getElementById('read2').style.display='Block'
-Menu()
-}
+
 function ADMINFechar(){
   document.getElementById('read2').style.display='none'
 };
 
-
-
 //logo click
 function imgLogo(){
-    swal({
+swal({
 title: ``,
 html:` `,
 background: 'rgba(118, 0, 122, 0)', // Cor de fundo
@@ -62,7 +58,6 @@ document.body.style.paddingRight = '0px';
 });
 swal('R.D - reparos a domicílio','','src/rd_logo_png.png')
 }
-
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
 function Menu() {
@@ -77,29 +72,22 @@ BTN.className='fa-solid fa-bars'
 sessionStorage.setItem('MENULateral','')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 }
-
 }
 function fecharMenu() {
 Menu() 
 }
-
 function init(){
     Menu() 
 }
 function sobre(){
   Menu() 
 }
-
 //inicio btn footer
 function inicio(){
  document.getElementById('aa_inicio').click()
 }
 
-
-
-
 //stars
-
 //localStorage.setItem('AvaliaçãoStar','')
 //localStorage.setItem('InfoMSM','')
 
@@ -116,7 +104,6 @@ document.getElementById('lblNotaAV').innerHTML=`Nota ${notaAVStars}`
 });
 const estrelas = document.querySelectorAll('.estrelas input');
 const labels = document.querySelectorAll('.label-estrela');
-
 estrelas.forEach((estrela, index) => {
 estrela.addEventListener('change', () => {
 const nota = (index + 1) * 2;
@@ -125,15 +112,12 @@ localStorage.setItem('AvaliaçãoStar', nota);
 labels.forEach((label, i) => {
 label.style.color = i <= index ? '#fc0' : '#ccc';
 });
-
 // swal(`${nota}`, '', 'success');
 loginComGoogle()
 document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
 });
 });
-
 //login google
-
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
   authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -147,24 +131,19 @@ apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 if (!firebase.apps.length) {
 firebase.initializeApp(firebaseConfig);
 }
-
 // Referências
 var auth = firebase.auth();
 var provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" }); // força seleção de conta
 var db = firebase.firestore();
-
-
 // Controle para evitar múltiplos popups
 let loginEmAndamento = false;
-
 // Função de login
 function loginComGoogle() {
 var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
 var msm= localStorage.getItem('InfoMSM')
 if (loginEmAndamento) return;
 loginEmAndamento = true;
-
 auth.signInWithPopup(provider)
 .then((result) => {
 loginEmAndamento = false;
@@ -177,9 +156,7 @@ uid: user.uid,
 Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp()
-
 };
-
 // Salva no Firestore
 db.collection("UsersPag").doc(user.uid).set(userData)
 .then(() => {
@@ -196,7 +173,6 @@ document.getElementById('avisoinfo').style.display='none'
 localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
-
 })
 .catch((error) => {
 console.error("Erro ao salvar no Firestore:", error);
@@ -209,9 +185,7 @@ console.error("Erro no login:", error);
 });
 }
 
-
 //Logado?
-
 setTimeout(function(){
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -225,7 +199,6 @@ apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
 firebase.initializeApp(firebaseConfig);
-
 }
 auth.onAuthStateChanged((user) => {
 if (user) {
@@ -236,7 +209,6 @@ if (msm) {
   var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
   document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 }
-
 // Usuário já está logado
 document.getElementById("user-photo").src = user.photoURL;
 document.getElementById("user-name").textContent = "Olá, " + user.displayName;
@@ -252,7 +224,6 @@ localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
 
-
 var dbb = firebase.firestore();
 dbb.collection("UsersPag").doc(user.uid).set({
 nome: user.displayName,
@@ -263,8 +234,6 @@ Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
 })
-
-
 
 //var itens1= 0
 var list = document.getElementById('listInfo');
@@ -285,7 +254,6 @@ produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 var coment= querySnapshot.size
-
 var div= document.createElement('div')
 var div2=document.createElement('div')
 var div3=document.createElement('div')
@@ -293,7 +261,6 @@ var label=document.createElement('label')
 var label2=document.createElement('label')
 var label3=document.createElement('label')
 var img=document.createElement('img')
-
 img.id='imgInfo'
 div.id='divInfo'
 div2.id='divInfo2'
@@ -301,7 +268,6 @@ div3.id='divInfo3'
 label.id='lblInfo'
 label2.id='lblInfo2'
 label3.id='lblInfo3'
-
 img.src=doc.foto
 if(!doc.Stars||doc.Stars==''){
 }else if(doc.Stars==2){
@@ -320,7 +286,6 @@ if(doc.Mensagem){
  var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
 label3.textContent= `#${textoFormatado}`
 }
-
 div2.appendChild(img)
 div3.appendChild(label)
 div3.appendChild(document.createElement('br'));
@@ -330,7 +295,6 @@ div3.appendChild(label3)
 div.appendChild(div2)
 div.appendChild(div3)
 list.appendChild(div)
-
 setTimeout(function(){
 //Swal.fire(`${coment}`,'','')
 document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
@@ -362,7 +326,6 @@ document.body.style.paddingRight = '0px';
  });
   }
  })
-
 })
 });
 
@@ -451,7 +414,6 @@ function verInfolist(){
 function avaliar(){
   Menu()
 }
-
 //tela cad
 function Cad(){
   window.open('html/cad.html','_blank')
@@ -468,4 +430,67 @@ window.open(url, "_blank");
 }
 function ZAP(){
   falecom()
+}
+function ADMIN(){
+if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+Swal.fire({
+title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+html:` <div  class="menu-container">
+<br>
+<p>Digite senha:
+<br>
+<input id='password' type='password' placeholder='Digite password..'> <i id='iPasWord' class="fa-solid fa-eye"></i>
+<br><br>
+<button id='Start'> Enter <i  class="fa-sharp-duotone fa-solid fa-unlock"></i></button>
+<br><br>  
+<button id='Sair' class='cancelar'> Cancelar </button>
+</div>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+}); 
+setTimeout(function(){
+sessionStorage.setItem('pesQuiSar','');
+},1000)
+document.getElementById('iPasWord').addEventListener('click',function(){
+var ii= document.getElementById('iPasWord');
+var iPW= document.getElementById('password');
+if(iPW.type=='password'){
+iPW.type='text'
+ii.className='fa-solid fa-eye-low-vision';
+} else{
+iPW.type='password';
+ii.className='fa-solid fa-eye';
+}
+});
+document.getElementById('Sair').addEventListener('click',function(){
+Swal.close('click')
+}); 
+document.getElementById('Start').addEventListener('click',function(){
+var resp1= sessionStorage.getItem('senha')
+var resp2=  sessionStorage.getItem('RecPasswor');
+var passWord= document.getElementById('password').value;
+if(!passWord||passWord==''){
+Swal.fire('Preencha o campo "Password"','','warning');
+} else{
+if(passWord== resp1|| passWord== resp2){
+if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+Cad()
+Swal.close()
+}else{
+Swal.fire('Senha incorreta!','','error');
+}
+}
+});
+Menu()
 }
