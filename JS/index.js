@@ -466,3 +466,6 @@ function falecom(){
 var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
 window.open(url, "_blank");
 }
+function ZAP(){
+  falecom()
+}
