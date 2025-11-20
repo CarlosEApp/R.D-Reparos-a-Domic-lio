@@ -2,7 +2,8 @@
 
 // Lista Tabela
 function listaPreços(){
- var telefone= 11995501463
+gerarCodigo()
+ var telefone=sessionStorage.getItem('teladmin')
 var itens= 0
 var listTab = document.getElementById('ListTabela');
 listTab.innerHTML = ''
@@ -60,7 +61,7 @@ label3.textContent=`R$: ${doc.Valor}`;
 if(!doc.Desconto||doc.Desconto==''){
 label4.textContent=``;
 }else{
-label4.textContent=`Promoção - Desc. de: ${doc.Desconto}`;
+label4.textContent=`Promoção: (R$: ${doc.Desconto})`;
 }
 if(!doc.OBS||doc.OBS==''){
 label5.textContent=``;
@@ -96,19 +97,37 @@ listTab.appendChild(div)
 //},2000)
 
 botão.addEventListener('click',function(){
-      var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+var codigo= sessionStorage.getItem('codigo')    
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+ var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
 window.open(url, "_blank");
 })
 pr.addEventListener('click',function(){
-      var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+var codigo= sessionStorage.getItem('codigo')   
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio / Ref: ${doc.ID} - Protocólo: (${codigo}_${data}_${hora})`;
 window.open(url, "_blank");
 })
 })
 })
 };
+
 listaPreços()
+
+ function gerarCodigo() {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+            let codigo = '';
+            for (let i = 0; i < 8; i++) {
+                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+            //document.getElementById('codigo').innerText = codigo;
+            sessionStorage.setItem('codigo',codigo)
+        }
+
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
 function Menu() {
@@ -142,3 +161,51 @@ Menu()
 function fecharTabela(){
 document.getElementById('divTabela').style.display='none'
 };
+
+var telefone= sessionStorage.getItem('teladmin')
+
+function ZAP(){
+  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de contato)`;
+window.open(url, "_blank");
+}
+
+
+
+//Orçamento
+function falecom(){
+ var sev= 'Pintura'
+ var telefone= sessionStorage.getItem('teladmin')
+  gerarCodigo()
+setTimeout(function(){
+var codigo= sessionStorage.getItem('codigo')
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= R.D - Reparos a Domicílio (pedido de orçamentro / ${sev}) - Protocólo: (${codigo}_${data}_${hora})`;
+window.open(url, "_blank");
+},1000)
+}
+function inicio(){
+      document.getElementById('a_inicio').click()
+}
+
+//Data e Hora
+
+   setInterval(function() {
+        
+ const newDate = new Date()
+ var dia = String(newDate.getDate()).padStart(2, '0');
+ var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+ var ano = String(newDate.getFullYear()).padStart(2, '0')
+ var data = `${dia}/${mes}/${ano}`
+ const now = new Date();
+ const hours = now.getHours().toString().padStart(2, '0');
+ const minutes = now.getMinutes().toString().padStart(2, '0');
+ const seconds = now.getSeconds().toString().padStart(2, '0');
+ const timeString = `${hours}:${minutes}:${seconds}`;
+
+ sessionStorage.setItem('data', data)
+ sessionStorage.setItem('hora', timeString)
+
+}, 1000)

@@ -32,20 +32,11 @@
         </div>
          <div id="menu_lateral">
         <div id="MenuIMG"> <img src="../src/RD_logo.png" alt="" width="100%"></div> 
-        <ul>
-          <li><a id="a_inicio" href="#" onclick="init()"><i class="fa-solid fa-house"></i> Início</a></li>
+               <ul>
+          <li><a id="a_inicio" href="#" ><i class="fa-solid fa-house"></i> Início</a></li>
            <li><a id="tabela"  onclick="tabela()">📝Tabela de Preços</a></li>
-           <li> <h3 id="red">🛠️ Áreas de Seviços: </h3></li>
-          <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
-          <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
-          <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
-          <li><a href="#bodyB3" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
-          <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
          <li> <h3 id="red">📞 Contatos, Rede sociais, etx: </h3></li>
           <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
-          
-          <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>
-          <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
           <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
           <!-- Adicione mais itens se quiser -->
         </ul>
@@ -64,14 +55,17 @@
             </div>
         </div>
         <div id="divFooter">
-            <div id="foote1">
+            <div id="foote1">        
+            <p id="pOrçamento">Faça seu orçamento conosco! </p><br>
+           <div id="divFaleCom">
+      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Orçamento</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
+    </div>
 
             </div>
-            <div id="foote1">
+            <div id="foote2">
 
             </div>
         </div>
-
     </div>
      <script src="../JS/pintura.js"></script>
 </body>

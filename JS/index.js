@@ -1,5 +1,11 @@
 
 
+// dados admim tel
+var telAdmim= 11995501463
+sessionStorage.setItem('teladmin', telAdmim)
+
+
+
 //btn alvenaria
 function alvenaria(){
     window.open('html/alvenaria.html','_blank')
@@ -453,7 +459,7 @@ function Cad(){
 
 
 //fale conosco
-var telefone= 11995501463
+var telefone= sessionStorage.getItem('teladmin')
 
 function falecom(){
   var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
