@@ -1,5 +1,83 @@
 
 
+//cadastrados
+
+        //fechar
+        function FecharCadServ(){
+             document.getElementById('listcadastrados').style.display='none'
+        }
+
+
+function ServCad(){
+
+     FecharCad()
+    document.getElementById('listcadastrados').style.display='block'
+}
+function selects(){
+  var lista=  document.getElementById('Listasev').value;
+  var list= document.getElementById('listCDS');
+  list.innerHTML=''
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var db = firebase.firestore()
+var produtosRef = db.collection(`${lista}`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+ //alert(doc.Titulo)
+ var div= document.createElement('div')
+ var div2= document.createElement('div')
+ var div3= document.createElement('div')
+ var lbl= document.createElement('label')
+ var lbl2= document.createElement('label')
+ var lbl3= document.createElement('label')
+ var btn= document.createElement('button')
+ var btn2= document.createElement('button')
+
+lbl.id='lblid'
+lbl2.id='lblid2'
+lbl3.id='lblid3'
+div.id='divid'
+div2.id='divid2'
+div3.id='divid3'
+btn.id='btnid'
+btn2.id='btnid2'
+lbl.textContent=`${doc.Titulo}`
+lbl2.textContent=`${doc.SubT}`
+lbl3.textContent=`${doc.ID}`
+btn.textContent=``
+btn.className=`fa-solid fa-eye`
+btn2.textContent=`Editar`
+
+div2.appendChild(lbl)
+div2.appendChild(document.createElement('br'))
+div2.appendChild(lbl2)
+div2.appendChild(document.createElement('br'))
+div2.appendChild(document.createElement('br'))
+div2.appendChild(lbl3)
+div3.appendChild(btn)
+div3.appendChild(document.createElement('br'))
+div3.appendChild(document.createElement('br'))
+div3.appendChild(btn2)
+div.appendChild(div2)
+div.appendChild(div3)
+list.appendChild(div)
+
+
+})
+})
+}
+
+
+
 //Limpar campos
 function limparC(){
 
@@ -161,8 +239,8 @@ function verImagem(){
 
 
 // Botão cadastro
-
 function Cadastro(){
+    FecharCadServ()
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 var resp= hora.split(':')
@@ -176,17 +254,14 @@ for (let i = 0; i < 8; i++) {
   codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
 }
 document.getElementById('Input_ID').value= codigo+tres
-
 }
 // botão fechar cadastro
 function FecharCad(){
+    limparC()
 document.getElementById('body1').style.display='none'
 }
 
-
-
 //Data e Hora
-
  setInterval(function() {
  const newDate = new Date()
  var dia = String(newDate.getDate()).padStart(2, '0');
@@ -203,3 +278,26 @@ document.getElementById('body1').style.display='none'
  localStorage.setItem('data', data)
  localStorage.setItem('hora', timeString)
 }, 1000)
+
+// Tela Cheia
+function toggleFullScreen() {
+
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+(!document.mozFullScreen && !document.webkitIsFullScreen)) {
+if (document.documentElement.requestFullScreen) {
+document.documentElement.requestFullScreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullScreen) {
+document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+}
