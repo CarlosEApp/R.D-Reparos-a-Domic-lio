@@ -6,7 +6,7 @@ padding: 0%;
 }
 body{
 font-family: 'Poppins', sans-serif;
-background-color: rgb(0, 19, 26);
+background-color: rgba(0, 19, 26, 0.815);
 color: aliceblue;
 text-rendering: geometricPrecision;
 }
@@ -14,13 +14,13 @@ text-rendering: geometricPrecision;
 margin: auto;
 width: 100%;
 max-width: 1100px;
-background-color: rgba(240, 248, 255, 0);
+background-color: rgb(0, 46, 63);
 min-height: 200vh;
 }
 #divHead{
 width: 100%;
 max-width: 1100px;
-background-color:rgb(0, 19, 26);
+background-color:rgb(0, 46, 63);
 min-height: 5vh;
 position: fixed;
 color: rgb(255, 255, 255);
@@ -75,7 +75,8 @@ font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
 #lblFecharTabela:hover{
 color: rgb(126, 0, 131);
 }
- #divid{
+ 
+#divid{
 margin: auto;
 width: 98%;
 max-width: 500px;
@@ -84,10 +85,11 @@ margin-bottom: 30px;
 border-radius: 20px;
 padding-bottom: 30px;
 margin-top: 30px;
-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
-border-top: 20px solid rgb(158, 150, 0);
-border-top-left-radius:40px ;
-border-top-right-radius: 40px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
+border: 5px solid rgb(82, 78, 0);
+}
+#divid:hover{
+    border: 5px solid rgb(189, 179, 0);
 }
 #botaoid{
 float: right;
@@ -147,8 +149,10 @@ width: 70%;
 font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
 }
 #imgid{
-    width: 25%;
+    width:70px;
     margin-top: 20px;
+    float: left;
+    margin-left: 20px;
 }
 
 #body1 h3{
@@ -217,15 +221,14 @@ margin: auto;
 width: 40%;
 padding-top: 37px;
 }
-
 #divFooter{
 width: 100%;
-min-height: 100vh;
+height: 90vh;
 background-color: rgb(0, 0, 0);
 border-top-left-radius: 40px;
 border-top-right-radius: 40px;
 margin-top: 30px;
-border-top: 20px solid rgb(176, 167, 0);
+border-top: 20px solid rgb(128, 134, 134);
 background-image: url('../src/RD_logo2.png');
 background-size: 30%;
 background-repeat: no-repeat;
@@ -233,9 +236,11 @@ background-position: center;
 }
 
 #paragrafo3{
-    font-size: clamp(0.700rem, 1vw + 0.5rem, 0.800rem);
+    font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
     color: rgb(42, 0, 70);
-    margin: 5px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #divFaleCom{
 width: 100%;
