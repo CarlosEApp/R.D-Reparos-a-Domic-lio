@@ -70,7 +70,28 @@ div3.appendChild(btn2)
 div.appendChild(div2)
 div.appendChild(div3)
 list.appendChild(div)
+btn.addEventListener('click',function(){
+    swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
+});
 
+btn2.addEventListener('click',function(){
+
+document.getElementById('ListaCategoria').value=doc.Lista
+document.getElementById('imgcad').src=doc.Imagem   
+document.getElementById('Input_ID').value=doc.ID
+document.getElementById('Input_titulo').value=doc.Titulo
+document.getElementById('Input_Subtitulo').value=doc.SubT
+document.getElementById('Input_Valor').value=doc.Valor
+document.getElementById('Input_ValorDesconto').value=doc.Desconto
+document.getElementById('Input_OBS').value=doc.OBS
+document.getElementById('Input_add1').value=doc.ADD1
+document.getElementById('Input_add2').value=doc.ADD2
+document.getElementById('Input_add3').value=doc.ADD3
+document.getElementById('Input_add4').value=doc.ADD4
+document.getElementById('Input_add5').value=doc.ADD5
+document.getElementById('body1').style.display='Block'
+ document.getElementById('listcadastrados').style.display='none'
+});
 
 })
 })
@@ -80,7 +101,6 @@ list.appendChild(div)
 
 //Limpar campos
 function limparC(){
-
 document.getElementById('ListaCategoria').value=''
 document.getElementById('imgcad').src;   
 document.getElementById('Input_ID').value=''
@@ -94,6 +114,7 @@ document.getElementById('Input_add2').value=''
 document.getElementById('Input_add3').value=''
 document.getElementById('Input_add4').value=''
 document.getElementById('Input_add5').value=''
+
 }
 
 //salvar cadastro
@@ -163,9 +184,16 @@ db.collection(`${lista}`).doc(`${idd}`).set({
 
 })
 setTimeout(function(){
+   
      FecharCad()
- Swal.fire('Sucesso!',`Salvo com o ID: ${idd} - Lista: ${lista}`,'success')
+ Swal.fire('Sucesso!',`Salvo com o ID: ${idd} - Lista: ${lista} `,'success')
    limparC()
+     var list= document.getElementById('listCDS');
+  list.innerHTML=''
+  setTimeout(function(){
+window.location.reload()
+  },2000)
+  
 },2000)
 
 }
