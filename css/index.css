@@ -156,7 +156,7 @@ color: rgb(0, 255, 242);
 #divBody{
  margin: auto;
 width: 95%;
-max-width: 1500px;
+max-width: 1600px;
 overflow: auto;
 min-height: 100vh;
 background-color: rgba(214, 9, 152, 0);
@@ -604,8 +604,78 @@ color: #ffffff;
 border: 1px solid rgb(0, 76, 255);
 background-color: #0062ff;
 }
+#div_loja{
+    float: right;
+    margin-right: 5%;
+    
+   
+}
 
+#iconeLoja{
+    position: fixed;
+    width: 4%;
+    min-width: 64px;
+    cursor: pointer;
+       float: right;
+    margin-right: 30px;
+    top: 85%;
+   
+  
+}
+#iconeLoja:hover{
+ background-color: red;
+ border-radius: 10px;
+}
+@media (max-width: 1400px) {
+#div_loja{
+    float: right;
+    margin-right: 7%;
+   
+}
+}
+@media (max-width: 1100px) {
+#div_loja{
+    float: right;
+    margin-right: 10%;
+   
+}
+}
+@media (max-width: 900px) {
+#div_loja{
+    float: right;
+    margin-right: 12%;
+   
+}
+}
+@media (max-width: 900px) {
+#div_loja{
+    float: right;
+    margin-right: 12%;
+   
+}
+}@media (max-width: 700px) {
+#div_loja{
+    float: right;
+    margin-right: 14%;
+   
+}
+}
+@media (max-width: 500px) {
+#div_loja{
+    float: right;
+    margin-right: 16%;
+   
+}
+}
+@media (max-width: 400px) {
+#div_loja{
+    float: right;
+    margin-right: 17%;
+   
+}
+}
 @media (min-width: 870px) {
+
 #menu_lateral {
 position: fixed;
 top: 50px;

@@ -4,19 +4,19 @@
 
         //fechar
         function FecharCadServ(){
-             document.getElementById('listcadastrados').style.display='none'
+             document.getElementById('listcadastrados').style.display='none';
         }
 
 
 function ServCad(){
-
-     FecharCad()
-    document.getElementById('listcadastrados').style.display='block'
+    document.getElementById('a_Inicio').click()
+     FecharCad();
+    document.getElementById('listcadastrados').style.display='block';
 }
 function selects(){
   var lista=  document.getElementById('Listasev').value;
   var list= document.getElementById('listCDS');
-  list.innerHTML=''
+  list.innerHTML='';
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -27,55 +27,60 @@ appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigure);
-var db = firebase.firestore()
+var db = firebase.firestore();
 var produtosRef = db.collection(`${lista}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
  //alert(doc.Titulo)
- var div= document.createElement('div')
- var div2= document.createElement('div')
- var div3= document.createElement('div')
- var lbl= document.createElement('label')
- var lbl2= document.createElement('label')
- var lbl3= document.createElement('label')
- var btn= document.createElement('button')
- var btn2= document.createElement('button')
+ var div= document.createElement('div');
+ var div2= document.createElement('div');
+ var div3= document.createElement('div');
+ var lbl= document.createElement('label');
+ var lbl2= document.createElement('label');
+ var lbl3= document.createElement('label');
+ var btn= document.createElement('button');
+ var btn2= document.createElement('button');
+ var btn3 = document.createElement('button');
 
-lbl.id='lblid'
-lbl2.id='lblid2'
-lbl3.id='lblid3'
-div.id='divid'
-div2.id='divid2'
-div3.id='divid3'
-btn.id='btnid'
-btn2.id='btnid2'
-lbl.textContent=`${doc.Titulo}`
-lbl2.textContent=`${doc.SubT}`
-lbl3.textContent=`${doc.ID}`
-btn.textContent=``
-btn.className=`fa-solid fa-eye`
-btn2.textContent=`Editar`
-
-div2.appendChild(lbl)
-div2.appendChild(document.createElement('br'))
-div2.appendChild(lbl2)
-div2.appendChild(document.createElement('br'))
-div2.appendChild(document.createElement('br'))
-div2.appendChild(lbl3)
-div3.appendChild(btn)
-div3.appendChild(document.createElement('br'))
-div3.appendChild(document.createElement('br'))
-div3.appendChild(btn2)
-div.appendChild(div2)
-div.appendChild(div3)
-list.appendChild(div)
+lbl.id='lblid';
+lbl2.id='lblid2';
+lbl3.id='lblid3';
+div.id='divid';
+div2.id='divid2';
+div3.id='divid3';
+btn.id='btnid';
+btn2.id='btnid2';
+btn3.id='btnid3';
+lbl.textContent=`${doc.Titulo}`;
+lbl2.textContent=`${doc.SubT}`;
+lbl3.textContent=`${doc.ID}`;
+btn.textContent=``;
+btn.className=`fa-solid fa-eye`;
+btn2.textContent=`Editar`;
+btn3.className=`fa-solid fa-trash`;
+div2.appendChild(lbl);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl2);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl3);
+div3.appendChild(btn);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(document.createElement('br'));
+div3.appendChild(btn3);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(document.createElement('br'));
+div3.appendChild(btn2);
+div.appendChild(div2);
+div.appendChild(div3);
+list.appendChild(div);
 btn.addEventListener('click',function(){
+
     swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
 });
 
 btn2.addEventListener('click',function(){
-
 document.getElementById('ListaCategoria').value=doc.Lista
 document.getElementById('imgcad').src=doc.Imagem   
 document.getElementById('Input_ID').value=doc.ID
@@ -92,6 +97,44 @@ document.getElementById('Input_add5').value=doc.ADD5
 document.getElementById('body1').style.display='Block'
  document.getElementById('listcadastrados').style.display='none'
 });
+btn3.addEventListener('click',function(){
+
+  Swal.fire({
+title: `Excluir Arquivo!`,
+html: ` <div  class="menu-container">
+<p> A exclusão não podera ser desfeita!</p>
+<br><br>
+<button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+<br><br>  <button id='Sair' class='cancelar'> Sair </button>
+</div>
+`,
+background: 'rgba(0, 0, 0, 1)', // Cor de fundo
+color: '#b90072ff', // Cor do texto
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Sair').addEventListener('click', function() {
+Swal.close('click')
+});
+document.getElementById('SwalExCód').addEventListener('click', function() {
+  var dx= firebase.firestore();
+  dx.collection(`${doc.Lista}`).doc(`${doc.ID}`).delete()
+   var dx2= firebase.firestore();
+  dx2.collection(`Geral-Cadastros`).doc(`${doc.ID}`).delete()
+setTimeout(function(){
+ Swal.fire('Arquivo excluido','Os arquivos e documentos foram deletados com sucesso!','success')
+ selects()
+},1000)
+ 
+
+});
+})
 
 })
 })
@@ -135,6 +178,7 @@ var add2= document.getElementById('Input_add2').value;
 var add3= document.getElementById('Input_add3').value;
 var add4= document.getElementById('Input_add4').value;
 var add5= document.getElementById('Input_add5').value;
+   document.getElementById('a_Inicio').click()
 
 if(!lista||lista==''||!idd||idd==''||!titulo|| titulo==''||!valor||valor==''){
     Swal.fire({
@@ -183,6 +227,26 @@ db.collection(`${lista}`).doc(`${idd}`).set({
     Hora:hora,
 
 })
+var db= firebase.firestore()
+db.collection(`Geral-Cadastros`).doc(`${idd}`).set({
+
+    ID:idd,
+    Titulo:titulo,
+    SubT:subt,
+    Valor:valor,
+    Desconto:descontoV,
+    Lista:lista,
+    OBS:obs,
+    Imagem:imagem,
+    ADD1:add1,
+    ADD2:add2,
+    ADD3:add3,
+    ADD4:add4,
+    ADD5:add5,
+    Data:data,
+    Hora:hora,
+})
+
 setTimeout(function(){
    
      FecharCad()
@@ -245,6 +309,7 @@ setTimeout(function() {
 var resp = document.getElementById('imgcad').value;
 // alert(resp)
 document.getElementById('myProgress').style.display = 'none'
+   document.getElementById('a_Inicio').click()
 }, 1000)
 } else {
 width++;
@@ -268,6 +333,7 @@ function verImagem(){
 
 // Botão cadastro
 function Cadastro(){
+   document.getElementById('a_Inicio').click()
     FecharCadServ()
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
@@ -329,3 +395,4 @@ document.webkitCancelFullScreen();
 }
 }
 }
+   document.getElementById('a_Inicio').click()

@@ -8,28 +8,28 @@ var resp2=sessionStorage.setItem('RecPasswor','Carlos@gat@gmail');
 
 //btn alvenaria
 function alvenaria(){
-window.open('html/alvenaria.html','_blank')
+window.open('html/alvenaria.html','_self')
 }
 
 //btn desktop
 function desktop(){
-window.open('html/desktop.html','_blank')
+window.open('html/desktop.html','_self')
 }
 
 //btn pintura
 function pintura(){
-window.open('html/pintura.html','_blank')
+window.open('html/pintura.html','_self')
 }
 
 //btn hidráulica
 function hidraulica(){
-window.open('html/hidraulica.html','_blank')
+window.open('html/hidraulica.html','_self')
 };
 
 
 //BTN Eletrica
 function Eletrica(){
-window.open('html/eletrica.html','_blank')
+window.open('html/eletrica.html','_self')
 };
 
 //Pesquisa Header
@@ -414,7 +414,7 @@ Menu()
 }
 //tela cad
 function Cad(){
-window.open('html/cad.html','_blank')
+ window.open('html/cad.html', '_self');
 }
 
 
