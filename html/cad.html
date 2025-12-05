@@ -31,7 +31,7 @@
             <h2>📝Cadastro</h2> 
             </div>
             <div id="head2">
-                <button onclick="Cadastro()"><i class="fa-solid fa-check"></i> Cadastro</button> <button onclick="ServCad()"> <i class="fa-solid fa-pen-to-square"></i> Serv.Cadastrados</button>
+                <button onclick="Cadastro()"><i class="fa-solid fa-check"></i> Cadastro</button> <button onclick="ServCad()"> <i class="fa-solid fa-pen-to-square"></i> Serv-Cad.</button> <button onclick="OrdemServiços()"><i class="fa-solid fa-gear"></i> Serviços</button>
             </div>
         </div>
         <a id="a_Inicio" href="#" title="inicio"></a>
@@ -48,6 +48,7 @@
                    <option value="Pintura">🖌️Pintura</option>
                    <option value="Desktop">💻M.Desktop</option>
                    <option value="Alvenaria">🔨Alvenaria</option>
+                       <option value="Jardinagem">🌿Jardinagem</option>
                    <option value="Utilitarios">👉Utilitários</option>
                  </select> <br><br>
                   <label  for="">Produto (ID) <br>
@@ -102,13 +103,33 @@
                    <option value="Pintura">🖌️Pintura</option>
                    <option value="Desktop">💻M.Desktop</option>
                    <option value="Alvenaria">🔨Alvenaria</option>
+                    <option value="Jardinagem">🌿Jardinagem</option>
                    <option value="Utilitarios"> 👉Utilitários</option>
                  </select> <br><br>
              
               <div id="listCDS"></div>
             </div>
 
+              <div id="Serv_Ordem_colab">
+                <select name="Serviços e colaboradores" id="serv_colaboradores" onchange="selectSOC()" title="Serviços e colaboradores">
+                  <option value="">Serviços e colaboradores</option>
+                     <option value="Colaboradores">Colaboradores</option>
+                     <option value="orçamento"> Orcamentos</option>
+                     <option value="OrdemServiços">Ordem de Serviços</option>
+                </select>
+              </div>
+              <div id="Colobaradores">
 
+
+              </div>
+
+              <div id="Orçamentos">
+
+              </div>
+
+              <div id="ordemserv">
+
+              </div>
         </div>
         <div id="divfooter">
 

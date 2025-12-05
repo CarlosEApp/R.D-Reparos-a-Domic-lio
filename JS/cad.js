@@ -1,5 +1,32 @@
 
 
+// Serviços,_Ordem de serviços e_colaboradores
+function OrdemServiços(){
+    FecharCadServ()
+      FecharCad()
+     document.getElementById('Serv_Ordem_colab').style.display='block';
+}
+
+//seletor de serviços
+function selectSOC(){
+  var resp=document.getElementById('serv_colaboradores').value;
+  if(resp==''){
+
+  } else if(resp=='Colaboradores'){
+    document.getElementById('Colobaradores').style.display='block'
+    document.getElementById('Orçamentos').style.display='none'
+    document.getElementById('ordemserv').style.display='none'
+  } else if(resp=='orçamento'){
+       document.getElementById('Colobaradores').style.display='none'
+    document.getElementById('Orçamentos').style.display='block'
+    document.getElementById('ordemserv').style.display='none'
+  } else if(resp=='OrdemServiços'){
+       document.getElementById('Colobaradores').style.display='none'
+    document.getElementById('Orçamentos').style.display='none'
+    document.getElementById('ordemserv').style.display='block'
+}
+}
+
 //cadastrados
 
         //fechar
@@ -12,6 +39,7 @@ function ServCad(){
     document.getElementById('a_Inicio').click()
      FecharCad();
     document.getElementById('listcadastrados').style.display='block';
+     document.getElementById('Serv_Ordem_colab').style.display='none';
 }
 function selects(){
   var lista=  document.getElementById('Listasev').value;
@@ -255,7 +283,8 @@ setTimeout(function(){
      var list= document.getElementById('listCDS');
   list.innerHTML=''
   setTimeout(function(){
-window.location.reload()
+//window.location.reload()
+selects()
   },2000)
   
 },2000)
@@ -333,6 +362,7 @@ function verImagem(){
 
 // Botão cadastro
 function Cadastro(){
+   document.getElementById('Serv_Ordem_colab').style.display='none';
    document.getElementById('a_Inicio').click()
     FecharCadServ()
 var data= localStorage.getItem('data')

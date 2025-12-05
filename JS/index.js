@@ -31,6 +31,10 @@ window.open('html/hidraulica.html','_self')
 function Eletrica(){
 window.open('html/eletrica.html','_self')
 };
+// BTN Jardinagem
+function jardinagem(){
+    window.open('html/jardinagem.html','_self')
+}
 
 //Pesquisa Header
 
