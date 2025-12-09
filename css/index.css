@@ -572,14 +572,14 @@ display: none;
 .my-custom_CadExCód{
 max-width: 390px;
 border-radius: 15px;
-background-color: #ffffff;
+background-color: #001f33;
 box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
 margin-top: 100px;
 margin-top: 100px;
 }
 .my-custom_CadExCód p{
 font-size: 13px;
-font-weight: bold;
+color: rgb(209, 209, 209);
 }
 .my-custom_CadExCód input, .my-custom_PesqCódigo input{
 width: 80%;
@@ -589,12 +589,24 @@ border-radius: 3px;
 cursor: pointer;
 font-size: 14px;
 outline: none;  
+background-color: #00326b6b;
+color: aliceblue;
+
+}
+#iPasWord:hover{
+    cursor: pointer;
+    color: aqua;
+}
+.my-custom_CadExCód input:hover, .my-custom_PesqCódigo input:hover{
+    background-color: #00235c;
+    border: 2px solid #c09301;
 }
 .my-custom_CadExCód button, .my-custom_PesqCódigo button{
 width: 60%;
 padding: 7px;
 border: 1px solid rgb(233, 233, 233);
-background-color: #e7e9ff;
+background-color: #9295b8;
+color: rgb(85, 0, 57);
 border-radius: 3px;
 cursor: pointer;
 }

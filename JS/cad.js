@@ -1,4 +1,72 @@
 
+//foto colab
+function Fotocolab(){
+  document.getElementById('inputColfiles').click()
+}
+//format RG
+  function formatarRG(rg) {
+            rg = rg.replace(/\D/g, ""); // Remove caracteres não numéricos
+            rg = rg.replace(/(\d{2})(\d)/, "$1.$2");
+            rg = rg.replace(/(\d{3})(\d)/, "$1.$2");
+            rg = rg.replace(/(\d{3})(\d{1})$/, "$1-$2");
+            return rg;
+        }
+
+        function aplicarMascaraRG(event) {
+            let input = event.target;
+            input.value = formatarRG(input.value);
+        }
+
+// format Tel
+document.getElementById('inputColTel').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    
+    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+
+    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
+
+    e.target.value = formattedValue;
+});
+
+//Botão cad. colaborador
+function Colaboradores(){
+  document.getElementById('cadCol').style.display='block'
+  document.getElementById('listCol').style.display='none'
+  //document.getElementById('body1').style.display='block'
+var data= localStorage.getItem('data')
+var hora= localStorage.getItem('hora')
+//alert(data)
+var dat= data.split('/')
+var date=dat['0']
+var date1=dat['1']
+var resp2= hora.split(':')
+//var um= resp2[0]
+//var dois= resp2[1]
+var NRE= resp2[2]
+var caracteres = '123456789';
+let colabRE = '';
+for (let i = 0; i < 5; i++) {
+  colabRE += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  document.getElementById('inputR_E').value= `${colabRE}.${date+date1}-${NRE}`
+
+}
+}
+
+// botão lista de colaboradores
+function listColaboradores(){
+    document.getElementById('cadCol').style.display='none'
+  document.getElementById('listCol').style.display='block'
+  
+}
+
+
+
+
+// Fechar lista Ordem de serviços, colabaradores
+function FecharColabServ(){
+  fecharOrdemServ()
+}
 
 // Serviços,_Ordem de serviços e_colaboradores
 function OrdemServiços(){
@@ -6,10 +74,18 @@ function OrdemServiços(){
       FecharCad()
      document.getElementById('Serv_Ordem_colab').style.display='block';
 }
+function fecharOrdemServ(){
+      document.getElementById('Colobaradores').style.display='none'
+    document.getElementById('Orçamentos').style.display='none'
+    document.getElementById('ordemserv').style.display='none'
+      document.getElementById('Serv_Ordem_colab').style.display='none';
+      document.getElementById('select_colaboradores').value=''
+
+}
 
 //seletor de serviços
 function selectSOC(){
-  var resp=document.getElementById('serv_colaboradores').value;
+  var resp=document.getElementById('select_colaboradores').value;
   if(resp==''){
 
   } else if(resp=='Colaboradores'){
@@ -26,20 +102,17 @@ function selectSOC(){
     document.getElementById('ordemserv').style.display='block'
 }
 }
-
 //cadastrados
-
         //fechar
         function FecharCadServ(){
              document.getElementById('listcadastrados').style.display='none';
         }
 
-
 function ServCad(){
     document.getElementById('a_Inicio').click()
      FecharCad();
     document.getElementById('listcadastrados').style.display='block';
-     document.getElementById('Serv_Ordem_colab').style.display='none';
+    fecharOrdemServ()
 }
 function selects(){
   var lista=  document.getElementById('Listasev').value;
@@ -137,7 +210,7 @@ html: ` <div  class="menu-container">
 </div>
 `,
 background: 'rgba(0, 0, 0, 1)', // Cor de fundo
-color: '#b90072ff', // Cor do texto
+color: '#ffffffff', // Cor do texto
 showCancelButton: false,
 showConfirmButton: false,
 customClass: {
@@ -362,7 +435,7 @@ function verImagem(){
 
 // Botão cadastro
 function Cadastro(){
-   document.getElementById('Serv_Ordem_colab').style.display='none';
+  fecharOrdemServ()
    document.getElementById('a_Inicio').click()
     FecharCadServ()
 var data= localStorage.getItem('data')

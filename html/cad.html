@@ -35,7 +35,59 @@
             </div>
         </div>
         <a id="a_Inicio" href="#" title="inicio"></a>
+        
         <div id="divBody">
+          <div id="Serv_Ordem_colab">
+              <label onclick="FecharColabServ()" id="lblFecharColabServ" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
+                <select name="Serviços e colaboradores" id="select_colaboradores" onchange="selectSOC()" title="Serviços e colaboradores">
+                  <option value="">Serviços e colaboradores</option>
+                     <option value="Colaboradores">Colaboradores</option>
+                     <option value="orçamento"> Orcamentos</option>
+                     <option value="OrdemServiços">Ordem de Serviços</option>
+                </select>
+           
+              <div id="Colobaradores">
+                <div id="ColBtn">
+                  <button onclick="Colaboradores()">Novo colab.</button><button onclick="listColaboradores()">Lista de colab.</button>
+                </div>
+                <div id="cadCol">
+                  <h2>Cadastre novo colaborador</h2>
+                 
+                  <div id="Colcad">
+                    <label id="LBL" for="">RE:</label> <br>
+                     <input type="text" title="Nº de Registro" id="inputR_E" placeholder="Nº de Registro (RE)"><br>
+                      <label id="LBL" for="">Nome:</label> <br>
+                       <input type="text" title="Nome" id="inputColnome" placeholder="Nome"><br>
+                        <label id="LBL" for="">Email:</label> <br>
+                         <input type="text" title="Email" id="inputColEmail" placeholder="Email"><br>
+                          <label id="LBL" for="">RG: <br>
+                           <input type="text" id="rg" title="RG" id="inputColRG" oninput="aplicarMascaraRG(event)" placeholder="RG:" maxlength="12"><br>
+                            <label id="LBL" for="">Telefone - Whats:</label> <br>
+                            <input type="text" title="Telefone" id="inputColTel" placeholder="Tel:11 99988-7766"><br>
+                            <input type="file" title="foto" id="inputColfiles"><br>
+                             <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
+                            <label id="lblFoto" for="" onclick="Fotocolab()" >Foto do colaborador  <br>
+                              <i id="iFoto" class="fa-solid fa-image"></i></label>
+                             <div id="btnCol">
+                               <button id="btnSalvar"> Salvar Cadastro</button> 
+                             </div>
+                  </div>
+
+                </div>
+                <div id="listCol">
+
+                </div>
+
+              </div>
+              <div id="Orçamentos">
+
+              </div>
+
+              <div id="ordemserv">
+
+              </div>
+                 </div>
+          
             <div id="body1">
                 <label onclick="FecharCad()" id="lblFecharCad" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
             <h2>📝Cadastro</h2>
@@ -110,26 +162,7 @@
               <div id="listCDS"></div>
             </div>
 
-              <div id="Serv_Ordem_colab">
-                <select name="Serviços e colaboradores" id="serv_colaboradores" onchange="selectSOC()" title="Serviços e colaboradores">
-                  <option value="">Serviços e colaboradores</option>
-                     <option value="Colaboradores">Colaboradores</option>
-                     <option value="orçamento"> Orcamentos</option>
-                     <option value="OrdemServiços">Ordem de Serviços</option>
-                </select>
-              </div>
-              <div id="Colobaradores">
-
-
-              </div>
-
-              <div id="Orçamentos">
-
-              </div>
-
-              <div id="ordemserv">
-
-              </div>
+              
         </div>
         <div id="divfooter">
 
