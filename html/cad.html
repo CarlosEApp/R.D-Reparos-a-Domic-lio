@@ -27,15 +27,14 @@
     <div id="DivGeral">
         <div id="divHead">
             <div id="head1">
-            <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>
-            <h2>📝Cadastro</h2> 
-            </div>
+             <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>
+              <h2>📝Cadastro</h2> 
+             </div>
             <div id="head2">
                 <button onclick="Cadastro()"><i class="fa-solid fa-check"></i> Cadastro</button> <button onclick="ServCad()"> <i class="fa-solid fa-pen-to-square"></i> Serv-Cad.</button> <button onclick="OrdemServiços()"><i class="fa-solid fa-gear"></i> Serviços</button>
             </div>
         </div>
         <a id="a_Inicio" href="#" title="inicio"></a>
-        
         <div id="divBody">
           <div id="Serv_Ordem_colab">
               <label onclick="FecharColabServ()" id="lblFecharColabServ" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
@@ -44,47 +43,45 @@
                      <option value="Colaboradores">Colaboradores</option>
                      <option value="orçamento"> Orcamentos</option>
                      <option value="OrdemServiços">Ordem de Serviços</option>
-                </select>
-           
+                </select> 
               <div id="Colobaradores">
                 <div id="ColBtn">
                   <button onclick="Colaboradores()">Novo colab.</button><button onclick="listColaboradores()">Lista de colab.</button>
                 </div>
                 <div id="cadCol">
-                  <h2>Cadastre novo colaborador</h2>
-                 
+                  <h2>Cadastre novo colaborador</h2>          
                   <div id="Colcad">
                     <label id="LBL" for="">RE:</label> <br>
-                     <input type="text" title="Nº de Registro" id="inputR_E" placeholder="Nº de Registro (RE)"><br>
-                      <label id="LBL" for="">Nome:</label> <br>
-                       <input type="text" title="Nome" id="inputColnome" placeholder="Nome"><br>
-                        <label id="LBL" for="">Email:</label> <br>
-                         <input type="text" title="Email" id="inputColEmail" placeholder="Email"><br>
-                          <label id="LBL" for="">RG: <br>
-                           <input type="text" id="rg" title="RG" id="inputColRG" oninput="aplicarMascaraRG(event)" placeholder="RG:" maxlength="12"><br>
-                            <label id="LBL" for="">Telefone - Whats:</label> <br>
-                            <input type="text" title="Telefone" id="inputColTel" placeholder="Tel:11 99988-7766"><br>
-                            <input type="file" title="foto" id="inputColfiles"><br>
-                             <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
-                            <label id="lblFoto" for="" onclick="Fotocolab()" >Foto do colaborador  <br>
-                              <i id="iFoto" class="fa-solid fa-image"></i></label>
-                             <div id="btnCol">
-                               <button id="btnSalvar"> Salvar Cadastro</button> 
-                             </div>
-                  </div>
-
+                      <input type="text" title="Nº de Registro" id="inputR_E" placeholder="Nº de Registro (RE)"><br>
+                       <label id="LBL" for="">Nome:</label> <br>
+                        <input type="text" title="Nome" id="inputColnome" placeholder="Nome"><br>
+                         <label id="LBL" for="">Email:</label> <br>
+                          <input type="text" title="Email" id="inputColEmail" placeholder="Email"><br>
+                           <label id="LBL" for="">RG: <br>
+                             <input type="text" id="rg" title="RG"  oninput="aplicarMascaraRG(event)" placeholder="RG:" maxlength="12"><br>
+                              <label id="LBL" for="">Telefone - Whats:</label> <br>
+                               <input type="text" title="Telefone" id="inputColTel" placeholder="Tel:11 99988-7766"><br>
+                                <input type="file" title="foto" id="file"><br>
+                                 <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
+                                   <div id="myProgress_2" title="Progresso">
+                                      <div id="myBarfoto">10%</div>
+                                       </div><br>
+                                  <label id="lblFoto" for="" onclick="Fotocolab()" >Foto do colaborador  <br>
+                                    <i id="iFoto" class="fa-solid fa-image"></i></label>
+                                    <div id="btnCol">
+                                      <button id="btnSalvar" onclick="SalvarCadColaborador()"> Salvar Cadastro</button> 
+                      </div>
                 </div>
-                <div id="listCol">
-
                 </div>
-
+                <div id="div_listCol">
+                  <div id="listCol"></div>
+                </div>
               </div>
-              <div id="Orçamentos">
 
+              <div id="Orçamentos">
               </div>
 
               <div id="ordemserv">
-
               </div>
                  </div>
           
@@ -161,11 +158,8 @@
              
               <div id="listCDS"></div>
             </div>
-
-              
         </div>
         <div id="divfooter">
-
         </div>
     </div>
     <script src="../JS/cad.js"></script>

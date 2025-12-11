@@ -1,39 +1,143 @@
 
-//foto colab
-function Fotocolab(){
-  document.getElementById('inputColfiles').click()
+
+
+
+
+//Salvar cadastro de colaborador
+function SalvarCadColaborador(){
+  var REID=document.getElementById('inputR_E').value;
+   var nomeColb= document.getElementById('inputColnome').value;
+    var EmailColab= document.getElementById('inputColEmail').value;
+     var RGColab= document.getElementById('rg').value;
+      var TelColab= document.getElementById('inputColTel').value;
+       var data= localStorage.getItem('data')
+        var hora= localStorage.getItem('hora')
+         var FotoColab= document.getElementById('fotoCol').src 
+      if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!RGColab||RGColab==''||!TelColab||TelColab==''){
+        Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
+      }else{
+          var firebaseConfigure = {
+         apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+         authDomain: "reparos-a-domicilio.firebaseapp.com",
+         projectId: "reparos-a-domicilio",
+         storageBucket: "reparos-a-domicilio.firebasestorage.app",
+         messagingSenderId: "2081562439",
+         appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+         measurementId: "G-M7YCZXPYGM"
+         };
+         firebase.initializeApp(firebaseConfigure);
+         var ddb= firebase.firestore();
+         ddb.collection('Colaboradores').doc(`${REID}`).set({
+          RE:REID,
+          ID:REID,
+          Nome:nomeColb,
+          Emal:EmailColab,
+          RG:RGColab,
+          Telefone:TelColab,
+          Foto:FotoColab,
+          Data: data,
+          Hora: hora,
+         })
+         setTimeout(function(){
+         Swal.fire('Salvo!','','success')
+         setTimeout(function(){
+          window.location.reload()
+         },2000)
+         },1000)
+           
+      }
+     
 }
+
+//Setar Foto do colaborador
+function Fotocolab(){
+var idfoto= document.getElementById('inputR_E').value;
+if(!idfoto||idfoto==''){
+  Swal.fire('Prencha o campo R.E','','error')
+}else{
+
+document.getElementById('file').click();
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var fileButton = document.getElementById('file');
+fileButton.addEventListener('change', function(e) {
+var file = e.target.files[0];
+var storageRef = firebase.storage().ref(`${idfoto}.jpg`);
+var task = storageRef.put(file);
+//
+task.on('state_changed', function progress(snapshot) {
+}, function error(err) {}, function complete() {
+storageRef.getDownloadURL().then(function(url_imagem) {
+Swal.close()
+document.getElementById('myProgress_2').style.display = 'block'
+var i = 0;
+if (i == 0) {
+i = 1;
+var elem = document.getElementById("myBarfoto");
+var width = 1;
+var id = setInterval(frame, 30);
+function frame() {
+if (width >= 100) {
+clearInterval(id);
+i = 0;
+document.getElementById('fotoCol').src = url_imagem
+//document.getElementById('imgcad').value = `${url_imagem}`
+setTimeout(function() {
+// alert(resp)
+document.getElementById('myProgress_2').style.display = 'none'
+}, 1000)
+} else {
+width++;
+elem.style.width = width + "%";
+elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+}
+}
+}
+})
+})
+})
+}
+};
+
+ document.getElementById('fotoCol').addEventListener('click',function(){
+  var fotoimg= document.getElementById('fotoCol').src;
+
+ swal('','',`${fotoimg}`)
+ });
+
 //format RG
-  function formatarRG(rg) {
-            rg = rg.replace(/\D/g, ""); // Remove caracteres não numéricos
-            rg = rg.replace(/(\d{2})(\d)/, "$1.$2");
-            rg = rg.replace(/(\d{3})(\d)/, "$1.$2");
-            rg = rg.replace(/(\d{3})(\d{1})$/, "$1-$2");
-            return rg;
-        }
-
-        function aplicarMascaraRG(event) {
-            let input = event.target;
-            input.value = formatarRG(input.value);
-        }
-
+function formatarRG(rg) {
+rg = rg.replace(/\D/g, ""); // Remove caracteres não numéricos
+rg = rg.replace(/(\d{2})(\d)/, "$1.$2");
+rg = rg.replace(/(\d{3})(\d)/, "$1.$2");
+rg = rg.replace(/(\d{3})(\d{1})$/, "$1-$2");
+return rg;
+}
+function aplicarMascaraRG(event) {
+let input = event.target;
+input.value = formatarRG(input.value);
+}
 // format Tel
 document.getElementById('inputColTel').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    
-    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-
-    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
-                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
-
-    e.target.value = formattedValue;
+let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+.replace(/(\d{4})(\d{4})$/, '$1-$2');
+e.target.value = formattedValue;
 });
-
 //Botão cad. colaborador
 function Colaboradores(){
-  document.getElementById('cadCol').style.display='block'
-  document.getElementById('listCol').style.display='none'
-  //document.getElementById('body1').style.display='block'
+document.getElementById('cadCol').style.display='block'
+document.getElementById('listCol').style.display='none'
+//document.getElementById('body1').style.display='block'
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 //alert(data)
@@ -47,77 +151,65 @@ var NRE= resp2[2]
 var caracteres = '123456789';
 let colabRE = '';
 for (let i = 0; i < 5; i++) {
-  colabRE += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-  document.getElementById('inputR_E').value= `${colabRE}.${date+date1}-${NRE}`
-
+colabRE += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+document.getElementById('inputR_E').value= `${colabRE}.${date+date1}-${NRE}`
 }
 }
-
 // botão lista de colaboradores
 function listColaboradores(){
-    document.getElementById('cadCol').style.display='none'
-  document.getElementById('listCol').style.display='block'
-  
+document.getElementById('cadCol').style.display='none'
+document.getElementById('listCol').style.display='block'
 }
-
-
-
-
 // Fechar lista Ordem de serviços, colabaradores
 function FecharColabServ(){
-  fecharOrdemServ()
+fecharOrdemServ()
 }
-
 // Serviços,_Ordem de serviços e_colaboradores
 function OrdemServiços(){
-    FecharCadServ()
-      FecharCad()
-     document.getElementById('Serv_Ordem_colab').style.display='block';
+FecharCadServ()
+FecharCad()
+document.getElementById('Serv_Ordem_colab').style.display='block';
 }
 function fecharOrdemServ(){
-      document.getElementById('Colobaradores').style.display='none'
-    document.getElementById('Orçamentos').style.display='none'
-    document.getElementById('ordemserv').style.display='none'
-      document.getElementById('Serv_Ordem_colab').style.display='none';
-      document.getElementById('select_colaboradores').value=''
-
+document.getElementById('Colobaradores').style.display='none'
+document.getElementById('Orçamentos').style.display='none'
+document.getElementById('ordemserv').style.display='none'
+document.getElementById('Serv_Ordem_colab').style.display='none';
+document.getElementById('select_colaboradores').value=''
 }
-
 //seletor de serviços
 function selectSOC(){
-  var resp=document.getElementById('select_colaboradores').value;
-  if(resp==''){
-
-  } else if(resp=='Colaboradores'){
-    document.getElementById('Colobaradores').style.display='block'
-    document.getElementById('Orçamentos').style.display='none'
-    document.getElementById('ordemserv').style.display='none'
-  } else if(resp=='orçamento'){
-       document.getElementById('Colobaradores').style.display='none'
-    document.getElementById('Orçamentos').style.display='block'
-    document.getElementById('ordemserv').style.display='none'
-  } else if(resp=='OrdemServiços'){
-       document.getElementById('Colobaradores').style.display='none'
-    document.getElementById('Orçamentos').style.display='none'
-    document.getElementById('ordemserv').style.display='block'
+var resp=document.getElementById('select_colaboradores').value;
+if(resp==''){
+} else if(resp=='Colaboradores'){
+document.getElementById('Colobaradores').style.display='block'
+document.getElementById('Orçamentos').style.display='none'
+document.getElementById('ordemserv').style.display='none'
+} else if(resp=='orçamento'){
+document.getElementById('Colobaradores').style.display='none'
+document.getElementById('Orçamentos').style.display='block'
+document.getElementById('ordemserv').style.display='none'
+} else if(resp=='OrdemServiços'){
+document.getElementById('Colobaradores').style.display='none'
+document.getElementById('Orçamentos').style.display='none'
+document.getElementById('ordemserv').style.display='block'
 }
 }
 //cadastrados
-        //fechar
-        function FecharCadServ(){
-             document.getElementById('listcadastrados').style.display='none';
-        }
-
+//fechar
+function FecharCadServ(){
+document.getElementById('listcadastrados').style.display='none';
+}
 function ServCad(){
-    document.getElementById('a_Inicio').click()
-     FecharCad();
-    document.getElementById('listcadastrados').style.display='block';
-    fecharOrdemServ()
+document.getElementById('a_Inicio').click()
+FecharCad();
+document.getElementById('listcadastrados').style.display='block';
+fecharOrdemServ()
 }
 function selects(){
-  var lista=  document.getElementById('Listasev').value;
-  var list= document.getElementById('listCDS');
-  list.innerHTML='';
+var lista=  document.getElementById('Listasev').value;
+var list= document.getElementById('listCDS');
+list.innerHTML='';
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -133,17 +225,16 @@ var produtosRef = db.collection(`${lista}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
- //alert(doc.Titulo)
- var div= document.createElement('div');
- var div2= document.createElement('div');
- var div3= document.createElement('div');
- var lbl= document.createElement('label');
- var lbl2= document.createElement('label');
- var lbl3= document.createElement('label');
- var btn= document.createElement('button');
- var btn2= document.createElement('button');
- var btn3 = document.createElement('button');
-
+//alert(doc.Titulo)
+var div= document.createElement('div');
+var div2= document.createElement('div');
+var div3= document.createElement('div');
+var lbl= document.createElement('label');
+var lbl2= document.createElement('label');
+var lbl3= document.createElement('label');
+var btn= document.createElement('button');
+var btn2= document.createElement('button');
+var btn3 = document.createElement('button');
 lbl.id='lblid';
 lbl2.id='lblid2';
 lbl3.id='lblid3';
@@ -177,10 +268,8 @@ div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
 btn.addEventListener('click',function(){
-
-    swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
+swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
 });
-
 btn2.addEventListener('click',function(){
 document.getElementById('ListaCategoria').value=doc.Lista
 document.getElementById('imgcad').src=doc.Imagem   
@@ -196,11 +285,10 @@ document.getElementById('Input_add3').value=doc.ADD3
 document.getElementById('Input_add4').value=doc.ADD4
 document.getElementById('Input_add5').value=doc.ADD5
 document.getElementById('body1').style.display='Block'
- document.getElementById('listcadastrados').style.display='none'
+document.getElementById('listcadastrados').style.display='none'
 });
 btn3.addEventListener('click',function(){
-
-  Swal.fire({
+Swal.fire({
 title: `Excluir Arquivo!`,
 html: ` <div  class="menu-container">
 <p> A exclusão não podera ser desfeita!</p>
@@ -224,25 +312,19 @@ document.getElementById('Sair').addEventListener('click', function() {
 Swal.close('click')
 });
 document.getElementById('SwalExCód').addEventListener('click', function() {
-  var dx= firebase.firestore();
-  dx.collection(`${doc.Lista}`).doc(`${doc.ID}`).delete()
-   var dx2= firebase.firestore();
-  dx2.collection(`Geral-Cadastros`).doc(`${doc.ID}`).delete()
+var dx= firebase.firestore();
+dx.collection(`${doc.Lista}`).doc(`${doc.ID}`).delete()
+var dx2= firebase.firestore();
+dx2.collection(`Geral-Cadastros`).doc(`${doc.ID}`).delete()
 setTimeout(function(){
- Swal.fire('Arquivo excluido','Os arquivos e documentos foram deletados com sucesso!','success')
- selects()
+Swal.fire('Arquivo excluido','Os arquivos e documentos foram deletados com sucesso!','success')
+selects()
 },1000)
- 
-
 });
 })
-
 })
 })
 }
-
-
-
 //Limpar campos
 function limparC(){
 document.getElementById('ListaCategoria').value=''
@@ -258,11 +340,8 @@ document.getElementById('Input_add2').value=''
 document.getElementById('Input_add3').value=''
 document.getElementById('Input_add4').value=''
 document.getElementById('Input_add5').value=''
-
 }
-
 //salvar cadastro
-
 function SalvarCad(){
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
@@ -279,10 +358,9 @@ var add2= document.getElementById('Input_add2').value;
 var add3= document.getElementById('Input_add3').value;
 var add4= document.getElementById('Input_add4').value;
 var add5= document.getElementById('Input_add5').value;
-   document.getElementById('a_Inicio').click()
-
+document.getElementById('a_Inicio').click()
 if(!lista||lista==''||!idd||idd==''||!titulo|| titulo==''||!valor||valor==''){
-    Swal.fire({
+Swal.fire({
 title: ``,
 html:``,
 background: 'rgba(46, 82, 60, 1)', // Cor de fundo
@@ -296,7 +374,7 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';        
 }
 });
-   Swal.fire('Atenção','Preencha os campos obrigatórios: ID produto, Titulo e Valor','warning')
+Swal.fire('Atenção','Preencha os campos obrigatórios: ID produto, Titulo e Valor','warning')
 }else{
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -310,65 +388,53 @@ measurementId: "G-M7YCZXPYGM"
 firebase.initializeApp(firebaseConfigure);
 var db= firebase.firestore()
 db.collection(`${lista}`).doc(`${idd}`).set({
-
-    ID:idd,
-    Titulo:titulo,
-    SubT:subt,
-    Valor:valor,
-    Desconto:descontoV,
-    Lista:lista,
-    OBS:obs,
-    Imagem:imagem,
-    ADD1:add1,
-    ADD2:add2,
-    ADD3:add3,
-    ADD4:add4,
-    ADD5:add5,
-    Data:data,
-    Hora:hora,
-
+ID:idd,
+Titulo:titulo,
+SubT:subt,
+Valor:valor,
+Desconto:descontoV,
+Lista:lista,
+OBS:obs,
+Imagem:imagem,
+ADD1:add1,
+ADD2:add2,
+ADD3:add3,
+ADD4:add4,
+ADD5:add5,
+Data:data,
+Hora:hora,
 })
 var db= firebase.firestore()
 db.collection(`Geral-Cadastros`).doc(`${idd}`).set({
-
-    ID:idd,
-    Titulo:titulo,
-    SubT:subt,
-    Valor:valor,
-    Desconto:descontoV,
-    Lista:lista,
-    OBS:obs,
-    Imagem:imagem,
-    ADD1:add1,
-    ADD2:add2,
-    ADD3:add3,
-    ADD4:add4,
-    ADD5:add5,
-    Data:data,
-    Hora:hora,
+ID:idd,
+Titulo:titulo,
+SubT:subt,
+Valor:valor,
+Desconto:descontoV,
+Lista:lista,
+OBS:obs,
+Imagem:imagem,
+ADD1:add1,
+ADD2:add2,
+ADD3:add3,
+ADD4:add4,
+ADD5:add5,
+Data:data,
+Hora:hora,
 })
-
 setTimeout(function(){
-   
-     FecharCad()
- Swal.fire('Sucesso!',`Salvo com o ID: ${idd} - Lista: ${lista} `,'success')
-   limparC()
-     var list= document.getElementById('listCDS');
-  list.innerHTML=''
-  setTimeout(function(){
+FecharCad()
+Swal.fire('Sucesso!',`Salvo com o ID: ${idd} - Lista: ${lista} `,'success')
+limparC()
+var list= document.getElementById('listCDS');
+list.innerHTML=''
+setTimeout(function(){
 //window.location.reload()
 selects()
-  },2000)
-  
 },2000)
-
+},2000)
 }
-    
 }
-
-
-
-
 //Storage
 function imagem(){
 var idd= document.getElementById('Input_ID').value;
@@ -390,7 +456,6 @@ var storageRef = firebase.storage().ref(`${idd}.jpg`);
 var task = storageRef.put(file);
 //
 task.on('state_changed', function progress(snapshot) {
-
 }, function error(err) {}, function complete() {
 storageRef.getDownloadURL().then(function(url_imagem) {
 Swal.close()
@@ -411,7 +476,7 @@ setTimeout(function() {
 var resp = document.getElementById('imgcad').value;
 // alert(resp)
 document.getElementById('myProgress').style.display = 'none'
-   document.getElementById('a_Inicio').click()
+document.getElementById('a_Inicio').click()
 }, 1000)
 } else {
 width++;
@@ -424,20 +489,16 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 //Ver imagem
 function verImagem(){
-    var img= document.getElementById('imgcad').src;
-    swal('','',`${img}`)
-
+var img= document.getElementById('imgcad').src;
+swal('','',`${img}`)
 }
-
-
 // Botão cadastro
 function Cadastro(){
-  fecharOrdemServ()
-   document.getElementById('a_Inicio').click()
-    FecharCadServ()
+fecharOrdemServ()
+document.getElementById('a_Inicio').click()
+FecharCadServ()
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 var resp= hora.split(':')
@@ -448,37 +509,34 @@ document.getElementById('body1').style.display='block'
 var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
 let codigo = '';
 for (let i = 0; i < 8; i++) {
-  codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
 }
 document.getElementById('Input_ID').value= codigo+tres
 }
 // botão fechar cadastro
 function FecharCad(){
-    limparC()
+limparC()
 document.getElementById('body1').style.display='none'
 }
-
 //Data e Hora
- setInterval(function() {
- const newDate = new Date()
- var dia = String(newDate.getDate()).padStart(2, '0');
- var mes = String(newDate.getMonth() + 1).padStart(2, '0');
- var ano = String(newDate.getFullYear()).padStart(2, '0')
- var data = `${dia}/${mes}/${ano}`
- const now = new Date();
- const hours = now.getHours().toString().padStart(2, '0');
- const minutes = now.getMinutes().toString().padStart(2, '0');
- const seconds = now.getSeconds().toString().padStart(2, '0');
- const timeString = `${hours}:${minutes}:${seconds}`;
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
 // const lbl_data = document.getElementById('lbl-data');
- // lbl_data.innerHTML = `${data}`
- localStorage.setItem('data', data)
- localStorage.setItem('hora', timeString)
+// lbl_data.innerHTML = `${data}`
+localStorage.setItem('data', data)
+localStorage.setItem('hora', timeString)
 }, 1000)
-
 // Tela Cheia
 function toggleFullScreen() {
-
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
@@ -498,4 +556,4 @@ document.webkitCancelFullScreen();
 }
 }
 }
-   document.getElementById('a_Inicio').click()
+document.getElementById('a_Inicio').click()
