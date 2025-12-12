@@ -5,7 +5,7 @@
 
 // Lista de colaboradores
 function ListaCC(){
- 
+ fech()
   time2
 document.getElementById('cadCol').style.display='none'
 document.getElementById('listCol').style.display='block'
@@ -54,7 +54,7 @@ btn3.id='btnn3';
 img.id='imgg'
 img.src=`${doc.Foto}`
 lbl.textContent=`${doc.Nome}`;
-lbl2.textContent=`${doc.Emal}`;
+lbl2.textContent=`${doc.Email}`;
 lbl3.textContent=`R.E (${doc.RE})`;
 btn.textContent=``;
 btn.className=`fa-solid fa-eye`;
@@ -71,23 +71,98 @@ div4.appendChild(lbl3);
 div5.appendChild(btn);
 div5.appendChild(btn2);
 div5.appendChild(btn3);
-
 div2.appendChild(div3);
 div2.appendChild(div4);
 div.appendChild(div2);
 div.appendChild(div5);
 li.appendChild(div);
-
 setTimeout(function(){
  document.getElementById('listItens2').innerHTML=`Total de ( ${itens2} ) Colaboradores encontrados`
  sessionStorage.setItem('time12',itens2)
   document.getElementById('listItens2').style.display='block'
   document.getElementById('listItens1').style.display='none'
 },500)
+btn.addEventListener('click',function(){
+  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nData:\n${doc.Data}\n-------------------------\nHora:\n${doc.Hora}\n\n`,`success`)
+});
+img.addEventListener('click',function(){
+  swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
+});
+ btn2.addEventListener('click', function(){
+   document.getElementById('inputR_E').value=doc.RE
+   document.getElementById('inputColnome').value= doc.Nome
+   document.getElementById('inputColEmail').value=doc.Email
+   document.getElementById('rg').value=doc.RG
+   document.getElementById('inputColTel').value=doc.Telefone
+   document.getElementById('fotoCol').src=doc.Foto
+
+   document.getElementById('cadCol').style.display='block'
+  document.getElementById('listCol').style.display='none'
+  document.getElementById('listItens1').style.display='none'
+  document.getElementById('listItens2').style.display='none'
+ 
+ });
+ btn3.addEventListener('click', function () {
+  Swal.fire({
+    title: 'Excluir Colaborador!',
+    html: `
+      <div class="menu-container">
+        <p>A exclusão não poderá ser desfeita!</p>
+        <br><br>
+        <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+        <br><br>
+        <button id="Sair" class="cancelar">Sair</button>
+      </div>
+    `,
+    background: 'rgba(0, 0, 0, 1)',
+    color: '#ffffffff',
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+      popup: 'my-custom_CadExCód'
+    },
+    didOpen: () => {
+      document.body.style.paddingRight = '0px';
+    }
+  });
+
+  document.getElementById('Sair').addEventListener('click', function () {
+    Swal.close();
+  });
+
+  document.getElementById('SwalExCód').addEventListener('click', function () {
+    var db = firebase.firestore();
+    var storage = firebase.storage();
+
+    // Primeiro deleta o documento do Firestore
+    db.collection('Colaboradores').doc(doc.RE).delete()
+      .then(() => {
+        // Depois deleta a foto no Storage
+        if (doc.Foto) {
+          var fotoRef = storage.refFromURL(doc.Foto);
+          return fotoRef.delete();
+        }
+      })
+      .then(() => {
+        Swal.fire('Colaborador excluído', 'Os documentos e a foto foram deletados com sucesso!', 'success');
+        selects();
+      })
+      .catch((error) => {
+        
+      });
+  });
+});
 })
 })
 }
-
+ function fech(){
+   document.getElementById('inputR_E').value=''
+   document.getElementById('inputColnome').value=''
+   document.getElementById('inputColEmail').value=''
+   document.getElementById('rg').value=''
+   document.getElementById('inputColTel').value=''
+   document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
+ }
 //Salvar cadastro de colaborador
 function SalvarCadColaborador(){
 var REID=document.getElementById('inputR_E').value;
@@ -116,7 +191,7 @@ ddb.collection('Colaboradores').doc(`${REID}`).set({
 RE:REID,
 ID:REID,
 Nome:nomeColb,
-Emal:EmailColab,
+Email:EmailColab,
 RG:RGColab,
 Telefone:TelColab,
 Foto:FotoColab,
@@ -269,12 +344,14 @@ document.getElementById('Colobaradores').style.display='block'
 document.getElementById('Orçamentos').style.display='none'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='orçamento'){
+  fech()
    document.getElementById('listItens1').style.display='none'
   document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='block'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='OrdemServiços'){
+  fech()
  document.getElementById('listItens1').style.display='none'
 document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
