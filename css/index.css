@@ -583,7 +583,7 @@ color: rgb(209, 209, 209);
 }
 .my-custom_CadExCód input, .my-custom_PesqCódigo input{
 width: 80%;
-padding: 7px;
+padding: 10px;
 border: 2px solid #e0e0e0;
 border-radius: 3px;
 cursor: pointer;
@@ -591,6 +591,7 @@ font-size: 14px;
 outline: none;  
 background-color: #00326b6b;
 color: aliceblue;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 
 }
 #iPasWord:hover{

@@ -46,7 +46,7 @@
                 </select> 
               <div id="Colobaradores">
                 <div id="ColBtn">
-                  <button onclick="Colaboradores()">Novo colab.</button><button onclick="listColaboradores()">Lista de colab.</button>
+                  <button onclick="Colaboradores()">Novo colab.</button><button onclick="ListaCC()">Lista de colab.</button>
                 </div>
                 <div id="cadCol">
                   <h2>Cadastre novo colaborador</h2>          
@@ -64,16 +64,17 @@
                                 <input type="file" title="foto" id="file"><br>
                                  <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
                                    <div id="myProgress_2" title="Progresso">
-                                      <div id="myBarfoto">10%</div>
-                                       </div><br>
-                                  <label id="lblFoto" for="" onclick="Fotocolab()" >Foto do colaborador  <br>
-                                    <i id="iFoto" class="fa-solid fa-image"></i></label>
-                                    <div id="btnCol">
-                                      <button id="btnSalvar" onclick="SalvarCadColaborador()"> Salvar Cadastro</button> 
+                                    <div id="myBarfoto">10%</div>
+                                      </div><br>
+                                       <label id="lblFoto" for="" onclick="Fotocolab()" >Foto do colaborador  <br>
+                                        <i id="iFoto" class="fa-solid fa-image"></i></label>
+                                         <div id="btnCol">
+                                          <button id="btnSalvar" onclick="SalvarCadColaborador()"> Salvar Cadastro</button> 
                       </div>
                 </div>
                 </div>
                 <div id="div_listCol">
+                   <h3 id="listItens2">Total de 0 produtos encontrados</h3>
                   <div id="listCol"></div>
                 </div>
               </div>
@@ -146,7 +147,7 @@
               <br>
                <h2>Serviços:</h2>
                    <select title="Lista de serviços" name="" id="Listasev" onchange="selects()" >
-                    <option value="">Serviços de:</option>
+                    <option value=''>Serviços de:</option>
                    <option value="Eletrica">⚡Elétrica</option>
                    <option value="Hidraulica">🚿Hidraulica</option>
                    <option value="Pintura">🖌️Pintura</option>
@@ -155,7 +156,7 @@
                     <option value="Jardinagem">🌿Jardinagem</option>
                    <option value="Utilitarios"> 👉Utilitários</option>
                  </select> <br><br>
-             
+                     <h3 id="listItens1">Total de ( 0 ) produtos encontrados</h3>
               <div id="listCDS"></div>
             </div>
         </div>

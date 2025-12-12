@@ -441,7 +441,6 @@ navigator.vibrate(200); // vibra por 200ms
 Swal.fire({
 title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
 html:` <div  class="menu-container">
-<br>
 <p>Digite senha:
 <br>
 <input id='password' type='password' placeholder='Digite password..'> <i id='iPasWord' class="fa-solid fa-eye"></i>

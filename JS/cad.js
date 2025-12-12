@@ -3,50 +3,133 @@
 
 
 
+// Lista de colaboradores
+function ListaCC(){
+ 
+  time2
+document.getElementById('cadCol').style.display='none'
+document.getElementById('listCol').style.display='block'
+var li= document.getElementById('listCol');
+li.innerHTML='';
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var dbt = firebase.firestore();
+var produtosRef = dbt.collection(`Colaboradores`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var itens2 =querySnapshot.size;
+var div= document.createElement('div');
+var div2= document.createElement('div');
+var div3= document.createElement('div');
+var div4= document.createElement('div');
+var div5= document.createElement('div');
+var lbl= document.createElement('label');
+var lbl2= document.createElement('label');
+var lbl3= document.createElement('label');
+var btn= document.createElement('button');
+var btn2= document.createElement('button');
+var btn3 = document.createElement('button');
+var img=document.createElement('img');
+
+lbl.id='lbl';
+lbl2.id='lbl2';
+lbl3.id='lbl3';
+div.id='dv';
+div2.id='dv2';
+div3.id='dv3';
+div4.id='dv4';
+div5.id='dv5';
+btn.id='btnn';
+btn2.id='btnn2';
+btn3.id='btnn3';
+img.id='imgg'
+img.src=`${doc.Foto}`
+lbl.textContent=`${doc.Nome}`;
+lbl2.textContent=`${doc.Emal}`;
+lbl3.textContent=`R.E (${doc.RE})`;
+btn.textContent=``;
+btn.className=`fa-solid fa-eye`;
+btn2.textContent=`Editar`;
+btn3.className=`fa-solid fa-trash`;
+
+ div3.appendChild(img);
+ div4.appendChild(lbl);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(lbl2);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(document.createElement('br'));
+div4.appendChild(lbl3);
+div5.appendChild(btn);
+div5.appendChild(btn2);
+div5.appendChild(btn3);
+
+div2.appendChild(div3);
+div2.appendChild(div4);
+div.appendChild(div2);
+div.appendChild(div5);
+li.appendChild(div);
+
+setTimeout(function(){
+ document.getElementById('listItens2').innerHTML=`Total de ( ${itens2} ) Colaboradores encontrados`
+ sessionStorage.setItem('time12',itens2)
+  document.getElementById('listItens2').style.display='block'
+  document.getElementById('listItens1').style.display='none'
+},500)
+})
+})
+}
+
 //Salvar cadastro de colaborador
 function SalvarCadColaborador(){
-  var REID=document.getElementById('inputR_E').value;
-   var nomeColb= document.getElementById('inputColnome').value;
-    var EmailColab= document.getElementById('inputColEmail').value;
-     var RGColab= document.getElementById('rg').value;
-      var TelColab= document.getElementById('inputColTel').value;
-       var data= localStorage.getItem('data')
-        var hora= localStorage.getItem('hora')
-         var FotoColab= document.getElementById('fotoCol').src 
-      if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!RGColab||RGColab==''||!TelColab||TelColab==''){
-        Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
-      }else{
-          var firebaseConfigure = {
-         apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-         authDomain: "reparos-a-domicilio.firebaseapp.com",
-         projectId: "reparos-a-domicilio",
-         storageBucket: "reparos-a-domicilio.firebasestorage.app",
-         messagingSenderId: "2081562439",
-         appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-         measurementId: "G-M7YCZXPYGM"
-         };
-         firebase.initializeApp(firebaseConfigure);
-         var ddb= firebase.firestore();
-         ddb.collection('Colaboradores').doc(`${REID}`).set({
-          RE:REID,
-          ID:REID,
-          Nome:nomeColb,
-          Emal:EmailColab,
-          RG:RGColab,
-          Telefone:TelColab,
-          Foto:FotoColab,
-          Data: data,
-          Hora: hora,
-         })
-         setTimeout(function(){
-         Swal.fire('Salvo!','','success')
-         setTimeout(function(){
-          window.location.reload()
-         },2000)
-         },1000)
-           
-      }
-     
+var REID=document.getElementById('inputR_E').value;
+var nomeColb= document.getElementById('inputColnome').value;
+var EmailColab= document.getElementById('inputColEmail').value;
+var RGColab= document.getElementById('rg').value;
+var TelColab= document.getElementById('inputColTel').value;
+var data= localStorage.getItem('data')
+var hora= localStorage.getItem('hora')
+var FotoColab= document.getElementById('fotoCol').src 
+if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!RGColab||RGColab==''||!TelColab||TelColab==''){
+Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
+}else{
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var ddb= firebase.firestore();
+ddb.collection('Colaboradores').doc(`${REID}`).set({
+RE:REID,
+ID:REID,
+Nome:nomeColb,
+Emal:EmailColab,
+RG:RGColab,
+Telefone:TelColab,
+Foto:FotoColab,
+Data: data,
+Hora: hora,
+})
+setTimeout(function(){
+Swal.fire('Salvo!','','success')
+setTimeout(function(){
+window.location.reload()
+},2000)
+},1000)
+}
 }
 
 //Setar Foto do colaborador
@@ -135,6 +218,8 @@ e.target.value = formattedValue;
 });
 //Botão cad. colaborador
 function Colaboradores(){
+   document.getElementById('listItens1').style.display='none'
+  document.getElementById('listItens2').style.display='none'
 document.getElementById('cadCol').style.display='block'
 document.getElementById('listCol').style.display='none'
 //document.getElementById('body1').style.display='block'
@@ -155,11 +240,7 @@ colabRE += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
 document.getElementById('inputR_E').value= `${colabRE}.${date+date1}-${NRE}`
 }
 }
-// botão lista de colaboradores
-function listColaboradores(){
-document.getElementById('cadCol').style.display='none'
-document.getElementById('listCol').style.display='block'
-}
+
 // Fechar lista Ordem de serviços, colabaradores
 function FecharColabServ(){
 fecharOrdemServ()
@@ -180,16 +261,22 @@ document.getElementById('select_colaboradores').value=''
 //seletor de serviços
 function selectSOC(){
 var resp=document.getElementById('select_colaboradores').value;
-if(resp==''){
+if(!resp||resp==''){
+
 } else if(resp=='Colaboradores'){
+     ListaCC()
 document.getElementById('Colobaradores').style.display='block'
 document.getElementById('Orçamentos').style.display='none'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='orçamento'){
+   document.getElementById('listItens1').style.display='none'
+  document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='block'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='OrdemServiços'){
+ document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='none'
 document.getElementById('ordemserv').style.display='block'
@@ -207,7 +294,9 @@ document.getElementById('listcadastrados').style.display='block';
 fecharOrdemServ()
 }
 function selects(){
+   sessionStorage.setItem('time1','')
 var lista=  document.getElementById('Listasev').value;
+time1()
 var list= document.getElementById('listCDS');
 list.innerHTML='';
 var firebaseConfigure = {
@@ -225,7 +314,7 @@ var produtosRef = db.collection(`${lista}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
-//alert(doc.Titulo)
+ var itens= querySnapshot.size;
 var div= document.createElement('div');
 var div2= document.createElement('div');
 var div3= document.createElement('div');
@@ -267,6 +356,12 @@ div3.appendChild(btn2);
 div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
+setTimeout(function(){
+ document.getElementById('listItens1').innerHTML=`Total de ( ${itens} ) produtos encontrados`
+ sessionStorage.setItem('time1',itens)
+  document.getElementById('listItens1').style.display='block'
+  document.getElementById('listItens2').style.display='none'
+},500)
 btn.addEventListener('click',function(){
 swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
 });
@@ -557,3 +652,30 @@ document.webkitCancelFullScreen();
 }
 }
 document.getElementById('a_Inicio').click()
+
+
+// Time itens
+function time1(){
+  setTimeout(function(){
+    document.getElementById('listItens1').style.display='block'
+  document.getElementById('listItens2').style.display='none'
+  var resp= sessionStorage.getItem('time1')
+  if(!resp||resp==''){
+    document.getElementById('listItens1').innerHTML=`Total de ( 0 ) produtos encontrados`
+  } else{
+     document.getElementById('listItens1').innerHTML=`Total de ( ${resp} ) produtos encontrados`
+  }
+  },2000)
+}
+function time2(){
+  setTimeout(function(){
+    document.getElementById('listItens2').style.display='block'
+  document.getElementById('listItens1').style.display='none'
+  var resp= sessionStorage.getItem('time2')
+  if(!resp2||resp2==''){
+    document.getElementById('listItens2').innerHTML=`Total de ( 0 ) Colaboradores encontrados`
+  } else{
+     document.getElementById('listItens2').innerHTML=`Total de ( ${resp2} ) Colaboradores encontrados`
+  }
+  },2000)
+}
