@@ -668,6 +668,8 @@ swal('','',`${img}`)
 }
 // Botão cadastro
 function Cadastro(){
+limparC()
+document.getElementById('imgcad').src="../src/RD.png"
 fecharOrdemServ()
 document.getElementById('a_Inicio').click()
 FecharCadServ()

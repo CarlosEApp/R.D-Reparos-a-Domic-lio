@@ -441,16 +441,14 @@ navigator.vibrate(200); // vibra por 200ms
 Swal.fire({
 title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
 html:` <div  class="menu-container">
-<p>Digite senha:
-<br>
+
 <input id='password' type='password' placeholder='Digite password..'> <i id='iPasWord' class="fa-solid fa-eye"></i>
-<br><br>
+<div id='dddv'>
 <button id='Start'> Enter <i  class="fa-sharp-duotone fa-solid fa-unlock"></i></button>
-<br><br>  
-<button id='Sair' class='cancelar'> Cancelar </button>
+<button id='Sair' class='cancelar'> Sair </button> </div>
 </div>
 `,
-background: 'rgba(0, 51, 59, 1)', // Cor de fundo
+background: 'rgba(42, 0, 59, 1)', // Cor de fundo
 color: '#ffffffff', // Cor do texto
 showCancelButton: false,
 showConfirmButton: false,

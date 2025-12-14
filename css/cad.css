@@ -491,92 +491,85 @@ background-color: aqua;
 color: rgb(24, 2, 85);
 }
 #listItens1,#listItens2{
-    text-align: center;
-    margin-bottom: 10px;
-    color: aqua;
-    display: none;
+text-align: center;
+margin-bottom: 10px;
+color: aqua;
+display: none;
 }
 #bid{
     color: lawngreen;
 }
 #imgg{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-right: 20px;
-    border: 3px solid rgb(179, 93, 250);
+width: 70px;
+height: 70px;
+border-radius: 50%;
+cursor: pointer;
+margin-right: 20px;
+border: 3px solid rgb(179, 93, 250);
 }
 #imgg:hover{
-     border: 3px solid rgb(6, 180, 0);
+border: 3px solid rgb(6, 180, 0);
 }
 #dv{
-   margin: auto;
-   width: 90%;
-   max-width: 550px;
-    background-color: rgb(44, 0, 85);
-      margin-bottom: 20px;
-    border-radius: 10px;
-        padding: 10px;
-        margin-top: 30px;
-         border: 3px solid rgb(92, 0, 167);
-
+margin: auto;
+width: 90%;
+max-width: 550px;
+background-color: rgb(44, 0, 85);
+margin-bottom: 20px;
+border-radius: 10px;
+padding: 10px;
+margin-top: 30px;
+border: 3px solid rgb(92, 0, 167);
 }
 #dv2{
-    display: flex;
-    align-items: center;
-    
+display: flex;
+align-items: center;
 }
 #dv label{
-      font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
-
+font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 }
-
 #dv button{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    cursor: pointer;
-  
+margin-top: 30px;
+margin-bottom: 20px;
+cursor: pointer;
 }
 #dv5{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+display: flex;
+justify-content: space-around;
+align-items: center;
 }
 #dv4{
-    margin-top: 30px;
+margin-top: 30px;
 }
 #lbl3{
-    color: rgb(209, 188, 0);
-    font-weight: bold;
+color: rgb(209, 188, 0);
+font-weight: bold;
 }
 #btnn2{
-    padding: 7px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border: 0cap;
-    background-color: rgba(240, 248, 255, 0.5);
-    border-radius: 5px;
-      font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+padding: 7px;
+padding-left: 25px;
+padding-right: 25px;
+border: 0cap;
+background-color: rgba(240, 248, 255, 0.5);
+border-radius: 5px;
+font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 }
 #btnn2:hover{
-    background-color: rgb(192, 163, 0);
-    color: rgb(251, 255, 0);
+background-color: rgb(192, 163, 0);
+color: rgb(251, 255, 0);
 }
 #btnn,#btnn3{
-    border: 0cap;
-    background-color: rgba(255, 245, 238, 0);
-     font-size: clamp( 1.100rem , 1vw + 0.5rem, 1.200rem);
-     color: aliceblue;
+border: 0cap;
+background-color: rgba(255, 245, 238, 0);
+font-size: clamp( 1.100rem , 1vw + 0.5rem, 1.200rem);
+color: aliceblue;
 }
 #btnn:hover{
-    color: rgb(0, 216, 29);
+color: rgb(0, 216, 29);
 }
-
 #btnn3:hover{
-    color: rgb(255, 30, 0);
+color: rgb(255, 30, 0);
 }
 #listItens1,#listItens2{
-      font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 }
