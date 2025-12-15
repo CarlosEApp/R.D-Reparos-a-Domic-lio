@@ -11,13 +11,12 @@ text-rendering: geometricPrecision;
 #divGeral{
 margin: auto;
 width: 100%;
-max-width: 1100px;
 background-color: rgb(0, 46, 63);
 min-height: 200vh;
 }
 #divHead{
 width: 100%;
-max-width: 1100px;
+max-width: 1920px;
 background-color:rgb(0, 46, 63);
 min-height: 5vh;
 position: fixed;
@@ -39,7 +38,9 @@ margin-right: 37px;
 font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
 #divBody{
+margin: auto;
 width: 100%;
+max-width: 1000px;
 padding-top: 82px;
 margin-bottom: 80px;
 }
@@ -73,7 +74,6 @@ font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
 #lblFecharTabela:hover{
 color: rgb(126, 0, 131);
 }
-
 #divid{
 margin: auto;
 width: 98%;
@@ -89,7 +89,6 @@ border: 5px solid rgb(0, 121, 26);
 #divid:hover{
     border: 5px solid rgb(0, 202, 27);
 }
-
 #botaoid{
 float: right;
 margin-right: 30px;
@@ -122,7 +121,6 @@ font-size: clamp(0.600rem, 1vw + 0.5rem, 0.700rem);
 #divid #botaoid:hover,#paragrafo:hover{
 color: rgb(12, 102, 0);
 }
-
 #labelid{
     font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
     font-weight: bolder;
@@ -157,7 +155,6 @@ font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
     float: left;
     margin-left: 20px;
 }
-
 #body1 h3{
 max-width: 250px;
 margin-left: 10px;
@@ -175,34 +172,38 @@ cursor: pointer;
 }
 #body1 h3:hover{
  background-color :rgb(255, 255, 255);
-
 }
 #body1 h3:hover i{
     color: red;
 }
-
 #menu_lateral {
 position: fixed;
+display: flex;
+flex-direction: column;
+align-items: center;
 top: 50px;
 left: -105%;
 width: 100%;
-height: 100%;
-max-width: 870px;
+min-height: 100%;
 background-color: #ffffff;
 color: rgb(71, 71, 71);
 transition: left 0.3s ease;
 z-index: 1000;
 padding: 0px;
-overflow-y: auto;
 border-right: 1px solid rgb(0, 0, 0);
-margin-top: 32px;
+margin-top: 10px;
 border-top-right-radius: 30px;
+overflow: auto;
+padding-top: 30px;
 border-top: 30px solid rgb(0, 148, 0);
 }
 #menu_lateral ul {
 list-style: none;
 padding: 0;
-margin-bottom: 120px;
+max-height: 80vh;
+padding-bottom: 50px;
+overflow: auto;
+padding-right: 30px;
 }
 #menu_lateral li {
 margin: 20px 0;
@@ -220,11 +221,7 @@ color: rgb(52, 0, 196);
 .menu-ativo {
 left: 0 !important;
 }
-#MenuIMG{
-margin: auto;
-width: 40%;
-padding-top: 37px;
-}
+
 
 #divFooter{
 width: 100%;
@@ -292,32 +289,6 @@ border-radius: 10px;
 background-color: rgb(255, 255, 255);
 color: black;
 }
-
-
-
-
-@media (min-width: 870px) {
-#menu_lateral {
-position: fixed;
-top: 50px;
-left: -100%;
-width: 100%;
-height: 100%;
-max-width: 400px;
-transition: left 0.3s ease;
-z-index: 1000;
-padding: 0px;
-overflow-y: auto;
-}
-}
-@media (max-width: 870px) {
-#MenuIMG{
-margin: auto;
-width: 43%;
-padding-top: 37px;
-}
-}
-
 #telaCheia{
     cursor: pointer;
     font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
@@ -346,4 +317,8 @@ padding-top: 37px;
 #h1btnServ:hover{
     background-color: aqua;
     color: brown;
+}#divFooter{
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
 }
