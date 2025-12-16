@@ -164,6 +164,7 @@ Menu()
 //abrir tabela
 function tabela(){
 document.getElementById('divTabela').style.display='block'
+document.getElementById('a_inicio').click()
 listaPreços()
 Menu() 
 };
@@ -252,3 +253,14 @@ function serviçosClick(){
   document.getElementById('divTabela').style.display='block'
 listaPreços()
 }
+function Orçamento(){
+  Menu()
+   
+}
+function Returpag(){
+ window.open('../index.html','_self')
+}
+function inicio_(){
+    Menu()
+}
+
