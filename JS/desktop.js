@@ -27,6 +27,8 @@ var itens = querySnapshot.size;
 var div= document.createElement('div');
 var div2= document.createElement('div');
 var div3= document.createElement('div');
+var div4= document.createElement('div');
+var div5= document.createElement('div');
 var img= document.createElement('img')
 var label= document.createElement('label');
 var label2= document.createElement('label');
@@ -35,10 +37,11 @@ var label4= document.createElement('label');
 var label5= document.createElement('p');
 var botão= document.createElement('button');
 var pr=document.createElement('p');
-var pr2=document.createElement('p');
-div.id='divid',
-div2.id='divid2',
-div3.id='divid3',
+div.id='divid'
+div2.id='divid2'
+div3.id='divid3'
+div4.id='divid3'
+div5.id='divid3'
 label.id='labelid'
 label2.id='labelid2'
 label3.id='labelid3'
@@ -46,9 +49,9 @@ label4.id='labelid4'
 label5.id='labelid5'
 botão.id='botaoid'
 pr.id='paragrafo'
-pr2.id='paragrafo2'
 img.id='imgid'
-img.src=`../src/RD_logo.png`
+
+img.src=`${doc.Imagem}`
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
 label2.textContent=``;
@@ -67,29 +70,29 @@ label5.textContent=``;
 label5.textContent=`${doc.OBS}`;
 }
 botão.className='fa-brands fa-whatsapp';
-pr.textContent='WhatsApp';
-pr2.textContent=`ID: ${doc.ID}`;
+pr.textContent=`ID: ${doc.ID}`;
 
-div.appendChild(img)
+div3.appendChild(img)
+
+div4.appendChild(label);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(label2);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(label3);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(label4);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(label5);
+div5.appendChild(document.createElement('br'));
+div5.appendChild(botão)
+div5.appendChild(document.createElement('br'));
+div5.appendChild(pr);
+div2.appendChild(div3);
+div2.appendChild(div4);
+div2.appendChild(div5);
+div.appendChild(pr);
 div.appendChild(document.createElement('br'));
-div.appendChild(document.createElement('br'));
-div.appendChild(document.createElement('br'));
-div2.appendChild(document.createElement('br'));
-div2.appendChild(label);
-div2.appendChild(document.createElement('br'));
-div2.appendChild(label2);
-div3.appendChild(label3);
-div3.appendChild(document.createElement('br'));
-div3.appendChild(label4);
-div3.appendChild(document.createElement('br'));
-div3.appendChild(label5);
-div3.appendChild(document.createElement('br'));
-div3.appendChild(botão);
-div3.appendChild(pr);
-div3.appendChild(document.createElement('br'));
-div3.appendChild(pr2);
 div.appendChild(div2);
-div.appendChild(div3);
 listTab.appendChild(div)
 
 //setTimeout(function(){

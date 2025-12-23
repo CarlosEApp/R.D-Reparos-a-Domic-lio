@@ -41,7 +41,6 @@ var label4= document.createElement('label');
 var label5= document.createElement('p');
 var botão= document.createElement('button');
 var pr=document.createElement('p');
-var pr2=document.createElement('p');
 div.id='divid'
 div2.id='divid2'
 div3.id='divid3'
@@ -54,7 +53,6 @@ label4.id='labelid4'
 label5.id='labelid5'
 botão.id='botaoid'
 pr.id='paragrafo'
-pr2.id='paragrafo2'
 img.id='imgid'
 
 img.src=`${doc.Imagem}`
@@ -76,8 +74,7 @@ label5.textContent=``;
 label5.textContent=`${doc.OBS}`;
 }
 botão.className='fa-brands fa-whatsapp';
-pr.textContent='WhatsApp';
-pr2.textContent=`ID: ${doc.ID}`;
+pr.textContent=`ID: ${doc.ID}`;
 
 div3.appendChild(img)
 
@@ -93,11 +90,11 @@ div4.appendChild(label5);
 div5.appendChild(document.createElement('br'));
 div5.appendChild(botão)
 div5.appendChild(document.createElement('br'));
-div5.appendChild(pr2);
+div5.appendChild(pr);
 div2.appendChild(div3);
 div2.appendChild(div4);
 div2.appendChild(div5);
-div.appendChild(pr2);
+div.appendChild(pr);
 div.appendChild(document.createElement('br'));
 div.appendChild(div2);
 listTab.appendChild(div)
@@ -112,20 +109,11 @@ var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
+var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\nServiços e Instalações: ( ${doc.Titulo} )\n\n`
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
-pr.addEventListener('click',function(){
-var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
-var codigo= sessionStorage.getItem('codigo')   
-var data= sessionStorage.getItem('data')
-var hora= sessionStorage.getItem('hora')
-var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\n Protocólo: (${codigo}_${data}_${hora})\n\n`
-var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
-window.open(url, "_blank");
-})
+
 })
 })
 };
@@ -202,7 +190,7 @@ var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=` R.D - Reparos a Domicílio\n\nPedido de orçamentro de ${sev}\n\nProtocólo: (${codigo}_${data}_${hora})\n\n`
+var text=` R.D - Reparos a Domicílio\n\nPedido de orçamento: ( ${sev} )\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
