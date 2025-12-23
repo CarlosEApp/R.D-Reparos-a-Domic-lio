@@ -59,6 +59,18 @@ document.body.style.paddingRight = '0px';
 });
 swal('R.D - reparos a domicílio','','src/rd_logo_png.png')
 }
+
+//Colaboradores
+
+function Colab(){
+document.getElementById("divColaboradores").classList.add("divColaboradores-ativo");
+
+}
+//fechar colab
+function fecharcolab(){
+document.getElementById("divColaboradores").classList.remove("divColaboradores-ativo");
+}
+
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
 function Menu() {

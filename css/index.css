@@ -230,7 +230,6 @@ color: rgb(52, 0, 196);
 .menu-ativo {
 left: 0 !important;
 }
-
 #bodyB1,#bodyB2,#bodyB3,#bodyB4{
 margin: auto;
 background-color: rgb(0, 0, 0);
@@ -587,7 +586,7 @@ border: 5px solid rgb(189, 189, 189);
     margin-bottom: 10px;
 }
 
-.my-custom_CadExCód input{
+.my-custom_CadExCód input, #inputAD, #inputColabRE, #inputColabPW{
 width: 80%;
 padding: 12px;
 border: 1px solid #e0e0e0;
@@ -602,7 +601,7 @@ font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 cursor: pointer;
 color: aqua;
 }
-.my-custom_CadExCód input:hover{
+.my-custom_CadExCód input:hover, #inputAD:hover, #inputColabRE:hover, #inputColabPW:hover{
 background-color: #00163a;
 border: 0px solid #00220d;
 color: rgb(52, 165, 0);
@@ -701,4 +700,82 @@ font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
 #telaCheia:hover{
 color: aqua;
+}
+#divColaboradores{
+position: fixed;
+top: 50px;
+left: -105%;
+width: 100%;
+min-height: 100vh;
+background-color: #080000;
+color: rgb(71, 71, 71);
+transition: left 0.3s ease;
+z-index: 9999;
+padding: 0px;
+margin-top: 5px;
+border-top-right-radius: 30px;
+border-right: 5px solid rgb(0, 0, 0);
+overflow: auto;
+padding-top: 25px;
+padding-bottom: 50px;
+
+}
+#colaboradores{
+    margin: auto;
+    width: 90%;
+    height: 80vh;
+    max-width: 600px;
+    overflow: auto;
+    padding-left: 5px;
+    
+}
+.divColaboradores-ativo {
+left: 0 !important;
+}
+#administrar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#lblFecharColab{
+    font-size: clamp(1.700rem, 1vw + 0.5rem, 1.800rem);
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+#lblFecharColab:hover{
+    color: rgb(161, 1, 1);
+}
+#lblAd, #lblColab{
+     font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+}
+#entrebtn, #entrebtnColab{
+width: 85%;
+padding: 15px;
+margin-top: 5px;
+cursor: pointer;
+background-color: #000763;
+color: aliceblue;
+border: 3px solid rgba(1, 90, 168, 0.315);
+   font-size: clamp(0.9000rem, 1vw + 0.5rem, 1rem);
+}
+
+@media (max-width: 500px) {
+#entrebtn, #entrebtnColab{
+width: 86%;
+padding: 15px;
+margin-top: 5px;
+cursor: pointer;
+background-color: #00021b;
+color: aliceblue;
+border: 3px solid rgba(1, 90, 168, 0.315);
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+}
+}
+#entrebtn:hover, #entrebtnColab:hover{
+    background-color: aqua;
+    color: brown;
+}
+#divColaboradores h1{
+    border-top: 10px solid rgba(245, 245, 220, 0.356) ;
+    width: 86%;
+    margin-top: 20px;
 }
