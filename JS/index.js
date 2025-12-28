@@ -446,37 +446,11 @@ window.open(Url,"_blank" );
 function ZAP(){
 falecom()
 }
-function ADMIN(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
-Swal.fire({
-title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
-html:` <div  class="menu-container">
 
-<input id='password' type='password' placeholder='Digite password..'> <i id='iPasWord' class="fa-solid fa-eye"></i>
-<div id='dddv'>
-<button id='Start'> Enter <i  class="fa-sharp-duotone fa-solid fa-unlock"></i></button>
-<button id='Sair' class='cancelar'> Sair </button> </div>
-</div>
-`,
-background: 'rgba(42, 0, 59, 1)', // Cor de fundo
-color: '#ffffffff', // Cor do texto
-showCancelButton: false,
-showConfirmButton: false,
-customClass: {
-popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
-},
-didOpen: () => {
-document.body.style.paddingRight = '0px';
-}
-}); 
-setTimeout(function(){
-sessionStorage.setItem('pesQuiSar','');
-},1000)
+// Administrador
 document.getElementById('iPasWord').addEventListener('click',function(){
 var ii= document.getElementById('iPasWord');
-var iPW= document.getElementById('password');
+var iPW= document.getElementById('inputAD');
 if(iPW.type=='password'){
 iPW.type='text'
 ii.className='fa-solid fa-eye-low-vision';
@@ -485,29 +459,44 @@ iPW.type='password';
 ii.className='fa-solid fa-eye';
 }
 });
-document.getElementById('Sair').addEventListener('click',function(){
-Swal.close('click')
-}); 
-document.getElementById('Start').addEventListener('click',function(){
-var resp1= sessionStorage.getItem('senha')
-var resp2=  sessionStorage.getItem('RecPasswor');
-var passWord= document.getElementById('password').value;
-if(!passWord||passWord==''){
-Swal.fire('Preencha o campo "Password"','','warning');
-} else{
-if(passWord== resp1|| passWord== resp2){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
-Cad()
-Swal.close()
+
+function entreADM(){
+ var resp1= sessionStorage.getItem('PassW01')
+  var resp2= sessionStorage.getItem('PassW02')
+    
+ var pass = document.getElementById('inputAD').value;
+
+if(pass== resp1|| pass== resp2){
+
+//alert(`${resp2}`)
+swal('Sucesso','Você será redirecionado para tela de administradores','success');
+setTimeout(function(){
+ window.open('html/cad.html','_self')
+},2000)
 }else{
-Swal.fire('Senha incorreta!','','error');
+swal('Senha incorreta!','','error');
 }
+}
+
+
+
+
+// Colaboradores
+document.getElementById('iPasWord2').addEventListener('click',function(){
+var ii_= document.getElementById('iPasWord2');
+var iPW_= document.getElementById('inputColabPW');
+if(iPW_.type=='password'){
+iPW_.type='text'
+ii_.className='fa-solid fa-eye-low-vision';
+} else{
+iPW_.type='password';
+ii_.className='fa-solid fa-eye';
 }
 });
-Menu()
-}
+
+
+
+
 
 // Tela Cheia
 function toggleFullScreen() {
@@ -531,3 +520,32 @@ document.webkitCancelFullScreen();
 }
 }
 }
+
+
+var firebaseConfig = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfig);
+var adbb = firebase.firestore();
+
+var produtosRef = adbb.collection(`Admin`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var coment = querySnapshot.size
+
+sessionStorage.setItem('PassW01', doc.Passw01)
+sessionStorage.setItem('PassW02', doc.Passw02)
+setTimeout(function(){
+//Swal.fire(`${coment}`,`${doc.Passw01},__${doc.Passw02},`,'')
+},2000)
+
+
+})
+})
