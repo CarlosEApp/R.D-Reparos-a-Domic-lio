@@ -469,7 +469,7 @@ function entreADM(){
 if(pass== resp1|| pass== resp2){
 
 //alert(`${resp2}`)
-swal('Sucesso','Você será redirecionado para tela de administradores','success');
+swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
 setTimeout(function(){
  window.open('html/cad.html','_self')
 },2000)
