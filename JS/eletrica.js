@@ -258,3 +258,4 @@ function inicio_(){
     Menu()
 }
 
+document.getElementById('divTabela').style.display='block'
