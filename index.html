@@ -32,6 +32,33 @@
 </head>
 <body>
  <div id="divGeral" >
+     <div id="divColaboradores">
+    <div id="colaboradores">
+       <label id="lblFecharColab" for="" onclick="fecharcolab()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
+        <p> Campos reservados para administradores e colaboradores
+        </p>
+       <div id="administrar">
+        <h2>Administradores</h2>
+             <label id="lblAd">digíte sua senha de administrador <br>
+              <input id="inputAD" type="password" placeholder="Password">  <i id='iPasWord' class="fa-solid fa-eye"></i>
+             </label> <br>
+             <button id="entrebtn" onclick="entreADM()">Entre</button>
+       </div> <br><br>
+   
+        <div id="divCol">
+             <h2>Colaboradores</h2>
+             <label id="lblColab">digíte seu nº de registro <br>
+              <input id="inputColabRE" type="text" placeholder="Nº de Registro">
+             </label> <br>
+              <label id="lblColab">digíte sua senha de colaborador <br>
+              <input id="inputColabPW" type="password" placeholder="Password">  <i id='iPasWord2' class="fa-solid fa-eye"></i>
+             </label> <br>
+             <button id="entrebtnColab" onclick="entreCol()">Entre</button>
+             </div>
+             <br>  <br>
+       </div>
+     
+    </div>
    <div id="divRead">
     <div id="read1">
      <div id="logoName">
@@ -45,33 +72,7 @@
       </div>
     </div>
    </div>
-   <div id="divColaboradores">
-    <div id="colaboradores">
-       <label id="lblFecharColab" for="" onclick="fecharcolab()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
-        <p> Campos reservados para administradores e colaboradores
-        </p>
-       <div id="administrar">
-        <h2>Administradores</h2>
-             <label id="lblAd">digíte sua senha de administrador <br>
-              <input id="inputAD" type="password" placeholder="Password">  <i id='iPasWord' class="fa-solid fa-eye"></i>
-             </label> <br>
-             <button id="entrebtn" onclick="entreADM()">Entre</button>
-       </div> <br>
-       <h1></h1> <br>
-        <div id="divCol">
-             <h2>Colaboradores</h2>
-             <label id="lblColab">digíte seu nº de registro <br>
-              <input id="inputColabRE" type="text" placeholder="Nº de Registro">
-             </label> <br>
-              <label id="lblColab">digíte sua senha de colaborador <br>
-              <input id="inputColabPW" type="password" placeholder="Password">  <i id='iPasWord2' class="fa-solid fa-eye"></i>
-             </label> <br>
-             <button id="entrebtnColab" onclick="entreCol()">Entre</button>
-             </div>
-             <br> <h1></h1> <br>
-       </div>
-     
-    </div>
+
       
  
  <div id="menu_lateral">

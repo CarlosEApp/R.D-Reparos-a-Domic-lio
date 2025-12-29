@@ -21,7 +21,7 @@ margin:0 auto;
 width: 100%;
 background-color:   rgb(0, 46, 65);
 position: fixed;
-z-index: 9999;
+z-index: 9993;
 color: aliceblue;
 }
 #read1{
@@ -145,8 +145,6 @@ transition: left 0.3s ease;
 z-index: 1000;
 padding: 0px;
 margin-top: 5px;
-border-top-right-radius: 30px;
-border-right: 5px solid rgb(0, 0, 0);
 overflow: auto;
 padding-top: 15px;
 padding-bottom: 50px;
@@ -522,13 +520,14 @@ box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
 margin-top: 100px;
 margin-top: 100px;
 border: 5px solid rgb(189, 189, 189);
+z-index: 9999;
 }
 #dddv{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 20px;
+margin-bottom: 10px;
 }
 
 .my-custom_CadExCód input, #inputAD, #inputColabRE, #inputColabPW{
@@ -537,30 +536,28 @@ padding: 12px;
 border: 1px solid #e0e0e0;
 border-radius: 5px;
 cursor: pointer;
-
 background-color: #000811c0;
 color: aliceblue;
 font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
-#iPasWord:hover{
-cursor: pointer;
-color: aqua;
-}
+
  #inputAD:hover, #inputColabRE:hover, #inputColabPW:hover{
 background-color: #00163a;
 border: 1px solid #00220d;
-color: rgb(52, 165, 0);
+color: rgb(255, 255, 255);
 }
 
 
 #iPasWord, #iPasWord2{
-    cursor: pointer;
-    color: rgb(255, 255, 255);
+cursor: pointer;
+color: rgba(255, 255, 255, 0.671);
+margin-left: 5px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
-    #divColaboradores label,h2,p{
-        color: rgba(255, 255, 255, 0.651);
-        margin-bottom: 10px;
-    }
+#divColaboradores label,h2,p{
+color: rgba(255, 255, 255, 0.651);
+margin-bottom: 10px;
+}
     
 #div_loja{
 float: right;
@@ -636,8 +633,7 @@ color: aqua;
 }
 #divColaboradores{
 position: fixed;
-top: 40px;
-left: -105%;
+left: -102%;
 width: 100%;
 min-height: 100vh;
 background-color: #080000;
@@ -645,11 +641,7 @@ color: rgb(71, 71, 71);
 transition: left 0.3s ease;
 z-index: 9999;
 padding: 0px;
-margin-top: 5px;
-border-top-right-radius: 30px;
-border-right: 5px solid rgb(0, 0, 0);
-overflow: auto;
-padding-top: 25px;
+padding-top: 20px;
 padding-bottom: 50px;
 
 }
@@ -673,9 +665,15 @@ left: 0 !important;
     font-size: clamp(1.700rem, 1vw + 0.5rem, 1.800rem);
     cursor: pointer;
     margin-bottom: 30px;
+
 }
-#lblFecharColab:hover{
-    color: rgb(161, 1, 1);
+#lblFecharColab i{
+    color: rgb(255, 255, 255);
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+#lblFecharColab i:hover{
+    color: rgb(255, 0, 0);
 }
 #lblAd, #lblColab{
      font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
@@ -683,36 +681,39 @@ left: 0 !important;
 #entrebtn, #entrebtnColab{
 width: 86%;
 padding: 15px;
-margin-top: 5px;
+margin-top: 10px;
 cursor: pointer;
- background-color: aqua;
-color: rgb(46, 0, 36);
-border: 3px solid rgba(1, 90, 168, 0.315);
-   font-size: clamp(0.9000rem, 1vw + 0.5rem, 1rem);
+ background-color: rgb(0, 67, 99);
+color: rgb(255, 255, 255);
+border:3px solid rgba(1, 90, 168, 0.315);
+font-size: clamp(0.9000rem, 1vw + 0.5rem, 1rem);
+border-radius: 7px;
 }
 
 @media (max-width: 500px) {
 #entrebtn, #entrebtnColab{
 width: 88%;
 padding: 15px;
-margin-top: 5px;
+margin-top: 10px;
 cursor: pointer;
-   background-color: aqua;
-color: rgb(46, 0, 36);
-border: 3px solid rgba(1, 90, 168, 0.315);
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+ background-color: rgb(0, 67, 99);
+color: rgb(255, 255, 255);
+border:3px solid rgba(1, 90, 168, 0.315);
+font-size: clamp(0.9000rem, 1vw + 0.5rem, 1rem);
+border-radius: 7px;
 }
 }
 @media (max-width: 400px) {
 #entrebtn, #entrebtnColab{
 width: 90%;
 padding: 15px;
-margin-top: 5px;
+margin-top: 10px;
 cursor: pointer;
- background-color: aqua;
-color: rgb(46, 0, 36);
-border: 3px solid rgba(1, 90, 168, 0.315);
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+ background-color: rgb(0, 67, 99);
+color: rgb(255, 255, 255);
+border:3px solid rgba(1, 90, 168, 0.315);
+font-size: clamp(0.9000rem, 1vw + 0.5rem, 1rem);
+border-radius: 7px;
 }
 }
 #entrebtn:hover, #entrebtnColab:hover{
