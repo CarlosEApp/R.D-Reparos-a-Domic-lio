@@ -70,46 +70,7 @@ font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
 #read2{
 display: none;
 }
-#divPesquisa{
-width: 100%;
-padding-top: 10px;
-padding-bottom: 20px;
-color: rgb(255, 255, 255);
-}
-#pesquisa{
-color: rgb(255, 255, 255);
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: rgba(165, 42, 42, 0);
-}
-#PSQ{
-border: 2px solid rgb(255, 255, 255);
-padding: 7px;
-border-radius: 20px;
-background-color: rgba(0, 0, 0, 0.856);
-}
-#PSQ i {
-color:rgb(156, 156, 156) ;
-outline: none;
-margin-right: 5px;
-}
-#pesquisa {
-margin-right: 10px;
-border-left: 3px solid rgb(146, 146, 146);
-height: 20px;
-padding-left: 10px;
-margin-left: 5px;
-padding-top: 5px;
-padding-bottom: 5px;
-font-size: 20px;
-color: #ffffff;
-cursor: pointer;
-}
-#pesquisa {
-color: rgb(27, 209, 3);
-border-left: 3px solid rgb(27, 209, 3);
-}
+
 #btnsetFechar{
 color: #000000;
 border: 0cap;
@@ -123,23 +84,7 @@ cursor: pointer;
 #btnsetFechar:hover{
     color: #850028;
 }
-#PSQ input{
-min-width: 250px;
-background-color: rgba(37, 37, 37, 0);
-outline: none;
-border: 0cap;
-cursor: pointer;
-font-size: clamp(0.980rem, 1vw + 0.5rem, 1rem);
-color: #ffffff;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-#btnSetPesq{
-cursor: pointer;
-font-size: clamp(1.300rem, 1vw + 0.5rem, 1.300rem);
-font-weight: bolder;
-outline: none;
-}
+
 #div_admim{
 width: 100%;
 min-height: 100vh;
