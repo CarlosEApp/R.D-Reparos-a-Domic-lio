@@ -4,6 +4,9 @@
 
 
 // Lista de colaboradores
+sessionStorage.setItem('data_cd','')
+sessionStorage.setItem('hora_cd','')
+
 function ListaCC(){
  fech()
   time2
@@ -83,18 +86,44 @@ setTimeout(function(){
   document.getElementById('listItens1').style.display='none'
 },500)
 btn.addEventListener('click',function(){
-  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nData:\n${doc.Data}\n-------------------------\nHora:\n${doc.Hora}\n\n`,`success`)
+  if(!doc.Data_Cd||doc.Data_Cd==''){
+   sessionStorage.setItem('data_cd',doc.Data)
+       var data_=doc.Data;
+   }else{
+    sessionStorage.setItem('data_cd',doc.Data_Cd)
+    var data_=doc.Data_Cd;
+   };
+   if(!doc.Hora_Cd||doc.Hora_Cd==''){
+   sessionStorage.setItem('hora_cd',doc.Hora)
+   var hora_=doc.Hora;
+   }else{
+    sessionStorage.setItem('hora_cd',doc.Hora_Cd)
+    var hora_=doc.Hora_Cd;
+   }
+
+  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
 });
 img.addEventListener('click',function(){
   swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
 });
  btn2.addEventListener('click', function(){
    document.getElementById('inputR_E').value=doc.RE
+   document.getElementById('inputServ').value=doc.Serviços
    document.getElementById('inputColnome').value= doc.Nome
    document.getElementById('inputColEmail').value=doc.Email
    document.getElementById('rg').value=doc.RG
    document.getElementById('inputColTel').value=doc.Telefone
    document.getElementById('fotoCol').src=doc.Foto
+if(!doc.Data_Cd||doc.Data_Cd==''){
+   sessionStorage.setItem('data_cd',doc.Data)
+   }else{
+    sessionStorage.setItem('data_cd',doc.Data_Cd)
+   };
+   if(!doc.Hora_Cd||doc.Hora_Cd==''){
+   sessionStorage.setItem('hora_cd',doc.Hora)
+   }else{
+    sessionStorage.setItem('hora_cd',doc.Hora_Cd)
+   }
 
    document.getElementById('cadCol').style.display='block'
   document.getElementById('listCol').style.display='none'
@@ -145,6 +174,7 @@ img.addEventListener('click',function(){
       })
       .then(() => {
         Swal.fire('Colaborador excluído', 'Os documentos e a foto foram deletados com sucesso!', 'success');
+        ListaCC()
         selects();
       })
       .catch((error) => {
@@ -157,6 +187,7 @@ img.addEventListener('click',function(){
 }
  function fech(){
    document.getElementById('inputR_E').value=''
+   document.getElementById('inputServ').value=''
    document.getElementById('inputColnome').value=''
    document.getElementById('inputColEmail').value=''
    document.getElementById('rg').value=''
@@ -166,6 +197,7 @@ img.addEventListener('click',function(){
 //Salvar cadastro de colaborador
 function SalvarCadColaborador(){
 var REID=document.getElementById('inputR_E').value;
+var serv= document.getElementById('inputServ').value;
 var nomeColb= document.getElementById('inputColnome').value;
 var EmailColab= document.getElementById('inputColEmail').value;
 var RGColab= document.getElementById('rg').value;
@@ -173,6 +205,21 @@ var TelColab= document.getElementById('inputColTel').value;
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 var FotoColab= document.getElementById('fotoCol').src 
+var data_cd_s= sessionStorage.getItem('data_cd');
+var hora_cd_s= sessionStorage.getItem('hora_cd');
+
+if(!data_cd_s||data_cd_s==''){
+ var data_cd= ''
+}else{
+ var data_cd= data_cd_s;
+};
+
+if(!hora_cd_s||hora_cd_s==''){
+  var hora_cd=''
+}else{
+  var hora_cd= hora_cd_s;
+}
+
 if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!RGColab||RGColab==''||!TelColab||TelColab==''){
 Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
 }else{
@@ -190,6 +237,7 @@ var ddb= firebase.firestore();
 ddb.collection('Colaboradores').doc(`${REID}`).set({
 RE:REID,
 ID:REID,
+Serviços:serv,
 Nome:nomeColb,
 Email:EmailColab,
 RG:RGColab,
@@ -197,6 +245,9 @@ Telefone:TelColab,
 Foto:FotoColab,
 Data: data,
 Hora: hora,
+Hora_Cd:hora_cd,
+Data_Cd:data_cd,
+
 })
 setTimeout(function(){
 Swal.fire('Salvo!','','success')
@@ -293,8 +344,10 @@ e.target.value = formattedValue;
 });
 //Botão cad. colaborador
 function Colaboradores(){
-   document.getElementById('listItens1').style.display='none'
-  document.getElementById('listItens2').style.display='none'
+sessionStorage.setItem('data_cd','')
+sessionStorage.setItem('hora_cd','')
+document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens2').style.display='none'
 document.getElementById('cadCol').style.display='block'
 document.getElementById('listCol').style.display='none'
 //document.getElementById('body1').style.display='block'
