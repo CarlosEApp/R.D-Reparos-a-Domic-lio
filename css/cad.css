@@ -676,3 +676,9 @@ color: rgb(255, 30, 0);
 #listItens1,#listItens2{
 font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 }
+#OrçarImput p{
+    margin-left: 30px;
+    font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+    color: rgb(139, 0, 93);
+    font-weight: bold;
+}

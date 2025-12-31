@@ -108,13 +108,34 @@
                                                 <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
                                                   <label for="">CEP <br>
                                                    <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br><br>
+                                                    <h3>Campos p/ prestador</h3>
                                                      <label for="">Prestador de serviço <br>
                                                       <input id="Input_prestadornome" type="text" placeholder="Prestador"></label> <br>
                                                        <label for="">Nº de Registro <br>
                                                         <input id="Input_Nregistro" type="text" placeholder="Registro"></label> <br><br>                                                                                                   
                                                          <label for="">Observações <br>
                                                           <textarea id="Input_ObsOrç" cols="30" rows="5" placeholder="Observações..."></textarea></label>
-                                                        <br><br>                                        
+                                                        <br><br> 
+                                                         <p>Valor do serviço e tempo de duração</p>
+                                                            <label for="">Valor Total <br>
+                                                             <input id="Input_valorTotal" type="number" placeholder="000,00"></label> <br>   
+                                                             <label for="">Data de inicio <br>
+                                                             <input id="Input_dataInicio" type="date" onchange="dataServ1()"></label> <br>   
+                                                             <label for="">Data de termino <br>
+                                                             <input id="Input_dataTermino" type="date" onchange="dataServ2()"></label> <br> <br>
+                                                              <h3>Campos p/ Cliente</h3>
+                                                              <label for="">Nome (Cliente) <br>
+                                                               <input id="Input_NomeCliente" type="text" placeholder="Nome..."></label> <br>
+                                                                  <label for="">CPF (Cliente) <br>
+                                                               <input id="Input_CPFCliente" type="text" placeholder="CPF..."></label> <br>
+                                                                  <label for="">Termos de Contrato (concordo ou descordo) <br>
+                                                               <input id="Input_TermosContrato" type="text" placeholder="Termos..."></label> <br><br><br>
+                                                                  <p>Ordem e serviço (Aprovada ou cancelada)</p>
+                                                                   <label for="">Ordem de Serviço <br>
+                                                               <input id="Input_ordedeServiço" type="text" placeholder="Ordem de Serviço (Aprovação)..."></label> <br><br><br>
+
+                                                               
+
                                                     
                              </div>
                                                        <button onclick="SalvarOrçamento()">Salvar Orçamento</button>

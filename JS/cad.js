@@ -1,6 +1,40 @@
 
 
 
+// dateServ1
+function dataServ1(){
+  var dataInicio=document.getElementById('Input_dataInicio').value;
+   var daTa= dataInicio.split('-')
+   var ano= daTa[0];
+    var mes= daTa[1];
+      var dia= daTa[2];
+      var datainicio=`${dia}/${mes}/${ano}`
+      if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
+
+}else{
+  setTimeout(function(){
+    Swal.fire('Data selecionada!',`${datainicio}`,'success')
+},3000)
+}}
+document.getElementById('Input_dataInicio').value=`2026-01-03`;
+
+// dateServ2
+function dataServ2(){
+  var dataTermino=document.getElementById('Input_dataTermino').value;
+   var daTa= dataTermino.split('-')
+   var ano= daTa[0];
+    var mes= daTa[1];
+      var dia= daTa[2];
+      var dataTermino=`${dia}/${mes}/${ano}`
+      if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
+
+}else{
+  setTimeout(function(){
+    Swal.fire('Data selecionada!',`${dataTermino}`,'success')
+},3000)
+}}
+document.getElementById('Input_dataInicio').value=`2026-01-03`;
+
 // cad novo orçamento
 function SalvarOrçamento(){
   var codigoP=document.getElementById('Input_Codigo_Orçar').value;
@@ -17,6 +51,13 @@ function SalvarOrçamento(){
   var cep = document.getElementById('Input_cep').value;
   var data= localStorage.getItem('data')
   var hora= localStorage.getItem('hora')
+  var dataInicio=document.getElementById('Input_dataInicio').value;
+  var dataTermino=document.getElementById('Input_dataTermino').value;
+  var valorTotal=document.getElementById('Input_valorTotal').value;
+  var nomeCliente=document.getElementById('Input_NomeCliente').value;
+  var cpfCliente=document.getElementById('Input_CPFCliente').value;
+  var termosContrato=document.getElementById('Input_TermosContrato').value;
+  var ordemServico=document.getElementById('Input_ordedeServiço').value;
 
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -46,6 +87,13 @@ CEP:cep,
 Prestador:prestadorP,
 Data:data,
 Hora:hora,
+Data_Inicio:dataInicio,
+data_Termino:dataTermino,
+valorTotal:valorTotal,
+Nome_Cliente:nomeCliente,
+CPF_Cliente:cpfCliente,
+Termos_Contrato:termosContrato,
+Ordem_de_Serviço:ordemServico,
 
 
 })
