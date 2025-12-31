@@ -258,4 +258,4 @@ function inicio_(){
     Menu()
 }
 
-document.getElementById('divTabela').style.display='block'
+document.getElementById('divTabela').style.display='none'

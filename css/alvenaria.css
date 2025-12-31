@@ -18,16 +18,17 @@ min-height: 200vh;
 width: 100%;
 max-width: 1920px;
 background-color:rgb(0, 46, 63);
-min-height: 5vh;
+min-height: 6vh;
 position: fixed;
 color: rgb(255, 255, 255);
+z-index: 999;
 }
 #head1{
 display: flex;
 justify-content:space-between;
-margin-top: 20px;
+margin-top: 10px;
 color: rgb(255, 255, 255);
-padding-bottom: 5px;
+padding-bottom: 10px;
 }
 #head1 button{
 border: 0cap;
@@ -103,7 +104,7 @@ background-color: #fefeff00;
 }
 #paragrafo{
 float: left;
-margin-left: 25px;
+margin-left: 7px;
 cursor: pointer;
 border: 0cap;
 outline: none;
@@ -167,18 +168,17 @@ position: fixed;
 display: flex;
 flex-direction: column;
 align-items: center;
-top: 50px;
+top: 45px;
 left: -105%;
 width: 100%;
 min-height: 100%;
 background-color: #ffffff;
 color: rgb(71, 71, 71);
 transition: left 0.3s ease;
-z-index: 1000;
+z-index: 99;
 padding: 0px;
 border-right: 1px solid rgb(0, 0, 0);
 margin-top: 10px;
-border-top-right-radius: 30px;
 overflow: auto;
 padding-top: 30px;
 border-top: 30px solid rgb(76, 80, 80);
@@ -225,20 +225,22 @@ padding-top: 20px;
 background-color: rgba(0, 0, 0, 0);
 }
 #btnFalecom{
-min-width: 170px;
+width: 50%;
+max-width: 300px;
+min-width: 200px;
 border: 0cap;
 padding: 15px;
 cursor: pointer;
-background-color: rgb(11, 165, 0);
+background-color: rgb(8, 128, 0);
 color: rgb(244, 235, 235);
 border-radius: 30px;
 box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp( 1.100rem, 1vw + 0.5rem, 1.200rem);
 font-weight: bold;
 }
 #btnFalecom:hover{
-background-color: rgb(1, 194, 17);
-color: aliceblue;
+background-color: rgb(0, 228, 19);
+color: rgb(32, 0, 0);
 }
 #pOrçamento{
 text-align: center;
@@ -287,7 +289,7 @@ font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
 #h1btnServ:hover{
 background-color: rgb(255, 255, 255);
 color: rgb(124, 0, 114);
-box-shadow: 0 3px 7px rgba(7, 0, 0, 0.671);
+box-shadow: 0 1px 1px rgba(7, 0, 0, 0.671);
 border-radius: 5px;
 }
 #divFooter{
