@@ -1,6 +1,101 @@
 
 
 
+// cad novo orçamento
+function SalvarOrçamento(){
+  var codigoP=document.getElementById('Input_Codigo_Orçar').value;
+  var clienteP=document.getElementById('Input_Cliente').value;
+  var serviçoP=document.getElementById('Input_Serviço').value;
+  var nregistroP=document.getElementById('Input_Nregistro').value;
+  var prestadorP=document.getElementById('Input_prestadornome').value;
+  var obsP=document.getElementById('Input_ObsOrç').value;
+  var rua = document.getElementById('Input_rua').value;
+  var numero = document.getElementById('Input_numero').value;
+  var bairro = document.getElementById('Input_bairro').value;
+  var cidade = document.getElementById('Input_cidade').value;
+  var estado = document.getElementById('Input_estado').value;
+  var cep = document.getElementById('Input_cep').value;
+  var data= localStorage.getItem('data')
+  var hora= localStorage.getItem('hora')
+
+var firebaseConfigures = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigures);
+
+var dbo = firebase.firestore();
+dbo.collection('Orçamentos').doc(`${codigoP}`).set({
+
+Código:codigoP,
+Cliente:clienteP,
+Serviço:serviçoP,
+NRE:nregistroP,
+Observações:obsP,
+Rua:rua,
+Número:numero,
+Bairro:bairro,
+Cidade:cidade,
+Estado:estado,
+CEP:cep,
+Prestador:prestadorP,
+Data:data,
+Hora:hora,
+
+
+})
+setTimeout(function(){
+  Swal.fire('Orçamento salvo!','','success')
+  setTimeout(function(){
+    window.location.reload()
+  },2000);
+},2000);
+}
+
+
+
+  document.getElementById('orçar').style.display='none'
+  document.getElementById('ListaOrçamentos').style.display='none'
+//Orçamentos
+function orçamentos(){
+  var respOR=document.getElementById('ListaOrçamentos').style.display;
+  if(respOR=='none'){
+  document.getElementById('orçar').style.display='none'
+  document.getElementById('ListaOrçamentos').style.display='block'
+} else{
+document.getElementById('ListaOrçamentos').style.display='none'
+}} 
+
+function novoOrçamento(){
+  var respNO=document.getElementById('orçar').style.display;
+  if(respNO=='none'){
+  document.getElementById('orçar').style.display='block'
+  document.getElementById('ListaOrçamentos').style.display='none';
+var caracteres_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+let codigo_ = '';
+for (let i = 0; i < 8; i++) {
+codigo_ += caracteres_.charAt(Math.floor(Math.random() * caracteres_.length));
+document.getElementById('Input_Codigo_Orçar').value= `${codigo_}ORS`
+}
+} else{
+   document.getElementById('orçar').style.display='none'
+}}
+
+// format cep
+ function formatarCEP(cep) {
+            cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+            cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
+            return cep;
+        }
+
+        function aplicarMascaraCEP(event) {
+            event.target.value = formatarCEP(event.target.value);
+        }
 
 
 // Lista de colaboradores
@@ -9,7 +104,7 @@ sessionStorage.setItem('hora_cd','')
 
 function ListaCC(){
  fech()
-  time2
+time2
 document.getElementById('cadCol').style.display='none'
 document.getElementById('listCol').style.display='block'
 var li= document.getElementById('listCol');
@@ -101,7 +196,7 @@ btn.addEventListener('click',function(){
     var hora_=doc.Hora_Cd;
    }
 
-  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
+  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nCPF:\n${doc.CPF}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
 });
 img.addEventListener('click',function(){
   swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
@@ -112,6 +207,7 @@ img.addEventListener('click',function(){
    document.getElementById('inputColnome').value= doc.Nome
    document.getElementById('inputColEmail').value=doc.Email
    document.getElementById('rg').value=doc.RG
+   document.getElementById('cpf').value=doc.CPF
    document.getElementById('inputColTel').value=doc.Telefone
    document.getElementById('fotoCol').src=doc.Foto
 if(!doc.Data_Cd||doc.Data_Cd==''){
@@ -124,12 +220,10 @@ if(!doc.Data_Cd||doc.Data_Cd==''){
    }else{
     sessionStorage.setItem('hora_cd',doc.Hora_Cd)
    }
-
    document.getElementById('cadCol').style.display='block'
-  document.getElementById('listCol').style.display='none'
-  document.getElementById('listItens1').style.display='none'
-  document.getElementById('listItens2').style.display='none'
- 
+   document.getElementById('listCol').style.display='none'
+   document.getElementById('listItens1').style.display='none'
+   document.getElementById('listItens2').style.display='none'
  });
  btn3.addEventListener('click', function () {
   Swal.fire({
@@ -154,15 +248,12 @@ if(!doc.Data_Cd||doc.Data_Cd==''){
       document.body.style.paddingRight = '0px';
     }
   });
-
-  document.getElementById('Sair').addEventListener('click', function () {
+   document.getElementById('Sair').addEventListener('click', function () {
     Swal.close();
   });
-
   document.getElementById('SwalExCód').addEventListener('click', function () {
     var db = firebase.firestore();
     var storage = firebase.storage();
-
     // Primeiro deleta o documento do Firestore
     db.collection('Colaboradores').doc(doc.RE).delete()
       .then(() => {
@@ -201,6 +292,7 @@ var serv= document.getElementById('inputServ').value;
 var nomeColb= document.getElementById('inputColnome').value;
 var EmailColab= document.getElementById('inputColEmail').value;
 var RGColab= document.getElementById('rg').value;
+var CPFColab= document.getElementById('cpf').value;
 var TelColab= document.getElementById('inputColTel').value;
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
@@ -219,8 +311,7 @@ if(!hora_cd_s||hora_cd_s==''){
 }else{
   var hora_cd= hora_cd_s;
 }
-
-if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!RGColab||RGColab==''||!TelColab||TelColab==''){
+if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!TelColab||TelColab==''){
 Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
 }else{
 var firebaseConfigure = {
@@ -241,13 +332,13 @@ Serviços:serv,
 Nome:nomeColb,
 Email:EmailColab,
 RG:RGColab,
+CPF:CPFColab,
 Telefone:TelColab,
 Foto:FotoColab,
 Data: data,
 Hora: hora,
 Hora_Cd:hora_cd,
 Data_Cd:data_cd,
-
 })
 setTimeout(function(){
 Swal.fire('Salvo!','','success')
@@ -334,6 +425,15 @@ function aplicarMascaraRG(event) {
 let input = event.target;
 input.value = formatarRG(input.value);
 }
+// format CPF 
+function aplicarMascaraCPF(event) {
+  let input = event.target;
+  let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+  if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+  let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+  input.value = formattedValue;
+}
+
 // format Tel
 document.getElementById('inputColTel').addEventListener('input', function (e) {
 let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
@@ -398,14 +498,14 @@ document.getElementById('Orçamentos').style.display='none'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='orçamento'){
   fech()
-   document.getElementById('listItens1').style.display='none'
-  document.getElementById('listItens2').style.display='none'
+document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='block'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='OrdemServiços'){
   fech()
- document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens1').style.display='none'
 document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='none'

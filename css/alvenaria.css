@@ -50,15 +50,13 @@ border-radius: 50px;
 min-height: 100vh;
 border-bottom-left-radius:10px;
 border-bottom-right-radius:10px;
-padding: 20px;
-border-top: 30px solid rgba(128, 134, 134, 0);
+border-top: 30px solid rgba(192, 182, 0, 0);
 background-image: url('../src/RD_logo.png');
 background-size: 40%;
 background-repeat: no-repeat;
 background-position: center;
 }
 #divTabela{
-margin: auto;
 width: 100%;
 text-align: center;
 color: rgb(46, 46, 46);
@@ -66,12 +64,16 @@ background-color: #fefeff;
 min-height: 100vh;
 display: none;
 padding-bottom: 70px;
-
+}
+#ListaTabela{
+    width: 100%;
+    background-color: aqua;
 }
 #lblFecharTabela{
 float: left;
 cursor: pointer;
 font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
+margin-left: 20px;
 }
 #lblFecharTabela:hover{
 color: rgb(126, 0, 131);
@@ -101,15 +103,7 @@ background-color: #fefeff00;
 }
 #paragrafo{
 float: left;
-margin-left: 20px;
-cursor: pointer;
-border: 0cap;
-outline: none;
-font-size: clamp(0.600rem, 1vw + 0.5rem, 0.700rem);
-}
-#paragrafo2{
-float: left;
-margin-left: 20px;
+margin-left: 25px;
 cursor: pointer;
 border: 0cap;
 outline: none;
@@ -119,35 +113,33 @@ font-size: clamp(0.600rem, 1vw + 0.5rem, 0.700rem);
 color: rgb(12, 102, 0);
 }
 #labelid{
-font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
-font-weight: bolder;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-weight: bold;
 color: rgb(64, 0, 83);
 }
 #labelid2{
 font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
-font-weight: bolder;
 color: rgb(34, 34, 34);
 }
 #labelid3{
-font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
-font-weight: bolder;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-weight: bold;
 color: rgb(34, 34, 34);
 }
 #labelid4{
-font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
-font-weight: bolder;
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
 color: rgb(2, 116, 59);
 }
 #labelid5{
 margin: auto;
-width: 70%;
-font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+width: 100%;
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.800rem);
 }
 #imgid{
-width:70px;
+width:82px;
 margin-top: 20px;
 float: left;
-margin-left: 20px;
+margin-left: 3px;
 }
 #body1 h3{
 max-width: 250px;

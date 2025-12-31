@@ -59,12 +59,14 @@
                         <input type="text" title="Nome" id="inputColnome" placeholder="Nome"><br>
                          <label id="LBL" for="">Email:</label> <br>
                           <input type="text" title="Email" id="inputColEmail" placeholder="Email"><br>
-                           <label id="LBL" for="">RG: <br>
-                             <input type="text" id="rg" title="RG"  oninput="aplicarMascaraRG(event)" placeholder="RG:" maxlength="12"><br>
-                              <label id="LBL" for="">Telefone - Whats:</label> <br>
-                               <input type="text" title="Telefone" id="inputColTel" placeholder="Tel:11 99988-7766"><br>
-                                <input type="file" title="foto" id="file"><br>
-                                 <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
+                           <label id="LBL" for="">RG:</label>  <br>
+                            <input type="text" id="rg" title="RG"  oninput="aplicarMascaraRG(event)" placeholder="RG:" maxlength="12"><br>
+                             <label id="LBL" for="">CPF:</label>  <br>
+                              <input type="text" id="cpf" title="CPF"  oninput="aplicarMascaraCPF(event)" placeholder="CPF:" maxlength="14"><br>
+                               <label id="LBL" for="">Telefone - Whats:</label> <br>
+                                <input type="text" title="Telefone" id="inputColTel" placeholder="Tel:11 99988-7766"><br>
+                                 <input type="file" title="foto" id="file"><br>
+                                  <img id="fotoCol" src="../src/Profile-PNG-Images.png" alt="" title="Foto do colaborador" width="100"><br>
                                    <div id="myProgress_2" title="Progresso">
                                     <div id="myBarfoto">10%</div>
                                       </div><br>
@@ -82,10 +84,50 @@
               </div>
 
               <div id="Orçamentos">
-              </div>
+                <div id="Oarçhead">
+                   <button onclick="orçamentos()">Orçamentos</button> <button onclick="novoOrçamento()">Novo Orcamento</button>
+                </div>
+                <div id="orçar">
+                  <h3>Novo Orçamento</h3>
+                  <div id="OrçarImput">
+                    <label for="">Código protocolo <br>
+                      <input id="Input_Codigo_Orçar" type="text" placeholder="Código"></label> <br>
+                        <label for="">Cliente <br>
+                          <input id="Input_Cliente" type="text" placeholder="Nome do cliente..."></label> <br>
+                            <label for="">Serviço <br>
+                              <input id="Input_Serviço" type="text" placeholder="Serviço..."></label> <br>
+                                <label for="">Rua <br>
+                                  <input id="Input_rua" type="text" placeholder="Rua"></label> <br>
+                                    <label for="">Nº <br>
+                                     <input id="Input_numero" type="text" placeholder="nº"></label> <br>
+                                       <label for="">Bairro <br>
+                                         <input id="Input_bairro" type="text" placeholder="Bairro"></label> <br>
+                                           <label for="">Cidade <br>
+                                             <input id="Input_cidade" type="text" placeholder="Cidade"></label> <br>
+                                               <label for="">Estado <br>
+                                                <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
+                                                  <label for="">CEP <br>
+                                                   <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br><br>
+                                                     <label for="">Prestador de serviço <br>
+                                                      <input id="Input_prestadornome" type="text" placeholder="Prestador"></label> <br>
+                                                       <label for="">Nº de Registro <br>
+                                                        <input id="Input_Nregistro" type="text" placeholder="Registro"></label> <br><br>                                                                                                   
+                                                         <label for="">Observações <br>
+                                                          <textarea id="Input_ObsOrç" cols="30" rows="5" placeholder="Observações..."></textarea></label>
+                                                        <br><br>                                        
+                                                    
+                             </div>
+                                                       <button onclick="SalvarOrçamento()">Salvar Orçamento</button>
+                </div>
+                  <div id="ListaOrçamentos">
+                    <h3>Informações de Orçamento</h3>
+                    <div id="listOrçamentos"></div>
+                   </div>
+               </div>
 
               <div id="ordemserv">
-              </div>
+
+               </div>
                  </div>
           
             <div id="body1">
@@ -95,54 +137,53 @@
                  <img id="imgcad" onclick="verImagem()" src="../src/RD.png" alt="" width="15%">
                  <select title="Lista de Categoria de serviços" name="" id="ListaCategoria" >
                     <option value=''>Serviços de:</option>
-                   <option value="Eletrica">⚡Elétrica</option>
-                   <option value="Hidraulica">🚿Hidraulica</option>
-                   <option value="Pintura">🖌️Pintura</option>
-                   <option value="Desktop">💻M.Desktop</option>
-                   <option value="Alvenaria">🔨Alvenaria</option>
-                   <option value="Jardinagem">🌿Jardinagem</option>
-                   <option value="Utilitarios">👉Utilitários</option>
+                     <option value="Eletrica">⚡Elétrica</option>
+                      <option value="Hidraulica">🚿Hidraulica</option>
+                       <option value="Pintura">🖌️Pintura</option>
+                        <option value="Desktop">💻M.Desktop</option>
+                         <option value="Alvenaria">🔨Alvenaria</option>
+                          <option value="Jardinagem">🌿Jardinagem</option>
+                          <option value="Utilitarios">👉Utilitários</option>
                  </select> <br><br>
                   <label  for="">Produto (ID) <br>
-                    <input id="Input_ID" type="text" placeholder="Produto...">
-                  </label> <br>
-                  <label for="">Titulo <br>
-                    <input id="Input_titulo" type="text" placeholder="Titulo...">
-                  </label> <br>
-                  <label for="">Sub-titulo <br>
-                    <input id="Input_Subtitulo" type="text" placeholder="Sub-titulo...">
-                  </label> <br>
-                   <label for="">Valor EX: 1,00-2,00 R$ - (Utilit= ex: 10,00)  <br>
-                    <input id="Input_Valor" type="text" placeholder="000,00">
-                  </label> <br>
-                  <label for="">Valor com desconto R$ <br>
-                    <input id="Input_ValorDesconto" type="text" placeholder="00,00">
-                  </label> <br>
-                   <label for="">Observação do Prod. <br>
-                    <input id="Input_OBS" type="text" placeholder="OBS">
-                  </label> <br>
-                  <label for="">Adicional 01 <br>
-                    <input id="Input_add1" type="text" placeholder="Adicional..">
-                  </label>
-                   <br>  <label for="">Adicional 02 <br>
-                    <input id="Input_add2" type="text" placeholder="Adicional..">
-                  </label> 
-                  <br> <label for="">Adicional 03 <br>
-                    <input id="Input_add3" type="text" placeholder="Adicional..">
-                  </label> 
-                  <br><label for="">Adicional 04 <br>
-                    <input id="Input_add4" type="text" placeholder="Adicional..">
-                  </label> 
-                  <br><label for="">Adicional 05 <br>
-                    <input id="Input_add5" type="text" placeholder="Adicional..">
-                  </label> <br><br>
-
-                  <input id="files" type="file" title="foto files">
-                  <i id="clickImagem" onclick="imagem()" class="fa-solid fa-images"></i> Imagem
-                  <br><div id="myProgress" title="Progresso">
-                         <div id="myBarIMG">10%</div>
-                      </div><br><br>
-                   <button onclick="SalvarCad()">Salvar Cad.</button>
+                   <input id="Input_ID" type="text" placeholder="Produto...">
+                    </label> <br>
+                     <label for="">Titulo <br>
+                      <input id="Input_titulo" type="text" placeholder="Titulo...">
+                       </label> <br>
+                        <label for="">Sub-titulo <br>
+                        <input id="Input_Subtitulo" type="text" placeholder="Sub-titulo...">
+                         </label> <br>
+                          <label for="">Valor EX: 1,00-2,00 R$ - (Utilit= ex: 10,00)  <br>
+                           <input id="Input_Valor" type="text" placeholder="000,00">
+                           </label> <br>
+                            <label for="">Valor com desconto R$ <br>
+                             <input id="Input_ValorDesconto" type="text" placeholder="00,00">
+                              </label> <br>
+                               <label for="">Observação do Prod. <br>
+                                <input id="Input_OBS" type="text" placeholder="OBS">
+                                 </label> <br>
+                                 <label for="">Adicional 01 <br>
+                                  <input id="Input_add1" type="text" placeholder="Adicional..">
+                                   </label>
+                                   <br>  <label for="">Adicional 02 <br>
+                                    <input id="Input_add2" type="text" placeholder="Adicional..">
+                                    </label> 
+                                    <br> <label for="">Adicional 03 <br>
+                                     <input id="Input_add3" type="text" placeholder="Adicional..">
+                                      </label> 
+                                      <br><label for="">Adicional 04 <br>
+                                       <input id="Input_add4" type="text" placeholder="Adicional..">
+                                       </label> 
+                                       <br><label for="">Adicional 05 <br>
+                                        <input id="Input_add5" type="text" placeholder="Adicional..">
+                                         </label> <br><br>
+                                         <input id="files" type="file" title="foto files">
+                                         <i id="clickImagem" onclick="imagem()" class="fa-solid fa-images"></i> Imagem
+                                          <br><div id="myProgress" title="Progresso">
+                                         <div id="myBarIMG">10%</div>
+                                       </div><br><br>
+                                      <button onclick="SalvarCad()">Salvar Cad.</button>
             </div></div>
             <div id="listcadastrados">
                <label onclick="FecharCadServ()" id="lblFecharCadServ" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
@@ -150,14 +191,14 @@
                <h2>Serviços:</h2>
                    <select title="Lista de serviços" name="" id="Listasev" onchange="selects()" >
                     <option value=''>Serviços de:</option>
-                   <option value="Eletrica">⚡Elétrica</option>
-                   <option value="Hidraulica">🚿Hidraulica</option>
-                   <option value="Pintura">🖌️Pintura</option>
-                   <option value="Desktop">💻M.Desktop</option>
-                   <option value="Alvenaria">🔨Alvenaria</option>
-                    <option value="Jardinagem">🌿Jardinagem</option>
-                   <option value="Utilitarios"> 👉Utilitários</option>
-                 </select> <br><br>
+                     <option value="Eletrica">⚡Elétrica</option>
+                      <option value="Hidraulica">🚿Hidraulica</option>
+                       <option value="Pintura">🖌️Pintura</option>
+                        <option value="Desktop">💻M.Desktop</option>
+                         <option value="Alvenaria">🔨Alvenaria</option>
+                          <option value="Jardinagem">🌿Jardinagem</option>
+                           <option value="Utilitarios"> 👉Utilitários</option>
+                    </select> <br><br>
                      <h3 id="listItens1">Total de ( 0 ) produtos encontrados</h3>
               <div id="listCDS"></div>
             </div>
