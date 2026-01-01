@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Jardinagem</title>
+     <link rel="shortcut icon" href="../src/rd_logo_png.png" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jardinagem.css">
+</head>
+<body>
+    <div id="divGeral">
+        <div id="divHead">
+            <div id="head1">
+                <h2>🌱Jardinagem</h2> <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+         <div id="menu_lateral">
+    
+                <ul>
+             <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
+           <li><a  href="#" onclick="inicio_()"><i class="fa-solid fa-house"></i> Início</a></li>
+          <li><a  id="RetorPag"  onclick="Returpag()"><i class="fa-solid fa-left-long"></i> Retornar a pagiina Inicial </a></li> 
+           <li><a id="tabela"  onclick="tabela()">🛠️<b>R$</b>  Serviços e valores</a></li>
+           <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+           <li><a  id="Orçamento" href="#pOrçamento" onclick="Orçamento()"> <i class="fa-solid fa-pen-to-square"></i> Orçamento </a></li>  
+           <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+        </ul>
+      </div>
+        <div id="divBody">
+            <div id="body1">
+                <p id="paragrafo3">Atendemos em Itanhaém e região</p>
+               <h2 id="h1btnServ" onclick="serviçosClick()">🛠️R$ Serviços e valores</h2>
+                <div id="divTabela">
+                   <label id="lblFecharTabela" for="" onclick="fecharTabela()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
+                    
+                    <div id="Tabela">
+                        <div id="ListTabela"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    <div id="divFooter">
+            <div id="foote1">              
+            <p id="pOrçamento">Faça seu orçamento conosco! </p><br>
+           <div id="divFaleCom">
+      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Orçamento</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
+    </div>
+            </div>
+            <div id="foote2">
+
+            </div>
+        </div>
+
+    </div>
+     <script src="../JS/jardinagem.js"></script>
+</body>
+</html>
