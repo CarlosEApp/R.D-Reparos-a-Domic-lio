@@ -102,7 +102,7 @@ var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-  var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n\n👉 Data e Hora: ${data} - ${hora}\n\n`
+ var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n-----------------------------\nProduto: ${doc.Titulo}\n-------------------------------\n👉 Data e Hora: ${data} - ${hora}\n\n`
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
@@ -112,7 +112,7 @@ var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
- var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n\n👉 Data e Hora: ${data} - ${hora}\n\n`
+ var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n-----------------------------\nProduto: ${doc.Titulo}\n-------------------------------\n👉 Data e Hora: ${data} - ${hora}\n\n`
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
