@@ -148,7 +148,7 @@ var pagina =`https://rd-reparos-domicilio.netlify.app/`
 var codigo = doc.Código;
 var Cliente = doc.Cliente;
 var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo;
-var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n--------------------------\n👨‍💼👩‍💼  Cliente: ${Cliente}\n👉 Código: ${codigo}\n-------------------------\n Link p/Orçamento: 👉 ${url}\n\n✅ Pagina: ${pagina}\n\n\n`;
+var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n-------------------------------------\n👨‍💼👩‍💼  Cliente: ${Cliente}\n👉 Código: ${codigo}\n-------------------------------------\n Link p/Orçamento: 👉 ${url}\n\n✅ Pagina: ${pagina}\n\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
