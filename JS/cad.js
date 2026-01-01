@@ -1,6 +1,208 @@
 
 
 
+
+//Limpar campos de orçamento
+
+function LimparCamposOrçamento(){
+  document.getElementById('Input_Codigo_Orçar').value='';
+  document.getElementById('Input_Cliente').value='';
+   document.getElementById('Input_Serviço').value='';
+  document.getElementById('Input_Nregistro').value='';
+  document.getElementById('Input_prestadornome').value='';
+  document.getElementById('Input_ObsOrç').value='';
+  document.getElementById('Input_rua').value='';
+  document.getElementById('Input_numero').value='';
+  document.getElementById('Input_bairro').value='';
+  document.getElementById('Input_cidade').value='';
+  document.getElementById('Input_estado').value='';
+  document.getElementById('Input_cep').value='';
+  document.getElementById('Input_dataInicio').value='';
+  document.getElementById('Input_dataTermino').value='';
+  document.getElementById('Input_valorTotal').value='';
+  document.getElementById('Input_NomeCliente').value='';
+  document.getElementById('Input_CPFCliente').value='';
+  document.getElementById('Input_TermosContrato').value='';
+  document.getElementById('Input_ordedeServiço').value='';
+    sessionStorage.setItem('edite_data','');
+  sessionStorage.setItem('edite_hora','');
+
+}
+
+// Lista de orçamentos
+function ListaOrçamentos_(){
+  sessionStorage.setItem('edite_data','');
+  sessionStorage.setItem('edite_hora','');
+
+var list= document.getElementById('listOrçamentos');
+list.innerHTML='';
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var db = firebase.firestore();
+var produtosRef = db.collection(`Orçamentos`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var Cadastro =querySnapshot.size;
+
+var div= document.createElement('div');
+var div2= document.createElement('div');
+var div3= document.createElement('div');
+var div4= document.createElement('div');
+var lbl= document.createElement('label');
+var lbl2= document.createElement('label');
+var lbl3= document.createElement('label');
+var lbl4= document.createElement('label');
+var lbl5= document.createElement('label');
+var btn= document.createElement('button');
+var btn2= document.createElement('button');
+var btn3= document.createElement('button');
+
+div.id='dv_';
+div2.id='dv2_';
+div3.id='dv3_';
+div4.id='dv4_';
+lbl.id='lbl_';
+lbl2.id='lbl2_';
+lbl3.id='lbl3_';
+lbl4.id='lbl4_';
+lbl5.id='lbl5_';
+btn.id='btnn_';
+btn2.id='btnn2_';
+btn3.id='btnn3_';
+lbl.textContent=`${doc.Código}`;
+lbl2.textContent=`${doc.Cliente}`;
+lbl3.textContent=`${doc.Serviço}`;
+lbl4.textContent=`${doc.Data} - ${doc.Hora}`;
+btn.textContent=``;
+btn.className=`fa-solid fa-eye`;
+btn2.textContent=`Editar`;
+btn3.textContent=``;
+btn3.className=`fa-solid fa-trash`;
+
+//lbl5.textContent=`${doc.Prestador}`;
+
+div2.appendChild(lbl);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl2);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl3);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl4);
+div2.appendChild(document.createElement('br'));
+div4.appendChild(btn);
+div4.appendChild(btn2);
+div4.appendChild(btn3);
+div3.appendChild(div4);
+div.appendChild(div2);
+div.appendChild(div3);
+list.appendChild(div);
+
+document.getElementById('p_info').innerHTML=`Total de ( ${Cadastro} ) orçamentos encontrados`
+
+btn2.addEventListener('click',function(){
+  document.getElementById('Input_Codigo_Orçar').value=doc.Código;
+  document.getElementById('Input_Cliente').value=doc.Cliente;
+  document.getElementById('Input_Serviço').value=doc.Serviço;
+  document.getElementById('Input_Nregistro').value=doc.NRE;
+  document.getElementById('Input_prestadornome').value=doc.Prestador;
+  document.getElementById('Input_ObsOrç').value=doc.Observações;
+  document.getElementById('Input_rua').value=doc.Rua;
+  document.getElementById('Input_numero').value=doc.Número;
+  document.getElementById('Input_bairro').value=doc.Bairro;
+  document.getElementById('Input_cidade').value=doc.Cidade;
+  document.getElementById('Input_estado').value=doc.Estado;
+  document.getElementById('Input_cep').value=doc.CEP;
+  document.getElementById('Input_dataInicio').value=doc.Data_Inicio;
+  document.getElementById('Input_dataTermino').value=doc.data_Termino;
+  document.getElementById('Input_valorTotal').value=doc.valorTotal;
+  document.getElementById('Input_NomeCliente').value=doc.Nome_Cliente;
+  document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
+  document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
+  document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
+  sessionStorage.setItem('edite_data',doc.Data);
+  sessionStorage.setItem('edite_hora',doc.Hora);
+
+ document.getElementById('orçar').style.display='block'
+  document.getElementById('ListaOrçamentos').style.display='none'
+
+});
+
+btn3.addEventListener('click', function () {
+  var data= localStorage.getItem('data')
+var hora= localStorage.getItem('hora')
+var dbx = firebase.firestore();
+var dbx_ = firebase.firestore();
+ Swal.fire({
+    title: 'Excluir Colaborador!',
+    html: `
+      <div class="menu-container">
+        <p>A exclusão não poderá ser desfeita!</p>
+        <br>
+        <input id='confirmaCódigo' type='text' placeholder='Digite o código para confirmar'>
+        <br>
+        <button id="SwalEx" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+        <br><br>
+        <button id="Sair" class="cancelar">Sair</button>
+      </div>
+    `,
+    background: 'rgba(0, 0, 0, 1)',
+    color: '#ffffffff',
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+      popup: 'my-custom_CadExCód'
+    },
+    didOpen: () => {
+      document.body.style.paddingRight = '0px';
+    }
+  });
+   document.getElementById('Sair').addEventListener('click', function () {
+    Swal.close();
+  });
+  document.getElementById('SwalEx').addEventListener('click', function () {
+    
+    var códigoDigitado = document.getElementById('confirmaCódigo').value;
+    if (códigoDigitado == doc.Código) {
+     dbx.collection('Orçamentos').doc(doc.Código).delete().then(() => {
+     dbx_.collection('ExOrçamentos').doc(doc.Código).set({
+    Código:doc.Código,
+    Cliente:doc.Nome_Cliente,
+    CPF_Cliente:doc.CPF_Cliente,
+    Serviço:doc.Serviço,
+    NRE:doc.NRE,
+    Prestador:doc.Prestador,
+    Data:doc.Data,
+    Hora:doc.Hora,
+    Data_hora_X: `${data} - ${hora}`,
+    
+  })
+Swal.fire('Orçamento excluído!','','success')
+ListaOrçamentos_()
+
+});
+
+    } else{
+      Swal.fire('Código incorreto!','','error')
+    }
+  })
+
+
+});
+})
+});
+}
+
+
+ListaOrçamentos_()
 // dateServ1
 function dataServ1(){
   var dataInicio=document.getElementById('Input_dataInicio').value;
@@ -13,7 +215,7 @@ function dataServ1(){
 
 }else{
   setTimeout(function(){
-    Swal.fire('Data selecionada!',`${datainicio}`,'success')
+    //Swal.fire('Data selecionada!',`${datainicio}`,'success')
 },3000)
 }}
 document.getElementById('Input_dataInicio').value=`2026-01-03`;
@@ -30,7 +232,7 @@ function dataServ2(){
 
 }else{
   setTimeout(function(){
-    Swal.fire('Data selecionada!',`${dataTermino}`,'success')
+   // Swal.fire('Data selecionada!',`${dataTermino}`,'success')
 },3000)
 }}
 document.getElementById('Input_dataInicio').value=`2026-01-03`;
@@ -49,8 +251,15 @@ function SalvarOrçamento(){
   var cidade = document.getElementById('Input_cidade').value;
   var estado = document.getElementById('Input_estado').value;
   var cep = document.getElementById('Input_cep').value;
-  var data= localStorage.getItem('data')
-  var hora= localStorage.getItem('hora')
+  var data=sessionStorage.getItem('edite_data');
+   var hora=sessionStorage.getItem('edite_hora');
+   if(!data||data==''){
+    var data= localStorage.getItem('data')
+   }
+   if(!hora||hora==''){
+    var hora= localStorage.getItem('hora')
+   }
+ 
   var dataInicio=document.getElementById('Input_dataInicio').value;
   var dataTermino=document.getElementById('Input_dataTermino').value;
   var valorTotal=document.getElementById('Input_valorTotal').value;
@@ -117,6 +326,8 @@ function orçamentos(){
   document.getElementById('ListaOrçamentos').style.display='block'
 } else{
 document.getElementById('ListaOrçamentos').style.display='none'
+
+
 }} 
 
 function novoOrçamento(){
@@ -124,6 +335,7 @@ function novoOrçamento(){
   if(respNO=='none'){
   document.getElementById('orçar').style.display='block'
   document.getElementById('ListaOrçamentos').style.display='none';
+  LimparCamposOrçamento()
 var caracteres_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
 let codigo_ = '';
 for (let i = 0; i < 8; i++) {
