@@ -104,16 +104,25 @@ listTab.appendChild(div)
 //},2000)
 
 botão.addEventListener('click',function(){
-var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
+   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')    
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var text=`R.D - Reparos a Domicílio\n\nRef: ${doc.ID}\n\nServiços e Instalações: ( ${doc.Titulo} )\n\n`
+ var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+  var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n\n👉 Data e Hora: ${data} - ${hora}\n\n`
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
 })
-
+pr.addEventListener('click',function(){
+   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
+var codigo= sessionStorage.getItem('codigo')   
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+ var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n\n👉 Data e Hora: ${data} - ${hora}\n\n`
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)} Página web: ${pag}`;
+window.open(url, "_blank");
+})
 })
 })
 };
@@ -190,11 +199,11 @@ var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=` R.D - Reparos a Domicílio\n\nPedido de orçamento: ( ${sev} )\n\n`
-var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+ var text=` ✅📝 Pedido de orçamento:\n🛠️ Serviço: ${sev}\n----------------------------------\n 👉 Data e Hora: ${data} - ${hora}\n\n`
+  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} Página web: ${pag}`;
 window.open(url, "_blank");
-},1500)
+},1000)
 }
 function inicio(){
 document.getElementById('a_inicio').click()

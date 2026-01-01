@@ -65,6 +65,7 @@ var lbl5= document.createElement('label');
 var btn= document.createElement('button');
 var btn2= document.createElement('button');
 var btn3= document.createElement('button');
+var btn4= document.createElement('button');
 
 div.id='dv_';
 div2.id='dv2_';
@@ -78,6 +79,7 @@ lbl5.id='lbl5_';
 btn.id='btnn_';
 btn2.id='btnn2_';
 btn3.id='btnn3_';
+btn4.id='btnn3_';
 lbl.textContent=`${doc.Código}`;
 lbl2.textContent=`${doc.Cliente}`;
 lbl3.textContent=`${doc.Serviço}`;
@@ -87,6 +89,8 @@ btn.className=`fa-solid fa-eye`;
 btn2.textContent=`Editar`;
 btn3.textContent=``;
 btn3.className=`fa-solid fa-trash`;
+btn4.textContent=``;
+btn4.className=`fa-solid fa-share-nodes`;
 
 //lbl5.textContent=`${doc.Prestador}`;
 
@@ -100,6 +104,7 @@ div2.appendChild(lbl4);
 div2.appendChild(document.createElement('br'));
 div4.appendChild(btn);
 div4.appendChild(btn2);
+div4.appendChild(btn4);
 div4.appendChild(btn3);
 div3.appendChild(div4);
 div.appendChild(div2);
@@ -107,6 +112,48 @@ div.appendChild(div3);
 list.appendChild(div);
 
 document.getElementById('p_info').innerHTML=`Total de ( ${Cadastro} ) orçamentos encontrados`
+
+btn4.addEventListener('click', function(){
+
+Swal.fire({
+title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
+html: `
+<br> 
+<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+<br><br>   
+<button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+<br><br><br><button id='sair_'>Cancelar</button><br><br>
+`,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'black', // Cor do texto
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('sair_').addEventListener('click',function(){
+Swal.close()
+});
+document.getElementById('face').addEventListener('click',function(){
+var codigo = doc.Código;
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo);
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+});
+document.getElementById('whats').addEventListener('click',function(){
+var pagina =`https://rd-reparos-domicilio.netlify.app/`
+var codigo = doc.Código;
+var Cliente = doc.Cliente;
+var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo;
+var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n--------------------------\n👨‍💼 Cliente: ${Cliente}\n✅ Código: ${codigo}\n-------------------------\n Link p/Orçamento: 👉 ${url}\n\nPagina: 👉 ${pagina}\n\n\n`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+});
+
+})
 
 btn2.addEventListener('click',function(){
   document.getElementById('Input_Codigo_Orçar').value=doc.Código;
@@ -142,7 +189,7 @@ var hora= localStorage.getItem('hora')
 var dbx = firebase.firestore();
 var dbx_ = firebase.firestore();
  Swal.fire({
-    title: 'Excluir Colaborador!',
+    title: 'Acesse seu Orçamento!',
     html: `
       <div class="menu-container">
         <p>A exclusão não poderá ser desfeita!</p>

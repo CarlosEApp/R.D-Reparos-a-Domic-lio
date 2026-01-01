@@ -729,3 +729,52 @@ background-color: #000763;
 #colaboradores input{
     width: 82%;
 }
+.my-custom_CadExCód_{
+    width: 90%;
+    max-width: 400px;
+    border: 5px solid beige;
+    border-radius: 20px;
+}
+.my-custom_CadExCód_ h2{
+     font-size: clamp( 1.100rem, 1vw + 0.5rem, 1.200rem);
+}
+.my-custom_CadExCód_ p{
+     font-size: clamp( 0.800rem, 1vw + 0.5rem, 0.900rem);
+}
+.my-custom_CadExCód_ button{
+border-radius: 20px;
+background-color: rgba(255, 255, 255, 0);
+border: 0px solid aliceblue;
+padding: 10px;
+cursor: pointer;
+color: rgb(20, 170, 0);
+font-weight: bold;
+padding-left: 30px;
+padding-right: 30px;
+outline: none;
+font-size: clamp( 0.900rem, 1vw + 0.5rem, 1rem);
+}
+.my-custom_CadExCód_ #Sair{
+    margin-left: 50px;
+    color: rgb(255, 0, 0);
+}
+.my-custom_CadExCód_ button:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(0, 119, 16);
+}
+.my-custom_CadExCód_ #Sair:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(160, 3, 3);
+}
+#confirmaCódigo{
+    margin: auto;
+    width: 80%;
+    cursor: pointer;
+    background-color: rgb(11, 11, 11);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 15px;
+    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

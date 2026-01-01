@@ -1,4 +1,42 @@
 
+//Meu Orçamento
+function MeuOrçamento(){
+    Swal.fire({
+    title: '📝 Acesse seu Orçamento!',
+    html: `
+      <div class="menu-container">
+        <p>Digite ou cole seu código</p>
+        
+        <input id='confirmaCódigo' type='text' placeholder='Digite o código e confirme'>
+        <br>
+        <button id="Swalstart" title="">Confirme</button>
+        <button id="Sair" class="cancelar">Sair</button>
+      </div>
+    `,
+    background: 'rgba(0, 0, 0, 1)',
+    color: '#ffffffff',
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+      popup: 'my-custom_CadExCód_'
+    },
+    didOpen: () => {
+      document.body.style.paddingRight = '0px';
+    }
+  });
+   document.getElementById('Sair').addEventListener('click', function () {
+    Swal.close();
+  });
+    document.getElementById('Swalstart').addEventListener('click', function () {
+        var codigo = document.getElementById('confirmaCódigo').value;
+        if (!codigo||codigo=='') {
+          Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
+        } else{
+          window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
+        }
+    });
+}
+
 
 // dados admim tel
 var telAdmim= 11995501463
