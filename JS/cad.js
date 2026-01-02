@@ -1,6 +1,22 @@
 
 
 
+// abre lista de serviços orgados
+ document.getElementById('listaOrdemServs').style.display='none'
+function listServiOrdem(){
+   var respp= document.getElementById('listaOrdemServs').style.display;
+   if(respp=='block'){
+
+  document.getElementById('listaOrdemServs').style.display='none'
+  document.getElementById('btnListSevOrca').innerHTML='Lista de Serviços'
+   }else{
+
+  document.getElementById('listaOrdemServs').style.display='block'
+  document.getElementById('btnListSevOrca').innerHTML='Fechar lista'
+   }
+
+}
+
 
 //Limpar campos de orçamento
 
@@ -24,7 +40,14 @@ function LimparCamposOrçamento(){
   document.getElementById('Input_CPFCliente').value='';
   document.getElementById('Input_TermosContrato').value='';
   document.getElementById('Input_ordedeServiço').value='';
-    sessionStorage.setItem('edite_data','');
+  document.getElementById('Input_Ref').value=''
+  document.getElementById('Input_tempoDuração').value=''
+  document.getElementById('Input_Sevfinit').value=''
+  document.getElementById('Input_valorSinal').value=''
+  document.getElementById('Input_valorparcela').value=''
+  document.getElementById('Input_valorFinal').value=''
+  document.getElementById('Input_ClienteTel').value=''
+  sessionStorage.setItem('edite_data','');
   sessionStorage.setItem('edite_hora','');
 
 }
@@ -175,6 +198,13 @@ btn2.addEventListener('click',function(){
   document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
   document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
   document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
+  document.getElementById('Input_Ref').value= doc.EndREF
+  document.getElementById('Input_tempoDuração').value= doc.Duração_Serv
+  document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ
+  document.getElementById('Input_valorSinal').value=doc.Valor_Sinal
+  document.getElementById('Input_valorparcela').value=doc.Valor_parcelas
+  document.getElementById('Input_valorFinal').value=doc.Valor_finalizado
+  document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente
   sessionStorage.setItem('edite_data',doc.Data);
   sessionStorage.setItem('edite_hora',doc.Hora);
 
@@ -314,6 +344,13 @@ function SalvarOrçamento(){
   var cpfCliente=document.getElementById('Input_CPFCliente').value;
   var termosContrato=document.getElementById('Input_TermosContrato').value;
   var ordemServico=document.getElementById('Input_ordedeServiço').value;
+  var referenciaENd=document.getElementById('Input_Ref').value;
+  var duraçãoServ=document.getElementById('Input_tempoDuração').value;
+  var finalServ=document.getElementById('Input_Sevfinit').value;
+  var valorSinal=document.getElementById('Input_valorSinal').value;
+  var valorparcela=document.getElementById('Input_valorparcela').value;
+  var valorFinal=document.getElementById('Input_valorFinal').value;
+  var Tel_cliente=document.getElementById('Input_ClienteTel').value;
 
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -350,6 +387,13 @@ Nome_Cliente:nomeCliente,
 CPF_Cliente:cpfCliente,
 Termos_Contrato:termosContrato,
 Ordem_de_Serviço:ordemServico,
+EndREF: referenciaENd,
+Duração_Serv: duraçãoServ,
+FinalizadoServ: finalServ,
+Valor_Sinal: valorSinal,
+Valor_parcelas: valorparcela,
+Valor_finalizado: valorFinal,
+Tel_Cliente: Tel_cliente,
 
 
 })
@@ -392,6 +436,19 @@ document.getElementById('Input_Codigo_Orçar').value= `${codigo_}ORS`
 } else{
    document.getElementById('orçar').style.display='none'
 }}
+
+// format Tel
+document.getElementById('Input_ClienteTel').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    
+    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+
+    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
+
+    e.target.value = formattedValue;
+});
+
 
 // format cep
  function formatarCEP(cep) {

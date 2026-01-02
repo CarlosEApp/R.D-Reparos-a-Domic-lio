@@ -13,7 +13,7 @@ function MeuOrçamento(){
         <button id="Sair" class="cancelar">Sair</button>
       </div>
     `,
-    background: 'rgba(0, 0, 0, 1)',
+    background: ' rgba(0, 49, 71, 1)',
     color: '#ffffffff',
     showCancelButton: false,
     showConfirmButton: false,

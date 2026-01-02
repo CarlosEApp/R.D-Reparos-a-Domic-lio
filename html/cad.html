@@ -88,58 +88,75 @@
                    <button onclick="orçamentos()">Orçamentos</button> <button onclick="novoOrçamento()">Novo Orcamento</button>
                 </div>
                 <div id="orçar">
-                  <h3>Novo Orçamento</h3>
+                 <h3>Novo Orçamento</h3>
                   <div id="OrçarImput">
-                    <label for="">Código protocolo <br>
-                      <input id="Input_Codigo_Orçar" type="text" placeholder="Código"></label> <br>
-                        <label for="">Cliente <br>
-                          <input id="Input_Cliente" type="text" placeholder="Nome do cliente..."></label> <br>
-                            <label for="">Serviço <br>
-                              <input id="Input_Serviço" type="text" placeholder="Serviço..."></label> <br>
-                                <label for="">Rua <br>
-                                  <input id="Input_rua" type="text" placeholder="Rua"></label> <br>
-                                    <label for="">Nº <br>
-                                     <input id="Input_numero" type="text" placeholder="nº"></label> <br>
-                                       <label for="">Bairro <br>
-                                         <input id="Input_bairro" type="text" placeholder="Bairro"></label> <br>
-                                           <label for="">Cidade <br>
-                                             <input id="Input_cidade" type="text" placeholder="Cidade"></label> <br>
-                                               <label for="">Estado <br>
-                                                <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
-                                                  <label for="">CEP <br>
-                                                   <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br><br>
-                                                    <h3>Campos p/ prestador</h3>
-                                                     <label for="">Prestador de serviço <br>
-                                                      <input id="Input_prestadornome" type="text" placeholder="Prestador"></label> <br>
-                                                       <label for="">Nº de Registro <br>
-                                                        <input id="Input_Nregistro" type="text" placeholder="Registro"></label> <br><br>                                                                                                   
-                                                         <label for="">Observações <br>
-                                                          <textarea id="Input_ObsOrç" cols="30" rows="5" placeholder="Observações..."></textarea></label>
-                                                        <br><br> 
-                                                         <p>Valor do serviço e tempo de duração</p>
-                                                            <label for="">Valor Total <br>
-                                                             <input id="Input_valorTotal" type="number" placeholder="000,00"></label> <br>   
-                                                             <label for="">Data de inicio <br>
-                                                             <input id="Input_dataInicio" type="date" onchange="dataServ1()"></label> <br>   
-                                                             <label for="">Data de termino <br>
-                                                             <input id="Input_dataTermino" type="date" onchange="dataServ2()"></label> <br> <br>
-                                                              <h3>Campos p/ Cliente</h3>
-                                                              <label for="">Nome (Cliente) <br>
-                                                               <input id="Input_NomeCliente" type="text" placeholder="Nome..."></label> <br>
-                                                                  <label for="">CPF (Cliente) <br>
-                                                               <input id="Input_CPFCliente" type="text" placeholder="CPF..."></label> <br>
-                                                                  <label for="">Termos de Contrato (concordo ou descordo) <br>
-                                                               <input id="Input_TermosContrato" type="text" placeholder="Termos..."></label> <br><br><br>
-                                                                  <p>Ordem e serviço (Aprovada ou cancelada)</p>
-                                                                   <label for="">Ordem de Serviço <br>
-                                                               <input id="Input_ordedeServiço" type="text" placeholder="Ordem de Serviço (Aprovação)..."></label> <br><br><br>
-
-                                                               
-
-                                                    
-                             </div>
-                                                       <button onclick="SalvarOrçamento()">Salvar Orçamento</button>
-                </div>
+                   <label for="">Código protocolo <br>
+                    <input id="Input_Codigo_Orçar" type="text" placeholder="Código"></label> <br>
+                      <label for="">Cliente <br>
+                        <input id="Input_Cliente" type="text" placeholder="Nome do cliente..."></label> <br>
+                         <label for="">Tel: (whatsApp) <br>
+                        <input id="Input_ClienteTel" type="text" placeholder="Tel..."></label> <br>
+                          <label for="">Serviço <br>
+                            <input id="Input_Serviço" type="text" placeholder="Serviço..."></label> <br>
+                              <label for="">Rua <br>
+                               <input id="Input_rua" type="text" placeholder="Rua"></label> <br>
+                                <label for="">Nº <br>
+                                  <input id="Input_numero" type="text" placeholder="nº"></label> <br>
+                                   <label for="">Bairro <br>
+                                    <input id="Input_bairro" type="text" placeholder="Bairro"></label> <br>
+                                     <label for="">Cidade <br>
+                                      <input id="Input_cidade" type="text" placeholder="Cidade"></label> <br>
+                                        <label for="">Estado <br>
+                                         <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
+                                          <label for="">CEP <br>
+                                            <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br>
+                                             <label for="">Referência <br>
+                                              <input id="Input_Ref" type="text"  placeholder="Referência..."></label> <br><br><br>
+                                               <h3>Campos p/ prestador</h3>
+                                                <label for="">Prestador de serviço <br>
+                                                 <input id="Input_prestadornome" type="text" placeholder="Prestador"></label> <br>
+                                                  <label for="">Nº de Registro <br>
+                                                   <input id="Input_Nregistro" type="text" placeholder="Registro"></label> <br><br>                                                                                                   
+                                                    <label for="">Observações <br>
+                                                    <textarea id="Input_ObsOrç" cols="30" rows="5" placeholder="Observações..."></textarea></label>
+                                                      <br><br> 
+                                                       <p>Valor do serviço e tempo de duração</p>
+                                                        <label for="">Valor Total <br>
+                                                         <input id="Input_valorTotal" type="text" placeholder="000,00"></label> <br> 
+                                                          <label for="">Forma de pagamento (Sinal, Parcelas, Finalizar) </label> <br>
+                                                           <div id="ffpag">
+                                                            <input id="Input_valorSinal" type="text" placeholder="Sinal 000,00"> R$<br>     
+                                                             <input id="Input_valorparcela" type="text" placeholder=" 3x 000,00"> R$<br>     
+                                                              <input id="Input_valorFinal" type="text" placeholder=" Final 000,00"> R$
+                                                               </div>
+                                                               <label for="">Tempo de duração do serviço (02 dias) <br>
+                                                                <input id="Input_tempoDuração" type="number" placeholder="00 dias"></label> <br>     
+                                                                 <label for="">Data de inicio <br>
+                                                                  <input id="Input_dataInicio" type="date" onchange="dataServ1()"></label> <br>   
+                                                                   <label for="">Data de termino <br>
+                                                                    <input id="Input_dataTermino" type="date" onchange="dataServ2()"></label> <br> <br>
+                                                                     <h3>Campos p/ Cliente</h3>
+                                                                      <label for="">Nome (Cliente) <br>
+                                                                       <input id="Input_NomeCliente" type="text" placeholder="Nome..."></label> <br>
+                                                                        <label for="">CPF (Cliente) <br>
+                                                                         <input id="Input_CPFCliente" type="text" placeholder="CPF..."></label> <br>
+                                                                          <label for="">Termos de Contrato (concordo ou descordo) <br>
+                                                                           <input id="Input_TermosContrato" type="text" placeholder="Termos..."></label> <br><br><br>
+                                                                            <p>Ordem e serviço (Aprovada ou cancelada)</p>
+                                                                               <label for="">Ordem de Serviço <br>
+                                                                             <input id="Input_ordedeServiço" type="text" placeholder="Ordem de Serviço (Aprovação)..."></label> <br><br>
+                                                                              <label for="">Serviço finalizado (01/01/0001 - 10:00:00) <br>
+                                                                            <input id="Input_Sevfinit" type="text" placeholder="Finalizado"></label> <br> 
+                                                                             <br> <br>
+                                                                             <button id="btnListSevOrca"  onclick="listServiOrdem()">Lista de Serviços</button>
+                                                                             <div id="listaOrdemServs">
+                                                                              <h3>Lista de serviços e valores</h3>
+                                                                              <div id="listOS"></div>
+                                                                             </div>
+                                                                                                                          
+                                                                            </div>
+                                                                                <button onclick="SalvarOrçamento()">Salvar Orçamento</button>
+                   </div>
                   <div id="ListaOrçamentos">
                     <h3>Informações de Orçamentos <p id="p_info"></p></h3>
                     <div id="listOrçamentos"></div>

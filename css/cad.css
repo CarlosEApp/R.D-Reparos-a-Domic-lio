@@ -412,6 +412,7 @@ background-size: max(150px, 15%);
 background-repeat: no-repeat;
 background-position: center;
 }
+
 #Oarçhead{
  display: flex;
  justify-content: space-around;
@@ -583,15 +584,15 @@ cursor: pointer;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 10px solid rgb(255, 255, 255);
-    background-color: rgb(202, 148, 0);
+    background-color: rgb(238, 174, 0);
     margin-top: 20px;
    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem); 
-    color: rgb(43, 29, 0);
+    color: rgb(0, 97, 0);
     font-weight: bold;
 }
 #orçar button:hover{
-    background-color: rgb(255, 208, 0);
-    color: rgb(0, 100, 5);
+    background-color: rgb(0, 167, 50);
+    color: rgb(255, 255, 255);
 }
 #divBtnSalvarOrçamento{
     width: 80%;
@@ -768,4 +769,28 @@ font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
     font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
     color: rgb(139, 0, 93);
     font-weight: bold;
+}
+#ffpag{
+    color: black;
+}
+#ffpag input{
+
+  max-width: 150px;
+   margin-bottom: 10px;
+  
+}
+#listaOrdemServs{
+    width: 100%;
+    min-height: 40vh;
+    background-color: aqua;
+    display: none;
+   
+}
+#OrçarImput #btnListSevOrca{
+    background-color: brown;
+    color: aliceblue;
+}
+#OrçarImput #btnListSevOrca:hover{
+    background-color: rgb(0, 104, 17);
+    color: rgb(255, 255, 255);
 }
