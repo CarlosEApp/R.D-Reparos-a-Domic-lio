@@ -27,14 +27,21 @@ function MeuOrçamento(){
    document.getElementById('Sair').addEventListener('click', function () {
     Swal.close();
   });
-    document.getElementById('Swalstart').addEventListener('click', function () {
-        var codigo = document.getElementById('confirmaCódigo').value;
-        if (!codigo||codigo=='') {
-          Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
-        } else{
-          window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
-        }
-    });
+  document.getElementById('Swalstart').addEventListener('click', function () {
+    // pega o valor do input
+    var codigo = document.getElementById('confirmaCódigo').value;
+
+    // remove todos os espaços
+    codigo = codigo.replace(/\s+/g, "");
+
+    // valida se está vazio
+    if (!codigo || codigo === '') {
+        Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
+    } else {
+        // abre a página com o código
+        window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
+    }
+});
 }
 
 

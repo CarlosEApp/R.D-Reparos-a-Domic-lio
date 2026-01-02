@@ -25,6 +25,7 @@ document.body.style.paddingRight = '0px';
 }
 }); 
   setTimeout(function(set){
+      document.getElementById('divInit').style.display='none';
 Swal.close()
 },7000)
 }
@@ -50,8 +51,6 @@ window.onload = function () {
   // Aguarda 3 segundos e busca no Firestore
   setTimeout(function () {
     var orcamento = sessionStorage.getItem("MeuOrçamento");
-
-
    var firebaseConfig = {
      apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
      authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -70,13 +69,32 @@ window.onload = function () {
       //alert("Orçamento encontrado:\nCódigo: " + dados.Codigo + "\nCliente: " + dados.Cliente);
         document.getElementById("codigoCliente").innerHTML = dados.Código
         document.getElementById("nomeCliente").innerHTML = dados.Cliente;
-        Swal.close()
+        document.getElementById('divGeral').style.display='block';
+       
+      
       } else {
-        
-       Swal.fire("Orçamento não encontrado!",'Não foi possivel localizar o orçamento com o código fornecido.','error');
+        document.getElementById('divGeral').style.display='none';
+    Swal.fire({ 
+      title: "Orçamento não encontrado!", 
+      text: "Não foi possível localizar o orçamento com o código fornecido.", 
+      icon: "error", 
+      color: '#ffffffff',
+      iconColor: "#c40000ff",
+      background: "#001813ff",
+      customClass: { 
+        popup: 'popup-class', 
+        title: 'title-class', 
+        htmlContainer: 'text-class' }
+    })
+     
+     setTimeout(function(){
+     window.open('../index.html', '_self')
+    // document.getElementById('divInit').style.display='none';
+       },4000)
+      
       }
     });
-  }, 3000);
+  }, 2000);
 };
 
 
