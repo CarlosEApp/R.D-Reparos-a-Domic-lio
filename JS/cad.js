@@ -141,11 +141,10 @@ btn4.addEventListener('click', function(){
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-<br> 
-<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
-<br><br>   
+  
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-<br><br><br><button id='sair_'>Cancelar</button><br><br>
+<br><br>
+<button id='sair_'>Cancelar</button><br><br>
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto
@@ -161,11 +160,7 @@ document.body.style.paddingRight = '0px';
 document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
-document.getElementById('face').addEventListener('click',function(){
-var codigo = doc.Código;
-var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo);
-window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-});
+
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
 var codigo = doc.Código;
@@ -646,6 +641,7 @@ if(!doc.Data_Cd||doc.Data_Cd==''){
    document.getElementById('inputColnome').value=''
    document.getElementById('inputColEmail').value=''
    document.getElementById('rg').value=''
+    document.getElementById('cpf').value=''
    document.getElementById('inputColTel').value=''
    document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
  }
@@ -808,6 +804,14 @@ e.target.value = formattedValue;
 });
 //Botão cad. colaborador
 function Colaboradores(){
+     document.getElementById('inputR_E').value=''
+   document.getElementById('inputServ').value=''
+   document.getElementById('inputColnome').value=''
+   document.getElementById('inputColEmail').value=''
+   document.getElementById('rg').value=''
+    document.getElementById('cpf').value=''
+   document.getElementById('inputColTel').value=''
+   document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
 sessionStorage.setItem('data_cd','')
 sessionStorage.setItem('hora_cd','')
 document.getElementById('listItens1').style.display='none'
@@ -1186,6 +1190,7 @@ swal('','',`${img}`)
 // Botão cadastro
 function Cadastro(){
 limparC()
+
 document.getElementById('imgcad').src="../src/RD.png"
 fecharOrdemServ()
 document.getElementById('a_Inicio').click()

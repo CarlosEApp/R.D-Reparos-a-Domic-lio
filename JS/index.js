@@ -1,4 +1,46 @@
 
+
+//Compartilhar
+
+
+function Comparltlhar(){
+Swal.fire({
+title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
+html: `
+
+<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+<br><br>
+<button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+<br><br><button id='sair_'>Cancelar</button><br><br>
+`,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'black', // Cor do texto// Cor do texto
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('sair_').addEventListener('click',function(){
+Swal.close()
+});
+document.getElementById('face').addEventListener('click',function(){
+
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+});
+document.getElementById('whats').addEventListener('click',function(){
+var pagina =`https://rd-reparos-domicilio.netlify.app/`
+var whatsappMessage =`✅Visite nossa Página\n--------------------------------------------\n🛠️ Serviço: com qualidade e segurança para sua casa!\n----------------------------------------------\n✅ Pagina: 👉  ${pagina}\n\n\n`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+});
+}
+
+
 //Meu Orçamento
 function MeuOrçamento(){
     Swal.fire({
