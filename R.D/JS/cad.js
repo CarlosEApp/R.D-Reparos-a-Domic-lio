@@ -1,6 +1,22 @@
 
 
 
+// abre lista de serviços orgados
+ document.getElementById('listaOrdemServs').style.display='none'
+function listServiOrdem(){
+   var respp= document.getElementById('listaOrdemServs').style.display;
+   if(respp=='block'){
+
+  document.getElementById('listaOrdemServs').style.display='none'
+  document.getElementById('btnListSevOrca').innerHTML='Lista de Serviços'
+   }else{
+
+  document.getElementById('listaOrdemServs').style.display='block'
+  document.getElementById('btnListSevOrca').innerHTML='Fechar lista'
+   }
+
+}
+
 
 //Limpar campos de orçamento
 
@@ -24,7 +40,14 @@ function LimparCamposOrçamento(){
   document.getElementById('Input_CPFCliente').value='';
   document.getElementById('Input_TermosContrato').value='';
   document.getElementById('Input_ordedeServiço').value='';
-    sessionStorage.setItem('edite_data','');
+  document.getElementById('Input_Ref').value=''
+  document.getElementById('Input_tempoDuração').value=''
+  document.getElementById('Input_Sevfinit').value=''
+  document.getElementById('Input_valorSinal').value=''
+  document.getElementById('Input_valorparcela').value=''
+  document.getElementById('Input_valorFinal').value=''
+  document.getElementById('Input_ClienteTel').value=''
+  sessionStorage.setItem('edite_data','');
   sessionStorage.setItem('edite_hora','');
 
 }
@@ -111,18 +134,17 @@ div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
 
-document.getElementById('p_info').innerHTML=`Total de ( ${Cadastro} ) orçamentos encontrados`
+document.getElementById('p_info').innerHTML=`<b>(${Cadastro})</b>orçamentos encontrados`
 
 btn4.addEventListener('click', function(){
 
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-<br> 
-<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
-<br><br>   
+  
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-<br><br><br><button id='sair_'>Cancelar</button><br><br>
+<br><br>
+<button id='sair_'>Cancelar</button><br><br>
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto
@@ -138,17 +160,13 @@ document.body.style.paddingRight = '0px';
 document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
-document.getElementById('face').addEventListener('click',function(){
-var codigo = doc.Código;
-var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo);
-window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-});
+
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
 var codigo = doc.Código;
 var Cliente = doc.Cliente;
 var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + codigo;
-var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n--------------------------\n👨‍💼 Cliente: ${Cliente}\n✅ Código: ${codigo}\n-------------------------\n Link p/Orçamento: 👉 ${url}\n\nPagina: 👉 ${pagina}\n\n\n`;
+var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n-------------------------------------\n👨‍💼👩‍💼  Cliente: ${Cliente}\n👉 Código: ${codigo}\n-------------------------------------\n Link p/Orçamento: 👉 ${url}\n\n✅ Pagina: ${pagina}\n\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -175,6 +193,13 @@ btn2.addEventListener('click',function(){
   document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
   document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
   document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
+  document.getElementById('Input_Ref').value= doc.EndREF
+  document.getElementById('Input_tempoDuração').value= doc.Duração_Serv
+  document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ
+  document.getElementById('Input_valorSinal').value=doc.Valor_Sinal
+  document.getElementById('Input_valorparcela').value=doc.Valor_parcelas
+  document.getElementById('Input_valorFinal').value=doc.Valor_finalizado
+  document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente
   sessionStorage.setItem('edite_data',doc.Data);
   sessionStorage.setItem('edite_hora',doc.Hora);
 
@@ -314,6 +339,13 @@ function SalvarOrçamento(){
   var cpfCliente=document.getElementById('Input_CPFCliente').value;
   var termosContrato=document.getElementById('Input_TermosContrato').value;
   var ordemServico=document.getElementById('Input_ordedeServiço').value;
+  var referenciaENd=document.getElementById('Input_Ref').value;
+  var duraçãoServ=document.getElementById('Input_tempoDuração').value;
+  var finalServ=document.getElementById('Input_Sevfinit').value;
+  var valorSinal=document.getElementById('Input_valorSinal').value;
+  var valorparcela=document.getElementById('Input_valorparcela').value;
+  var valorFinal=document.getElementById('Input_valorFinal').value;
+  var Tel_cliente=document.getElementById('Input_ClienteTel').value;
 
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -350,6 +382,13 @@ Nome_Cliente:nomeCliente,
 CPF_Cliente:cpfCliente,
 Termos_Contrato:termosContrato,
 Ordem_de_Serviço:ordemServico,
+EndREF: referenciaENd,
+Duração_Serv: duraçãoServ,
+FinalizadoServ: finalServ,
+Valor_Sinal: valorSinal,
+Valor_parcelas: valorparcela,
+Valor_finalizado: valorFinal,
+Tel_Cliente: Tel_cliente,
 
 
 })
@@ -392,6 +431,19 @@ document.getElementById('Input_Codigo_Orçar').value= `${codigo_}ORS`
 } else{
    document.getElementById('orçar').style.display='none'
 }}
+
+// format Tel
+document.getElementById('Input_ClienteTel').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    
+    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+
+    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
+
+    e.target.value = formattedValue;
+});
+
 
 // format cep
  function formatarCEP(cep) {
@@ -482,7 +534,7 @@ div.appendChild(div2);
 div.appendChild(div5);
 li.appendChild(div);
 setTimeout(function(){
- document.getElementById('listItens2').innerHTML=`Total de ( ${itens2} ) Colaboradores encontrados`
+ document.getElementById('listItens2').innerHTML=`<b>(${itens2})</b> Colaboradores encontrados`
  sessionStorage.setItem('time12',itens2)
   document.getElementById('listItens2').style.display='block'
   document.getElementById('listItens1').style.display='none'
@@ -589,6 +641,7 @@ if(!doc.Data_Cd||doc.Data_Cd==''){
    document.getElementById('inputColnome').value=''
    document.getElementById('inputColEmail').value=''
    document.getElementById('rg').value=''
+    document.getElementById('cpf').value=''
    document.getElementById('inputColTel').value=''
    document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
  }
@@ -751,6 +804,14 @@ e.target.value = formattedValue;
 });
 //Botão cad. colaborador
 function Colaboradores(){
+     document.getElementById('inputR_E').value=''
+   document.getElementById('inputServ').value=''
+   document.getElementById('inputColnome').value=''
+   document.getElementById('inputColEmail').value=''
+   document.getElementById('rg').value=''
+    document.getElementById('cpf').value=''
+   document.getElementById('inputColTel').value=''
+   document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
 sessionStorage.setItem('data_cd','')
 sessionStorage.setItem('hora_cd','')
 document.getElementById('listItens1').style.display='none'
@@ -782,6 +843,7 @@ fecharOrdemServ()
 }
 // Serviços,_Ordem de serviços e_colaboradores
 function OrdemServiços(){
+  document.getElementById('a_InicioColab').click()
 FecharCadServ()
 FecharCad()
 document.getElementById('Serv_Ordem_colab').style.display='block';
@@ -1129,6 +1191,7 @@ swal('','',`${img}`)
 // Botão cadastro
 function Cadastro(){
 limparC()
+
 document.getElementById('imgcad').src="../src/RD.png"
 fecharOrdemServ()
 document.getElementById('a_Inicio').click()

@@ -29,9 +29,58 @@
     <link rel="stylesheet" href="../CSS/orcaserv.css">
 </head>
 <body>
-    <h1>Orçamento</h1> <br>
-     <h2 id="codigoCliente">Código</h2>
-    <h3 id="nomeCliente">Cliente</h3>
+   
+   <div id="divInit"></div>
+
+    <div id="divGeral">
+         <div id="divHeader">
+            <div id="head1">
+              <h2>Orçamento</h2>  <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button id="btnMenu" onclick="menu()" type=""> Menu</button>
+            </div>
+            <div id="head2">
+                <h4  id="codigoCliente">0000000</h4> <button id="annalizeOrçar" onclick="AnnalizeOrçamento()" type=""> Annalize</button>
+            </div>
+         </div>
+         <div id="divBody">
+            <div id="body1">
+            <div id="dadosCliente">
+             <h3>Dados do clientes</h3>
+            <label id="nomeCliente" for="">Cliente</label><br>
+            <label id="telCliente" for="">Tel:</label><br>
+             <label id="cpfCliente" for="">CPF:</label><br>
+              <h3>Endereço</h3>
+               <label id="rua" for="">Rua</label><br>
+                 <label id="numero" for="">Nº</label><br>
+                 <label id="bairro" for="">Bairro</label><br>
+                  <label id="cidade" for="">Cidade</label><br>
+                   <label id="estado" for="">Estado</label><br>
+                    <label id="cep" for="">CEP</label><br>
+                     <label  id="ref" for="">Ref</label><br>
+                   </div>
+                   <div id="divColab">
+                  <h3>Dados do Prestador</h3>
+                  <label id="nome_Clob" for="">Pretador</label><br>
+                      <label id="RE_Clob" for="">Nº de registro</label><br>
+                   </div>
+
+            </div>
+             <div id="body2"></div>
+
+             </div>
+
+
+            </div>
+
+         </div>
+
+
+
+       
+   
+    
+
+
+    </div>
 
  <script src="../JS/orcaserv.js"></script>
 
