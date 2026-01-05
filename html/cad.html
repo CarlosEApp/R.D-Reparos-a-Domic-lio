@@ -25,6 +25,7 @@
 </head>
 <body>
     <div id="DivGeral">
+       
         <div id="divHead">
             <div id="head1">
              <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>
@@ -34,16 +35,18 @@
                 <button onclick="Cadastro()"><i class="fa-solid fa-check"></i> Cadastro</button> <button onclick="ServCad()"> <i class="fa-solid fa-pen-to-square"></i> Serv-Cad.</button> <button onclick="OrdemServiços()"><i class="fa-solid fa-gear"></i> Serviços</button>
             </div>
         </div>
+        <a id="a_InicioColab" href="#" title="Inicio_colab"></a>
         <a id="a_Inicio" href="#" title="inicio"></a>
         <div id="divBody">
           <div id="Serv_Ordem_colab">
+            <div id="divselect">
               <label onclick="FecharColabServ()" id="lblFecharColabServ" for="">  <i id="i_fechar" class="fa-solid fa-delete-left"></i> Fechar</label><br>
                 <select name="Serviços e colaboradores" id="select_colaboradores" onchange="selectSOC()" title="Serviços e colaboradores">
                   <option value="">Serviços e colaboradores</option>
                      <option value="Colaboradores">Colaboradores</option>
                      <option value="orçamento"> Orcamentos</option>
                      <option value="OrdemServiços">Ordem de Serviços</option>
-                </select> 
+                </select> </div>
               <div id="Colobaradores">
                 <div id="ColBtn">
                   <button onclick="Colaboradores()">Novo colab.</button><button onclick="ListaCC()">Lista de colab.</button>
@@ -78,7 +81,7 @@
                 </div>
                 </div>
                 <div id="div_listCol">
-                   <h3 id="listItens2">Total de 0 produtos encontrados</h3>
+                   <h3 id="listItens2">  produtos encontrados</h3>
                   <div id="listCol"></div>
                 </div>
               </div>
@@ -158,7 +161,7 @@
                                                                                 <button onclick="SalvarOrçamento()">Salvar Orçamento</button>
                    </div>
                   <div id="ListaOrçamentos">
-                    <h3>Informações de Orçamentos <p id="p_info"></p></h3>
+                    <h3><p id="p_info"></p></h3>
                     <div id="listOrçamentos"></div>
                    </div>
                </div>
@@ -237,7 +240,7 @@
                           <option value="Jardinagem">🌿Jardinagem</option>
                            <option value="Utilitarios"> 👉Utilitários</option>
                     </select> <br><br>
-                     <h3 id="listItens1">Total de ( 0 ) produtos encontrados</h3>
+                     <h3 id="listItens1">( 0 ) produtos encontrados</h3>
               <div id="listCDS"></div>
             </div>
         </div>

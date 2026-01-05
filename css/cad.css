@@ -16,7 +16,7 @@ outline: none;
 margin: auto;
 width: 100%;
 max-width: 1200px;
-background-color: aliceblue;
+background-color: rgb(255, 255, 255);
 min-height: 100vh;
 outline: none;
 }
@@ -60,6 +60,39 @@ min-height: 140vh;
 padding-top: 140px;
 padding-bottom: 200px;
 outline: none;
+}
+@media (max-width: 1000px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 130px;
+padding-bottom: 200px;
+outline: none;
+}
+}
+@media (max-width: 800px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 120px;
+padding-bottom: 200px;
+outline: none;
+}
+}
+@media (max-width: 600px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 110px;
+padding-bottom: 200px;
+outline: none;
+}
 }
 #body1{
 margin: auto;
@@ -359,21 +392,20 @@ background-color: rgb(119, 0, 65);
 }
 #Serv_Ordem_colab{
 margin: auto;
-width: 93%;
+width: 95%;
 min-height: 100vh;
-background-color: rgb(0, 82, 102);
+background-color: rgba(0, 82, 102, 0);
 display: none;
 border-radius: 10px;
-padding: 10px;
+padding: 5px;
 outline: none;
-padding-bottom: 150px;
+padding-bottom: 100px;
 }
 #select_colaboradores{
 width: 60%;
 max-width: 300px;
 padding: 10px;
 border: 2px solid rgb(58, 0, 23);
-margin-bottom: 10px;
 cursor: pointer;
 color: rgb(0, 10, 20);
 outline: none;
@@ -388,16 +420,15 @@ border: 2px solid rgb(139, 0, 56);
 #Colobaradores{
 margin: auto;
 width: 100%;
-max-width:800px;
 min-height: 20vh;
 background-color: rgb(0, 14, 12);
 display: none;
 font-weight: lighter;
 text-align: center;
 outline: none;
-border-radius: 20px;
+
 padding-bottom: 100px;
-margin-top: 30px;
+
 
 }
 #Orçamentos{
@@ -417,23 +448,28 @@ background-position: center;
  display: flex;
  justify-content: space-around;
  align-items: center;
- margin-top: 10px;
- background-color: rgb(0, 94, 78);
+ background-color: rgba(0, 94, 78, 0);
  padding:15px;
- border-top: rgba(240, 248, 255, 0.507) 5px solid;
+ border-top: rgb(19, 19, 19) 5px solid;
 }
 #Oarçhead button{
-    border: 0cap;
-    cursor: pointer;
-    background-color: rgba(240, 248, 255, 0);
-    color: aliceblue;
-    text-decoration: underline 2px solid rgb(185, 185, 185);
-    font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+width: 37%;
+border:2px solid rgb(0, 48, 8);
+background-color: rgb(0, 126, 88);
+color: rgb(255, 255, 255);
+padding: 10px;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 10px;
+outline: none;
+margin-top: 10px;
+font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 
 }
 #Oarçhead button:hover{
-    color: rgb(255, 196, 0);
-        text-decoration: underline 2px solid rgb(255, 255, 255);
+    color: rgb(46, 1, 10);
+    background-color:aqua;
+      
 }
 #orçar{
     margin: auto;
@@ -445,9 +481,10 @@ background-position: center;
 }
 #orçar h3, #ListaOrçamentos h3{
     text-align: center;
-    color: rgb(0, 10, 20);
-    margin-top: 5px;
+    color: rgb(0, 9, 17);
+  
     margin-bottom: 10px;
+    
 }
 #ListaOrçamentos{
        margin: auto;
@@ -600,7 +637,7 @@ cursor: pointer;
 #ordemserv{
 width: 100%;
 min-height: 100vh;
-background-color: rgb(56, 2, 204);
+background-color: rgb(100, 100, 100);
 display: none;
 outline: none;
 }
@@ -612,19 +649,25 @@ padding-top: 20px;
 outline: none;
 }
 #cadCol{
+    margin: auto;
+max-width: 840px;
 display: none;
+background-color: rgba(0, 0, 0, 0);
+padding-top: 20px;
+padding-bottom: 70px;
+border-radius: 20px;
 }
 #ColBtn button{
 width: 37%;
 border:2px solid azure;
-background-color: rgba(63, 0, 63, 0.829);
+background-color: rgb(56, 0, 119);
 color: rgb(255, 255, 255);
 padding: 10px;
 border-radius: 10px;
 cursor: pointer;
-margin-bottom: 30px;
+margin-bottom: 10px;
 outline: none;
-margin-top: 30px;
+margin-top: 10px;
 font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 }
 #ColBtn button:hover{
@@ -733,7 +776,7 @@ align-items: center;
 margin-top: 30px;
 }
 #lbl3{
-color: rgb(209, 188, 0);
+color: rgb(190, 171, 0);
 font-weight: bold;
 }
 #btnn2{
@@ -782,7 +825,7 @@ font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
 #listaOrdemServs{
     width: 100%;
     min-height: 40vh;
-    background-color: aqua;
+    background-color: rgb(255, 0, 242);
     display: none;
    
 }
@@ -817,4 +860,13 @@ font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
     border: 2px solid #009238;
         border-radius: 10px;
    
+}
+#divselect{
+    background-color: black;
+    padding: 10px;
+    margin: 0%;
+}
+#div_listCol h3{
+    color: rgb(255, 252, 252);
+    margin-top: 20px;
 }

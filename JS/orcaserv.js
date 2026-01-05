@@ -67,13 +67,17 @@ window.onload = function () {
       if (doc.exists) {
         var dados = doc.data();
       //alert("Orçamento encontrado:\nCódigo: " + dados.Codigo + "\nCliente: " + dados.Cliente);
-        document.getElementById("codigoCliente").innerHTML = dados.Código
-        document.getElementById("nomeCliente").innerHTML = dados.Cliente;
+        document.getElementById("codigoCliente").innerHTML =`Código: <b id='BB'>${ dados.Código}</b>`
+        document.getElementById("nomeCliente").innerHTML = `Cliente N: <b id='BB2'>${dados.Cliente}</b>`;
+         document.getElementById("telCliente").innerHTML = `Contato: <b id='BB2'>${dados.Tel_Cliente}</b>`;
+          document.getElementById("cpfCliente").innerHTML = `CPF: <b id='BB2'>${dados.CPF_Cliente}</b>`;
+
+
         document.getElementById('divGeral').style.display='block';
        
       
       } else {
-        document.getElementById('divGeral').style.display='none';
+      document.getElementById('divGeral').style.display='none';
     Swal.fire({ 
       title: "Orçamento não encontrado!", 
       text: "Não foi possível localizar o orçamento com o código fornecido.", 
@@ -97,6 +101,28 @@ window.onload = function () {
   }, 2000);
 };
 
+// Tela Cheia
+function toggleFullScreen() {
+
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+(!document.mozFullScreen && !document.webkitIsFullScreen)) {
+if (document.documentElement.requestFullScreen) {
+document.documentElement.requestFullScreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullScreen) {
+document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+}
 
    AlertaInicial()
 

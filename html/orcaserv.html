@@ -34,24 +34,38 @@
 
     <div id="divGeral">
          <div id="divHeader">
-            <div head1>
-              <h2>Orçamento</h2>
+            <div id="head1">
+              <h2>Orçamento</h2>  <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button id="btnMenu" onclick="menu()" type=""> Menu</button>
             </div>
-            <div head2>
-                <h3  id="codigoCliente">0000000</h3> <button onclick="menu()" type=""> Menu</button>
+            <div id="head2">
+                <h4  id="codigoCliente">0000000</h4> <button id="annalizeOrçar" onclick="AnnalizeOrçamento()" type=""> Annalize</button>
             </div>
          </div>
          <div id="divBody">
-            <h3>Dados do clientes</h3>
-            <div id="dadosCliente"></div>
-            <label for="">Cliente</label><br>
-            <label for="">CPF</label><br>
-            <p>Endereço</p><br>
-            <label for="">Rua</label><br>
-             <label for="">Nº</label><br>
-              <label for="">Bairro</label><br>
-               <label for="">Cidade</label><br>
-                <label for="">Estado</label><br>
+            <div id="body1">
+            <div id="dadosCliente">
+             <h3>Dados do clientes</h3>
+            <label id="nomeCliente" for="">Cliente</label><br>
+            <label id="telCliente" for="">Tel:</label><br>
+             <label id="cpfCliente" for="">CPF:</label><br><br>
+              <p>Endereço</p>
+               <label for="">Rua</label><br>
+                <label for="">Nº</label><br>
+                 <label for="">Bairro</label><br>
+                  <label for="">Cidade</label><br>
+                   <label for="">Estado</label><br>
+                   </div>
+                   <div id="divColab">
+                  <h3>Dados do Prestador</h3>
+                  <label id="nome_Clob" for="">Pretador</label><br>
+                      <label id="RE_Clob" for="">Nº de registro</label><br>
+                   </div>
+
+            </div>
+             <div id="body2"></div>
+
+             </div>
+
 
             </div>
 
@@ -59,9 +73,9 @@
 
 
 
-         <h1>Orçamento</h1> <br>
+       
    
-    <h3 id="nomeCliente">Cliente</h3>
+    
 
 
     </div>

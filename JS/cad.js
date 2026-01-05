@@ -134,7 +134,7 @@ div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
 
-document.getElementById('p_info').innerHTML=`Total de ( ${Cadastro} ) orçamentos encontrados`
+document.getElementById('p_info').innerHTML=`<b>(${Cadastro})</b>orçamentos encontrados`
 
 btn4.addEventListener('click', function(){
 
@@ -534,7 +534,7 @@ div.appendChild(div2);
 div.appendChild(div5);
 li.appendChild(div);
 setTimeout(function(){
- document.getElementById('listItens2').innerHTML=`Total de ( ${itens2} ) Colaboradores encontrados`
+ document.getElementById('listItens2').innerHTML=`<b>(${itens2})</b> Colaboradores encontrados`
  sessionStorage.setItem('time12',itens2)
   document.getElementById('listItens2').style.display='block'
   document.getElementById('listItens1').style.display='none'
@@ -843,6 +843,7 @@ fecharOrdemServ()
 }
 // Serviços,_Ordem de serviços e_colaboradores
 function OrdemServiços(){
+  document.getElementById('a_InicioColab').click()
 FecharCadServ()
 FecharCad()
 document.getElementById('Serv_Ordem_colab').style.display='block';

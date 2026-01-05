@@ -40,7 +40,6 @@ window.open(whatsappLink, "_blank");
 });
 }
 
-
 //Meu Orçamento
 function MeuOrçamento(){
     Swal.fire({
