@@ -180,6 +180,7 @@ window.onload = function () {
                        document.getElementById('RE_Clob').value=dados.NRE
                      document.getElementById("Tel_Clob").innerHTML = `Contato (Whats): <b id='BB2'> ${dados.Tel_Prestador}</b>`;
                        document.getElementById('Tel_Clob').value=dados.Tel_Prestador
+                       document.getElementById('h3Servi').innerHTML=`Serviço de  <b id='BBb'> ${dados.Serviço}</b>`
           
 
         document.getElementById('divGeral').style.display='block';

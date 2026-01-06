@@ -394,7 +394,38 @@ Valor_finalizado: valorFinal,
 Tel_Cliente: Tel_cliente,
 Tel_Prestador: tel_prest,
 
-
+})
+var bcp = firebase.firestore();
+bcp.collection('backupOrServ').doc(`${codigoP}`).set({
+  ódigo:codigoP,
+Cliente:clienteP,
+Serviço:serviçoP,
+NRE:nregistroP,
+Observações:obsP,
+Rua:rua,
+Número:numero,
+Bairro:bairro,
+Cidade:cidade,
+Estado:estado,
+CEP:cep,
+Prestador:prestadorP,
+Data:data,
+Hora:hora,
+Data_Inicio:dataInicio,
+data_Termino:dataTermino,
+valorTotal:valorTotal,
+Nome_Cliente:nomeCliente,
+CPF_Cliente:cpfCliente,
+Termos_Contrato:termosContrato,
+Ordem_de_Serviço:ordemServico,
+EndREF: referenciaENd,
+Duração_Serv: duraçãoServ,
+FinalizadoServ: finalServ,
+Valor_Sinal: valorSinal,
+Valor_parcelas: valorparcela,
+Valor_finalizado: valorFinal,
+Tel_Cliente: Tel_cliente,
+Tel_Prestador: tel_prest,
 })
 setTimeout(function(){
   Swal.fire('Orçamento salvo!','','success')
