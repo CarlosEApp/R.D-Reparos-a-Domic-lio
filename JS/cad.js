@@ -47,6 +47,7 @@ function LimparCamposOrçamento(){
   document.getElementById('Input_valorparcela').value=''
   document.getElementById('Input_valorFinal').value=''
   document.getElementById('Input_ClienteTel').value=''
+  document.getElementById('Input_prestadorTel').value=''
   sessionStorage.setItem('edite_data','');
   sessionStorage.setItem('edite_hora','');
 
@@ -193,18 +194,19 @@ btn2.addEventListener('click',function(){
   document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
   document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
   document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
-  document.getElementById('Input_Ref').value= doc.EndREF
-  document.getElementById('Input_tempoDuração').value= doc.Duração_Serv
-  document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ
-  document.getElementById('Input_valorSinal').value=doc.Valor_Sinal
-  document.getElementById('Input_valorparcela').value=doc.Valor_parcelas
-  document.getElementById('Input_valorFinal').value=doc.Valor_finalizado
-  document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente
+  document.getElementById('Input_Ref').value= doc.EndREF;
+  document.getElementById('Input_tempoDuração').value= doc.Duração_Serv;
+  document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ;
+  document.getElementById('Input_valorSinal').value=doc.Valor_Sinal;
+  document.getElementById('Input_valorparcela').value=doc.Valor_parcelas;
+  document.getElementById('Input_valorFinal').value=doc.Valor_finalizado;
+  document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente;
+  document.getElementById('Input_prestadorTel').value=doc.Tel_Prestador;
   sessionStorage.setItem('edite_data',doc.Data);
   sessionStorage.setItem('edite_hora',doc.Hora);
 
- document.getElementById('orçar').style.display='block'
-  document.getElementById('ListaOrçamentos').style.display='none'
+ document.getElementById('orçar').style.display='block';
+  document.getElementById('ListaOrçamentos').style.display='none';
 
 });
 
@@ -346,6 +348,7 @@ function SalvarOrçamento(){
   var valorparcela=document.getElementById('Input_valorparcela').value;
   var valorFinal=document.getElementById('Input_valorFinal').value;
   var Tel_cliente=document.getElementById('Input_ClienteTel').value;
+  var tel_prest=document.getElementById('Input_prestadorTel').value;
 
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -389,6 +392,7 @@ Valor_Sinal: valorSinal,
 Valor_parcelas: valorparcela,
 Valor_finalizado: valorFinal,
 Tel_Cliente: Tel_cliente,
+Tel_Prestador: tel_prest,
 
 
 })
@@ -432,8 +436,19 @@ document.getElementById('Input_Codigo_Orçar').value= `${codigo_}ORS`
    document.getElementById('orçar').style.display='none'
 }}
 
-// format Tel
+// format Tel cliente
 document.getElementById('Input_ClienteTel').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    
+    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+
+    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
+
+    e.target.value = formattedValue;
+});
+// format Tel prestador
+document.getElementById('Input_prestadorTel').addEventListener('input', function (e) {
     let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
     
     if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
@@ -785,10 +800,18 @@ function aplicarMascaraRG(event) {
 let input = event.target;
 input.value = formatarRG(input.value);
 }
-// format CPF 
-function aplicarMascaraCPF(event) {
+// format CPF Colaborador
+function CPF_Colaborador(event) {
   let input = event.target;
   let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+  if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+  let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+  input.value = formattedValue;
+}
+// format CPF cliente
+function CPF_Cliente(event) {
+  let input = event.target;
+  let value= input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
   if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
   let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
   input.value = formattedValue;

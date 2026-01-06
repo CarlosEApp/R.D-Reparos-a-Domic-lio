@@ -257,4 +257,4 @@ function Returpag(){
 function inicio_(){
 Menu()
 }
-document.getElementById('divTabela').style.display='none'
+//document.getElementById('divTabela').style.display='none'
