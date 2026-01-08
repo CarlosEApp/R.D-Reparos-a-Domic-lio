@@ -129,20 +129,7 @@ document.getElementById('read2').style.display='none'
 
 //logo click
 function imgLogo(){
-swal({
-title: ``,
-html:` `,
-background: 'rgba(118, 0, 122, 0)', // Cor de fundo
-color: '#ffffff04', // Cor do texto
-allowOutsideClick: false,
-showConfirmButton: false,
-customClass: {
-popup: 'my-custom_infoMSM' // Aplica a classe CSS personalizada
-},
-didOpen: () => {
-document.body.style.paddingRight = '0px';        
-}
-});
+
 swal('R.D - reparos a domicílio','','src/rd_logo_png.png')
 }
 

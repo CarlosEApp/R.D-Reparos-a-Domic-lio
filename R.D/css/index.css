@@ -14,7 +14,6 @@ margin: auto;
 width: 100%;
 max-width: 1920px;
 min-height: 100vh;
-
 }
 #divRead{
 margin:0 auto;
@@ -70,7 +69,6 @@ font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
 #read2{
 display: none;
 }
-
 #btnsetFechar{
 color: #000000;
 border: 0cap;
@@ -84,11 +82,9 @@ cursor: pointer;
 #btnsetFechar:hover{
     color: #850028;
 }
-
 #div_admim{
 width: 100%;
 min-height: 100vh;
-
 }
 #IMenu{
 font-size: clamp(1.300rem, 1vw + 0.5rem, 1.300rem);
@@ -100,13 +96,12 @@ color: rgb(0, 255, 242);
 }
 #divBody{
  margin: auto;
-width: 95%;
+width: 100%;
 max-width: 1450px;
 overflow: auto;
 min-height: 100vh;
 background-color: rgb(0, 0, 0);
 padding-top: 100px;
-
 }
 @media (max-width: 1100px) {
     #divBody{
@@ -174,10 +169,19 @@ color: rgb(52, 0, 196);
 .menu-ativo {
 left: 0 !important;
 }
-#bodyB1,#bodyB2,#bodyB3,#bodyB4{
+#bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
+width: 100%;
 margin: auto;
 background-color: rgb(0, 0, 0);
 margin-bottom: 70px;
+}
+
+#Fflex{
+margin: auto;
+width: 98%;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
 }
 #bodyB0{
 width: 100%;
@@ -198,40 +202,47 @@ color: rgb(0, 167, 0);
 font-size: clamp(1.300rem, 1vw + 0.5rem, 1.800rem);
 margin-top: 10px;
 }
-#bodyB1 label,#bodyB2 label,#bodyB3 label,#bodyB4 label,#bodyB5 label{
-font-size: clamp(1.300rem, 1vw + 0.5rem, 1.800rem);
+#bodyB1 label,#bodyB2 label,#bodyB3 label,#bodyB4 label,#bodyB5,label,#bodyB6 {
+font-size: clamp(1.100rem, 1vw + 0.5rem, 1.500rem);
 color: rgb(255, 255, 255);
 }
 #Info{
 margin-left: 3%;
-margin-bottom: 100px;
+margin-bottom: 50px;
 margin-top: 40px;
 margin-right: 10px;
+align-items: center;
 }
 #Info h3{
 margin-bottom: 10px;
 }
 #divStartServ{
-width: 100%;
+margin: auto;
+width:93%;
+max-width: 310px;
 text-align: center;
-margin-top:80px;
+
 }
 #divStartServ button{
 min-width: 300px;
 padding: 15px;
-background-color: rgba(18, 109, 0, 0.575);
+background-color: rgb(0, 63, 78);
 color: #ffffff;
-border: 2px solid rgb(202, 172, 0);
-border-radius: 10px;
+border: 2px solid rgb(228, 194, 0);
+border-radius: 7px;
 margin-right: 20px;
-font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 cursor: pointer;
-box-shadow: 0 2px 5px rgba(53, 129, 82, 0.514);
+margin-bottom: 50px;
+margin-left: 5px;
+margin-right: 5px;
+margin-top:40px;
+border-radius: 20px;
 }
 #divStartServ button:hover{
-background-color: rgb(26, 155, 0);
+background-color: rgb(22, 133, 0);
 color: rgb(255, 255, 255);
-border: 2px solid rgb(251, 255, 0);
+border: 2px solid rgb(0, 255, 98);
 }
 #iPint{
 color: rgb(255, 217, 2);
@@ -246,6 +257,17 @@ min-height: 100vh;
 background-color: rgb(0, 49, 53);
 padding-top: 70px;
 padding-bottom: 100px;
+}
+#footer2 h2{
+    font-size: clamp(1.500rem, 1vw + 0.5rem, 1.600rem);
+    color: #00ca4e;
+}
+#footer2 h3{
+      font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+      color: rgba(240, 248, 255, 0.89);
+}
+#footer2 h4{
+    font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
 }
 #footer1{
 text-align: center;
@@ -328,7 +350,6 @@ margin: auto;
 width: 100%;
 min-height: 40vh;
 background-color: rgb(255, 255, 255);
-
 padding-top: 50px;
 margin-bottom: 25px;
 padding-bottom: 30px;

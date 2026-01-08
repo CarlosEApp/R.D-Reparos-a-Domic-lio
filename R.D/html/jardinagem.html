@@ -25,13 +25,14 @@
 </head>
 <body>
     <div id="divGeral">
+        <header>
         <div id="divHead">
             <div id="head1">
                 <h2>🌱Jardinagem</h2> <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
             </div>
         </div>
-         <div id="menu_lateral">
-    
+        </header>
+         <nav id="menu_lateral">
                 <ul>
              <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
            <li><a  href="#" onclick="inicio_()"><i class="fa-solid fa-house"></i> Início</a></li>
@@ -41,14 +42,13 @@
            <li><a  id="Orçamento" href="#pOrçamento" onclick="Orçamento()"> <i class="fa-solid fa-pen-to-square"></i> Orçamento </a></li>  
            <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
         </ul>
-      </div>
+    </nav>
+    <main>
         <div id="divBody">
             <div id="body1">
-                <p id="paragrafo3">Atendemos em Itanhaém e região</p>
-               <h2 id="h1btnServ" onclick="serviçosClick()">🛠️R$ Serviços e valores</h2>
+               <p onclick="serviçosClick()" id="paragrafo3">Atendemos em Itanhaém e região  <i id="i_Click"  class="fa-solid fa-eye"></i></p>
                 <div id="divTabela">
-                   <label id="lblFecharTabela" for="" onclick="fecharTabela()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
-                    
+                   <label id="lblFecharTabela" for="" onclick="fecharTabela()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>                  
                     <div id="Tabela">
                         <div id="ListTabela"></div>
                     </div>
@@ -56,19 +56,18 @@
 
             </div>
         </div>
-    <div id="divFooter">
-            <div id="foote1">              
+     </main>   
+ <footer> 
+         <div id="divFooter">
+            <div id="foote1">           
             <p id="pOrçamento">Faça seu orçamento conosco! </p><br>
            <div id="divFaleCom">
       <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Orçamento</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
-    </div>
-            </div>
-            <div id="foote2">
-
-            </div>
+   </div>
+      </div>
         </div>
-
-    </div>
+ </footer>
      <script src="../JS/jardinagem.js"></script>
 </body>
+
 </html>

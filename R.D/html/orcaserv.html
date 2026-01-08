@@ -26,13 +26,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/orcaserv.css">
+    <link rel="stylesheet" href="../css/orcaserv.css">
 </head>
 <body>
    
    <div id="divInit"></div>
 
     <div id="divGeral">
+      <header>
          <div id="divHeader">
             <div id="head1">
               <h2>Orçamento</h2>  <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button id="btnMenu" onclick="menu()" type=""> Menu</button>
@@ -41,13 +42,15 @@
                 <h4  id="codigoCliente">0000000</h4> <button id="annalizeOrçar" onclick="AnnalizeOrçamento()" type=""> Annalize</button>
             </div>
          </div>
+         </header>
+         <main>
          <div id="divBody">
             <div id="body1">
             <div id="dadosCliente">
              <h3>Dados do clientes</h3>
             <label id="nomeCliente" for="">Cliente</label><br>
-            <label id="telCliente" for="">Tel:</label><br>
-             <label id="cpfCliente" for="">CPF:</label><br>
+            <label id="telCliente" for="">Tel:</label>  <i id="i_Tel" onclick="telCliente()" class="fa-brands fa-whatsapp"></i><br>
+             <label id="cpfCliente" for="">CPF:</label><br><br>
               <h3>Endereço</h3>
                <label id="rua" for="">Rua</label><br>
                  <label id="numero" for="">Nº</label><br>
@@ -56,33 +59,38 @@
                    <label id="estado" for="">Estado</label><br>
                     <label id="cep" for="">CEP</label><br>
                      <label  id="ref" for="">Ref</label><br>
+                    </div>
+                      <div id="divColab">
+                  
+                     <h3>Dados do Prestador</h3>
+                      <label id="nome_Clob" for="">Pretador</label><br>
+                       <label id="RE_Clob" for="">Nº de registro</label><br>
+                        <label id="Tel_Clob" for="">Contato (WhatsApp)</label>  <i id="i_Tel" onclick="telPrestador()" class="fa-brands fa-whatsapp"></i><br>
+                        <label onclick="verPrest()" id="VerPret" for="">Ver mais <i id="I_prest" class="fa-solid fa-eye"></i></label>
                    </div>
-                   <div id="divColab">
-                  <h3>Dados do Prestador</h3>
-                  <label id="nome_Clob" for="">Pretador</label><br>
-                      <label id="RE_Clob" for="">Nº de registro</label><br>
-                   </div>
+               </div>
 
-            </div>
-             <div id="body2"></div>
+             <div id="body2">
+             <h3 id="h3Servi">Serviço de ...</h3>
 
+             <div id="div_list">
+               <div id="header_list">
+                <button>botão 01</button>  <button>botão 02</button>  <button>botão 03</button>
+               </div>
+               <div id="listaserv">
+
+               </div>
              </div>
-
-
             </div>
-
-         </div>
-
-
-
-       
+             </div>
+        </main>
+        <footer id="footerh1">
    
-    
-
-
+</footer>
     </div>
 
  <script src="../JS/orcaserv.js"></script>
-
+  
 </body>
+
 </html>

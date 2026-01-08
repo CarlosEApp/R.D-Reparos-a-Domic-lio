@@ -98,6 +98,9 @@ listTab.appendChild(div)
 //setTimeout(function(){
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
+img.addEventListener('click',function(){
+  swal(`${doc.Titulo}`,`${doc.ID}`,`${doc.Imagem}`)
+})
 
 botão.addEventListener('click',function(){
    var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
@@ -263,4 +266,4 @@ function inicio_(){
 function inicio_(){
 Menu()
 }
-document.getElementById('divTabela').style.display='none'
+//document.getElementById('divTabela').style.display='none'
