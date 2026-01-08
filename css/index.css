@@ -258,6 +258,17 @@ background-color: rgb(0, 49, 53);
 padding-top: 70px;
 padding-bottom: 100px;
 }
+#footer2 h2{
+    font-size: clamp(1.500rem, 1vw + 0.5rem, 1.600rem);
+    color: #00ca4e;
+}
+#footer2 h3{
+      font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+      color: rgba(240, 248, 255, 0.89);
+}
+#footer2 h4{
+    font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
+}
 #footer1{
 text-align: center;
 margin: auto;
