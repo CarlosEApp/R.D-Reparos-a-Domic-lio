@@ -1,6 +1,43 @@
 
 
+// ver mais prestador
+function verPrest(){
+     var RE_Prest= document.getElementById('RE_Clob').value;
 
+    var firebaseConfig = {
+     apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+     authDomain: "reparos-a-domicilio.firebaseapp.com",
+     projectId: "reparos-a-domicilio",
+     storageBucket: "reparos-a-domicilio.firebasestorage.app",
+     messagingSenderId: "2081562439",
+     appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+     measurementId: "G-M7YCZXPYGM"
+     };
+    
+    firebase.initializeApp(firebaseConfig);
+
+ var dbc=firebase.firestore();
+
+ dbc.collection('Colaboradores').doc(`${RE_Prest}`).get().then((doc)=>{
+   var doc= doc.data()
+   Swal.fire({ title: `Nº: ${doc.ID}`,
+      text: ``, 
+      html:`Nome do Prestador: <br> ${doc.Nome}<br> --------------------------------<br> <br> Telefone (whatsApp)<br> ${doc.Telefone}<br> ---------------------------<br> <br> `,
+      imageUrl: `${doc.Foto}`,
+      background: '#222',
+      color: '#fff', // cor do texto });
+      allowOutsideClick: false,
+      showConfirmButton: true,
+      customClass: {
+     popup: 'my-custom' // Aplica a classe CSS personalizada
+     },
+     didOpen: () => {
+     document.body.style.paddingRight = '0px';
+            
+     }
+ })
+})
+}
 
 // falar por whats com cliente
 function telCliente(){

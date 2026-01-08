@@ -141,5 +141,55 @@ background-color: rgb(0, 25, 26);
     color: black;
     background-color: brown;
     width: 100%;
-    min-height: 30vh;
+    min-height: 70vh;
+    bottom: 3px;
+}
+.my-custom{
+    border-radius: 20px;
+    max-width: 400px;
+}
+.my-custom img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.my-custom h2{
+     color:rgb(255, 187, 0) ;
+      font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
+}
+#VerPret{
+    cursor: pointer;
+    color: rgb(0, 67, 99);
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+    font-weight: bolder;
+}
+#VerPret:hover {
+      color:rgb(228, 167, 0) ;
+}
+#VerPret:hover #I_prest{
+color:rgb(0, 116, 25) ;
+font-size: clamp(1.200rem, 1vw + 0.5rem, 1.300rem);
+}
+#div_list{
+    width: 100%;
+    min-height: 70vh;
+}
+#header_list{
+    margin: auto;
+    background-color:rgb(1, 114, 99) ;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh;
+
+}
+
+#header_list button{
+  border: 0cap;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: aliceblue;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+  font-weight: bold;
 }
