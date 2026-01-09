@@ -92,20 +92,16 @@ margin-bottom: 30px;
 padding-bottom: 20px;
 margin-top: 20px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.178);
-
 }
 #Tabela{
 margin-bottom: 70px;
 }
-
 #divOrçar{
 width: 100%;
 max-width: 300px;
 background-color: rgba(241, 250, 255, 0);
 border: 1px solid rgb(1, 75, 85);
 padding-bottom: 70px;
-
-
 }
 #h2Orçar{
 background-color: rgb(1, 75, 85);
@@ -115,7 +111,6 @@ border: 2px solid rgb(0, 43, 28);
 height: 5vh;
 padding-top: 5px;
 font-size: clamp(1.300rem, 1vw + 0.5rem, 1.300rem);
-
 }
 #OrçarImput label{
 font-size: clamp(0.700rem, 1vw + 0.5rem, 0.700rem);
@@ -193,9 +188,6 @@ margin-top: 20px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
 }
-
-
-
 #divid2{
 display: flex;
 justify-content: space-between;
@@ -315,7 +307,6 @@ color: rgb(52, 0, 196);
 .menu-ativo {
 left: 0 !important;
 }
-
 #paragrafo3{
 font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
 color: rgb(42, 0, 70);
@@ -359,7 +350,7 @@ min-width: 200px;
 border: 0cap;
 padding: 15px;
 cursor: pointer;
-background-color: rgb(240, 240, 240);
+background-color: rgb(230, 235, 243);
 color: rgb(29, 29, 29);
 border-radius: 30px;
 font-size: clamp( 0.900rem, 1vw + 0.5rem, 1rem);
@@ -372,7 +363,6 @@ color: rgb(32, 0, 0);
 #pOrçamento{
 text-align: center;
 margin-top: 80px;
-
 font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
 #homee{
@@ -431,7 +421,6 @@ background-size: max(150px, 15%);
 background-repeat: no-repeat;
 background-position: center;
 }
-
 #ffx{
 font-size: clamp(1.700rem, 1vw + 0.5rem, 1.900rem);
 margin-left: 20px;
