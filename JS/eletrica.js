@@ -31,27 +31,20 @@ var itens = querySnapshot.size;
 var div= document.createElement('div');
 var div2= document.createElement('div');
 var div3= document.createElement('div');
-var div4= document.createElement('div');
-var div5= document.createElement('div');
 var img= document.createElement('img')
 var label= document.createElement('label');
 var label2= document.createElement('label');
 var label3= document.createElement('label');
 var label4= document.createElement('label');
-var label5= document.createElement('p');
-var botão= document.createElement('button');
 var pr=document.createElement('p');
 div.id='divid'
 div2.id='divid2'
 div3.id='divid3'
-div4.id='divid3'
-div5.id='divid3'
 label.id='labelid'
 label2.id='labelid2'
 label3.id='labelid3'
 label4.id='labelid4'
-label5.id='labelid5'
-botão.id='botaoid'
+
 pr.id='paragrafo'
 img.id='imgid'
 
@@ -68,35 +61,19 @@ label4.textContent=``;
 }else{
 label4.textContent=`Promoção: (R$: ${doc.Desconto})`;
 }
-if(!doc.OBS||doc.OBS==''){
-label5.textContent=``;
-}else{
-label5.textContent=`${doc.OBS}`;
-}
-botão.className='fa-brands fa-whatsapp';
 pr.textContent=`ID: ${doc.ID}`;
-
-div3.appendChild(img)
-
-div4.appendChild(label);
-div4.appendChild(document.createElement('br'));
-div4.appendChild(label2);
-div4.appendChild(document.createElement('br'));
-div4.appendChild(label3);
-div4.appendChild(document.createElement('br'));
-div4.appendChild(label4);
-div4.appendChild(document.createElement('br'));
-div4.appendChild(label5);
-div5.appendChild(document.createElement('br'));
-div5.appendChild(botão)
-div5.appendChild(document.createElement('br'));
-div5.appendChild(pr);
-div2.appendChild(div3);
-div2.appendChild(div4);
-div2.appendChild(div5);
-div.appendChild(pr);
-div.appendChild(document.createElement('br'));
+div2.appendChild(img)
+div3.appendChild(label);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label2);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label3);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label4);
+div3.appendChild(document.createElement('br'));
 div.appendChild(div2);
+div.appendChild(div3);
+div.appendChild(pr);
 listTab.appendChild(div)
 
 //setTimeout(function(){
@@ -106,26 +83,7 @@ img.addEventListener('click',function(){
   swal(`${doc.Titulo}`,`${doc.ID}`,`${doc.Imagem}`)
 })
 
-botão.addEventListener('click',function(){
-   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
-var codigo= sessionStorage.getItem('codigo')    
-var data= sessionStorage.getItem('data')
-var hora= sessionStorage.getItem('hora')
- var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
- var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n-----------------------------\nProduto: ${doc.Titulo}\n-------------------------------\n👉 Data e Hora: ${data} - ${hora}\n\n`
-var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)}✅  Página web: ${pag}`;
-window.open(url, "_blank");
-})
-pr.addEventListener('click',function(){
-   var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
-var codigo= sessionStorage.getItem('codigo')   
-var data= sessionStorage.getItem('data')
-var hora= sessionStorage.getItem('hora')
-var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
- var text=`✅Reparos a Domicílio\n---------------------------------\n👉 Ref: ${doc.ID}\n-----------------------------\nProduto: ${doc.Titulo}\n-------------------------------\n👉 Data e Hora: ${data} - ${hora}\n\n`
-var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(text)}✅  Página web: ${pag}`;
-window.open(url, "_blank");
-})
+
 })
 })
 };
@@ -151,7 +109,7 @@ if(!MENU_|| MENU_==''){
 BTN.className='fa-solid fa-delete-left'
 sessionStorage.setItem('MENULateral','Aberto')
 document.getElementById("menu_lateral").classList.add("menu-ativo");
-fecharTabela()
+
 }else{
 BTN.className='fa-solid fa-bars'
 sessionStorage.setItem('MENULateral','')
@@ -251,10 +209,11 @@ document.webkitCancelFullScreen();
 
 function Orçamento(){
   Menu()
-   var el= document.getElementById('divOrçar')
+     var el= document.getElementById('divOrçar')
    el.style.borderWidth = '3px'; 
    el.style.borderStyle = 'solid'; 
    el.style.borderColor = 'rgba(0, 172, 23, 1)';
+   
 }
 function Returpag(){
  window.open('../index.html','_self')
