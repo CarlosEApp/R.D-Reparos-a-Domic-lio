@@ -82,8 +82,6 @@ listTab.appendChild(div)
 img.addEventListener('click',function(){
   swal(`${doc.Titulo}`,`${doc.ID}`,`${doc.Imagem}`)
 })
-
-
 })
 })
 };
