@@ -165,19 +165,12 @@ Menu()
 };
 
 //abrir tabela
-function tabela(){
-document.getElementById('divTabela').style.display='block';
-document.getElementById('a_inicio').click()
-listaPreços()
-Menu() 
-};
+
 
 
 //fechar tabela
 
-function fecharTabela(){
-document.getElementById('divTabela').style.display='none'
-};
+
 
 var telefone= sessionStorage.getItem('teladmin')
 function ZAP(){
@@ -252,13 +245,13 @@ document.webkitCancelFullScreen();
 }
 }
 
-function serviçosClick(){
-  document.getElementById('divTabela').style.display='block'
-listaPreços()
-}
+
 function Orçamento(){
   Menu()
-   
+   var el= document.getElementById('divOrçar')
+   el.style.borderWidth = '3px'; 
+   el.style.borderStyle = 'solid'; 
+   el.style.borderColor = 'rgba(0, 172, 23, 1)';
 }
 function Returpag(){
  window.open('../index.html','_self')

@@ -40,11 +40,10 @@ color: aliceblue;
 margin-right: 37px;
 font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
-
 #divBody{
 margin: auto;
 width: 100%;
-max-width: 1000px;
+max-width: 1400px;
 padding-top: 37px;
 margin-bottom: 80px;
 }
@@ -62,17 +61,18 @@ background-position: center;
 }
 #divTabela{
 width: 100%;
+display: flex;
+justify-content: space-around;
 text-align: center;
 color: rgb(46, 46, 46);
-background-color: #fefeff;
+background-color: #ffffff;
 min-height: 100vh;
-
 padding-bottom: 70px;
+flex-wrap: wrap;
+margin-top: 20px;
 }
-#ListaTabela{
-    width: 100%;
-    background-color: aqua;
-}
+
+
 #lblFecharTabela{
 float: left;
 cursor: pointer;
@@ -86,12 +86,116 @@ color: rgb(126, 0, 131);
 margin: auto;
 width: 100%;
 max-width: 800px;
+min-width: 600px;
+background-color: #fefeff;
+margin-bottom: 30px;
+padding-bottom: 20px;
+margin-top: 20px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+
+}
+#Tabela{
+margin-bottom: 70px;
+}
+
+#divOrçar{
+width: 100%;
+max-width: 300px;
+background-color: rgba(241, 250, 255, 0);
+border: 1px solid rgb(1, 75, 85);
+padding-bottom: 70px;
+
+
+}
+#h2Orçar{
+background-color: rgb(1, 75, 85);
+margin-bottom: 10px;
+color: #eeeeee;
+border: 2px solid rgb(0, 43, 28);
+height: 5vh;
+padding-top: 5px;
+font-size: clamp(1.300rem, 1vw + 0.5rem, 1.300rem);
+
+}
+#OrçarImput label{
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.700rem);
+color: rgb(27, 27, 27);
+}
+#OrçarImput input{
+width: 80%;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 0.900rem);
+color: rgb(0, 10, 20);
+cursor: pointer;
+padding: 10px;
+border: 1px solid rgba(0, 10, 10, 0.274);
+background-color: rgb(255, 255, 255);
+border-radius: 2px;
+outline-color: #07df00;
+}
+#OrçarImput input:hover{
+background-color: rgb(0, 255, 255);
+border: 1px solid rgb(139, 0, 56);
+color: rgb(160, 0, 0);
+}
+@media (max-width: 1000px) {
+#divid{
+margin: auto;
+width: 100%;
+max-width: 800px;
+min-width: 480px;
 background-color: #fefeff;
 margin-bottom: 30px;
 padding-bottom: 20px;
 margin-top: 20px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
+}
+@media (max-width: 870px) {
+#divid{
+margin: auto;
+width: 100%;
+max-width: 800px;
+min-width: 600px;
+background-color: #fefeff;
+margin-bottom: 30px;
+padding-bottom: 20px;
+margin-top: 20px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
+#divOrçar{
+width: 100%;
+max-width: 350px;
+}
+}
+@media (max-width: 600px) {
+#divid{
+margin: auto;
+width: 100%;
+max-width: 800px;
+min-width: 470px;
+background-color: #fefeff;
+margin-bottom: 30px;
+padding-bottom: 20px;
+margin-top: 20px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
+}
+@media (max-width: 500px) {
+#divid{
+margin: auto;
+width: 100%;
+max-width: 800px;
+min-width: 400px;
+background-color: #fefeff;
+margin-bottom: 30px;
+padding-bottom: 20px;
+margin-top: 20px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+}
+}
+
+
+
 #divid2{
 display: flex;
 justify-content: space-between;
@@ -185,7 +289,7 @@ border-right: 1px solid rgb(0, 0, 0);
 margin-top: 10px;
 overflow: auto;
 padding-top: 30px;
-border-top: 30px solid rgb(192, 182, 0);
+border-top: 30px solid rgb(76, 80, 80);
 }
 #menu_lateral ul {
 list-style: none;
@@ -242,13 +346,33 @@ box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
 font-size: clamp( 1.100rem, 1vw + 0.5rem, 1.200rem);
 font-weight: bold;
 }
-#btnFalecom:hover{
+#ppt{
+font-size: clamp( 0.700rem, 1vw + 0.5rem, 0.700rem);
+margin-top: 15px;
+font-weight: bold;
+color: rgba(83, 0, 0, 0.829);
+}
+#btnFalecom_{
+width: 50%;
+max-width: 300px;
+min-width: 200px;
+border: 0cap;
+padding: 15px;
+cursor: pointer;
+background-color: rgb(240, 240, 240);
+color: rgb(29, 29, 29);
+border-radius: 30px;
+font-size: clamp( 0.900rem, 1vw + 0.5rem, 1rem);
+font-weight: bold;
+}
+#btnFalecom:hover,#btnFalecom_:hover{
 background-color: rgb(0, 228, 19);
 color: rgb(32, 0, 0);
 }
 #pOrçamento{
 text-align: center;
 margin-top: 80px;
+
 font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
 #homee{
@@ -307,19 +431,20 @@ background-size: max(150px, 15%);
 background-repeat: no-repeat;
 background-position: center;
 }
+
 #ffx{
 font-size: clamp(1.700rem, 1vw + 0.5rem, 1.900rem);
 margin-left: 20px;
 }
 #i_Click{
- font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
 #i_Click, #paragrafo3{
-    cursor: pointer;
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+cursor: pointer;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
 }
 #paragrafo3:hover #i_Click{
-    cursor: pointer;
-     font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
-    color: rgb(2, 104, 61);
+cursor: pointer;
+font-size: clamp(1.100rem, 1vw + 0.5rem, 1.200rem);
+color: rgb(2, 104, 61);
 }

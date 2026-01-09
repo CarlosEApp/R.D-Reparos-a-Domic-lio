@@ -32,40 +32,75 @@
             </div>
         </div>
         </header>
-         <nav id="menu_lateral">
-                <ul>
-             <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
-           <li><a  href="#" onclick="inicio_()"><i class="fa-solid fa-house"></i> Início</a></li>
+        <nav id="menu_lateral">
+    
+        <ul>
+          <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
+          <li><a  href="#" onclick="inicio_()"><i class="fa-solid fa-house"></i> Início</a></li>
           <li><a  id="RetorPag"  onclick="Returpag()"><i class="fa-solid fa-left-long"></i> Retornar a pagiina Inicial </a></li> 
-           <li><a id="tabela"  onclick="tabela()">🛠️<b>R$</b>  Serviços e valores</a></li>
-           <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
-           <li><a  id="Orçamento" href="#pOrçamento" onclick="Orçamento()"> <i class="fa-solid fa-pen-to-square"></i> Orçamento </a></li>  
-           <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+          <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+         <li><a  id="Orçamento" href="#inputNome" onclick="Orçamento()"> <i class="fa-solid fa-pen-to-square"></i> Orçamento </a></li> 
+          <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+    
+          <!-- Adicione mais itens se quiser -->
         </ul>
     </nav>
     <main>
         <div id="divBody">
-            <div id="body1">
-               <p onclick="serviçosClick()" id="paragrafo3">Atendemos em Itanhaém e região  <i id="i_Click"  class="fa-solid fa-eye"></i></p>
-                <div id="divTabela">
-                   <label id="lblFecharTabela" for="" onclick="fecharTabela()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>                  
-                    <div id="Tabela">
-                        <div id="ListTabela"></div>
-                    </div>
-                </div>
-
+            <div id="body1">                     
+                <div id="divTabela">                                
+                    <div id="Tabela">                     
+                 <div id="ListTabela"></div>
+                  </div>
+                    <div id="divOrçar">
+                     <h2 id="h2Orçar">Faça o seu Orçamento</h2>
+                      <div id="OrçarImput">
+                       <label for="">Nome completo <br>
+                       <input type="text" id="inputNome" placeholder="Nome:">
+                        </label><br>
+                         <label for="">CPF <br>
+                          <input type="text" id="inputCPF" placeholder="CPF:">
+                           </label><br>
+                            <label for="">Tel: whatsApp <br>
+                             <input type="text" id="inputTel" placeholder="Telefone:">
+                              </label><br>
+                                <label for="">Email <br>
+                               <input type="email" id="inputemail" placeholder="Email:">
+                               </label><br>
+                               <p id="ppt">Endereço</p>
+                                <label for="">Rua <br>
+                                 <input id="Input_rua" type="text" placeholder="Rua"></label> <br>
+                                  <label for="">Nº <br>
+                                   <input id="Input_numero" type="text" placeholder="nº"></label> <br>
+                                    <label for="">Bairro <br>
+                                     <input id="Input_bairro" type="text" placeholder="Bairro"></label> <br>
+                                      <label for="">Cidade <br>
+                                       <input id="Input_cidade" type="text" placeholder="Cidade"></label> <br>
+                                        <label for="">Estado <br>
+                                         <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
+                                          <label for="">CEP <br>
+                                            <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br>
+                                             <label for="">Referência <br>
+                                                <input id="Input_Ref" type="text"  placeholder="Referência..."></label> <br><br><br>                                                    
+                                                <button id="btnFalecom_" onclick="falecom_bt()"><i id="zap" class="fa-brands fa-whatsapp"></i> Orçamento</button> 
+                                                <p id="ppt">Orçamento solicitado por WhatsApp</p>
+                                                    
+                            </div>
+                         </div>
+                      </div>
+                  
             </div>
         </div>
-     </main>   
- <footer> 
+        </main>
+  <footer> 
          <div id="divFooter">
             <div id="foote1">           
-            <p id="pOrçamento">Faça seu orçamento conosco! </p><br>
+            <p id="pOrçamento">Fale agora conosco! </p><br>
            <div id="divFaleCom">
-      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Orçamento</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
-   </div>
-      </div>
-        </div>
+      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Mensagem</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
+    </div>
+     </div>
+      </div>     
  </footer>
      <script src="../JS/jardinagem.js"></script>
 </body>
