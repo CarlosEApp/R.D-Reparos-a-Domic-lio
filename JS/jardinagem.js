@@ -34,16 +34,12 @@ var label3= document.createElement('label');
 var label4= document.createElement('label');
 var pr=document.createElement('p');
 div.id='divid'
-div2.id='divid2'
-div3.id='divid3'
 label.id='labelid'
 label2.id='labelid2'
 label3.id='labelid3'
 label4.id='labelid4'
-
 pr.id='paragrafo'
 img.id='imgid'
-
 img.src=`${doc.Imagem}`
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
