@@ -656,8 +656,8 @@ position: fixed;
 left: -102%;
 width: 100%;
 min-height: 100vh;
-background-color: #080000;
-color: rgb(71, 71, 71);
+background-color: #000000;
+color: rgb(185, 185, 185);
 transition: left 0.3s ease;
 z-index: 9999;
 padding: 0px;
@@ -668,11 +668,12 @@ padding-bottom: 50px;
 #colaboradores{
     margin: auto;
     width: 95%;
-    height: 80vh;
-    max-width: 600px;
+    height: 100vh;
+    max-width: 450px;
     overflow: auto;
     padding-left: 5px;
-    
+    background-color: #00923800;
+    margin-top: 20px;
 }
 .divColaboradores-ativo {
 left: 0 !important;
@@ -682,7 +683,7 @@ left: 0 !important;
     margin-bottom: 20px;
 }
 #lblFecharColab{
-    font-size: clamp(1.700rem, 0.3vw  + 0.5rem, 1.800rem);
+    font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
     cursor: pointer;
     margin-bottom: 30px;
 
@@ -703,24 +704,18 @@ width: 86%;
 padding: 15px;
 margin-top: 10px;
 cursor: pointer;
- background-color: rgb(0, 67, 99);
+ background-color:  #003b4d;
 color: rgb(255, 255, 255);
-border:3px solid rgba(1, 90, 168, 0.315);
-font-size: clamp(0.9000rem, 0.3vw  + 0.5rem, 1rem);
+border:3px solid rgb(2, 57, 83);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 border-radius: 7px;
+font-weight: bold;
 }
-
 @media (max-width: 500px) {
 #entrebtn, #entrebtnColab{
 width: 88%;
 padding: 15px;
 margin-top: 10px;
-cursor: pointer;
- background-color: rgb(0, 67, 99);
-color: rgb(255, 255, 255);
-border:3px solid rgba(1, 90, 168, 0.315);
-font-size: clamp(0.9000rem, 0.3vw  + 0.5rem, 1rem);
-border-radius: 7px;
 }
 }
 @media (max-width: 400px) {
@@ -728,30 +723,32 @@ border-radius: 7px;
 width: 90%;
 padding: 15px;
 margin-top: 10px;
-cursor: pointer;
- background-color: rgb(0, 67, 99);
-color: rgb(255, 255, 255);
-border:3px solid rgba(1, 90, 168, 0.315);
-font-size: clamp(0.9000rem, 0.3vw  + 0.5rem, 1rem);
-border-radius: 7px;
 }
 }
 #entrebtn:hover, #entrebtnColab:hover{
-color: rgb(255, 255, 255);
-background-color: #000763;
+color: rgb(0, 233, 31);
+background-color: #002835;
+border:3px solid rgb(26, 221, 0);
 }
-
 #divColaboradores h1{
     border-top: 10px solid rgba(245, 245, 220, 0.356) ;
-    width: 95%;
+   
     margin-top: 20px;
+     font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #colaboradores input{
     width: 82%;
+    background-color: rgba(0, 0, 0, 0.432);
+    outline-color: rgb(35, 173, 0);
+  
+}
+#colaboradores input:hover{
+    background-color: #0087a8;
+    color: rgb(0, 0, 0);
 }
 .my-custom_CadExCód_{
     width: 100%;
-    max-width: 500px;
+    max-width: 300px;
     border: 5px solid beige;
     border-radius: 20px;
     margin-bottom: 200px;
@@ -771,10 +768,10 @@ padding: 10px;
 cursor: pointer;
 color: rgb(202, 202, 202);
 font-weight: bold;
-padding-left: 30px;
-padding-right: 30px;
+padding-left: 20px;
+padding-right: 20px;
 outline: none;
-font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+font-size: clamp( 0.900rem, 0.3vw  + 0.5rem, 1rem);
  text-decoration: underline 2px
 
 }

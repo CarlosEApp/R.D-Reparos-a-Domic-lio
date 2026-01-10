@@ -43,7 +43,7 @@ outline: none;
 border: 0cap;
 background-color: rgba(240, 248, 255, 0);
 color: aliceblue;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 cursor: pointer;
 margin-top: 10px;
 font-weight: bold;
@@ -114,7 +114,7 @@ outline: none;
 #lblFecharColabServ{
 float: right;
 margin-right: 20px;
-font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
 cursor: pointer;
 outline: none;
 }
@@ -122,7 +122,7 @@ outline: none;
 float: left;
 margin-left: 20px;
 padding-top: 20px;
-font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
 cursor: pointer;
 outline: none;
 }
@@ -146,7 +146,7 @@ padding: 12px;
 border-radius: 7px;
 box-shadow: 0 3px 7px rgb(11, 11, 11);
 margin-top: 30px;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 outline: none;
 }
 #Listasev{
@@ -157,7 +157,7 @@ border: 0cap;
 padding: 12px;
 border-radius: 7px;
 margin-top: 5px;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 background-color: aqua;
 outline: none;
 }
@@ -187,7 +187,7 @@ border: 0cap;
 border-radius: 7px;
 margin-bottom: 10px;
 box-shadow: 0 3px 7px rgb(6, 8, 9);
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 outline: none;
 }
 #DivCad input:hover{
@@ -195,7 +195,7 @@ box-shadow: 0 5px 10px rgb(129, 129, 129);
 outline: none;
 }
 #DivCad label{
-font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
 outline: none;
 }
 #DivCad button{
@@ -270,7 +270,7 @@ outline: none;
 #Input_ID{
 color: rgb(0, 99, 53);
 font-weight: bolder;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 outline: none;
 }
 #listcadastrados{
@@ -309,7 +309,7 @@ outline: none;
 }
 #btnid{
 border: 0cap;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 background-color: rgba(240, 248, 255, 0);
 color: aliceblue;
 cursor: pointer;
@@ -327,7 +327,7 @@ outline: none;
 padding: 5px;
 padding-left: 10px;
 padding-right: 10px;
-font-size: clamp(0.700rem, 1vw + 0.5rem, 0.800rem);
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
 border-radius: 4px;
 cursor: pointer;
 border: 0cap;
@@ -339,16 +339,16 @@ color: rgb(80, 0, 0);
 outline: none;
 }
 #lblid{
-font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
 color: rgb(0, 211, 28);
 outline: none;
 }
 #lblid2{
-font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
 outline: none;
 }
 #lblid3{
-font-size: clamp(0.700rem, 1vw + 0.5rem, 0.800rem);
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
 color: rgb(255, 255, 255);
 outline: none;
 }
@@ -356,7 +356,7 @@ outline: none;
 float: right;
 margin-right: 20px;
 cursor: pointer;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 margin-top: 10px;
 outline: none;
 }
@@ -368,7 +368,7 @@ border: 0cap;
 background-color: rgba(255, 245, 238, 0);
 color: aliceblue;
 cursor: pointer;
-font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
 outline: none;
 }
 #btnid3:hover{
@@ -409,7 +409,7 @@ border: 2px solid rgb(58, 0, 23);
 cursor: pointer;
 color: rgb(0, 10, 20);
 outline: none;
-font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
 border-radius: 5px;
 }
 #select_colaboradores:hover{
@@ -463,7 +463,7 @@ cursor: pointer;
 margin-bottom: 10px;
 outline: none;
 margin-top: 10px;
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 
 }
 #Oarçhead button:hover{
@@ -527,24 +527,24 @@ margin-left: 10px;
     margin-right: 10px;
 }
 #lbl_{
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
     font-weight: bold;
     color: rgb(77, 0, 47);
 }
 #lbl2_,#lbl3_,#lbl4_,#lbl5_{
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 0.900rem);
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 0.900rem);
     color: rgb(73, 73, 73);
 }
 
 #btnn_{
     border: 0cap;
     cursor: pointer;
-     font-size: clamp( 1.100rem, 1vw + 0.5rem, 1.200rem);
+     font-size: clamp( 1.100rem, 0.3vw + 0.5rem, 1.200rem);
 }
 #btnn2_{
     border: 1px solid rgb(85, 85, 85);
     cursor: pointer;
-     font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+     font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
      padding: 5px;
      padding-left: 20px;
      padding-right: 20px;
@@ -554,7 +554,7 @@ margin-left: 10px;
 #btnn3_{
   border: 0cap;
     cursor: pointer;
-     font-size: clamp( 1.100rem, 1vw + 0.5rem, 1.200rem);
+     font-size: clamp( 1.100rem, 0.3vw + 0.5rem, 1.200rem);
 }
 
 #btnn3_:hover{
@@ -575,7 +575,7 @@ margin-left: 10px;
     max-width: 600px;
 }
 #OrçarImput label{
-    font-size: clamp(0.700rem, 1vw + 0.5rem, 0.800rem);
+    font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
     color: rgb(0, 10, 20);
     margin-left: 30px;
     
@@ -588,13 +588,13 @@ margin-left: 10px;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
     padding: 15px;
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
     border-radius: 10px;
     margin-bottom: 20px;
 }
 #OrçarImput input{
     width: 80%;
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
     color: rgb(0, 10, 20);
     margin-left: 30px;
     cursor: pointer;
@@ -611,7 +611,7 @@ margin-left: 10px;
 #OrçarImput textarea{
 margin-left: 15px;
 width: 88%;
-font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem); 
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem); 
 padding: 10px;  
 cursor: pointer;
 }
@@ -623,7 +623,7 @@ cursor: pointer;
     border: 10px solid rgb(255, 255, 255);
     background-color: rgb(238, 174, 0);
     margin-top: 20px;
-   font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem); 
+   font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem); 
     color: rgb(0, 97, 0);
     font-weight: bold;
 }
@@ -668,7 +668,7 @@ cursor: pointer;
 margin-bottom: 10px;
 outline: none;
 margin-top: 10px;
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 }
 #ColBtn button:hover{
 background-color: aqua;
@@ -685,7 +685,7 @@ outline: none;
 background-color: rgb(255, 255, 255);
 margin-bottom: 20px;
 color: rgb(19, 19, 19);
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 border-radius: 5px;
 }
 #Colcad input:hover{
@@ -705,7 +705,7 @@ font-size: 16px;
 cursor: pointer;
 }
 #iFoto{
-font-size: clamp( 1.800rem , 1vw + 0.5rem, 1.900rem);
+font-size: clamp( 1.800rem , 0.3vw + 0.5rem, 1.900rem);
 margin-bottom: 50px;
 }
 #lblFoto:hover{
@@ -718,7 +718,7 @@ padding: 12px;
 cursor: pointer;
 border-radius: 5px;
 border: 0cap;
-font-size: clamp( 1rem , 1vw + 0.5rem, 1.100rem);
+font-size: clamp( 1rem , 0.3vw + 0.5rem, 1.100rem);
 }
 #btnSalvar:hover{
 background-color: aqua;
@@ -760,7 +760,7 @@ display: flex;
 align-items: center;
 }
 #dv label{
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 }
 #dv button{
 margin-top: 30px;
@@ -786,7 +786,7 @@ padding-right: 25px;
 border: 0cap;
 background-color: rgba(240, 248, 255, 0.5);
 border-radius: 5px;
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 }
 #btnn2:hover{
 background-color: rgb(192, 163, 0);
@@ -795,7 +795,7 @@ color: rgb(251, 255, 0);
 #btnn,#btnn3{
 border: 0cap;
 background-color: rgba(255, 245, 238, 0);
-font-size: clamp( 1.100rem , 1vw + 0.5rem, 1.200rem);
+font-size: clamp( 1.100rem , 0.3vw + 0.5rem, 1.200rem);
 color: aliceblue;
 }
 #btnn:hover{
@@ -805,11 +805,11 @@ color: rgb(0, 216, 29);
 color: rgb(255, 30, 0);
 }
 #listItens1,#listItens2{
-font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
 }
 #OrçarImput p{
     margin-left: 30px;
-    font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+    font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
     color: rgb(139, 0, 93);
     font-weight: bold;
 }
@@ -848,7 +848,7 @@ font-size: clamp( 0.900rem , 1vw + 0.5rem, 1rem);
     width: 73%;
     padding: 10px;
     color: rgb(27, 21, 21);
-     font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+     font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
        border-radius: 7px;
         border: 2px solid #ffffff;
         background-color: rgb(190, 190, 221);
