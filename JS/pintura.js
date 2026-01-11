@@ -68,12 +68,12 @@ listTab.appendChild(div)
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
 div.addEventListener('click', function(){
-Swal.fire({ title: `Nº: ${doc.Titulo}`,
+Swal.fire({ title: `${doc.Titulo}`,
 text: ``, 
 html:`Valor prod: ${doc.Valor} R$<br>Promoção: ${doc.Desconto} R$<br> -----------------------<br><br>
 <button id='btnnbt1'>Eu,Quero! </button>
 <label id='sairnnlbl'>Sair, Exit</label>
-<br> <br><br>${doc.ID}
+<br> <br><br>Nº: ${doc.ID}
 `,
 imageUrl: `${doc.Imagem} `,
 background: '#222',
