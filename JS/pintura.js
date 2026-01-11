@@ -92,6 +92,9 @@ Swal.close()
 })
 document.getElementById('btnnbt1').addEventListener('click',function(){
 var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+  var telefone='11995501463'
+}
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/pintura.html");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
