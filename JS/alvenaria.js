@@ -97,7 +97,7 @@ var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/alve
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n👉 Data e Hora: ${data} - ${hora}\n\n`
+var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url} `  ;
 window.open(url, "_blank");
