@@ -1,13 +1,10 @@
 
 
 //Compartilhar
-
-
 function Comparltlhar(){
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-
 <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
 <br><br>
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
@@ -28,7 +25,6 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
@@ -39,53 +35,47 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
 }
-
 //Meu Orçamento
 function MeuOrçamento(){
-    Swal.fire({
-    title: '📝 Acesse seu Orçamento!',
-    html: `
-      <div class="menu-container">
-        <p>Digite ou cole seu código</p>
-        
-        <input id='confirmaCódigo' type='text' placeholder='Digite o código e confirme'>
-        <br>
-        <button id="Swalstart" title="">Confirme</button>
-        <button id="Sair" class="cancelar">Sair</button>
-      </div>
-    `,
-    background: ' rgba(0, 49, 71, 1)',
-    color: '#ffffffff',
-    showCancelButton: false,
-    showConfirmButton: false,
-    customClass: {
-      popup: 'my-custom_CadExCód_'
-    },
-    didOpen: () => {
-      document.body.style.paddingRight = '0px';
-    }
-  });
-   document.getElementById('Sair').addEventListener('click', function () {
-    Swal.close();
-  });
-  document.getElementById('Swalstart').addEventListener('click', function () {
-    // pega o valor do input
-    var codigo = document.getElementById('confirmaCódigo').value;
-
-    // remove todos os espaços
-    codigo = codigo.replace(/\s+/g, "");
-
-    // valida se está vazio
-    if (!codigo || codigo === '') {
-        Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
-    } else {
-        // abre a página com o código
-        window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
-    }
+Swal.fire({
+title: '📝 Acesse seu Orçamento!',
+html: `
+<div class="menu-container">
+<p>Digite ou cole seu código</p>
+<input id='confirmaCódigo' type='text' placeholder='Digite o código e confirme'>
+<br>
+<button id="Swalstart" title="">Confirme</button>
+<button id="Sair" class="cancelar">Sair</button>
+</div>
+`,
+background: ' rgba(0, 49, 71, 1)',
+color: '#ffffffff',
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód_'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Sair').addEventListener('click', function () {
+Swal.close();
+});
+document.getElementById('Swalstart').addEventListener('click', function () {
+// pega o valor do input
+var codigo = document.getElementById('confirmaCódigo').value;
+// remove todos os espaços
+codigo = codigo.replace(/\s+/g, "");
+// valida se está vazio
+if (!codigo || codigo === '') {
+Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
+} else {
+// abre a página com o código
+window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
+}
 });
 }
-
-
 // dados admim tel
 var telAdmim= 11995501463
 sessionStorage.setItem('teladmin', telAdmim)
@@ -96,54 +86,42 @@ var resp2=sessionStorage.setItem('RecPasswor','Carlos@gat@gmail');
 function alvenaria(){
 window.open('html/alvenaria.html','_self')
 }
-
 //btn desktop
 function desktop(){
 window.open('html/desktop.html','_self')
 }
-
 //btn pintura
 function pintura(){
 window.open('html/pintura.html','_self')
 }
-
 //btn hidráulica
 function hidraulica(){
 window.open('html/hidraulica.html','_self')
 };
-
 //BTN Eletrica
 function Eletrica(){
 window.open('html/eletrica.html','_self')
 };
 // BTN Jardinagem
 function jardinagem(){
-    window.open('html/jardinagem.html','_self')
+window.open('html/jardinagem.html','_self')
 };
-
 //Pesquisa Header
-
 function ADMINFechar(){
 document.getElementById('read2').style.display='none'
 };
-
 //logo click
 function imgLogo(){
-
 swal('R.D - reparos a domicílio','','src/rd_logo_png.png')
 }
-
 //Colaboradores
-
 function Colab(){
 document.getElementById("divColaboradores").classList.add("divColaboradores-ativo");
-
 }
 //fechar colab
 function fecharcolab(){
 document.getElementById("divColaboradores").classList.remove("divColaboradores-ativo");
 }
-
 //Menu lateral
 sessionStorage.setItem('MENULateral','')
 function Menu() {
@@ -172,11 +150,9 @@ Menu()
 function inicio(){
 document.getElementById('aa_inicio').click()
 }
-
 //stars
 //localStorage.setItem('AvaliaçãoStar','')
 //localStorage.setItem('InfoMSM','')
-
 document.addEventListener('DOMContentLoaded', function () {
 const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStar'));
 if (notaAVStars) {
@@ -270,7 +246,6 @@ Swal.fire("Google erro!: " ,`Ops! Não conseguimos autenticar você.`,'error');
 console.error("Erro no login:", error);
 });
 }
-
 //Logado?
 setTimeout(function(){
 var firebaseConfig = {
@@ -414,7 +389,6 @@ Swal.close()
 })
 })
 });
-
 } else {
 // Usuário não está logado
 var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
@@ -427,7 +401,6 @@ document.getElementById('btnGoogle').style.display='block'
 }
 });
 },2000)
-
 //entre com google botão
 function EntreGoogle(){
 loginComGoogle() 
@@ -440,7 +413,6 @@ html:` <p>Deixe uma breve mensagem!</p>
 <br>
 <label id='lblBtn1' title='Salvar'> Salvar <i class="fa-solid fa-check-double"></i></label> 
 <label id='lblBtn2' title='cancelar'>Cancelar</label>
-
 `,
 background: 'rgba(46, 82, 60, 1)', // Cor de fundo
 color: '#ffffffff', // Cor do texto
@@ -455,18 +427,14 @@ document.body.style.paddingRight = '0px';
 });
 document.getElementById('lblBtn2').addEventListener('click',function(){
 Swal.close()
-
 })
 document.getElementById('lblBtn1').addEventListener('click',function(){
 var resp= document.getElementById('inputInfo').value;
 if(resp){
-
 localStorage.setItem('InfoMSM', resp)
-
 // alert(msm);
 var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
 document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
-
 setTimeout(function(){
 window.location.reload()
 },1500)
@@ -502,13 +470,10 @@ Menu()
 }
 //tela cad
 function Cad(){
- window.open('html/cad.html', '_self');
+window.open('html/cad.html', '_self');
 }
-
-
 //fale conosco
 var telefone= sessionStorage.getItem('teladmin')
-
 function falecom(){
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
@@ -519,7 +484,6 @@ window.open(Url,"_blank" );
 function ZAP(){
 falecom()
 }
-
 // Administrador
 document.getElementById('iPasWord').addEventListener('click',function(){
 var ii= document.getElementById('iPasWord');
@@ -532,28 +496,20 @@ iPW.type='password';
 ii.className='fa-solid fa-eye';
 }
 });
-
 function entreADM(){
- var resp1= sessionStorage.getItem('PassW01')
-  var resp2= sessionStorage.getItem('PassW02')
-    
- var pass = document.getElementById('inputAD').value;
-
+var resp1= sessionStorage.getItem('PassW01')
+var resp2= sessionStorage.getItem('PassW02')
+var pass = document.getElementById('inputAD').value;
 if(pass== resp1|| pass== resp2){
-
 //alert(`${resp2}`)
 swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
 setTimeout(function(){
- window.open('html/cad.html','_self')
+window.open('html/cad.html','_self')
 },2000)
 }else{
 swal('Senha incorreta!','','error');
 }
 }
-
-
-
-
 // Colaboradores
 document.getElementById('iPasWord2').addEventListener('click',function(){
 var ii_= document.getElementById('iPasWord2');
@@ -566,14 +522,8 @@ iPW_.type='password';
 ii_.className='fa-solid fa-eye';
 }
 });
-
-
-
-
-
 // Tela Cheia
 function toggleFullScreen() {
-
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
@@ -593,8 +543,6 @@ document.webkitCancelFullScreen();
 }
 }
 }
-
-
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -606,19 +554,15 @@ measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfig);
 var adbb = firebase.firestore();
-
 var produtosRef = adbb.collection(`Admin`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 var coment = querySnapshot.size
-
 sessionStorage.setItem('PassW01', doc.Passw01)
 sessionStorage.setItem('PassW02', doc.Passw02)
 setTimeout(function(){
 //Swal.fire(`${coment}`,`${doc.Passw01},__${doc.Passw02},`,'')
 },2000)
-
-
 })
 })

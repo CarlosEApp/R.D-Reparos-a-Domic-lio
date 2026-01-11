@@ -1,12 +1,11 @@
 
-
 *{
 margin: 0%;
 padding: 0%;
 }
 body{
 font-family: 'Poppins', sans-serif;
-background-color: rgba(255, 255, 255, 0.815);
+background-color: rgb(241, 249, 255);
 color: aliceblue;
 text-rendering: geometricPrecision;
 }
@@ -40,7 +39,7 @@ background-color: rgba(240, 248, 255, 0);
 cursor: pointer;
 color: aliceblue;
 margin-right: 37px;
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #divBody{
 margin: auto;
@@ -50,7 +49,7 @@ padding-top: 37px;
 margin-bottom: 80px;
 }
 #body1{
-background-color: rgb(255, 255, 255);
+background-color: rgb(241, 249, 255);
 border-radius: 50px;
 min-height: 100vh;
 border-bottom-left-radius:10px;
@@ -67,22 +66,13 @@ display: flex;
 justify-content: space-around;
 text-align: center;
 color: rgb(46, 46, 46);
-background-color: #ffffff;
+background-color: rgb(241, 249, 255);
 min-height: 100vh;
 padding-bottom: 70px;
 flex-wrap: wrap;
 margin-top: 20px;
 }
-#lblFecharTabela{
-float: left;
-cursor: pointer;
-font-size: clamp(1rem, 0.3vw + 0.5rem, 1rem);
-margin-left: 20px;
-}
-#lblFecharTabela:hover{
-color: rgb(126, 0, 131);
-}
-#divid{
+#div1{
 margin: auto;
 width: 100%;
 display: flex;
@@ -94,10 +84,16 @@ background-color: #fefeff;
 margin-bottom: 10px;
 margin-top: 20px;
 border-bottom: 2px solid rgba(0, 0, 0, 0.178);
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.541);
+border-radius: 5px;
+cursor: pointer;
 }
-#divid2{
-margin-right: 10px;
-margin-bottom: 30px;
+#div1:hover{
+  background-color: rgba(238, 244, 255, 0.192);
+}
+#div2{
+  width: 100%;
+  cursor: pointer;
 }
 #Tabela{
 margin-bottom: 70px;
@@ -110,40 +106,40 @@ border-left: 1px solid rgb(1, 75, 85);
 border-right: 1px solid rgb(1, 75, 85);
 padding-bottom: 70px;
 margin-top: 40px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.541);
 }
 #h2Orçar{
 background-color: rgb(1, 75, 85);
 margin-bottom: 10px;
 color: #eeeeee;
-
 margin: 7px;
 margin-top: 20px;
 padding-top: 10px;
 padding-bottom: 10px;
-font-size: clamp(1.300rem, 0.3vw + 0.5rem, 1.300rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #OrçarImput label{
-font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.700rem);
+font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.700rem);
 color: rgb(27, 27, 27);
 }
 #OrçarImput input{
 width: 80%;
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 0.900rem);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 color: rgb(0, 10, 20);
 cursor: pointer;
 padding: 10px;
 border: 1px solid rgba(0, 10, 10, 0.274);
 background-color: rgb(255, 255, 255);
 border-radius: 2px;
-outline-color: #07df00;
+outline-color: #df0000;
 }
 #OrçarImput input:hover{
-background-color: rgb(0, 255, 255);
+background-color: rgb(245, 250, 255);
 border: 1px solid rgb(139, 0, 56);
 color: rgb(160, 0, 0);
 }
 @media (max-width: 1000px) {
-#divid{
+#div1{
 margin: auto;
 width: 96%;
 max-width: 800px;
@@ -156,7 +152,7 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
 }
 @media (max-width: 870px) {
-#divid{
+#div1{
 margin: auto;
 width: 96%;
 max-width: 800px;
@@ -173,7 +169,7 @@ max-width: 350px;
 }
 }
 @media (max-width: 600px) {
-#divid{
+#div1{
 margin: auto;
 width: 96%;
 max-width: 800px;
@@ -186,7 +182,7 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
 }
 @media (max-width: 500px) {
-#divid{
+#div1{
 margin: auto;
 width: 96%;
 max-width: 800px;
@@ -198,42 +194,55 @@ margin-top: 20px;
 border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
 }
+#div1 label{
+  margin-right: 10px;
+  cursor: pointer;
+}
 #paragrafo{
 cursor: pointer;
 border: 0cap;
 outline: none;
-font-size: clamp(0.600rem, 0.3vw + 0.5rem, 0.700rem);
+font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.700rem);
 margin-top: 110px;
 margin-right: 10px;
 margin-left: 10px;
 }
+#label3{
+  color: rgba(0, 0, 0, 0.836);
+  text-decoration: line-through;
+}
 #divid #botaoid:hover,#paragrafo:hover{
 color: rgb(12, 102, 0);
 }
-#labelid{
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+#label{
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
 color: rgb(64, 0, 83);
 }
-#labelid2{
-font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
+#label2{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
 color: rgb(34, 34, 34);
 }
-#labelid3{
-font-size: clamp(1.100rem, 0.3vw + 0.5rem, 1.200rem);
+#label03{
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
 color: rgb(34, 34, 34);
 }
-#labelid4{
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+#label4{
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 color: rgb(2, 116, 59);
 font-weight: bolder;
 }
+#Mreq{
+  font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
 
 #imgid{
-width:70px;
-margin-top: 10px;
+width:64px;
 cursor: pointer;
+margin-right: 10px;
+margin-left: 5px;
+
 }
 #body1 h3{
 max-width: 250px;
@@ -301,7 +310,7 @@ color: rgb(52, 0, 196);
 left: 0 !important;
 }
 #paragrafo3{
-font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
+font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.700rem);
 color: rgb(42, 0, 70);
 text-align: center;
 margin-top: 10px;
@@ -327,11 +336,11 @@ background-color: rgb(8, 128, 0);
 color: rgb(244, 235, 235);
 border-radius: 30px;
 box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
-font-size: clamp( 1.100rem, 0.3vw + 0.5rem, 1.200rem);
+font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1.100rem);
 font-weight: bold;
 }
 #ppt{
-font-size: clamp( 0.700rem, 0.3vw + 0.5rem, 0.700rem);
+font-size: clamp( 0.600rem, 0.3vw  + 0.5rem, 0.700rem);
 margin-top: 15px;
 font-weight: bold;
 color: rgba(83, 0, 0, 0.829);
@@ -346,7 +355,7 @@ cursor: pointer;
 background-color: rgb(230, 235, 243);
 color: rgb(29, 29, 29);
 border-radius: 30px;
-font-size: clamp( 0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp( 0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 font-weight: bold;
 }
 #btnFalecom:hover,#btnFalecom_:hover{
@@ -356,7 +365,7 @@ color: rgb(32, 0, 0);
 #pOrçamento{
 text-align: center;
 margin-top: 80px;
-font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #homee{
 min-width: 100px;
@@ -366,7 +375,7 @@ border: 0cap;
 cursor: pointer;
 padding: 12px;
 box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 border-radius: 10px;
 }
 #homee:hover{
@@ -375,7 +384,7 @@ color: black;
 }
 #telaCheia{
 cursor: pointer;
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 margin-top: 10px;
 }
 #telaCheia:hover{
@@ -394,7 +403,7 @@ color: rgb(17, 1, 1);
 text-align: center;
 box-shadow: 0 3px 3px rgba(20, 20, 20, 0.562);
 cursor: pointer;
-font-size: clamp(1.100rem, 0.3vw + 0.5rem, 1.200rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #h1btnServ:hover{
 background-color: rgb(255, 255, 255);
@@ -415,18 +424,78 @@ background-repeat: no-repeat;
 background-position: center;
 }
 #ffx{
-font-size: clamp(1.700rem, 0.3vw + 0.5rem, 1.900rem);
+font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.600rem);
 margin-left: 20px;
 }
 #i_Click{
-font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #i_Click, #paragrafo3{
 cursor: pointer;
-font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #paragrafo3:hover #i_Click{
 cursor: pointer;
-font-size: clamp(1.100rem, 0.3vw + 0.5rem, 1.200rem);
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.100rem);
 color: rgb(2, 104, 61);
+}
+@media (max-width: 1380px) {
+#divBody{
+  margin: auto;
+  width: 90%;
+  max-width: 1920px;
+  min-height: 100vh;
+  color: black;
+}
+}
+@media (max-width: 1170px) {
+#divBody{
+  margin: auto;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 100vh;
+  color: black;
+}
+}
+
+.my-custom{
+    border-radius: 20px;
+    max-width: 370px;
+}
+.my-custom img{
+  max-width: 150px;
+    max-height: 150px;
+   
+}
+.my-custom h2{
+     color:rgb(255, 187, 0) ;
+      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+}
+.my-custom button{
+  width: 40%;
+  cursor: pointer;
+  border: 0cap;
+  background-color: #fefeffa9;
+  color: black;
+  padding: 7px;
+  border-radius: 7px;
+  outline: none;
+  font-weight: bold;
+  font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+  margin-right: 50px;
+}
+.my-custom button:hover{
+    background-color: #ffffff;
+  color: black;
+}
+.my-custom label{
+  cursor: pointer;
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+    color: rgb(0, 255, 200);
+      padding: 3px;
+}
+.my-custom label:hover{
+  color: rgb(255, 255, 255);
+  background-color: #cf0101;
+  border-radius: 5px;
 }

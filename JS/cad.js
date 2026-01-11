@@ -2,62 +2,53 @@
 
 
 // abre lista de serviços orgados
- document.getElementById('listaOrdemServs').style.display='none'
+document.getElementById('listaOrdemServs').style.display='none'
 function listServiOrdem(){
-   var respp= document.getElementById('listaOrdemServs').style.display;
-   if(respp=='block'){
-
-  document.getElementById('listaOrdemServs').style.display='none'
-  document.getElementById('btnListSevOrca').innerHTML='Lista de Serviços'
-   }else{
-
-  document.getElementById('listaOrdemServs').style.display='block'
-  document.getElementById('btnListSevOrca').innerHTML='Fechar lista'
-   }
-
+var respp= document.getElementById('listaOrdemServs').style.display;
+if(respp=='block'){
+document.getElementById('listaOrdemServs').style.display='none'
+document.getElementById('btnListSevOrca').innerHTML='Lista de Serviços'
+}else{
+document.getElementById('listaOrdemServs').style.display='block'
+document.getElementById('btnListSevOrca').innerHTML='Fechar lista'
 }
-
-
+}
 //Limpar campos de orçamento
-
 function LimparCamposOrçamento(){
-  document.getElementById('Input_Codigo_Orçar').value='';
-  document.getElementById('Input_Cliente').value='';
-   document.getElementById('Input_Serviço').value='';
-  document.getElementById('Input_Nregistro').value='';
-  document.getElementById('Input_prestadornome').value='';
-  document.getElementById('Input_ObsOrç').value='';
-  document.getElementById('Input_rua').value='';
-  document.getElementById('Input_numero').value='';
-  document.getElementById('Input_bairro').value='';
-  document.getElementById('Input_cidade').value='';
-  document.getElementById('Input_estado').value='';
-  document.getElementById('Input_cep').value='';
-  document.getElementById('Input_dataInicio').value='';
-  document.getElementById('Input_dataTermino').value='';
-  document.getElementById('Input_valorTotal').value='';
-  document.getElementById('Input_NomeCliente').value='';
-  document.getElementById('Input_CPFCliente').value='';
-  document.getElementById('Input_TermosContrato').value='';
-  document.getElementById('Input_ordedeServiço').value='';
-  document.getElementById('Input_Ref').value=''
-  document.getElementById('Input_tempoDuração').value=''
-  document.getElementById('Input_Sevfinit').value=''
-  document.getElementById('Input_valorSinal').value=''
-  document.getElementById('Input_valorparcela').value=''
-  document.getElementById('Input_valorFinal').value=''
-  document.getElementById('Input_ClienteTel').value=''
-  document.getElementById('Input_prestadorTel').value=''
-  sessionStorage.setItem('edite_data','');
-  sessionStorage.setItem('edite_hora','');
-
+document.getElementById('Input_Codigo_Orçar').value='';
+document.getElementById('Input_Cliente').value='';
+document.getElementById('Input_Serviço').value='';
+document.getElementById('Input_Nregistro').value='';
+document.getElementById('Input_prestadornome').value='';
+document.getElementById('Input_ObsOrç').value='';
+document.getElementById('Input_rua').value='';
+document.getElementById('Input_numero').value='';
+document.getElementById('Input_bairro').value='';
+document.getElementById('Input_cidade').value='';
+document.getElementById('Input_estado').value='';
+document.getElementById('Input_cep').value='';
+document.getElementById('Input_dataInicio').value='';
+document.getElementById('Input_dataTermino').value='';
+document.getElementById('Input_valorTotal').value='';
+document.getElementById('Input_NomeCliente').value='';
+document.getElementById('Input_CPFCliente').value='';
+document.getElementById('Input_TermosContrato').value='';
+document.getElementById('Input_ordedeServiço').value='';
+document.getElementById('Input_Ref').value=''
+document.getElementById('Input_tempoDuração').value=''
+document.getElementById('Input_Sevfinit').value=''
+document.getElementById('Input_valorSinal').value=''
+document.getElementById('Input_valorparcela').value=''
+document.getElementById('Input_valorFinal').value=''
+document.getElementById('Input_ClienteTel').value=''
+document.getElementById('Input_prestadorTel').value=''
+sessionStorage.setItem('edite_data','');
+sessionStorage.setItem('edite_hora','');
 }
-
 // Lista de orçamentos
 function ListaOrçamentos_(){
-  sessionStorage.setItem('edite_data','');
-  sessionStorage.setItem('edite_hora','');
-
+sessionStorage.setItem('edite_data','');
+sessionStorage.setItem('edite_hora','');
 var list= document.getElementById('listOrçamentos');
 list.innerHTML='';
 var firebaseConfigure = {
@@ -76,7 +67,6 @@ produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 var Cadastro =querySnapshot.size;
-
 var div= document.createElement('div');
 var div2= document.createElement('div');
 var div3= document.createElement('div');
@@ -90,7 +80,6 @@ var btn= document.createElement('button');
 var btn2= document.createElement('button');
 var btn3= document.createElement('button');
 var btn4= document.createElement('button');
-
 div.id='dv_';
 div2.id='dv2_';
 div3.id='dv3_';
@@ -115,9 +104,7 @@ btn3.textContent=``;
 btn3.className=`fa-solid fa-trash`;
 btn4.textContent=``;
 btn4.className=`fa-solid fa-share-nodes`;
-
 //lbl5.textContent=`${doc.Prestador}`;
-
 div2.appendChild(lbl);
 div2.appendChild(document.createElement('br'));
 div2.appendChild(lbl2);
@@ -134,15 +121,11 @@ div3.appendChild(div4);
 div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
-
 document.getElementById('p_info').innerHTML=`<b>(${Cadastro})</b>orçamentos encontrados`
-
 btn4.addEventListener('click', function(){
-
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-  
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
 <br><br>
 <button id='sair_'>Cancelar</button><br><br>
@@ -161,7 +144,6 @@ document.body.style.paddingRight = '0px';
 document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
-
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
 var codigo = doc.Código;
@@ -171,185 +153,166 @@ var whatsappMessage =`📝 Orçamento/Ordem Serviço:☝️\n-------------------
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
-
 })
-
 btn2.addEventListener('click',function(){
-  document.getElementById('Input_Codigo_Orçar').value=doc.Código;
-  document.getElementById('Input_Cliente').value=doc.Cliente;
-  document.getElementById('Input_Serviço').value=doc.Serviço;
-  document.getElementById('Input_Nregistro').value=doc.NRE;
-  document.getElementById('Input_prestadornome').value=doc.Prestador;
-  document.getElementById('Input_ObsOrç').value=doc.Observações;
-  document.getElementById('Input_rua').value=doc.Rua;
-  document.getElementById('Input_numero').value=doc.Número;
-  document.getElementById('Input_bairro').value=doc.Bairro;
-  document.getElementById('Input_cidade').value=doc.Cidade;
-  document.getElementById('Input_estado').value=doc.Estado;
-  document.getElementById('Input_cep').value=doc.CEP;
-  document.getElementById('Input_dataInicio').value=doc.Data_Inicio;
-  document.getElementById('Input_dataTermino').value=doc.data_Termino;
-  document.getElementById('Input_valorTotal').value=doc.valorTotal;
-  document.getElementById('Input_NomeCliente').value=doc.Nome_Cliente;
-  document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
-  document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
-  document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
-  document.getElementById('Input_Ref').value= doc.EndREF;
-  document.getElementById('Input_tempoDuração').value= doc.Duração_Serv;
-  document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ;
-  document.getElementById('Input_valorSinal').value=doc.Valor_Sinal;
-  document.getElementById('Input_valorparcela').value=doc.Valor_parcelas;
-  document.getElementById('Input_valorFinal').value=doc.Valor_finalizado;
-  document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente;
-  document.getElementById('Input_prestadorTel').value=doc.Tel_Prestador;
-  sessionStorage.setItem('edite_data',doc.Data);
-  sessionStorage.setItem('edite_hora',doc.Hora);
-
- document.getElementById('orçar').style.display='block';
-  document.getElementById('ListaOrçamentos').style.display='none';
-
+document.getElementById('Input_Codigo_Orçar').value=doc.Código;
+document.getElementById('Input_Cliente').value=doc.Cliente;
+document.getElementById('Input_Serviço').value=doc.Serviço;
+document.getElementById('Input_Nregistro').value=doc.NRE;
+document.getElementById('Input_prestadornome').value=doc.Prestador;
+document.getElementById('Input_ObsOrç').value=doc.Observações;
+document.getElementById('Input_rua').value=doc.Rua;
+document.getElementById('Input_numero').value=doc.Número;
+document.getElementById('Input_bairro').value=doc.Bairro;
+document.getElementById('Input_cidade').value=doc.Cidade;
+document.getElementById('Input_estado').value=doc.Estado;
+document.getElementById('Input_cep').value=doc.CEP;
+document.getElementById('Input_dataInicio').value=doc.Data_Inicio;
+document.getElementById('Input_dataTermino').value=doc.data_Termino;
+document.getElementById('Input_valorTotal').value=doc.valorTotal;
+document.getElementById('Input_NomeCliente').value=doc.Nome_Cliente;
+document.getElementById('Input_CPFCliente').value=doc.CPF_Cliente;
+document.getElementById('Input_TermosContrato').value=doc.Termos_Contrato;
+document.getElementById('Input_ordedeServiço').value=doc.Ordem_de_Serviço;
+document.getElementById('Input_Ref').value= doc.EndREF;
+document.getElementById('Input_tempoDuração').value= doc.Duração_Serv;
+document.getElementById('Input_Sevfinit').value=doc.FinalizadoServ;
+document.getElementById('Input_valorSinal').value=doc.Valor_Sinal;
+document.getElementById('Input_valorparcela').value=doc.Valor_parcelas;
+document.getElementById('Input_valorFinal').value=doc.Valor_finalizado;
+document.getElementById('Input_ClienteTel').value=doc.Tel_Cliente;
+document.getElementById('Input_prestadorTel').value=doc.Tel_Prestador;
+sessionStorage.setItem('edite_data',doc.Data);
+sessionStorage.setItem('edite_hora',doc.Hora);
+document.getElementById('orçar').style.display='block';
+document.getElementById('ListaOrçamentos').style.display='none';
 });
-
 btn3.addEventListener('click', function () {
-  var data= localStorage.getItem('data')
+var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 var dbx = firebase.firestore();
 var dbx_ = firebase.firestore();
- Swal.fire({
-    title: 'Acesse seu Orçamento!',
-    html: `
-      <div class="menu-container">
-        <p>A exclusão não poderá ser desfeita!</p>
-        <br>
-        <input id='confirmaCódigo' type='text' placeholder='Digite o código para confirmar'>
-        <br>
-        <button id="SwalEx" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-        <br><br>
-        <button id="Sair" class="cancelar">Sair</button>
-      </div>
-    `,
-    background: 'rgba(0, 0, 0, 1)',
-    color: '#ffffffff',
-    showCancelButton: false,
-    showConfirmButton: false,
-    customClass: {
-      popup: 'my-custom_CadExCód'
-    },
-    didOpen: () => {
-      document.body.style.paddingRight = '0px';
-    }
-  });
-   document.getElementById('Sair').addEventListener('click', function () {
-    Swal.close();
-  });
-  document.getElementById('SwalEx').addEventListener('click', function () {
-    
-    var códigoDigitado = document.getElementById('confirmaCódigo').value;
-    if (códigoDigitado == doc.Código) {
-     dbx.collection('Orçamentos').doc(doc.Código).delete().then(() => {
-     dbx_.collection('ExOrçamentos').doc(doc.Código).set({
-    Código:doc.Código,
-    Cliente:doc.Nome_Cliente,
-    CPF_Cliente:doc.CPF_Cliente,
-    Serviço:doc.Serviço,
-    NRE:doc.NRE,
-    Prestador:doc.Prestador,
-    Data:doc.Data,
-    Hora:doc.Hora,
-    Data_hora_X: `${data} - ${hora}`,
-    
-  })
+Swal.fire({
+title: 'Acesse seu Orçamento!',
+html: `
+<div class="menu-container">
+<p>A exclusão não poderá ser desfeita!</p>
+<br>
+<input id='confirmaCódigo' type='text' placeholder='Digite o código para confirmar'>
+<br>
+<button id="SwalEx" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+<br><br>
+<button id="Sair" class="cancelar">Sair</button>
+</div>
+`,
+background: 'rgba(0, 0, 0, 1)',
+color: '#ffffffff',
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Sair').addEventListener('click', function () {
+Swal.close();
+});
+document.getElementById('SwalEx').addEventListener('click', function () {
+var códigoDigitado = document.getElementById('confirmaCódigo').value;
+if (códigoDigitado == doc.Código) {
+dbx.collection('Orçamentos').doc(doc.Código).delete().then(() => {
+dbx_.collection('ExOrçamentos').doc(doc.Código).set({
+Código:doc.Código,
+Cliente:doc.Nome_Cliente,
+CPF_Cliente:doc.CPF_Cliente,
+Serviço:doc.Serviço,
+NRE:doc.NRE,
+Prestador:doc.Prestador,
+Data:doc.Data,
+Hora:doc.Hora,
+Data_hora_X: `${data} - ${hora}`,
+})
 Swal.fire('Orçamento excluído!','','success')
 ListaOrçamentos_()
-
 });
-
-    } else{
-      Swal.fire('Código incorreto!','','error')
-    }
-  })
-
-
+} else{
+Swal.fire('Código incorreto!','','error')
+}
+})
 });
 })
 });
 }
-
-
 ListaOrçamentos_()
 // dateServ1
 function dataServ1(){
-  var dataInicio=document.getElementById('Input_dataInicio').value;
-   var daTa= dataInicio.split('-')
-   var ano= daTa[0];
-    var mes= daTa[1];
-      var dia= daTa[2];
-      var datainicio=`${dia}/${mes}/${ano}`
-      if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
-
+var dataInicio=document.getElementById('Input_dataInicio').value;
+var daTa= dataInicio.split('-')
+var ano= daTa[0];
+var mes= daTa[1];
+var dia= daTa[2];
+var datainicio=`${dia}/${mes}/${ano}`
+if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
 }else{
-  setTimeout(function(){
-    //Swal.fire('Data selecionada!',`${datainicio}`,'success')
+setTimeout(function(){
+//Swal.fire('Data selecionada!',`${datainicio}`,'success')
 },3000)
 }}
 document.getElementById('Input_dataInicio').value=`2026-01-03`;
-
 // dateServ2
 function dataServ2(){
-  var dataTermino=document.getElementById('Input_dataTermino').value;
-   var daTa= dataTermino.split('-')
-   var ano= daTa[0];
-    var mes= daTa[1];
-      var dia= daTa[2];
-      var dataTermino=`${dia}/${mes}/${ano}`
-      if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
-
+var dataTermino=document.getElementById('Input_dataTermino').value;
+var daTa= dataTermino.split('-')
+var ano= daTa[0];
+var mes= daTa[1];
+var dia= daTa[2];
+var dataTermino=`${dia}/${mes}/${ano}`
+if(!dia||!mes||!ano||dia==''||mes==''||ano==''){
 }else{
-  setTimeout(function(){
-   // Swal.fire('Data selecionada!',`${dataTermino}`,'success')
+setTimeout(function(){
+// Swal.fire('Data selecionada!',`${dataTermino}`,'success')
 },3000)
 }}
 document.getElementById('Input_dataInicio').value=`2026-01-03`;
-
 // cad novo orçamento
 function SalvarOrçamento(){
-  var codigoP=document.getElementById('Input_Codigo_Orçar').value;
-  var clienteP=document.getElementById('Input_Cliente').value;
-  var serviçoP=document.getElementById('Input_Serviço').value;
-  var nregistroP=document.getElementById('Input_Nregistro').value;
-  var prestadorP=document.getElementById('Input_prestadornome').value;
-  var obsP=document.getElementById('Input_ObsOrç').value;
-  var rua = document.getElementById('Input_rua').value;
-  var numero = document.getElementById('Input_numero').value;
-  var bairro = document.getElementById('Input_bairro').value;
-  var cidade = document.getElementById('Input_cidade').value;
-  var estado = document.getElementById('Input_estado').value;
-  var cep = document.getElementById('Input_cep').value;
-  var data=sessionStorage.getItem('edite_data');
-   var hora=sessionStorage.getItem('edite_hora');
-   if(!data||data==''){
-    var data= localStorage.getItem('data')
-   }
-   if(!hora||hora==''){
-    var hora= localStorage.getItem('hora')
-   }
- 
-  var dataInicio=document.getElementById('Input_dataInicio').value;
-  var dataTermino=document.getElementById('Input_dataTermino').value;
-  var valorTotal=document.getElementById('Input_valorTotal').value;
-  var nomeCliente=document.getElementById('Input_NomeCliente').value;
-  var cpfCliente=document.getElementById('Input_CPFCliente').value;
-  var termosContrato=document.getElementById('Input_TermosContrato').value;
-  var ordemServico=document.getElementById('Input_ordedeServiço').value;
-  var referenciaENd=document.getElementById('Input_Ref').value;
-  var duraçãoServ=document.getElementById('Input_tempoDuração').value;
-  var finalServ=document.getElementById('Input_Sevfinit').value;
-  var valorSinal=document.getElementById('Input_valorSinal').value;
-  var valorparcela=document.getElementById('Input_valorparcela').value;
-  var valorFinal=document.getElementById('Input_valorFinal').value;
-  var Tel_cliente=document.getElementById('Input_ClienteTel').value;
-  var tel_prest=document.getElementById('Input_prestadorTel').value;
-
+var codigoP=document.getElementById('Input_Codigo_Orçar').value;
+var clienteP=document.getElementById('Input_Cliente').value;
+var serviçoP=document.getElementById('Input_Serviço').value;
+var nregistroP=document.getElementById('Input_Nregistro').value;
+var prestadorP=document.getElementById('Input_prestadornome').value;
+var obsP=document.getElementById('Input_ObsOrç').value;
+var rua = document.getElementById('Input_rua').value;
+var numero = document.getElementById('Input_numero').value;
+var bairro = document.getElementById('Input_bairro').value;
+var cidade = document.getElementById('Input_cidade').value;
+var estado = document.getElementById('Input_estado').value;
+var cep = document.getElementById('Input_cep').value;
+var data=sessionStorage.getItem('edite_data');
+var hora=sessionStorage.getItem('edite_hora');
+if(!data||data==''){
+var data= localStorage.getItem('data')
+}
+if(!hora||hora==''){
+var hora= localStorage.getItem('hora')
+}
+var dataInicio=document.getElementById('Input_dataInicio').value;
+var dataTermino=document.getElementById('Input_dataTermino').value;
+var valorTotal=document.getElementById('Input_valorTotal').value;
+var nomeCliente=document.getElementById('Input_NomeCliente').value;
+var cpfCliente=document.getElementById('Input_CPFCliente').value;
+var termosContrato=document.getElementById('Input_TermosContrato').value;
+var ordemServico=document.getElementById('Input_ordedeServiço').value;
+var referenciaENd=document.getElementById('Input_Ref').value;
+var duraçãoServ=document.getElementById('Input_tempoDuração').value;
+var finalServ=document.getElementById('Input_Sevfinit').value;
+var valorSinal=document.getElementById('Input_valorSinal').value;
+var valorparcela=document.getElementById('Input_valorparcela').value;
+var valorFinal=document.getElementById('Input_valorFinal').value;
+var Tel_cliente=document.getElementById('Input_ClienteTel').value;
+var tel_prest=document.getElementById('Input_prestadorTel').value;
 var firebaseConfigures = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -360,10 +323,8 @@ appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigures);
-
 var dbo = firebase.firestore();
 dbo.collection('Orçamentos').doc(`${codigoP}`).set({
-
 Código:codigoP,
 Cliente:clienteP,
 Serviço:serviçoP,
@@ -393,11 +354,10 @@ Valor_parcelas: valorparcela,
 Valor_finalizado: valorFinal,
 Tel_Cliente: Tel_cliente,
 Tel_Prestador: tel_prest,
-
 })
 var bcp = firebase.firestore();
 bcp.collection('backupOrServ').doc(`${codigoP}`).set({
-  ódigo:codigoP,
+ódigo:codigoP,
 Cliente:clienteP,
 Serviço:serviçoP,
 NRE:nregistroP,
@@ -428,35 +388,29 @@ Tel_Cliente: Tel_cliente,
 Tel_Prestador: tel_prest,
 })
 setTimeout(function(){
-  Swal.fire('Orçamento salvo!','','success')
-  setTimeout(function(){
-    window.location.reload()
-  },2000);
+Swal.fire('Orçamento salvo!','','success')
+setTimeout(function(){
+window.location.reload()
+},2000);
 },2000);
 }
-
-
-
-  document.getElementById('orçar').style.display='none'
-  document.getElementById('ListaOrçamentos').style.display='none'
+document.getElementById('orçar').style.display='none'
+document.getElementById('ListaOrçamentos').style.display='none'
 //Orçamentos
 function orçamentos(){
-  var respOR=document.getElementById('ListaOrçamentos').style.display;
-  if(respOR=='none'){
-  document.getElementById('orçar').style.display='none'
-  document.getElementById('ListaOrçamentos').style.display='block'
+var respOR=document.getElementById('ListaOrçamentos').style.display;
+if(respOR=='none'){
+document.getElementById('orçar').style.display='none'
+document.getElementById('ListaOrçamentos').style.display='block'
 } else{
 document.getElementById('ListaOrçamentos').style.display='none'
-
-
 }} 
-
 function novoOrçamento(){
-  var respNO=document.getElementById('orçar').style.display;
-  if(respNO=='none'){
-  document.getElementById('orçar').style.display='block'
-  document.getElementById('ListaOrçamentos').style.display='none';
-  LimparCamposOrçamento()
+var respNO=document.getElementById('orçar').style.display;
+if(respNO=='none'){
+document.getElementById('orçar').style.display='block'
+document.getElementById('ListaOrçamentos').style.display='none';
+LimparCamposOrçamento()
 var caracteres_ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
 let codigo_ = '';
 for (let i = 0; i < 8; i++) {
@@ -464,51 +418,38 @@ codigo_ += caracteres_.charAt(Math.floor(Math.random() * caracteres_.length));
 document.getElementById('Input_Codigo_Orçar').value= `${codigo_}ORS`
 }
 } else{
-   document.getElementById('orçar').style.display='none'
+document.getElementById('orçar').style.display='none'
 }}
-
 // format Tel cliente
 document.getElementById('Input_ClienteTel').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    
-    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-
-    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
-                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
-
-    e.target.value = formattedValue;
+let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+   .replace(/(\d{4})(\d{4})$/, '$1-$2');
+e.target.value = formattedValue;
 });
 // format Tel prestador
 document.getElementById('Input_prestadorTel').addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    
-    if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-
-    let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
-                              .replace(/(\d{4})(\d{4})$/, '$1-$2');
-
-    e.target.value = formattedValue;
+let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+   .replace(/(\d{4})(\d{4})$/, '$1-$2');
+e.target.value = formattedValue;
 });
-
-
 // format cep
- function formatarCEP(cep) {
-            cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
-            cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
-            return cep;
-        }
-
-        function aplicarMascaraCEP(event) {
-            event.target.value = formatarCEP(event.target.value);
-        }
-
-
+function formatarCEP(cep) {
+cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
+return cep;
+}
+function aplicarMascaraCEP(event) {
+event.target.value = formatarCEP(event.target.value);
+}
 // Lista de colaboradores
 sessionStorage.setItem('data_cd','')
 sessionStorage.setItem('hora_cd','')
-
 function ListaCC(){
- fech()
+fech()
 time2
 document.getElementById('cadCol').style.display='none'
 document.getElementById('listCol').style.display='block'
@@ -542,7 +483,6 @@ var btn= document.createElement('button');
 var btn2= document.createElement('button');
 var btn3 = document.createElement('button');
 var img=document.createElement('img');
-
 lbl.id='lbl';
 lbl2.id='lbl2';
 lbl3.id='lbl3';
@@ -563,9 +503,8 @@ btn.textContent=``;
 btn.className=`fa-solid fa-eye`;
 btn2.textContent=`Editar`;
 btn3.className=`fa-solid fa-trash`;
-
- div3.appendChild(img);
- div4.appendChild(lbl);
+div3.appendChild(img);
+div4.appendChild(lbl);
 div4.appendChild(document.createElement('br'));
 div4.appendChild(lbl2);
 div4.appendChild(document.createElement('br'));
@@ -580,117 +519,115 @@ div.appendChild(div2);
 div.appendChild(div5);
 li.appendChild(div);
 setTimeout(function(){
- document.getElementById('listItens2').innerHTML=`<b>(${itens2})</b> Colaboradores encontrados`
- sessionStorage.setItem('time12',itens2)
-  document.getElementById('listItens2').style.display='block'
-  document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens2').innerHTML=`<b>(${itens2})</b> Colaboradores encontrados`
+sessionStorage.setItem('time12',itens2)
+document.getElementById('listItens2').style.display='block'
+document.getElementById('listItens1').style.display='none'
 },500)
 btn.addEventListener('click',function(){
-  if(!doc.Data_Cd||doc.Data_Cd==''){
-   sessionStorage.setItem('data_cd',doc.Data)
-       var data_=doc.Data;
-   }else{
-    sessionStorage.setItem('data_cd',doc.Data_Cd)
-    var data_=doc.Data_Cd;
-   };
-   if(!doc.Hora_Cd||doc.Hora_Cd==''){
-   sessionStorage.setItem('hora_cd',doc.Hora)
-   var hora_=doc.Hora;
-   }else{
-    sessionStorage.setItem('hora_cd',doc.Hora_Cd)
-    var hora_=doc.Hora_Cd;
-   }
-
-  swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nCPF:\n${doc.CPF}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
+if(!doc.Data_Cd||doc.Data_Cd==''){
+sessionStorage.setItem('data_cd',doc.Data)
+var data_=doc.Data;
+}else{
+sessionStorage.setItem('data_cd',doc.Data_Cd)
+var data_=doc.Data_Cd;
+};
+if(!doc.Hora_Cd||doc.Hora_Cd==''){
+sessionStorage.setItem('hora_cd',doc.Hora)
+var hora_=doc.Hora;
+}else{
+sessionStorage.setItem('hora_cd',doc.Hora_Cd)
+var hora_=doc.Hora_Cd;
+}
+swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nCPF:\n${doc.CPF}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
 });
 img.addEventListener('click',function(){
-  swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
+swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
 });
- btn2.addEventListener('click', function(){
-   document.getElementById('inputR_E').value=doc.RE
-   document.getElementById('inputServ').value=doc.Serviços
-   document.getElementById('inputColnome').value= doc.Nome
-   document.getElementById('inputColEmail').value=doc.Email
-   document.getElementById('rg').value=doc.RG
-   document.getElementById('cpf').value=doc.CPF
-   document.getElementById('inputColTel').value=doc.Telefone
-   document.getElementById('fotoCol').src=doc.Foto
+btn2.addEventListener('click', function(){
+document.getElementById('inputR_E').value=doc.RE
+document.getElementById('inputServ').value=doc.Serviços
+document.getElementById('inputColnome').value= doc.Nome
+document.getElementById('inputColEmail').value=doc.Email
+document.getElementById('rg').value=doc.RG
+document.getElementById('cpf').value=doc.CPF
+document.getElementById('inputColTel').value=doc.Telefone
+document.getElementById('fotoCol').src=doc.Foto
 if(!doc.Data_Cd||doc.Data_Cd==''){
-   sessionStorage.setItem('data_cd',doc.Data)
-   }else{
-    sessionStorage.setItem('data_cd',doc.Data_Cd)
-   };
-   if(!doc.Hora_Cd||doc.Hora_Cd==''){
-   sessionStorage.setItem('hora_cd',doc.Hora)
-   }else{
-    sessionStorage.setItem('hora_cd',doc.Hora_Cd)
-   }
-   document.getElementById('cadCol').style.display='block'
-   document.getElementById('listCol').style.display='none'
-   document.getElementById('listItens1').style.display='none'
-   document.getElementById('listItens2').style.display='none'
- });
- btn3.addEventListener('click', function () {
-  Swal.fire({
-    title: 'Excluir Colaborador!',
-    html: `
-      <div class="menu-container">
-        <p>A exclusão não poderá ser desfeita!</p>
-        <br><br>
-        <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-        <br><br>
-        <button id="Sair" class="cancelar">Sair</button>
-      </div>
-    `,
-    background: 'rgba(0, 0, 0, 1)',
-    color: '#ffffffff',
-    showCancelButton: false,
-    showConfirmButton: false,
-    customClass: {
-      popup: 'my-custom_CadExCód'
-    },
-    didOpen: () => {
-      document.body.style.paddingRight = '0px';
-    }
-  });
-   document.getElementById('Sair').addEventListener('click', function () {
-    Swal.close();
-  });
-  document.getElementById('SwalExCód').addEventListener('click', function () {
-    var db = firebase.firestore();
-    var storage = firebase.storage();
-    // Primeiro deleta o documento do Firestore
-    db.collection('Colaboradores').doc(doc.RE).delete()
-      .then(() => {
-        // Depois deleta a foto no Storage
-        if (doc.Foto) {
-          var fotoRef = storage.refFromURL(doc.Foto);
-          return fotoRef.delete();
-        }
-      })
-      .then(() => {
-        Swal.fire('Colaborador excluído', 'Os documentos e a foto foram deletados com sucesso!', 'success');
-        ListaCC()
-        selects();
-      })
-      .catch((error) => {
-        
-      });
-  });
+sessionStorage.setItem('data_cd',doc.Data)
+}else{
+sessionStorage.setItem('data_cd',doc.Data_Cd)
+};
+if(!doc.Hora_Cd||doc.Hora_Cd==''){
+sessionStorage.setItem('hora_cd',doc.Hora)
+}else{
+sessionStorage.setItem('hora_cd',doc.Hora_Cd)
+}
+document.getElementById('cadCol').style.display='block'
+document.getElementById('listCol').style.display='none'
+document.getElementById('listItens1').style.display='none'
+document.getElementById('listItens2').style.display='none'
+});
+btn3.addEventListener('click', function () {
+Swal.fire({
+title: 'Excluir Colaborador!',
+html: `
+<div class="menu-container">
+<p>A exclusão não poderá ser desfeita!</p>
+<br><br>
+<button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+<br><br>
+<button id="Sair" class="cancelar">Sair</button>
+</div>
+`,
+background: 'rgba(0, 0, 0, 1)',
+color: '#ffffffff',
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Sair').addEventListener('click', function () {
+Swal.close();
+});
+document.getElementById('SwalExCód').addEventListener('click', function () {
+var db = firebase.firestore();
+var storage = firebase.storage();
+// Primeiro deleta o documento do Firestore
+db.collection('Colaboradores').doc(doc.RE).delete()
+.then(() => {
+// Depois deleta a foto no Storage
+if (doc.Foto) {
+var fotoRef = storage.refFromURL(doc.Foto);
+return fotoRef.delete();
+}
+})
+.then(() => {
+Swal.fire('Colaborador excluído', 'Os documentos e a foto foram deletados com sucesso!', 'success');
+ListaCC()
+selects();
+})
+.catch((error) => {
+});
+});
 });
 })
 })
 }
- function fech(){
-   document.getElementById('inputR_E').value=''
-   document.getElementById('inputServ').value=''
-   document.getElementById('inputColnome').value=''
-   document.getElementById('inputColEmail').value=''
-   document.getElementById('rg').value=''
-    document.getElementById('cpf').value=''
-   document.getElementById('inputColTel').value=''
-   document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
- }
+function fech(){
+document.getElementById('inputR_E').value=''
+document.getElementById('inputServ').value=''
+document.getElementById('inputColnome').value=''
+document.getElementById('inputColEmail').value=''
+document.getElementById('rg').value=''
+document.getElementById('cpf').value=''
+document.getElementById('inputColTel').value=''
+document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
+}
 //Salvar cadastro de colaborador
 function SalvarCadColaborador(){
 var REID=document.getElementById('inputR_E').value;
@@ -705,17 +642,15 @@ var hora= localStorage.getItem('hora')
 var FotoColab= document.getElementById('fotoCol').src 
 var data_cd_s= sessionStorage.getItem('data_cd');
 var hora_cd_s= sessionStorage.getItem('hora_cd');
-
 if(!data_cd_s||data_cd_s==''){
- var data_cd= ''
+var data_cd= ''
 }else{
- var data_cd= data_cd_s;
+var data_cd= data_cd_s;
 };
-
 if(!hora_cd_s||hora_cd_s==''){
-  var hora_cd=''
+var hora_cd=''
 }else{
-  var hora_cd= hora_cd_s;
+var hora_cd= hora_cd_s;
 }
 if(!REID||REID==''||!nomeColb||nomeColb==''||!EmailColab||EmailColab==''||!TelColab||TelColab==''){
 Swal.fire('Preencha todos os campos!','Para salvar o cadastro você precisa digitar todas as informações requeridas no cadastro.','warning')
@@ -754,14 +689,12 @@ window.location.reload()
 },1000)
 }
 }
-
 //Setar Foto do colaborador
 function Fotocolab(){
 var idfoto= document.getElementById('inputR_E').value;
 if(!idfoto||idfoto==''){
-  Swal.fire('Prencha o campo R.E','','error')
+Swal.fire('Prencha o campo R.E','','error')
 }else{
-
 document.getElementById('file').click();
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -812,13 +745,10 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 }
 };
-
- document.getElementById('fotoCol').addEventListener('click',function(){
-  var fotoimg= document.getElementById('fotoCol').src;
-
- swal('','',`${fotoimg}`)
- });
-
+document.getElementById('fotoCol').addEventListener('click',function(){
+var fotoimg= document.getElementById('fotoCol').src;
+swal('','',`${fotoimg}`)
+});
 //format RG
 function formatarRG(rg) {
 rg = rg.replace(/\D/g, ""); // Remove caracteres não numéricos
@@ -833,19 +763,19 @@ input.value = formatarRG(input.value);
 }
 // format CPF Colaborador
 function CPF_Colaborador(event) {
-  let input = event.target;
-  let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-  if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-  let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
-  input.value = formattedValue;
+let input = event.target;
+let value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+input.value = formattedValue;
 }
 // format CPF cliente
 function CPF_Cliente(event) {
-  let input = event.target;
-  let value= input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-  if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-  let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
-  input.value = formattedValue;
+let input = event.target;
+let value= input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+input.value = formattedValue;
 }
 
 // format Tel
@@ -858,14 +788,14 @@ e.target.value = formattedValue;
 });
 //Botão cad. colaborador
 function Colaboradores(){
-     document.getElementById('inputR_E').value=''
-   document.getElementById('inputServ').value=''
-   document.getElementById('inputColnome').value=''
-   document.getElementById('inputColEmail').value=''
-   document.getElementById('rg').value=''
-    document.getElementById('cpf').value=''
-   document.getElementById('inputColTel').value=''
-   document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
+document.getElementById('inputR_E').value=''
+document.getElementById('inputServ').value=''
+document.getElementById('inputColnome').value=''
+document.getElementById('inputColEmail').value=''
+document.getElementById('rg').value=''
+document.getElementById('cpf').value=''
+document.getElementById('inputColTel').value=''
+document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
 sessionStorage.setItem('data_cd','')
 sessionStorage.setItem('hora_cd','')
 document.getElementById('listItens1').style.display='none'
@@ -890,14 +820,13 @@ colabRE += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
 document.getElementById('inputR_E').value= `${colabRE}.${date+date1}-${NRE}`
 }
 }
-
 // Fechar lista Ordem de serviços, colabaradores
 function FecharColabServ(){
 fecharOrdemServ()
 }
 // Serviços,_Ordem de serviços e_colaboradores
 function OrdemServiços(){
-  document.getElementById('a_InicioColab').click()
+document.getElementById('a_InicioColab').click()
 FecharCadServ()
 FecharCad()
 document.getElementById('Serv_Ordem_colab').style.display='block';
@@ -915,19 +844,19 @@ var resp=document.getElementById('select_colaboradores').value;
 if(!resp||resp==''){
 
 } else if(resp=='Colaboradores'){
-     ListaCC()
+ListaCC()
 document.getElementById('Colobaradores').style.display='block'
 document.getElementById('Orçamentos').style.display='none'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='orçamento'){
-  fech()
+fech()
 document.getElementById('listItens1').style.display='none'
 document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
 document.getElementById('Orçamentos').style.display='block'
 document.getElementById('ordemserv').style.display='none'
 } else if(resp=='OrdemServiços'){
-  fech()
+fech()
 document.getElementById('listItens1').style.display='none'
 document.getElementById('listItens2').style.display='none'
 document.getElementById('Colobaradores').style.display='none'
@@ -947,7 +876,7 @@ document.getElementById('listcadastrados').style.display='block';
 fecharOrdemServ()
 }
 function selects(){
-   sessionStorage.setItem('time1','')
+sessionStorage.setItem('time1','')
 var lista=  document.getElementById('Listasev').value;
 time1()
 var list= document.getElementById('listCDS');
@@ -967,7 +896,7 @@ var produtosRef = db.collection(`${lista}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
- var itens= querySnapshot.size;
+var itens= querySnapshot.size;
 var div= document.createElement('div');
 var div2= document.createElement('div');
 var div3= document.createElement('div');
@@ -1010,10 +939,10 @@ div.appendChild(div2);
 div.appendChild(div3);
 list.appendChild(div);
 setTimeout(function(){
- document.getElementById('listItens1').innerHTML=`Total de ( ${itens} ) produtos encontrados`
- sessionStorage.setItem('time1',itens)
-  document.getElementById('listItens1').style.display='block'
-  document.getElementById('listItens2').style.display='none'
+document.getElementById('listItens1').innerHTML=`Total de ( ${itens} ) produtos encontrados`
+sessionStorage.setItem('time1',itens)
+document.getElementById('listItens1').style.display='block'
+document.getElementById('listItens2').style.display='none'
 },500)
 btn.addEventListener('click',function(){
 swal(`${doc.Titulo}`,`${doc.SubT}\n-------------------------\nValor:\n${doc.Valor}\n------------------------\nValor c/desconto:\n${doc.Desconto}\n-------------------------\nOBS:\n${doc.OBS}\n-------------------------\nLista:\n${doc.Lista}\n-------------------------\nID:\n${doc.ID}\n-------------------------\nData e Hora:\n${doc.Data} - ${doc.Hora}\n-------------------------\n ${doc.ADD1}\n${doc.ADD2}\n${doc.ADD3}\n${doc.ADD4}\n${doc.ADD5}\n`,`${doc.Imagem}`)
@@ -1245,7 +1174,6 @@ swal('','',`${img}`)
 // Botão cadastro
 function Cadastro(){
 limparC()
-
 document.getElementById('imgcad').src="../src/RD.png"
 fecharOrdemServ()
 document.getElementById('a_Inicio').click()
@@ -1308,30 +1236,28 @@ document.webkitCancelFullScreen();
 }
 }
 document.getElementById('a_Inicio').click()
-
-
 // Time itens
 function time1(){
-  setTimeout(function(){
-    document.getElementById('listItens1').style.display='block'
-  document.getElementById('listItens2').style.display='none'
-  var resp= sessionStorage.getItem('time1')
-  if(!resp||resp==''){
-    document.getElementById('listItens1').innerHTML=`Total de ( 0 ) produtos encontrados`
-  } else{
-     document.getElementById('listItens1').innerHTML=`Total de ( ${resp} ) produtos encontrados`
-  }
-  },2000)
+setTimeout(function(){
+document.getElementById('listItens1').style.display='block'
+document.getElementById('listItens2').style.display='none'
+var resp= sessionStorage.getItem('time1')
+if(!resp||resp==''){
+document.getElementById('listItens1').innerHTML=`Total de ( 0 ) produtos encontrados`
+} else{
+document.getElementById('listItens1').innerHTML=`Total de ( ${resp} ) produtos encontrados`
+}
+},2000)
 }
 function time2(){
-  setTimeout(function(){
-    document.getElementById('listItens2').style.display='block'
-  document.getElementById('listItens1').style.display='none'
-  var resp= sessionStorage.getItem('time2')
-  if(!resp2||resp2==''){
-    document.getElementById('listItens2').innerHTML=`Total de ( 0 ) Colaboradores encontrados`
-  } else{
-     document.getElementById('listItens2').innerHTML=`Total de ( ${resp2} ) Colaboradores encontrados`
-  }
-  },2000)
+setTimeout(function(){
+document.getElementById('listItens2').style.display='block'
+document.getElementById('listItens1').style.display='none'
+var resp= sessionStorage.getItem('time2')
+if(!resp2||resp2==''){
+document.getElementById('listItens2').innerHTML=`Total de ( 0 ) Colaboradores encontrados`
+} else{
+document.getElementById('listItens2').innerHTML=`Total de ( ${resp2} ) Colaboradores encontrados`
+}
+},2000)
 }
