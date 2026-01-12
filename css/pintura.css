@@ -1,11 +1,10 @@
-
 *{
 margin: 0%;
 padding: 0%;
 }
 body{
 font-family: 'Poppins', sans-serif;
-background-color: rgb(241, 249, 255);
+background-color: rgb(255, 255, 255);
 color: aliceblue;
 text-rendering: geometricPrecision;
 }
@@ -17,7 +16,7 @@ background-color: rgba(0, 46, 63, 0);
 min-height: 200vh;
 }
 #divHead{
-    margin: auto;
+margin: auto;
 width: 100%;
 max-width: 1920px;
 background-color:rgb(0, 46, 63);
@@ -49,16 +48,12 @@ padding-top: 37px;
 margin-bottom: 80px;
 }
 #body1{
-background-color: rgb(241, 249, 255);
+background-color: rgba(241, 249, 255, 0);
 border-radius: 50px;
 min-height: 100vh;
 border-bottom-left-radius:10px;
 border-bottom-right-radius:10px;
 border-top: 30px solid rgba(192, 182, 0, 0);
-background-image: url('../src/RD_logo.png');
-background-size: 40%;
-background-repeat: no-repeat;
-background-position: center;
 }
 #divTabela{
 width: 100%;
@@ -66,11 +61,11 @@ display: flex;
 justify-content: space-around;
 text-align: center;
 color: rgb(46, 46, 46);
-background-color: rgb(241, 249, 255);
+background-color: rgb(255, 255, 255);
 min-height: 100vh;
 padding-bottom: 70px;
 flex-wrap: wrap;
-margin-top: 20px;
+padding-top: 20;
 }
 #div1{
 margin: auto;
@@ -90,11 +85,11 @@ border-radius: 5px;
 cursor: pointer;
 }
 #div1:hover{
-  background-color: rgba(238, 244, 255, 0.192);
+background-color: rgba(238, 244, 255, 0.192);
 }
 #div2{
-  width: 100%;
-  cursor: pointer;
+width: 100%;
+cursor: pointer;
 }
 #Tabela{
 margin-bottom: 70px;
@@ -196,8 +191,8 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.178);
 }
 }
 #div1 label{
-  margin-right: 10px;
-  cursor: pointer;
+margin-right: 10px;
+cursor: pointer;
 }
 #paragrafo{
 cursor: pointer;
@@ -208,8 +203,8 @@ margin-right: 10px;
 margin-left: 10px;
 }
 #label3{
-  color: rgba(0, 0, 0, 0.836);
-  text-decoration: line-through;
+color: rgba(0, 0, 0, 0.836);
+text-decoration: line-through;
 }
 #divid #botaoid:hover,#paragrafo:hover{
 color: rgb(12, 102, 0);
@@ -234,7 +229,14 @@ color: rgb(2, 116, 59);
 font-weight: bolder;
 }
 #Mreq{
-  font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+margin-bottom: 20px;
+}
+@media (max-width: 638px) {
+#Mreq{
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+margin-bottom: 10px;
+}
 }
 #img{
 width:64px;
@@ -439,61 +441,59 @@ color: rgb(2, 104, 61);
 }
 @media (max-width: 1380px) {
 #divBody{
-  margin: auto;
-  width: 90%;
-  max-width: 1920px;
-  min-height: 100vh;
-  color: black;
+margin: auto;
+width: 90%;
+max-width: 1920px;
+min-height: 100vh;
+color: black;
 }
 }
 @media (max-width: 1170px) {
 #divBody{
-  margin: auto;
-  width: 100%;
-  max-width: 1920px;
-  min-height: 100vh;
-  color: black;
+margin: auto;
+width: 100%;
+max-width: 1920px;
+min-height: 100vh;
+color: black;
 }
 }
-
 .my-custom{
-    border-radius: 20px;
-    max-width: 370px;
+border-radius: 20px;
+max-width: 370px;
 }
 .my-custom img{
-  max-width: 150px;
-    max-height: 150px;
-   
+max-width: 150px;
+max-height: 150px;
 }
 .my-custom h2{
-     color:rgb(255, 187, 0) ;
-      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+color:rgb(255, 187, 0) ;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 .my-custom button{
-  width: 40%;
-  cursor: pointer;
-  border: 0cap;
-  background-color: #fefeffa9;
-  color: black;
-  padding: 7px;
-  border-radius: 7px;
-  outline: none;
-  font-weight: bold;
-  font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-  margin-right: 50px;
+width: 40%;
+cursor: pointer;
+border: 0cap;
+background-color: #fefeffa9;
+color: black;
+padding: 7px;
+border-radius: 7px;
+outline: none;
+font-weight: bold;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+margin-right: 50px;
 }
 .my-custom button:hover{
-    background-color: #ffffff;
-  color: black;
+background-color: #ffffff;
+color: black;
 }
 .my-custom label{
-  cursor: pointer;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    color: rgb(0, 255, 200);
-      padding: 3px;
+cursor: pointer;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+color: rgb(0, 255, 200);
+padding: 3px;
 }
 .my-custom label:hover{
-  color: rgb(255, 255, 255);
-  background-color: #cf0101;
-  border-radius: 5px;
+color: rgb(255, 255, 255);
+background-color: #cf0101;
+border-radius: 5px;
 }
