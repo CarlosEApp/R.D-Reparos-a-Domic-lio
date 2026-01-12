@@ -38,7 +38,7 @@ label2.id='label2'
 label3.id='label03'
 label4.id='label4'
 pr.id='paragrafo'
-img.id='imgid'
+img.id='img'
 img.src=`${doc.Imagem}`
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
@@ -53,7 +53,7 @@ label4.textContent=``;
 label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
-pr.textContent=`ID: ${doc.ID}`;
+pr.textContent=`✅`;
 div.appendChild(img)
 div2.appendChild(label);
 div2.appendChild(document.createElement('br'));

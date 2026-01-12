@@ -70,7 +70,6 @@ font-size: clamp(1.100rem,  0.3vw + 0.5rem, 1.200rem);
 #read2{
 display: none;
 }
-
 #div_admim{
 width: 100%;
 min-height: 100vh;
@@ -271,18 +270,18 @@ padding-top: 70px;
 padding-bottom: 100px;
 }
 #divFooter p{
- font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
 }
 #footer2 h2{
-    font-size: clamp(1.400rem, 0.3vw + 0.5rem, 1.500rem);
-    color: #00ca4e;
+font-size: clamp(1.400rem, 0.3vw + 0.5rem, 1.500rem);
+color: #00ca4e;
 }
 #footer2 h3{
-      font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-      color: rgba(240, 248, 255, 0.89);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+color: rgba(240, 248, 255, 0.89);
 }
 #footer2 h4{
-    font-size: clamp(1.100rem, o.5vw + 0.5rem, 1.200rem);
+font-size: clamp(1.100rem, o.5vw + 0.5rem, 1.200rem);
 }
 #footer1{
 text-align: center;
@@ -546,10 +545,10 @@ color: #414141;
 display: none;
 }
 #titeleh5{
-    color: #afce00;
+color: #afce00;
 }
 #btnCad{
-    color: #000000;
+color: #000000;
 }
 .my-custom_CadExCód{
 max-width: 390px;
@@ -577,7 +576,7 @@ background-color: #000811c0;
 color: aliceblue;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
- #inputAD:hover, #inputColabRE:hover, #inputColabPW:hover{
+#inputAD:hover, #inputColabRE:hover, #inputColabPW:hover{
 background-color: #00163a;
 border: 1px solid #00220d;
 color: rgb(255, 255, 255);
@@ -650,7 +649,6 @@ float: right;
 margin-right: 17%;
 }
 }
-
 #aa_inicio{
 display: none;
 }
@@ -676,48 +674,46 @@ z-index: 9999;
 padding: 0px;
 padding-top: 20px;
 padding-bottom: 50px;
-
 }
 #colaboradores{
-    margin: auto;
-    width: 95%;
-    height: 100vh;
-    max-width: 450px;
-    overflow: auto;
-    padding-left: 5px;
-    background-color: #00923800;
-    margin-top: 20px;
+margin: auto;
+width: 95%;
+height: 100vh;
+max-width: 450px;
+overflow: auto;
+padding-left: 5px;
+background-color: #00923800;
+margin-top: 20px;
 }
 .divColaboradores-ativo {
 left: 0 !important;
 }
 #administrar{
-    margin-top: 20px;
-    margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 #lblFecharColab{
-    font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
-    cursor: pointer;
-    margin-bottom: 30px;
-
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+cursor: pointer;
+margin-bottom: 30px;
 }
 #lblFecharColab i{
-    color: rgb(255, 255, 255);
-    margin-left: 5px;
-    margin-bottom: 20px;
+color: rgb(255, 255, 255);
+margin-left: 5px;
+margin-bottom: 20px;
 }
 #lblFecharColab i:hover{
-    color: rgb(255, 0, 0);
+color: rgb(255, 0, 0);
 }
 #lblAd, #lblColab{
-     font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #entrebtn, #entrebtnColab{
 width: 86%;
 padding: 15px;
 margin-top: 10px;
 cursor: pointer;
- background-color:  #003b4d;
+background-color:  #003b4d;
 color: rgb(255, 255, 255);
 border:3px solid rgb(2, 57, 83);
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
@@ -744,34 +740,33 @@ background-color: #002835;
 border:3px solid rgb(26, 221, 0);
 }
 #divColaboradores h1{
-    border-top: 10px solid rgba(245, 245, 220, 0.356) ;
-   
-    margin-top: 20px;
-     font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+border-top: 10px solid rgba(245, 245, 220, 0.356) ;
+
+margin-top: 20px;
+font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #colaboradores input{
-    width: 82%;
-    background-color: rgba(0, 0, 0, 0.432);
-    outline-color: rgb(35, 173, 0);
-  
+width: 82%;
+background-color: rgba(0, 0, 0, 0.432);
+outline-color: rgb(35, 173, 0);
 }
 #colaboradores input:hover{
-    background-color: #0087a8;
-    color: rgb(0, 0, 0);
+background-color: #0087a8;
+color: rgb(0, 0, 0);
 }
 .my-custom_CadExCód_{
-    width: 100%;
-    max-width: 300px;
-    border: 5px solid beige;
-    border-radius: 20px;
-    margin-bottom: 200px;
-    padding-top: 20px;
+width: 100%;
+max-width: 300px;
+border: 5px solid beige;
+border-radius: 20px;
+margin-bottom: 200px;
+padding-top: 20px;
 }
 .my-custom_CadExCód_ h2{
-     font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 .my-custom_CadExCód_ p{
-     font-size: clamp( 0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+font-size: clamp( 0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 .my-custom_CadExCód_ button{
 border-radius: 20px;
@@ -785,12 +780,11 @@ padding-left: 20px;
 padding-right: 20px;
 outline: none;
 font-size: clamp( 0.900rem, 0.3vw  + 0.5rem, 1rem);
- text-decoration: underline 2px
-
+text-decoration: underline 2px
 }
 .my-custom_CadExCód_ #Sair{
-    margin-left: 50px;
-    color: rgb(161, 161, 161);
+margin-left: 50px;
+color: rgb(161, 161, 161);
 }
 .my-custom_CadExCód_ button:hover{
 color: rgb(255, 255, 255);
@@ -802,60 +796,58 @@ color: rgb(255, 255, 255);
 background-color: rgb(160, 3, 3);
 }
 #confirmaCódigo{
-    margin: auto;
-    width: 80%;
-    cursor: pointer;
-    background-color: rgb(11, 11, 11);
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-    padding: 15px;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    border-radius: 10px;
-    margin-bottom: 20px;
+margin: auto;
+width: 80%;
+cursor: pointer;
+background-color: rgb(11, 11, 11);
+color: rgb(255, 255, 255);
+border: 1px solid rgb(255, 255, 255);
+padding: 15px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+border-radius: 10px;
+margin-bottom: 20px;
 }
 .my-custom_CadExCód_ input{
-    width: 82%;
-    max-width: 330px;
-    font-weight: bold;
-    
+width: 82%;
+max-width: 330px;
+font-weight: bold;
 }
 .my-custom_compartilhar{
-    width: 80%;
-    max-width: 330px;
-    border: 5px solid rgb(104, 104, 104);
-    border-radius: 40px;
+width: 80%;
+max-width: 330px;
+border: 5px solid rgb(104, 104, 104);
+border-radius: 40px;
 }
 .my-custom_compartilhar button{
-    cursor: pointer;
-    width: 73%;
-    padding: 10px;
-    color: rgb(27, 21, 21);
-     font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-       border-radius: 7px;
-        border: 2px solid #ffffff;
-        background-color: rgb(190, 190, 221);
-        font-weight: bolder;
+cursor: pointer;
+width: 73%;
+padding: 10px;
+color: rgb(27, 21, 21);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+border-radius: 7px;
+border: 2px solid #ffffff;
+background-color: rgb(190, 190, 221);
+font-weight: bolder;
 }
 .my-custom_compartilhar button:hover{
-    background-color: #005713;
-    color: #ffffff;
-    border: 2px solid #009238;
-        border-radius: 10px;
-   
+background-color: #005713;
+color: #ffffff;
+border: 2px solid #009238;
+border-radius: 10px;
 }
 .my-custom_compartilhar #face:hover{
-    background-color: #00265f;
-    color: #ffffff;
-    border: 2px solid #0047b1;
-        border-radius: 10px;
+background-color: #00265f;
+color: #ffffff;
+border: 2px solid #0047b1;
+border-radius: 10px;
 }
 .my-custom_compartilhar #sair_:hover{
- background-color: #460006;
-    color: #ffffff;
-    border: 2px solid #b40000;
-     border-radius: 10px;
+background-color: #460006;
+color: #ffffff;
+border: 2px solid #b40000;
+border-radius: 10px;
 }
 .my-custom_compartilhar h2{
-    font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
-    color: rgb(29, 29, 29);
+font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+color: rgb(29, 29, 29);
 }

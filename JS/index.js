@@ -394,7 +394,7 @@ Swal.close()
 var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
 if(resp){
 document.getElementById('a_stars').click()
-Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
+//Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
 document.getElementById('btnGoogle').style.display='block'
 }else{
 }
