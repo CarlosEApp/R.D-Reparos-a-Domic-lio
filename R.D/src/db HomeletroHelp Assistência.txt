@@ -1,0 +1,39 @@
+db HomeletroHelp Assistência 
+
+
+cabeçario:
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Banco firebase:
+
+var firebaseConfigure = {
+  apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+  authDomain: "reparos-a-domicilio.firebaseapp.com",
+  projectId: "reparos-a-domicilio",
+  storageBucket: "reparos-a-domicilio.firebasestorage.app",
+  messagingSenderId: "2081562439",
+  appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+  measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var db= firebase.firestore()
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
