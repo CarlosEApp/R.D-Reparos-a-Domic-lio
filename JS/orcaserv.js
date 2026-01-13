@@ -24,7 +24,7 @@ function verPrest(){
       text: ``, 
       html:`Nome do Prestador: <br> ${doc.Nome}<br> --------------------------------<br> <br> Telefone (whatsApp)<br> ${doc.Telefone}<br> ---------------------------<br> <br> `,
       imageUrl: `${doc.Foto}`,
-      background: '#222',
+      background: '#003253',
       color: '#fff', // cor do texto });
       allowOutsideClick: false,
       showConfirmButton: true,

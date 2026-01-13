@@ -193,7 +193,7 @@ var hora= localStorage.getItem('hora')
 var dbx = firebase.firestore();
 var dbx_ = firebase.firestore();
 Swal.fire({
-title: 'Acesse seu Orçamento!',
+title: 'Exclua esse Orçamento!',
 html: `
 <div class="menu-container">
 <p>A exclusão não poderá ser desfeita!</p>
@@ -205,7 +205,7 @@ html: `
 <button id="Sair" class="cancelar">Sair</button>
 </div>
 `,
-background: 'rgba(0, 0, 0, 1)',
+background: '#003253',
 color: '#ffffffff',
 showCancelButton: false,
 showConfirmButton: false,
@@ -580,7 +580,7 @@ html: `
 <button id="Sair" class="cancelar">Sair</button>
 </div>
 `,
-background: 'rgba(0, 0, 0, 1)',
+background: '#003253',
 color: '#ffffffff',
 showCancelButton: false,
 showConfirmButton: false,
@@ -974,7 +974,7 @@ html: ` <div  class="menu-container">
 <br><br>  <button id='Sair' class='cancelar'> Sair </button>
 </div>
 `,
-background: 'rgba(0, 0, 0, 1)', // Cor de fundo
+background: '#003253', // Cor de fundo
 color: '#ffffffff', // Cor do texto
 showCancelButton: false,
 showConfirmButton: false,
