@@ -75,7 +75,7 @@ html:`Valor prod: ${doc.Valor} R$<br>Promoção: ${doc.Desconto} R$<br> --------
 <br> <br><br>Nº: ${doc.ID}
 `,
 imageUrl: `${doc.Imagem} `,
-background: '#222',
+background: '#003253',
 color: '#fff', // cor do texto });
 allowOutsideClick: false,
 showConfirmButton: false,
