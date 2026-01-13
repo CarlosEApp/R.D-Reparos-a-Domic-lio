@@ -1,3 +1,5 @@
+
+
 *{
 margin: 0%;
 padding: 0%;
@@ -75,7 +77,7 @@ justify-content: space-between;
 align-items: center;
 max-width: 800px;
 min-width: 640px;
-background-color: #fefeff;
+background-color: #f8f8ff;
 margin-bottom: 10px;
 padding-top: 10px;
 padding-bottom: 10px;
@@ -85,7 +87,7 @@ border-radius: 5px;
 cursor: pointer;
 }
 #div1:hover{
-background-color: rgba(238, 244, 255, 0.192);
+background-color: rgb(255, 255, 255);
 }
 #div2{
 width: 100%;
@@ -97,12 +99,12 @@ margin-bottom: 70px;
 #divOrçar{
 width: 100%;
 max-width: 300px;
-background-color: rgba(241, 250, 255, 0);
 border-left: 1px solid rgb(1, 75, 85);
 border-right: 1px solid rgb(1, 75, 85);
 padding-bottom: 70px;
 margin-top: 40px;
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.541);
+background-color: #f8f8ff;
 }
 #h2Orçar{
 background-color: rgb(1, 75, 85);
@@ -324,6 +326,7 @@ align-items: center;
 padding-bottom: 70px;
 padding-top: 20px;
 background-color: rgba(0, 0, 0, 0);
+
 }
 #btnFalecom{
 width: 50%;
@@ -473,18 +476,19 @@ font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 width: 40%;
 cursor: pointer;
 border: 0cap;
-background-color: #fefeffa9;
-color: black;
+background-color: #006d3a;
+color: rgb(255, 255, 255);
 padding: 7px;
-border-radius: 7px;
+border-radius: 3px;
 outline: none;
 font-weight: bold;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 margin-right: 50px;
 }
 .my-custom button:hover{
-background-color: #ffffff;
+background-color: #1df700;
 color: black;
+border-radius: 7px;
 }
 .my-custom label{
 cursor: pointer;
