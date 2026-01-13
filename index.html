@@ -34,93 +34,88 @@
  <div id="divGeral" >
  <header>
    <div id="divRead">
-    <div id="read1">
-     <div id="logoName">
-      <img  onclick="imgLogo()" src="src/rd_logo_png.png" alt=""> <h1> Reparos a Domicílio</h1> </div> <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
-
-    </div>
-    <div id="read2">
+     <div id="read1">
+      <div id="logoName">
+       <img  onclick="imgLogo()" src="src/rd_logo_png.png" alt=""> <h1> Reparos a Domicílio</h1> </div> <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
+      </div>
+      <div id="read2">
       <div id="div_admim">
       <button id="btnsetFechar"  title="Fechar"> <i onclick="ADMINFechar()" class="fa-solid fa-delete-left"></i></button>
       <br><br>
       </div>
     </div>
    </div>
-</header>
-      
+</header>     
  <nav  id="menu_lateral">
-        <ul>
-          <li><a id="a_inicio" href="#"><i class="fa-solid fa-house"></i> Início</a></li>
-           
-          <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
-          <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
-          <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
-          <li><a href="#bodyB3" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
-          <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
-          <li><a href="#bodyB6" onclick="init()">🌿Jardinagem </a></li>
-          <li><a  onclick="MeuOrçamento()">📝 Orçamento/Ordem de serv.</a></li> 
-          <li><a  href="#avaliação" onclick="avaliar()">🌟Avaliar</a></li> 
-          <li><a  onclick="Comparltlhar()"><i class="fa-solid fa-share-nodes"></i> Compartilhar Página</a></li>
-          <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>  
-          <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
-           <li><a onclick="Colab()">👨‍💼 Administração</a></li>
-        
-          <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+         <ul>
+          <li><a id="a_inicio" href="#"><i class="fa-solid fa-house"></i> Início</a></li>       
+           <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
+            <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
+             <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
+              <li><a href="#bodyB3" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+               <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
+                <li><a href="#bodyB6" onclick="init()">🌿Jardinagem </a></li>
+                 <li><a  onclick="MeuOrçamento()">📝 Orçamento/Ordem de serv.</a></li> 
+                  <li><a  href="#avaliação" onclick="avaliar()">🌟Avaliar</a></li> 
+                   <li><a  onclick="Comparltlhar()"><i class="fa-solid fa-share-nodes"></i> Compartilhar Página</a></li>
+                    <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>  
+                     <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+                      <li><a onclick="Colab()">👨‍💼 Administração</a></li>  
+                       <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
           <!-- Adicione mais itens se quiser -->
-        </ul>
+          </ul>
         </nav>
-       <main>
-          <div id="divColaboradores">
+ <main>
+    <div id="divColaboradores">
     <div id="colaboradores">
        <label id="lblFecharColab" for="" onclick="fecharcolab()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
         <p> Campos reservados para administradores e colaboradores
         </p>
-       <div id="administrar">
-        <h2>Administradores</h2>
+        <div id="administrar">
+         <h2>Administradores</h2>
              <label id="lblAd">digíte sua senha de administrador <br>
               <input id="inputAD" type="password" placeholder="Password">  <i id='iPasWord' class="fa-solid fa-eye"></i>
              </label> <br>
              <button id="entrebtn" onclick="entreADM()">Entre</button>
-       </div> <br><br>
-   
+        </div> <br><br>
         <div id="divCol">
              <h2>Colaboradores</h2>
              <label id="lblColab">digíte seu nº de registro <br>
-              <input id="inputColabRE" type="text" placeholder="Nº de Registro">
+                <input id="inputColabRE" type="text" placeholder="Nº de Registro">
              </label> <br>
               <label id="lblColab">digíte sua senha de colaborador <br>
-              <input id="inputColabPW" type="password" placeholder="Password">  <i id='iPasWord2' class="fa-solid fa-eye"></i>
+                <input id="inputColabPW" type="password" placeholder="Password">  <i id='iPasWord2' class="fa-solid fa-eye"></i>
              </label> <br>
-             <button id="entrebtnColab" onclick="entreCol()">Entre</button>
+              <button id="entrebtnColab" onclick="entreCol()">Entre</button>
              </div>
              <br>  <br>
        </div>
      
     </div>
    <div id="divBody">
-    <div id="div_loja">
-    <img id="iconeLoja" onclick="Loja()" src="src/IconeLoja.png" alt="" >
+     <div id="div_loja">
+      <img id="iconeLoja" onclick="Loja()" src="src/IconeLoja.png" alt="" >
     </div>
     <div id="body1">
       <div id="bodyB0">
-        <img id="DSimg_" src="src/RD_logo2.png" alt="">
+         <img id="DSimg_" src="src/RD_logo2.png" alt="">
         <h2 >Prestadora de serviços</h2>
-       </div>
-       <div id="bodyB1">
+     </div>
+     <div id="bodyB1">
         <img id="DSimg" src="src/DS01.png" alt="">
           <div id="Fflex">
-        <div id="Info">
+     <div id="Info">
         <label> <h3>⚡Elétrica</h3>
           Instalação e troca de tomadas, interruptores e disjuntores. <br>
           Identificação e correção de curtos e quedas de energia. <br>
           Instalação de ventiladores de teto, luminárias e chuveiros...</label>
-       </div>
-        <div id="divStartServ">
+      </div>
+       <div id="divStartServ">
           <button id="eletricaStart" onclick="Eletrica()">⚡ Servços de Elétrica ⚡</button> 
-         </div>
-       </div>
-       </div>
-       <div id="bodyB2">
+        </div>
+        </div>
+        </div>
+        <div id="bodyB2">
         <img id="DSimg" src="src/DS03.png" alt="">
         <div id="Fflex">
           <div id="Info">
