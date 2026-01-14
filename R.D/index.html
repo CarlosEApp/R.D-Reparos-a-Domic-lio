@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.D - Reparos a domicílio</title>
+    <link rel="shortcut icon" href="src/rd_logo_png.png" type="image/x-icon">
+
+     <meta property="og:title" content="R.D- Reparos a Domicílio!">
+   <meta name="description" content="R.D – Reparos a Domicílio. Soluções práticas, rápidas e confiáveis para sua casa, loja, escritório ou empresa. Atendemos em Itanhaém-SP e região.">
+    <meta property="og:image" content="https://rd-reparos-domicilio.netlify.app/src/logomt.png">
+    <meta property="og:url" content="https://rd-reparos-domicilio.netlify.app">
+    <meta property="og:type" content="website">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU" />
+    <meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+ <div id="divGeral" >
+ <header>
+   <div id="divRead">
+     <div id="read1">
+      <div id="logoName">
+       <img  onclick="imgLogo()" src="src/rd_logo_png.png" alt=""> <h1> Reparos a Domicílio</h1> </div> <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i> <button onclick="Menu()" > Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
+      </div>
+      <div id="read2">
+      <div id="div_admim">
+      <button id="btnsetFechar"  title="Fechar"> <i onclick="ADMINFechar()" class="fa-solid fa-delete-left"></i></button>
+      <br><br>
+      </div>
+    </div>
+   </div>
+</header>     
+ <nav  id="menu_lateral">
+         <ul>
+          <li><a id="a_inicio" href="#"><i class="fa-solid fa-house"></i> Início</a></li>       
+           <li><a  href="#bodyB1" onclick="init()">⚡  Elétrica</a></li>
+            <li><a href="#bodyB4" onclick="init()">💻 Manutenção de Desktop </a></li>
+             <li><a href="#bodyB2" onclick="init()">🚿 Hidráulica </a></li>
+              <li><a href="#bodyB3" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+               <li><a href="#bodyB5" onclick="init()">🔨 Alvenaria</a></li>
+                <li><a href="#bodyB6" onclick="init()">🌿Jardinagem </a></li>
+                 <li><a  onclick="MeuOrçamento()">📝 Orçamento/Ordem de serv.</a></li> 
+                  <li><a  href="#avaliação" onclick="avaliar()">🌟Avaliar</a></li> 
+                   <li><a  onclick="Comparltlhar()"><i class="fa-solid fa-share-nodes"></i> Compartilhar Página</a></li>
+                    <li><a href="#footer1" onclick="sobre()">📦 Sobre</a></li>  
+                     <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+                      <li><a onclick="Colab()">👨‍💼 Administração</a></li>  
+                       <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
+          <!-- Adicione mais itens se quiser -->
+          </ul>
+        </nav>
+ <main>
+     <div id="div_loja">
+      <img id="iconeLoja" onclick="Loja()" src="src/IconeLoja.png" alt="" >
+    </div>
+    <div id="divColaboradores">
+    <div id="colaboradores">
+       <label id="lblFecharColab" for="" onclick="fecharcolab()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
+        <p> Campos reservados para administradores e colaboradores
+        </p>
+        <div id="administrar">
+         <h2>Administradores</h2>
+             <label id="lblAd">digíte sua senha de administrador <br>
+              <input id="inputAD" type="password" placeholder="Password">  <i id='iPasWord' class="fa-solid fa-eye"></i>
+             </label> <br>
+             <button id="entrebtn" onclick="entreADM()">Entre</button>
+        </div> <br><br>
+        <div id="divCol">
+             <h2>Colaboradores</h2>
+             <label id="lblColab">digíte seu nº de registro <br>
+                <input id="inputColabRE" type="text" placeholder="Nº de Registro">
+             </label> <br>
+              <label id="lblColab">digíte sua senha de colaborador <br>
+                <input id="inputColabPW" type="password" placeholder="Password">  <i id='iPasWord2' class="fa-solid fa-eye"></i>
+             </label> <br>
+              <button id="entrebtnColab" onclick="entreCol()">Entre</button>
+             </div>
+             <br>  <br>
+       </div>
+     
+    </div>
+   <div id="divBody">
+    <div id="body1">
+      <div id="bodyB0">
+         <img id="DSimg_" src="src/RD_logo2.png" alt="">
+        <h2 >Prestadora de serviços</h2>
+     </div>
+     <div id="bodyB1">
+        <img id="DSimg" src="src/DS01.png" alt="">
+           <img id="imgrevE" src="src/imgEletrica.webp" alt="">
+          <div id="Fflex">
+     <div id="Info">
+        <label> <h3>⚡Elétrica</h3>
+          Instalação e troca de tomadas, interruptores e disjuntores. <br>
+          Identificação e correção de curtos e quedas de energia. <br>
+          Instalação de ventiladores de teto, luminárias e chuveiros...</label>
+      </div>
+       <div id="divStartServ">
+          <button id="eletricaStart" onclick="Eletrica()">⚡ Serviços de Elétrica ⚡</button> 
+        </div>
+        </div>
+        </div>
+        <div id="bodyB2">
+        <img id="DSimg" src="src/DS03.png" alt="">
+         <img id="imgrevH" src="src/imgHidraulica.webp" alt="">
+        <div id="Fflex">
+          <div id="Info">
+        <label> <h3> 🚿 Hidráulica</h3>
+          Conserto de vazamentos em torneiras, registros e sifões. <br>
+          Desentupimento de pias, ralos e vasos sanitários. <br>
+         Instalação de torneiras, chuveiros e caixas acoplada...</label>
+       </div>
+       <div id="divStartServ">
+          <button id="hidraulicaStart" onclick="hidraulica()">🚿 Serviços de Hidráulica 🚿</button> 
+         </div>
+       </div>
+        </div>
+       <div id="bodyB3">
+        <img id="DSimg" src="src/DS02.png" alt="">
+        <img id="imgrevP" src="src/imgPintura.jpg" alt="">
+          <div id="Fflex">
+          <div id="Info">
+        <label> <h3> <i id="iPint"  class="fa-solid fa-paint-roller"></i> Pintura</h3>
+         Pintura interna e externa com acabamento profissional. <br>
+         Correção de trincas e imperfeições antes da pintura. <br>
+         Aplicação de texturas e efeitos decorativos...</label>
+       </div>
+        <div id="divStartServ">
+          <button id="PinturaStart" onclick="pintura()"><i id="iPint" class="fa-solid fa-paint-roller"></i> Serviços de Pintura <i id="iPint" class="fa-solid fa-paint-roller"></i></button> 
+         </div>
+       </div>
+       </div>
+       <div id="bodyB4">
+        <img id="DSimg" src="src/DS04.png" alt="">
+           <img id="imgrevD" src="src/imgDesktop.png" alt="">
+         <div id="Fflex">
+               <div id="Info">
+        <label> <h3> 💻 Manutenção de Desktop</h3>
+         Limpeza interna e externa de computadores. <br>
+         Formatação, instalação de programas e antivírus. <br>
+         Diagnóstico e troca de peças (HD, memória, fonte, etc.)...</label>
+         </div>
+          <div id="divStartServ">
+          <button id="desktopStart" onclick="desktop()">💻 Manutenção de Desktop 💻</button> 
+         </div>
+       </div>
+       </div>
+       <div id="bodyB5">
+        <img id="DSimg" src="src/DS00.png" alt="">
+          <img id="imgrevA" src="src/imgAlvenaria.jpg" alt="">
+        <div id="Fflex">
+               <div id="Info">
+        <label> <h3> 🔨 Alvenaria</h3>
+         Construção de paredes internas e externas. <br>    
+         Levantamento de muros e cercas. <br>
+         Execução de fundações rasas (como sapatas). <br>      
+         Reboco e acabamento de superfícies. <br>
+         Assentamento de blocos cerâmicos, de concreto ou tijolos. <br>
+         Construção de churrasqueiras, lareiras e bancadas. <br>
+         Reformas e demolições parciais de alvenaria. <br>
+         Instalação de revestimentos e impermeabilização...</label>
+       </div>
+         <div id="divStartServ">
+          <button id="alvenariaStart" onclick="alvenaria()">🔨Serviços de Alvenaria 🔨</button> 
+         </div>
+       </div>
+       </div>
+        <div id="bodyB6">
+        <img id="DSimg" src="src/DS06.png" alt="">
+         <img id="imgrevJ" src="src/imgJardinagem.jpg" alt="">
+         <div id="Fflex">
+               <div id="Info">
+        <label> <h3> 🌿 Jardinagem </h3>
+               Manutenção de jardins<br>
+           
+           Corte de grama e aparo de cercas vivas<br>
+           
+           Poda de árvores e arbustos<br>
+           
+           Remoção de ervas daninhas<br>
+           
+           Regas regulares e limpeza de áreas verdes<br>
+           
+           Adubação e rastelamento<br>
+           
+           Paisagismo e criação de áreas verdes<br>
+           
+           Planejamento e design de jardins...<br>
+          </label> 
+         </div>
+           <div id="divStartServ">
+          <button id="jardinagemStart" onclick="jardinagem()">🌿Serviços de Jardinagem 🌿</button> 
+         </div>
+       </div>
+       </div>
+    </div>
+    <div id="body2">   
+    </div>
+   </div> 
+   <br><br>
+   <div id="avaliação">
+               <div id="Stars">
+               <div class="estrelas">
+                 <h2>Avaliação</h2><label id="lblNotaAV" for="">Nota</label> 
+                 <br>
+                <input type="radio" id="estrela1" name="estrela" value="1">
+                <label for="estrela1" class="label-estrela">&#9733;</label>
+                <input type="radio" id="estrela2" name="estrela" value="2">
+                <label for="estrela2" class="label-estrela">&#9733;</label>    
+                <input type="radio" id="estrela3" name="estrela" value="3">
+                <label for="estrela3" class="label-estrela">&#9733;</label>           
+                <input type="radio" id="estrela4" name="estrela" value="4">
+                <label for="estrela4" class="label-estrela">&#9733;</label>
+                <input type="radio" id="estrela5" name="estrela" value="5">
+                <label for="estrela5" class="label-estrela">&#9733;</label>
+              </div>
+              <label id="avisoinfo" for="">🌟Nos avalie para ver os cometários!🌟</label>
+               <div id="user-info">
+                <button onclick="EntreGoogle()" id="btnGoogle"> <i id="i_google" class="fa-brands fa-google"></i> Entre com o  google</button><br>
+                <img id="user-photo" src="src/Profile-PNG-Images.png" alt="Foto do usuário"  title="Foto perfil">
+                <p id="user-email">E-mail</p>
+                <p id="user-name">Nome</p> <br> <p onclick="ParagrafoMSM()" id="user-mensagem"></p> <p onclick="mensagemInfo()" id="infoComent" for=""> Cometar <i class="fa-solid fa-pencil"></i></p>
+                <br>             
+                <label id="verlistInfo" onclick="verInfolist()" for="">Ver comentários <span id="spanInfo"> </span> <span id="spanInfoNumero"> </span></label>
+                <div id="div_listInfo">
+                   <div id="listInfo"></div>
+                </div>
+              </div>
+            
+            </div>
+            <a id="a_stars" href="#avaliação" title="stars"></a>
+           </div>
+              </main>
+    <footer>
+   <div id="divFooter">
+    <div id="footer1">
+            <img src="src/RD_logo2.png" alt="">
+    </div>
+     <div id="footer2"><br>
+      <label for=""><h2>🛠️ R.D – Reparos a Domicílio</h2><br>
+<h3>Soluções práticas, rápidas e confiáveis para sua casa, loja, escritório e empresa <br>
+  atendimento em Itanhaém-SP e região.</h3><br>
+
+<br>
+⚡<b> Elétrica</b>  <p>
+Instalação e troca de tomadas, interruptores e disjuntores <br>
+
+Identificação e correção de curtos e quedas de energia<br>
+
+Instalação de ventiladores de teto, luminárias e chuveiros<br><br>
+</p>
+🚿 <b>Hidráulica</b><p>
+Conserto de vazamentos em torneiras, registros e sifões<br>
+
+Desentupimento de pias, ralos e vasos sanitários<br>
+
+Instalação de torneiras, chuveiros e caixas acopladas<br><br>
+</p>
+<i id="iPint_" class="fa-solid fa-paint-roller"></i> <b>Pintura</b><p>
+Pintura interna e externa com acabamento profissional<br>
+
+Correção de trincas e imperfeições antes da pintura<br>
+
+Aplicação de texturas e efeitos decorativos<br><br>
+</p>
+💻 <b>Manutenção de Desktop</b><p>
+Limpeza interna e externa de computadores<br>
+
+Formatação, instalação de programas e antivírus<br>
+
+Diagnóstico e troca de peças (HD, memória, fonte, etc.)<br><br>
+</p>
+🔨 <b>Alvenaria</b> <p>
+Construção de paredes internas e externas. <br>
+
+Levantamento de muros e cercas.<br>
+
+Execução de fundações rasas (como sapatas).<br>
+
+Reboco e acabamento de superfícies.<br>
+
+Assentamento de blocos cerâmicos, de concreto ou tijolos.<br>
+
+Construção de churrasqueiras, lareiras e bancadas.<br>
+
+Reformas e demolições parciais de alvenaria.<br>
+
+Instalação de revestimentos e impermeabilização.<br>
+<br>
+</p>
+🌿 <b>Serviços de jardinagem</b><p>
+Manutenção de jardins<br>
+
+Corte de grama e aparo de cercas vivas<br>
+
+Poda de árvores e arbustos<br>
+
+Remoção de ervas daninhas<br>
+
+Regas regulares e limpeza de áreas verdes<br>
+
+Adubação e rastelamento<br>
+
+Paisagismo e criação de áreas verdes<br>
+
+Planejamento e design de jardins<br>
+
+Escolha de espécies adequadas ao clima e solo<br>
+
+Implantação de canteiros, gramados e elementos decorativos<br>
+
+Harmonização estética de espaços externos<br>
+
+Serviços especializados<br>
+
+Instalação de sistemas de irrigação<br>
+
+Controle de pragas e doenças<br>
+
+Cultivo de hortas e plantas ornamentais<br>
+
+Conservação de áreas públicas e condomínios<br>
+
+<br><br>
+</p>
+<h4>Entre em contato conosco e agende seu orçamento sem compromisso!</h4><br> 📞 WhatsApp: (11 99550-1463) <br> 📍 Atendemos Itanhaém e região. <br> 📆 Segunda a sexta, das 8h às 18h</label>
+        
+    </div>
+    <br>
+    <div id="divFaleCom">
+      <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Fale conosco</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
+    </div>
+   </div>
+</footer>
+
+
+ </div> 
+
+
+<script src="JS/index.js"></script>
+<a id="aa_inicio" href="#" title="inicio"></a>
+
+
+
+
+</body>
+</html>

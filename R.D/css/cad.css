@@ -1,0 +1,890 @@
+
+
+*{
+margin: 0%;
+padding: 0%;
+outline: none;
+}
+body{
+font-family: 'Poppins', sans-serif;
+background-color: rgb(0, 19, 26);
+color: aliceblue;
+text-rendering: geometricPrecision;
+outline: none;
+}
+#DivGeral{
+margin: auto;
+width: 100%;
+max-width: 1200px;
+background-color: rgb(255, 255, 255);
+min-height: 100vh;
+outline: none;
+}
+#divHead{
+width: 100%;
+max-width: 1200px;
+min-height: 12vh;
+background-color: rgb(0, 66, 90);
+position: fixed;
+outline: none;
+}
+#head1 h2{
+margin-top: 7px;
+margin-left: 10px;
+outline: none;
+}
+#head2{
+display: flex;
+justify-content: space-around;
+align-items: center;
+outline: none;
+}
+#head2 button{
+border: 0cap;
+background-color: rgba(240, 248, 255, 0);
+color: aliceblue;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+cursor: pointer;
+margin-top: 10px;
+font-weight: bold;
+outline: none;
+}
+#head2 button:hover{
+color: aqua;
+}
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 140px;
+padding-bottom: 200px;
+outline: none;
+}
+@media (max-width: 1000px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 130px;
+padding-bottom: 200px;
+outline: none;
+}
+}
+@media (max-width: 800px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 120px;
+padding-bottom: 200px;
+outline: none;
+}
+}
+@media (max-width: 600px) {
+#divBody{
+margin: auto;
+width: 100%;
+max-width: 1000px;
+min-height: 140vh;
+padding-top: 110px;
+padding-bottom: 200px;
+outline: none;
+}
+}
+#body1{
+margin: auto;
+width: 95%;
+max-width: 800px;
+color: rgb(255, 255, 255);
+background-color: rgb(78, 89, 90);
+min-height: 100vh;
+border-radius: 40px;
+border-top: 20px solid rgb(210, 210, 0);
+display: none;
+outline: none;
+}
+#body1 h2{
+padding-top: 20px;
+text-align: center;
+outline: none;
+}
+#lblFecharColabServ{
+float: right;
+margin-right: 20px;
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
+cursor: pointer;
+outline: none;
+}
+#lblFecharCad, #lblFecharCadServ{
+float: left;
+margin-left: 20px;
+padding-top: 20px;
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
+cursor: pointer;
+outline: none;
+}
+#lblFecharCadServ:hover,#lblFecharColabServ:hover,#lblFecharCad:hover{
+color: rgb(255, 136, 0);
+}
+#DivCad{
+margin: auto;
+width: 90%;
+max-width: 700px;
+margin-top: 20px;
+padding: 10px;
+padding-bottom: 120px;
+outline: none;
+}
+#DivCad select{
+width: 230px;
+outline: none;
+border: 0cap;
+padding: 12px;
+border-radius: 7px;
+box-shadow: 0 3px 7px rgb(11, 11, 11);
+margin-top: 30px;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+outline: none;
+}
+#Listasev{
+margin-left: 30px;
+width: 230px;
+outline: none;
+border: 0cap;
+padding: 12px;
+border-radius: 7px;
+margin-top: 5px;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+background-color: aqua;
+outline: none;
+}
+#DivCad select:hover, #Listasev:hover{
+box-shadow: 0 5px 10px rgb(129, 129, 129);
+outline: none;
+}
+#imgcad {
+float: right;
+margin-right: 2px;
+margin-top: 10px;
+border-radius: 7px;
+cursor: pointer;
+box-shadow: 0 3px 7px rgb(6, 8, 9);
+outline: none;
+}
+#imgcad:hover{
+box-shadow: 0 5px 10px rgb(129, 129, 129);
+}
+#DivCad input{
+width: 70%;
+max-width: 500px;
+padding: 12px;
+cursor: pointer;
+outline: none;
+border: 0cap;
+border-radius: 7px;
+margin-bottom: 10px;
+box-shadow: 0 3px 7px rgb(6, 8, 9);
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+outline: none;
+}
+#DivCad input:hover{
+box-shadow: 0 5px 10px rgb(129, 129, 129);
+outline: none;
+}
+#DivCad label{
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
+outline: none;
+}
+#DivCad button{
+width: 230px;
+margin-left: 20px;
+border: 0cap;
+padding: 15px;
+cursor: pointer;
+border-radius: 20px;
+box-shadow: 0 5px 10px rgb(0, 0, 0);
+font-size: 14px;
+font-weight: bolder;
+outline: none;
+}
+#DivCad button:hover{
+box-shadow: 0 5px 10px rgb(163, 163, 163);
+background-color: aqua;
+outline: none;
+}
+#files{
+display: none;
+outline: none;
+}
+#clickImagem{
+cursor: pointer;
+font-size:55px;
+margin-left: 20px;
+outline: none;
+}
+#clickImagem:hover{
+color: rgb(0, 204, 255);
+outline: none;
+}
+#myProgress,#myProgress_2 {
+width: 80%;
+background-color:rgb(134, 130, 130);
+display: none;
+border-radius: 7px;
+margin-bottom: 3px;
+margin-left: 10%;
+margin-top: 10px;
+outline: none;
+}   
+#myBarIMG {
+width: 1%;
+/* Começa com 1% */
+height: 20px;
+background-color:rgb(123, 2, 87);
+text-align: center;
+/* Centraliza horizontalmente */
+line-height: 15px;
+/* Centraliza verticalmente */
+color: rgb(255, 255, 255);
+border-radius: 5px;
+font-weight: bold;
+outline: none;
+}
+#myBarfoto {
+width: 1%;
+/* Começa com 1% */
+height: 20px;
+background-color:rgba(138, 0, 131, 0.993);
+text-align: center;
+/* Centraliza horizontalmente */
+line-height: 15px;
+/* Centraliza verticalmente */
+color: rgb(255, 255, 255);
+border-radius: 5px;
+font-weight: bold;
+outline: none;
+}
+#Input_ID{
+color: rgb(0, 99, 53);
+font-weight: bolder;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+outline: none;
+}
+#listcadastrados{
+margin: auto;
+width: 98%;
+max-width: 600px;
+background-color: rgb(0, 36, 43);
+min-height: 30vh;
+color: aliceblue;
+border-radius: 20px;
+display: none;
+padding-bottom: 70px;
+outline: none;
+}
+#listcadastrados h2{
+text-align: center;
+color: rgb(255, 255, 255);
+margin-bottom: 10px;
+outline: none;
+}
+#listCDS{
+margin: auto;
+width: 96%;
+background-color: rgba(0, 255, 255, 0);
+padding-bottom: 50px;
+outline: none;
+}
+#divid{
+display: flex;
+justify-content: space-between;
+background-color: rgb(0, 54, 124);
+margin-bottom: 20px;
+padding: 10px;
+border-radius: 12px;
+outline: none;
+}
+#btnid{
+border: 0cap;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+background-color: rgba(240, 248, 255, 0);
+color: aliceblue;
+cursor: pointer;
+outline: none;
+}
+#btnid:hover{
+color: aqua;
+outline: none;
+}
+#divid3{
+text-align: center;
+outline: none;
+}
+#btnid2{
+padding: 5px;
+padding-left: 10px;
+padding-right: 10px;
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
+border-radius: 4px;
+cursor: pointer;
+border: 0cap;
+outline: none;
+}
+#btnid2:hover{
+background: aqua;
+color: rgb(80, 0, 0);
+outline: none;
+}
+#lblid{
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
+color: rgb(0, 211, 28);
+outline: none;
+}
+#lblid2{
+font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
+outline: none;
+}
+#lblid3{
+font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
+color: rgb(255, 255, 255);
+outline: none;
+}
+#telaCheia{
+float: right;
+margin-right: 20px;
+cursor: pointer;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+margin-top: 10px;
+outline: none;
+}
+#telaCheia:hover{
+color: aqua;
+}
+#btnid3{
+border: 0cap;
+background-color: rgba(255, 245, 238, 0);
+color: aliceblue;
+cursor: pointer;
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
+outline: none;
+}
+#btnid3:hover{
+color: red;
+}
+.my-custom_CadExCód{
+    width: 100%;
+    max-width: 370px;
+    border-radius: 20px;
+    border: 2px solid aliceblue;
+}
+.my-custom_CadExCód button{
+border-radius: 20px;
+background-color: rgba(255, 255, 255, 0);
+border: 2px solid rgb(226, 232, 238);
+padding: 12px;
+cursor: pointer;
+color: rgb(206, 204, 204);
+font-weight: bold;
+padding-left: 30px;
+padding-right: 30px;
+outline: none;
+}
+.my-custom_CadExCód button:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(119, 0, 65);
+}
+#Serv_Ordem_colab{
+margin: auto;
+width: 95%;
+min-height: 100vh;
+background-color: rgba(0, 82, 102, 0);
+display: none;
+border-radius: 10px;
+padding: 5px;
+outline: none;
+padding-bottom: 100px;
+}
+.my-custom_CadExCód h2{
+    font-size: clamp(1.400rem, 0.3vw + 0.5rem, 1.500rem);
+}
+.my-custom_CadExCód label{
+    font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
+}
+#select_colaboradores{
+width: 60%;
+max-width: 300px;
+padding: 10px;
+border: 2px solid rgb(58, 0, 23);
+cursor: pointer;
+color: rgb(0, 10, 20);
+outline: none;
+font-size: clamp(1rem, 0.3vw + 0.5rem, 1.100rem);
+border-radius: 5px;
+}
+#select_colaboradores:hover{
+background-color: aqua;
+color: brown;
+border: 2px solid rgb(139, 0, 56);
+}
+#Colobaradores{
+margin: auto;
+width: 100%;
+min-height: 20vh;
+background-color: rgb(0, 14, 12);
+display: none;
+font-weight: lighter;
+text-align: center;
+outline: none;
+
+padding-bottom: 100px;
+
+
+}
+#Orçamentos{
+width: 100%;
+min-height: 100vh;
+background-color: rgb(255, 255, 255);
+display: none;
+outline: none;
+background-image: url('../src/RD_logo2.png');
+background-size: 30%;
+background-size: max(150px, 15%);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#Oarçhead{
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ background-color: rgba(0, 94, 78, 0);
+ padding:15px;
+ border-top: rgb(19, 19, 19) 5px solid;
+}
+#Oarçhead button{
+width: 37%;
+border:2px solid rgb(0, 48, 8);
+background-color: rgb(0, 126, 88);
+color: rgb(255, 255, 255);
+padding: 10px;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 10px;
+outline: none;
+margin-top: 10px;
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+
+}
+#Oarçhead button:hover{
+    color: rgb(46, 1, 10);
+    background-color:aqua;
+      
+}
+#orçar{
+    margin: auto;
+    width: 100%;
+    min-height: 90vh;
+    max-width: 900px;
+    background-color: rgb(255, 255, 255);
+    display: none;
+}
+#orçar h3, #ListaOrçamentos h3{
+    text-align: center;
+    color: rgb(0, 9, 17);
+  
+    margin-bottom: 10px;
+    
+}
+#ListaOrçamentos{
+       margin: auto;
+    width: 100%;
+     min-height: 90vh;
+    max-width: 900px;
+    background-color: rgba(255, 217, 0, 0);
+      display: none;
+}
+#listOrçamentos{
+    margin: auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    min-height: 70vh;
+    padding-bottom: 100px;
+    color: rgb(37, 37, 37);
+    margin-top: 30px;
+}
+#dv_{
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid rgb(172, 172, 172);
+}
+#dv2_{
+margin-left: 10px;
+ margin-right: 10px;
+}
+#dv3_{
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+#dv4_{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#lbl_{
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+    font-weight: bold;
+    color: rgb(77, 0, 47);
+}
+#lbl2_,#lbl3_,#lbl4_,#lbl5_{
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 0.900rem);
+    color: rgb(73, 73, 73);
+}
+
+#btnn_{
+    border: 0cap;
+    cursor: pointer;
+     font-size: clamp( 1.100rem, 0.3vw + 0.5rem, 1.200rem);
+}
+#btnn2_{
+    border: 1px solid rgb(85, 85, 85);
+    cursor: pointer;
+     font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+     padding: 5px;
+     padding-left: 20px;
+     padding-right: 20px;
+     background-color: rgb(243, 246, 255);
+     border-radius: 5px;
+}
+#btnn3_{
+  border: 0cap;
+    cursor: pointer;
+     font-size: clamp( 1.100rem, 0.3vw + 0.5rem, 1.200rem);
+}
+
+#btnn3_:hover{
+    color: rgb(238, 1, 41);;
+}
+#btnn_:hover{
+    color: rgb(0, 94, 70);;
+}
+#btnn2_:hover{
+    background-color: rgb(0, 94, 70);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 187, 40);
+}
+
+#OrçarImput{
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+}
+#OrçarImput label{
+    font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.800rem);
+    color: rgb(0, 10, 20);
+    margin-left: 30px;
+    
+}
+#confirmaCódigo{
+    margin: auto;
+    width: 80%;
+    cursor: pointer;
+    background-color: rgb(11, 11, 11);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 15px;
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#OrçarImput input{
+    width: 80%;
+    font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+    color: rgb(0, 10, 20);
+    margin-left: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid rgb(0, 122, 116);
+    background-color: rgba(255, 255, 255, 0.397);
+    border-radius: 5px;
+}
+#OrçarImput input:hover{
+    background-color: rgb(0, 255, 255);
+    border: 1px solid rgb(139, 0, 56);
+    color: rgb(160, 0, 0);
+}
+#OrçarImput textarea{
+margin-left: 15px;
+width: 88%;
+font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem); 
+padding: 10px;  
+cursor: pointer;
+}
+#orçar button{
+    width: 100%;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 10px solid rgb(255, 255, 255);
+    background-color: rgb(238, 174, 0);
+    margin-top: 20px;
+   font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem); 
+    color: rgb(0, 97, 0);
+    font-weight: bold;
+}
+#orçar button:hover{
+    background-color: rgb(0, 167, 50);
+    color: rgb(255, 255, 255);
+}
+#divBtnSalvarOrçamento{
+    width: 80%;
+}
+#ordemserv{
+width: 100%;
+min-height: 100vh;
+background-color: rgb(100, 100, 100);
+display: none;
+outline: none;
+}
+#ColBtn{
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding-top: 20px;
+outline: none;
+}
+#cadCol{
+    margin: auto;
+max-width: 840px;
+display: none;
+background-color: rgba(0, 0, 0, 0);
+padding-top: 20px;
+padding-bottom: 70px;
+border-radius: 20px;
+}
+#ColBtn button{
+width: 37%;
+border:2px solid azure;
+background-color: rgb(56, 0, 119);
+color: rgb(255, 255, 255);
+padding: 10px;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 10px;
+outline: none;
+margin-top: 10px;
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+}
+#ColBtn button:hover{
+background-color: aqua;
+color: rgb(97, 0, 0);
+border:2px solid rgb(90, 0, 53);
+}
+#Colcad input{
+width: 90%;
+max-width: 500px;
+padding: 10px;
+cursor: pointer;
+border: 2px solid rgb(90, 0, 0);
+outline: none;
+background-color: rgb(255, 255, 255);
+margin-bottom: 20px;
+color: rgb(19, 19, 19);
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+border-radius: 5px;
+}
+#Colcad input:hover{
+background-color: aqua;
+border: 2px solid rgb(189, 0, 88);
+}
+#file{
+display: none;
+}
+#Colcad #LBL{
+cursor: pointer;
+font-size: 13px;
+color: rgb(255, 255, 255);
+}
+#lblFoto{
+font-size: 16px;
+cursor: pointer;
+}
+#iFoto{
+font-size: clamp( 1.800rem , 0.3vw + 0.5rem, 1.900rem);
+margin-bottom: 50px;
+}
+#lblFoto:hover{
+color: aqua;
+}
+#btnSalvar{
+width: 60%;
+max-width: 400px;
+padding: 12px;
+cursor: pointer;
+border-radius: 5px;
+border: 0cap;
+font-size: clamp( 1rem , 0.3vw + 0.5rem, 1.100rem);
+}
+#btnSalvar:hover{
+background-color: aqua;
+color: rgb(24, 2, 85);
+}
+#listItens1,#listItens2{
+text-align: center;
+margin-bottom: 10px;
+color: aqua;
+display: none;
+}
+#bid{
+    color: lawngreen;
+}
+#imgg{
+width: 70px;
+height: 70px;
+border-radius: 50%;
+cursor: pointer;
+margin-right: 20px;
+border: 3px solid rgb(179, 93, 250);
+}
+#imgg:hover{
+border: 3px solid rgb(6, 180, 0);
+}
+#dv{
+margin: auto;
+width: 90%;
+max-width: 550px;
+background-color: rgb(44, 0, 85);
+margin-bottom: 20px;
+border-radius: 10px;
+padding: 10px;
+margin-top: 30px;
+border: 3px solid rgb(92, 0, 167);
+}
+#dv2{
+display: flex;
+align-items: center;
+}
+#dv label{
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+}
+#dv button{
+margin-top: 30px;
+margin-bottom: 20px;
+cursor: pointer;
+}
+#dv5{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+#dv4{
+margin-top: 30px;
+}
+#lbl3{
+color: rgb(190, 171, 0);
+font-weight: bold;
+}
+#btnn2{
+padding: 7px;
+padding-left: 25px;
+padding-right: 25px;
+border: 0cap;
+background-color: rgba(240, 248, 255, 0.5);
+border-radius: 5px;
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+}
+#btnn2:hover{
+background-color: rgb(192, 163, 0);
+color: rgb(251, 255, 0);
+}
+#btnn,#btnn3{
+border: 0cap;
+background-color: rgba(255, 245, 238, 0);
+font-size: clamp( 1.100rem , 0.3vw + 0.5rem, 1.200rem);
+color: aliceblue;
+}
+#btnn:hover{
+color: rgb(0, 216, 29);
+}
+#btnn3:hover{
+color: rgb(255, 30, 0);
+}
+#listItens1,#listItens2{
+font-size: clamp( 0.900rem , 0.3vw + 0.5rem, 1rem);
+}
+#OrçarImput p{
+    margin-left: 30px;
+    font-size: clamp(0.800rem, 0.3vw + 0.5rem, 0.900rem);
+    color: rgb(139, 0, 93);
+    font-weight: bold;
+}
+#ffpag{
+    color: black;
+}
+#ffpag input{
+
+  max-width: 150px;
+   margin-bottom: 10px;
+  
+}
+#listaOrdemServs{
+    width: 100%;
+    min-height: 40vh;
+    background-color: rgb(255, 0, 242);
+    display: none;
+   
+}
+#OrçarImput #btnListSevOrca{
+    background-color: brown;
+    color: aliceblue;
+}
+#OrçarImput #btnListSevOrca:hover{
+    background-color: rgb(0, 104, 17);
+    color: rgb(255, 255, 255);
+}
+.my-custom_compartilhar{
+    width: 80%;
+    max-width: 330px;
+    border: 5px solid rgb(104, 104, 104);
+    border-radius: 40px;
+}
+.my-custom_compartilhar button{
+    cursor: pointer;
+    width: 73%;
+    padding: 10px;
+    color: rgb(27, 21, 21);
+     font-size: clamp(0.900rem, 0.3vw + 0.5rem, 1rem);
+       border-radius: 7px;
+        border: 2px solid #ffffff;
+        background-color: rgb(190, 190, 221);
+        font-weight: bolder;
+}
+.my-custom_compartilhar button:hover{
+    background-color: #005713;
+    color: #ffffff;
+    border: 2px solid #009238;
+        border-radius: 10px;
+   
+}
+#divselect{
+    background-color: black;
+    padding: 10px;
+    margin: 0%;
+}
+#div_listCol h3{
+    color: rgb(255, 252, 252);
+    margin-top: 20px;
+}
+#footer{
+       color: black;
+    background-color: brown;
+    width: 100%;
+    min-height: 30vh;
+}
