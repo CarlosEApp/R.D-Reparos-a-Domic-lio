@@ -54,18 +54,26 @@ margin-right: 5px;
 padding: 3px;
 cursor: pointer;
 }
+#imgrevP,#imgrevH,#imgrevE,#imgrevJ,#imgrevD,#imgrevA{
+    display: none;
+    width: 100%;
+    max-height: 33vh;
+ transition: transform 0.7s ease;
+}
+#imgrevP:hover,#imgrevH:hover,#imgrevE:hover,#imgrevJ:hover,#imgrevD:hover,#imgrevA:hover{
+  transform: translateY(-12px); 
+}
 #logoName img:hover{
 padding: 2px;
 background-color: #3dff087b;
 border-radius: 50%;
 }
-@media (max-width: 720px) {
-#logoName img{
-max-width: 30px ;
-margin-left: 5px;
-margin-right: 5px;
-padding: 3px;
-cursor: pointer;
+@media (max-width: 700px) {
+#DSimg,#DSimg2,#DSimg3,#DSimg4,#DSimg5,#DSimgim{
+display: none;
+}
+#imgrevP,#imgrevH,#imgrevE,#imgrevJ,#imgrevD,#imgrevA{
+    display: block;
 }
 }
 #r_d{
@@ -145,7 +153,7 @@ border-radius: 20px;
 width: 100%;
 min-height: 25vh;
 max-height: 55vh;
-border-top: 20px solid rgba(197, 177, 0, 0.932);
+border-top: 10px ;
 overflow: hidden;
 transition: transform 0.7s ease;
 }

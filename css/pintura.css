@@ -49,6 +49,7 @@ max-width: 1400px;
 padding-top: 37px;
 margin-bottom: 80px;
 }
+
 #body1{
 background-color: rgba(241, 249, 255, 0);
 border-radius: 50px;
@@ -83,8 +84,8 @@ padding-bottom: 10px;
 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.541);
 }
 #div1:hover{
-background-color: rgba(255, 255, 255, 0.801);
-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.973);
+border: 2px solid rgba(0, 153, 0, 0.973);
+border-radius: 12px;
 }
 #div2{
 width: 100%;
@@ -96,8 +97,8 @@ margin-bottom: 70px;
 #divOrçar{
 width: 100%;
 max-width: 300px;
-border-left: 1px solid rgb(1, 75, 85);
-border-right: 1px solid rgb(1, 75, 85);
+border-left: 1px solid rgba(1, 75, 85, 0);
+border-right: 1px solid rgba(1, 75, 85, 0);
 padding-bottom: 70px;
 margin-top: 40px;
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.541);
@@ -486,3 +487,33 @@ color: rgb(255, 255, 255);
 background-color: #cf0101;
 border-radius: 5px;
 }
+#folder img{
+    margin: auto;
+    max-height: 70vh;
+    padding-top: 52px;
+    transition: transform 0.7s ease;
+}
+#folder img:hover{
+transform: translateY(-12px); 
+  
+}
+@media (max-width: 1030px) {
+#folder img{
+    margin: auto;
+    max-height: 57vh;
+    padding-top: 52px;
+    transition: transform 0.7s ease;
+}
+}
+@media (max-width: 730px) {
+#folder img{
+    margin: auto;
+    max-height: 46vh;
+    padding-top: 52px;
+    transition: transform 0.7s ease;
+}
+}
+
+
+
+
