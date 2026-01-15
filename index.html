@@ -67,7 +67,6 @@
           <!-- Adicione mais itens se quiser -->
           </ul>
         </nav>
- <main>
      <div id="div_loja">
       <img id="iconeLoja" onclick="Loja()" src="src/IconeLoja.png" alt="" >
     </div>
@@ -95,17 +94,22 @@
              </div>
              <br>  <br>
        </div>
-     
     </div>
+         <div id="folder">
+             <img  src="../src/imgEletrica.webp" alt="" width="100%">
+         </div>
+     <main>
+   <div id="divPesquisa">
+    <h2>Pesquisar</h2>
+   </div>
    <div id="divBody">
+  
+     <h2 id="conheçaServ">Serviços Prestados</h2>
+  
     <div id="body1">
-      <div id="bodyB0">
-         <img id="DSimg_" src="src/RD_logo2.png" alt="">
-        <h2 >Prestadora de serviços</h2>
-     </div>
+     
      <div id="bodyB1">
-        <img id="DSimg" src="src/DS01.png" alt="">
-           <img id="imgrevE" src="src/imgEletrica.webp" alt="">
+        <img id="DSimg" src="src/imgEletrica.webp" alt="">
           <div id="Fflex">
      <div id="Info">
         <label> <h3>⚡Elétrica</h3>
@@ -119,8 +123,7 @@
         </div>
         </div>
         <div id="bodyB2">
-        <img id="DSimg" src="src/DS03.png" alt="">
-         <img id="imgrevH" src="src/imgHidraulica.webp" alt="">
+        <img id="DSimg" src="src/imgHidraulica.webp" alt="">
         <div id="Fflex">
           <div id="Info">
         <label> <h3> 🚿 Hidráulica</h3>
@@ -134,8 +137,7 @@
        </div>
         </div>
        <div id="bodyB3">
-        <img id="DSimg" src="src/DS02.png" alt="">
-        <img id="imgrevP" src="src/imgPintura.jpg" alt="">
+        <img id="DSimg" src="src/imgPintura.jpg" alt="">
           <div id="Fflex">
           <div id="Info">
         <label> <h3> <i id="iPint"  class="fa-solid fa-paint-roller"></i> Pintura</h3>
@@ -149,8 +151,7 @@
        </div>
        </div>
        <div id="bodyB4">
-        <img id="DSimg" src="src/DS04.png" alt="">
-           <img id="imgrevD" src="src/imgDesktop.png" alt="">
+        <img id="DSimg" src="src/imgDesktop.png" alt="">
          <div id="Fflex">
                <div id="Info">
         <label> <h3> 💻 Manutenção de Desktop</h3>
@@ -164,8 +165,7 @@
        </div>
        </div>
        <div id="bodyB5">
-        <img id="DSimg" src="src/DS00.png" alt="">
-          <img id="imgrevA" src="src/imgAlvenaria.jpg" alt="">
+        <img id="DSimg" src="src/imgAlvenaria.jpg" alt="">
         <div id="Fflex">
                <div id="Info">
         <label> <h3> 🔨 Alvenaria</h3>
@@ -184,8 +184,7 @@
        </div>
        </div>
         <div id="bodyB6">
-        <img id="DSimg" src="src/DS06.png" alt="">
-         <img id="imgrevJ" src="src/imgJardinagem.jpg" alt="">
+        <img id="DSimg" src="src/imgJardinagem.jpg" alt="">
          <div id="Fflex">
                <div id="Info">
         <label> <h3> 🌿 Jardinagem </h3>
@@ -211,15 +210,15 @@
          </div>
        </div>
        </div>
-    </div>
-    <div id="body2">   
-    </div>
-   </div> 
-   <br><br>
-   <div id="avaliação">
+    </div>   </div>
+  
+ 
+              </main>
+                <br><br>
+                 <div id="avaliação">
                <div id="Stars">
                <div class="estrelas">
-                 <h2>Avaliação</h2><label id="lblNotaAV" for="">Nota</label> 
+                <label id="lblNotaAV" for="">Nota</label> 
                  <br>
                 <input type="radio" id="estrela1" name="estrela" value="1">
                 <label for="estrela1" class="label-estrela">&#9733;</label>
@@ -241,6 +240,7 @@
                 <br>             
                 <label id="verlistInfo" onclick="verInfolist()" for="">Ver comentários <span id="spanInfo"> </span> <span id="spanInfoNumero"> </span></label>
                 <div id="div_listInfo">
+                  <h4 id="Avh4">Avaliações!</h4>
                    <div id="listInfo"></div>
                 </div>
               </div>
@@ -248,7 +248,6 @@
             </div>
             <a id="a_stars" href="#avaliação" title="stars"></a>
            </div>
-              </main>
     <footer>
    <div id="divFooter">
     <div id="footer1">
@@ -260,35 +259,35 @@
   atendimento em Itanhaém-SP e região.</h3><br>
 
 <br>
-⚡<b> Elétrica</b>  <p>
+⚡<b id="bbfoter"> Elétrica</b>  <p>
 Instalação e troca de tomadas, interruptores e disjuntores <br>
 
 Identificação e correção de curtos e quedas de energia<br>
 
 Instalação de ventiladores de teto, luminárias e chuveiros<br><br>
 </p>
-🚿 <b>Hidráulica</b><p>
+🚿 <b id="bbfoter">Hidráulica</b><p>
 Conserto de vazamentos em torneiras, registros e sifões<br>
 
 Desentupimento de pias, ralos e vasos sanitários<br>
 
 Instalação de torneiras, chuveiros e caixas acopladas<br><br>
 </p>
-<i id="iPint_" class="fa-solid fa-paint-roller"></i> <b>Pintura</b><p>
+<i id="iPint_" class="fa-solid fa-paint-roller"></i> <b id="bbfoter">Pintura</b><p>
 Pintura interna e externa com acabamento profissional<br>
 
 Correção de trincas e imperfeições antes da pintura<br>
 
 Aplicação de texturas e efeitos decorativos<br><br>
 </p>
-💻 <b>Manutenção de Desktop</b><p>
+💻 <b id="bbfoter">Manutenção de Desktop</b><p>
 Limpeza interna e externa de computadores<br>
 
 Formatação, instalação de programas e antivírus<br>
 
 Diagnóstico e troca de peças (HD, memória, fonte, etc.)<br><br>
 </p>
-🔨 <b>Alvenaria</b> <p>
+🔨 <b id="bbfoter">Alvenaria</b> <p>
 Construção de paredes internas e externas. <br>
 
 Levantamento de muros e cercas.<br>
@@ -306,7 +305,7 @@ Reformas e demolições parciais de alvenaria.<br>
 Instalação de revestimentos e impermeabilização.<br>
 <br>
 </p>
-🌿 <b>Serviços de jardinagem</b><p>
+🌿 <b id="bbfoter">Serviços de jardinagem</b><p>
 Manutenção de jardins<br>
 
 Corte de grama e aparo de cercas vivas<br>
@@ -341,7 +340,7 @@ Conservação de áreas públicas e condomínios<br>
 
 <br><br>
 </p>
-<h4>Entre em contato conosco e agende seu orçamento sem compromisso!</h4><br> 📞 WhatsApp: (11 99550-1463) <br> 📍 Atendemos Itanhaém e região. <br> 📆 Segunda a sexta, das 8h às 18h</label>
+<h4 id="bbfoter">Entre em contato conosco e agende seu orçamento sem compromisso!</h4><br> <label id="labelfoter">📞 WhatsApp: (11 99550-1463) <br> 📍 Atendemos Itanhaém e região. <br> 📆 Segunda a sexta, das 8h às 18h</label>
         
     </div>
     <br>
