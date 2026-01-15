@@ -3,26 +3,27 @@ margin: 0%;
 padding: 0%;
 }
 body{
-    width: 100%;
 font-family: 'Poppins', sans-serif;
-background-color:rgb(0, 238, 255);
+background-color:rgb(255, 255, 255);
 text-rendering: geometricPrecision;
 }
 #divGeral{
-    margin: auto;
+margin: auto;
 width: 100%;
 max-width: 1920px;
 min-height: 100vh;
 background-color: #ffffff;
 }
 #divRead{
-margin:0 auto;
-width: 100%;
+margin:auto;
+min-width: 100%;
 max-width: 1920px;
 background-color:rgb(0, 46, 65);
 position: fixed;
 z-index: 9993;
 color: aliceblue;
+padding-bottom: 1px;
+padding-top: 1;
 }
 #read1{
 margin: auto;
@@ -378,7 +379,6 @@ color: #7c00cf;
 #Avh4{
     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
     color: #353535;
- 
     border: 1px solid rgb(196, 196, 196);
     padding: 5px;
 
@@ -844,15 +844,16 @@ color: rgb(29, 29, 29);
  
 }
 main{
+     margin: auto;
       display: flex;
-    margin: auto;
+    min-width: 100%;
     max-width: 1920px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     padding-top: 15px;
-    
- 
+
 }
 #body1{
+    margin: auto;
     display: flex;
     justify-content: space-around;
       align-items: center;
@@ -861,6 +862,17 @@ main{
     margin-left: 50px;
     
 }
+#conheçaServ{
+    color: #e7e7e7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #002741;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+
 @media (max-width: 1430px) {
 #divPesquisa{
     width: 250px;
@@ -900,9 +912,8 @@ color: #ffffff;
 }
 #body1{
     margin: auto;
-
-  margin-left: 7px;
- margin-right: 7px;
+  margin-left: 17px;
+ margin-right: 17px;
 }
 }
 @media (max-width: 900px) {
@@ -914,6 +925,50 @@ margin-bottom: 70px;
 color: #ffffff;
  margin-left: 0px;
  margin: 0%;
+}
+
+main{
+     margin: auto;
+    min-width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
+
+}
+}
+@media (max-width: 640px) {
+#bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
+    margin: auto;
+width: 100%;
+background-color: rgba(0, 0, 0, 0);
+margin-bottom: 70px;
+color: #ffffff;
+ margin-left: 0px;
+ margin: 0%;
+}
+#divGeral{
+margin: auto;
+width: 102%;
+max-width: 1920px;
+min-height: 100vh;
+background-color: #ffffff;
+}
+#divRead{
+margin:auto;
+min-width: 100%;
+max-width: 1920px;
+background-color:rgb(0, 46, 65);
+position: fixed;
+z-index: 9993;
+color: aliceblue;
+padding-bottom: 5px;
+padding-top: 5px;
+}
+main{
+     margin: auto;
+    min-width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
+
 }
 }
 #folder img{
@@ -938,6 +993,27 @@ transform: translateY(-12px);
     max-height: 46vh;
     transition: transform 0.7s ease;
 }
+
+#conheçaServ{
+    color: #e7e7e7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #002741;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+}
+
+}
+@media (max-width: 530px) {
+#folder img{
+   
+    margin: auto;
+    max-height: 46vh;
+    transition: transform 0.7s ease;
+}
+
 }
 #bbfoter{
     color: aliceblue;
@@ -946,13 +1022,4 @@ transform: translateY(-12px);
 #labelfoter{
      color: aliceblue;
      font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-}
-#conheçaServ{
-    color: #e7e7e7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #002741;
-    margin-top: 20px;
-    margin-bottom: 70px;
-    text-align: center;
 }
