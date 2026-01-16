@@ -1030,6 +1030,9 @@ font-weight: bolder;
 color: rgb(255, 255, 255);
 
 }
+.my-custom_RDzinho button{
+    margin-bottom: 12px;
+}
 #divrdzinho{
 width: 100%;
 background-color: #0066ff00;
