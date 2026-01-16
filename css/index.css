@@ -131,14 +131,14 @@ overflow: auto;
 padding-right: 30px;
 }
 #menu_lateral li {
-margin: 10px 0;
+margin: 15px 0;
 }
 #menu_lateral a {
 color: rgb(70, 70, 70);
 text-decoration: none;
 cursor: pointer;
 margin-left: 10px;
-font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1.200rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
 }
 #menu_lateral a:hover{
@@ -564,6 +564,7 @@ margin-bottom: 10px;
 float: right;
 margin-right: 8%;
 }
+
 #iconeLoja{
 position: fixed;
 width: 7%;
@@ -1057,4 +1058,9 @@ color: aliceblue;
 }
 #divrdzinho button:hover{
 border:  3px solid rgba(23, 114, 0, 0);
+}
+#div_loja #lojaP{
+    color: #d60000;
+    font-size: 16px;
+    background-color: #007e11;
 }

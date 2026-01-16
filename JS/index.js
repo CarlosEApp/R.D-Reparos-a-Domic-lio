@@ -25,6 +25,9 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
+document.getElementById('mensagemRD').addEventListener('click',function(){
+falecom()
+})
 }
 
 //Compartilhar
