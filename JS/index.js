@@ -1,5 +1,32 @@
 
 
+
+//loja
+function Loja(){
+    Swal.fire({
+title: `Ola, eu sou o RD`,
+html: `
+<div id='divrdzinho'>
+<button id="Loja_RD" title="">Loja RD-Utl </button>  
+<br><br>
+<button id="mensagemRD" title="">Mensagem <i id='i_mensagem_RD' class="fa-brands fa-whatsapp"></i></button>            
+<br><br><br>
+</div>
+`,
+imageUrl: `src/RDzinho.png `,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'black', // Cor do texto// Cor do texto
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_RDzinho' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+}
+
 //Compartilhar
 function Comparltlhar(){
 Swal.fire({
