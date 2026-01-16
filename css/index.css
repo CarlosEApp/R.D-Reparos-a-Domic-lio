@@ -5,11 +5,13 @@ margin: 0%;
 padding: 0%;
 }
 body{
+    margin:auto;
+    width: 100%;
 font-family: 'Poppins', sans-serif;
 background-color: rgb(255, 255, 255);
 color: aliceblue;
 text-rendering: geometricPrecision;
-
+max-width: 1920px;
 }
 #divGeral{
 margin: auto;
@@ -19,8 +21,8 @@ background-color: rgba(0, 46, 63, 0);
 min-height: 100vh;
 }
 #divRead{
- position: fixed;
-margin:auto;
+    margin:auto;
+position: fixed;
 width: 100%;
 max-width: 1920px;
 background-color:rgb(0, 46, 65);
@@ -45,7 +47,6 @@ outline: none;
 color: rgb(255, 255, 255);
 }
 #logoName {
-
 display: flex;
 justify-content: center;
 align-items: center;
@@ -76,7 +77,6 @@ font-size: clamp(1.100rem,  0.3vw + 0.5rem, 1.200rem);
 #read2{
 display: none;
 }
-
 #IMenu{
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 font-weight: bolder;
@@ -86,9 +86,9 @@ outline: none;
 color: rgb(0, 255, 242);
 }
 #divBody{
- margin: auto;
+margin: auto;
 width: 100%;
-max-width: 1200px;
+max-width: 1400px;
 min-height: 100vh;
 background-color: rgb(255, 255, 255);
 padding-top: 10px;
@@ -96,12 +96,12 @@ padding-top: 10px;
 #DSimg{
 width: 100%;
 min-height: 25vh;
-max-height: 55vh;
+max-height: 36vh;
 overflow: hidden;
 transition: transform 0.7s ease;
 }
 #DSimg:hover{
-     transform: translateY(-12px);
+transform: translateY(-12px);
 }
 #menu_lateral {
 position: fixed;
@@ -154,6 +154,11 @@ max-width: 520px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
+
+overflow: hidden;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+margin-bottom: 70px;
 }
 #Fflex{
 margin: auto;
@@ -168,7 +173,7 @@ color: rgb(0, 0, 0);
 }
 #Info{
 margin-left: 3%;
-margin-bottom: 50px;
+margin-bottom: 30px;
 margin-top: 40px;
 margin-right: 10px;
 align-items: center;
@@ -182,7 +187,6 @@ width:93%;
 max-width: 310px;
 text-align: center;
 margin-bottom: 50px;
-
 }
 #divStartServ button{
 min-width: 300px;
@@ -194,17 +198,15 @@ border-radius: 7px;
 margin-right: 20px;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 cursor: pointer;
-margin-bottom: 50px;
+margin-bottom: 20px;
 margin-left: 5px;
 margin-right: 5px;
-margin-top:10px;
+margin-top:40px;
 border-radius: 20px;
-
 }
 #divStartServ button:hover{
 background-color: rgb(0, 155, 182);
 color: rgb(255, 255, 255);
-
 }
 #iPint{
 color: rgb(255, 217, 2);
@@ -213,7 +215,7 @@ color: rgb(255, 217, 2);
 color: rgb(224, 165, 0);
 }
 #divFooter{
- margin: auto;
+margin: auto;
 width: 100%;
 min-height: 100vh;
 background-color: rgb(0, 46, 65);
@@ -378,10 +380,10 @@ cursor: pointer;
 color: #7c00cf;
 }
 #Avh4{
-    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
-    color: #353535;
-    border: 1px solid rgb(196, 196, 196);
-    padding: 5px;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
+color: #353535;
+border: 1px solid rgb(196, 196, 196);
+padding: 5px;
 
 }
 #div_listInfo{
@@ -718,16 +720,14 @@ font-size: clamp( 1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 width: 82%;
 background-color: rgba(0, 0, 0, 0.432);
 border: 1px solid rgb(255, 145, 0);
- outline-color:rgb(0, 255, 42);
- font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1.100rem);
- margin-top: 3px;
-
+outline-color:rgb(0, 255, 42);
+font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1.100rem);
+margin-top: 3px;
 }
 #colaboradores input:hover{
 background-color: #91dbee00;
 color: rgb(255, 255, 255);
- border: 1px solid rgb(0, 126, 21);
-
+border: 1px solid rgb(0, 126, 21);
 }
 .my-custom_CadExCód_{
 width: 100%;
@@ -827,54 +827,51 @@ border-radius: 10px;
 font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 color: rgb(29, 29, 29);
 }
-
 #divPesquisa{
-    background-color: #0047b100;
-    width: 300px;
-    padding: 5px;
-    display: block;
-    border-right: 5px solid rgb(240, 240, 240);
-    border-bottom: 2px solid rgb(240, 240, 240);
-    padding-top: 20px;
+background-color: #0047b100;
+width: 300px;
+padding: 5px;
+display: block;
+border-right: 5px solid rgb(240, 240, 240);
+border-bottom: 2px solid rgb(240, 240, 240);
+padding-top: 20px;
 }
 #divPesquisa h2{
-    text-align: center;
-    background-color: rgb(255, 217, 0);
-    color: #000000;
- 
+text-align: center;
+background-color: rgb(255, 217, 0);
+color: #000000;
 }
-
 main{
-     margin: auto;
-      display: flex;
-    width: 100%;
-    max-width: 1920px;
-    background-color: rgb(255, 255, 255);
-    padding-top: 15px;
+margin: auto;
+display: flex;
+width: 100%;
+max-width: 1920px;
+background-color: rgb(255, 255, 255);
+padding-top: 15px;
 }
 #body1{
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-      align-items: center;
-    flex-wrap: wrap;
-    background-color: #0047b100;
-    margin-left: 50px;
+margin: auto;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+background-color: #0047b100;
+margin-left: 50px;
 }
 #conheçaServ{
-    color: #e7e7e7;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #002741;
-    margin-top: 20px;
-    margin-bottom: 70px;
-    text-align: center;
-    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+color: #e7e7e7;
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: #002741;
+margin-top: 20px;
+margin-bottom: 70px;
+text-align: center;
+font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.500rem);
 }
 @media (max-width: 1430px) {
 #divPesquisa{
-    width: 250px;
-    padding: 10px;
+width: 250px;
+padding: 10px;
 }
 }
 @media (max-width: 1630px) {
@@ -883,7 +880,7 @@ width: 400px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
- margin-left: 15px;
+margin-left: 15px;
 }
 }
 @media (max-width: 1280px) {
@@ -904,83 +901,86 @@ width: 400px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
- margin-left: 10px;
+margin-left: 10px;
+margin-top: 70px;
 }
 #body1{
 margin: auto;
-    
+
 }
 }
 @media (max-width: 900px) {
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
- margin: auto;
+margin: auto;
 width: 100%;
+margin-bottom: 70px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
- margin-left: 1px;
- margin: 1px;
+
 }
 }
 @media (max-width: 640px) {
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
-    margin: auto;
-min-width: 100%;
+margin: auto;
+min-width: 94%;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
- margin-left: 0%;
- margin-right: 0%;
- padding-left: 0%;
-  padding-right: 0%;
+margin-left: 0%;
+margin-right: 0%;
+padding-left: 0%;
+padding-right: 0%;
 }
 #divRead{
-
 padding-bottom: 5px;
 padding-top: 5px;
 margin: 0%;
 }
-
 }
 #folder img{
-    margin: auto;
-    width: 100%;
-    max-height: 70vh;
-    padding-top: 44px;
-    transition: transform 0.7s ease;
+margin: auto;
+width: 100%;
+height:64vh;
+padding-top: 44px;
+transition: transform 0.7s ease;
 }
 #folder img:hover{
 transform: translateY(-12px); 
 }
+#folder{
+    background-color:  #0183da;
+}
 @media (max-width: 1030px) {
 #folder img{
-    margin: auto;
-    max-height: 57vh;
-    transition: transform 0.7s ease;
+margin: auto;
+height: 57vh;
+transition: transform 0.7s ease;
 }
 }
 @media (max-width: 730px) {
 #folder img{
-    margin: auto;
-    max-height: 46vh;
-    transition: transform 0.7s ease;
+margin: auto;
+max-height: 56vh;
+transition: transform 0.7s ease;
 }
 #conheçaServ{
-    color: #e7e7e7;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #002741;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+color: #e7e7e7;
+padding-top: 20px;
+padding-bottom: 20px;
+background-color: #002741;
+margin-top: 20px;
+margin-bottom: 30px;
+text-align: center;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 }
 #bbfoter{
-    color: aliceblue;
-     font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+color: aliceblue;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #labelfoter{
-     color: aliceblue;
-     font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+color: aliceblue;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
+
