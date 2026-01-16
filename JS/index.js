@@ -10,7 +10,7 @@ html: `
 <button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja RD-Utl </button>  
 <br><br>
 <button id="mensagemRD" title=""><i class="fa-brands fa-whatsapp"></i> Mensagem </button>            
-<br><br>
+<br><br><br>
 </div>
 `,
 imageUrl: `src/RDzinho.png `,
