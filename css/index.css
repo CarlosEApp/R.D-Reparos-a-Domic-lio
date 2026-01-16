@@ -150,7 +150,7 @@ left: 0 !important;
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
 margin: auto;
 width: 100%;
-max-width: 520px;
+max-width: 460px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
@@ -917,7 +917,7 @@ padding: 10px;
 }
 @media (max-width: 1630px) {
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
-width: 430px;
+width: 420px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
@@ -926,7 +926,7 @@ margin-left: 15px;
 }
 @media (max-width: 1400px) {
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
-width: 380px;
+width: 350px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
