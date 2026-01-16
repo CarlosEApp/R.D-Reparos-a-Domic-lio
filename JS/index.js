@@ -14,7 +14,7 @@ html: `
 </div>
 `,
 imageUrl: `src/RDzinho.png `,
-background: 'rgb(255, 255, 255)', // Cor de fundo
+background: 'rgb(0, 87, 75)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
 showCancelButton: true,
 showConfirmButton: false,
