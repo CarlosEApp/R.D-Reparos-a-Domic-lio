@@ -189,8 +189,8 @@ text-align: center;
 margin-bottom: 50px;
 }
 #divStartServ button{
-min-width: 300px;
-padding: 13px;
+min-width: 280px;
+padding: 10px;
 background-color: rgb(0, 80, 94);
 color: #ffffff;
 border: 0cap;
@@ -580,13 +580,15 @@ background-color: rgba(243, 245, 255, 0);
 border-radius: 10px;
 transform: translateY(-15px);
 }
+
 @media (max-width: 1400px) {
 #div_loja{
 float: right;
-margin-right: 14%;
+margin-right: 12%;
 }
 #iconeLoja{
 width: 9%;
+top: 80%;
 }
 }
 @media (max-width: 1100px) {
@@ -851,18 +853,19 @@ border-radius: 10px;
 font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 color: rgb(29, 29, 29);
 }
-#divPesquisa{
+#mainn #divPesquisa{
 background-color: #0047b100;
 width: 300px;
 padding: 5px;
 display: block;
 border-right: 5px solid rgb(240, 240, 240);
 border-bottom: 2px solid rgb(240, 240, 240);
-padding-top: 20px;
+padding-top: 2px;
 }
-#divPesquisa h2{
+#mainn #divPesquisa h2{
 text-align: center;
 background-color: rgb(255, 217, 0);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 color: #000000;
 }
 main{
@@ -892,15 +895,38 @@ margin-bottom: 70px;
 text-align: center;
 font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.500rem);
 }
+#ppOR{
+ margin: auto;
+ width: 90%;
+ color: #000000;
+ font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
+ font-weight: bold;
+}
 @media (max-width: 1430px) {
-#divPesquisa{
-width: 250px;
+#mainn #divPesquisa{
+width: 280px;
 padding: 10px;
+}
+#ppOR{
+ margin: auto;
+ width: 90%;
+ color: #000000;
+ font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+ font-weight: bold;
 }
 }
 @media (max-width: 1630px) {
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
-width: 400px;
+width: 430px;
+background-color: rgba(0, 0, 0, 0);
+margin-bottom: 70px;
+color: #ffffff;
+margin-left: 15px;
+}
+}
+@media (max-width: 1400px) {
+#bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
+width: 380px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
@@ -908,7 +934,7 @@ margin-left: 15px;
 }
 }
 @media (max-width: 1280px) {
-#divPesquisa{
+#mainn #divPesquisa{
 display: none;
 }
 #bodyB1,#bodyB2,#bodyB3,#bodyB4,#bodyB5,#bodyB6{
@@ -1066,4 +1092,55 @@ border: 2px solid rgba(23, 114, 0, 0);
     color: #d60000;
     font-size: 16px;
     background-color: #007e11;
+}
+
+#divlTP_flex{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#divP_orçar{
+    margin: auto;
+    width: 100%;
+    min-height: 7vh;
+    background-color: #ffffff00;
+    padding-top:20px ;
+    border-radius: 10px;
+    padding-bottom: 30px;
+
+}
+#ppOR{
+    margin: auto;
+    width: 90%;
+    color: #383838;
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
+    font-weight: bold;
+}
+#inputPesqCód{
+    width: 80%;
+     margin: auto;
+      font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+      padding: 7px;
+      cursor: pointer;
+      background-color: #0047b100;
+      margin-top: 5px;
+      margin-left: 7px;
+      border: 0px #5e5e5e00;
+      outline-color: rgba(255, 0, 0, 0);
+      
+}
+#inputPesqCód::placeholder {
+     color: rgba(73, 0, 0, 0.5); /* muda a cor do pré‑texto */ 
+    font-style: italic; /* opcional: deixa em itálico */ 
+    opacity: 1; /* garante que a cor fique forte */ 
+    font-weight: bolder;
+}
+#divRecomendados{
+        width: 100%;
+    min-height: 20vh;
+    background-color: #00b7ff00;
+}
+#divRecomendados label{
+       font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }

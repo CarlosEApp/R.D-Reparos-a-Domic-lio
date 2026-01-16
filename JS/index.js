@@ -1,5 +1,14 @@
 
+// Pesquise por orçamento na lateral
+function psqOr(){
+var resp = document.getElementById('inputPesqCód').value; // use .value para pegar o texto digitado 
+if(resp.length === 11){ 
+   // alert("Você digitou exatamente 11 caracteres!");
+    window.open(`html/orcaserv.html?codigo=${resp}`, '_self');
+} else{
 
+}
+}
 
 //loja
 function Loja(){
