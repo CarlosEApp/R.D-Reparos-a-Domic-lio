@@ -1,4 +1,141 @@
 
+
+// format CPF cliente
+function CPF_Cliente(event) {
+let input = event.target;
+let value= input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+input.value = formattedValue;
+}
+// format Tel cliente
+document.getElementById('inputTel').addEventListener('input', function (e) {
+let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+   .replace(/(\d{4})(\d{4})$/, '$1-$2');
+e.target.value = formattedValue;
+});
+// format cep
+function formatarCEP(cep) {
+cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
+return cep;
+}
+function aplicarMascaraCEP(event) {
+event.target.value = formatarCEP(event.target.value);
+}
+sessionStorage.setItem('SERV','')
+//Enviar formuylario
+function falecom_bt(){
+var data= localStorage.getItem('data')
+var hora= localStorage.getItem('hora')
+
+var inp1= document.getElementById('inputNome').value;
+var inp2= document.getElementById('inputCPF').value;
+var inp3= document.getElementById('inputTel').value;
+
+var inp4= document.getElementById('Input_rua').value;
+var inp5= document.getElementById('Input_numero').value;
+var inp6= document.getElementById('Input_bairro').value;
+var inp7= document.getElementById('Input_cidade').value;
+var inp8= document.getElementById('Input_estado').value;
+// Opcionais
+var inp9= document.getElementById('inputemail').value;
+var inp10= document.getElementById('Input_cep').value;
+var inp11= document.getElementById('Input_Ref').value;
+var serv=sessionStorage.getItem('SERV');
+
+ if(!inp1||inp1==''){
+  document.getElementById('inputNome').style.borderColor='red'
+ }else{
+   document.getElementById('inputNome').style.borderColor='#0f8000'
+ };
+  if(!inp2||inp2==''){
+  document.getElementById('inputCPF').style.borderColor='red'
+ }else{
+   document.getElementById('inputCPF').style.borderColor='#0f8000'
+ };
+  if(!inp3||inp3==''){
+  document.getElementById('inputTel').style.borderColor='red'
+ }else{
+   document.getElementById('inputTel').style.borderColor='#0f8000'
+ };
+  if(!inp4||inp4==''){
+  document.getElementById('Input_rua').style.borderColor='red'
+ }else{
+   document.getElementById('Input_rua').style.borderColor='#0f8000'
+ };
+   if(!inp5||inp5==''){
+  document.getElementById('Input_numero').style.borderColor='red'
+ }else{
+   document.getElementById('Input_numero').style.borderColor='#0f8000'
+ };
+   if(!inp6||inp6==''){
+  document.getElementById('Input_bairro').style.borderColor='red'
+ }else{
+   document.getElementById('Input_bairro').style.borderColor='#0f8000'
+ };
+    if(!inp7||inp7==''){
+  document.getElementById('Input_cidade').style.borderColor='red'
+ }else{
+   document.getElementById('Input_cidade').style.borderColor='#0f8000'
+ };
+     if(!inp8||inp8==''){
+  document.getElementById('Input_estado').style.borderColor='red'
+ }else{
+   document.getElementById('Input_estado').style.borderColor='#0f8000'
+ };
+  if(!inp1||inp1==''||!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||inp6==''||!inp7||inp7==''||!inp8||inp8==''){
+ 
+  Swal.fire('','Cadastro incompleto','error')
+  setTimeout(function(){
+Swal.close()
+  },2000)
+} else{
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+ var dbf=firebase.firestore();
+  dbf.collection(`PDO_${serv}`).doc(`${inp2}`).set({
+ Nome:inp1,
+ CPF:inp2,
+ Tel:inp3,
+ Rua:inp4,
+ Numero:inp5,
+ Bairro:inp6,
+ Cidade:inp8,
+ Email:inp9,
+ CEP:inp10,
+ REF:inp11,
+ SERV: serv,
+ Data:data,
+ Hora:hora,
+ })
+
+ Swal.fire('','Cadastro completo!','success')
+   setTimeout(function(){
+Swal.close()
+var TelAD=`11995501463`
+var pagina =`https://rd-reparos-domicilio.netlify.app/`
+var NTF = `+55${TelAD}`;
+//var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + inp9;
+var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n-----------------------------------\n👍 Cliente: ${inp1}\n👉 CPF: ${inp2}\n📞 Tel: ${inp3}\n👉 Emal: ${inp9} \n-------------------------------------\n
+📄 Endereço:\n--------------------------------\nRua: ${inp4}\nNº: ${inp5}\nBairro: ${inp6}\nCidade: ${inp7}\nEstado: ${inp8}\nCep: ${inp10}\n REF: ${inp11}\n\n✅ Pagina: ${pagina}\n\n`;
+
+var whatsappLink = "https://wa.me/"+`${NTF}?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+  },2000)
+}
+}
+
 // Lista Tabela
 function listaPreços(){
 var telefone=sessionStorage.getItem('teladmin')
@@ -63,6 +200,8 @@ div2.appendChild(label4);
 div.appendChild(div2);
 div.appendChild(pr);
 listTab.appendChild(div)
+
+sessionStorage.setItem('SERV',doc.Lista)
 //setTimeout(function(){
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
 //},2000)
@@ -219,3 +358,20 @@ function inicio_(){
 Menu()
 }
 //document.getElementById('divTabela').style.display='none'
+//Data e Hora
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+// const lbl_data = document.getElementById('lbl-data');
+// lbl_data.innerHTML = `${data}`
+localStorage.setItem('data', data)
+localStorage.setItem('hora', timeString)
+}, 1000)
