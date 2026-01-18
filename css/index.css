@@ -306,11 +306,12 @@ margin: 0%;
 .estrelas label {
 color: #ccc;
 cursor: pointer;
-font-size: 4rem;
+font-size: 3rem;
 margin: 0%;
 }
 #lblNotaAV{
-font-size: 3rem;
+font-size: 2rem;
+
 }
 .estrelas input:checked ~ label {
 color: rgb(224, 240, 0);
@@ -321,7 +322,7 @@ width: 100%;
 min-height: 40vh;
 background-color: rgb(255, 255, 255);
 padding-top: 50px;
-margin-bottom: 50px;
+margin-bottom: 20px;
 padding-bottom: 30px;
 border-top: 15px solid rgb(0, 68, 85);
 }
@@ -332,7 +333,7 @@ max-width: 700px;
 min-width: 390px;
 text-align: center;
 border-radius: 20px;
-padding: 10px;
+
 }
 #Stars h2{
 color: #818181;
@@ -376,10 +377,12 @@ display: none;
 }
 #infoComent{
 cursor: pointer;
+
 }
 #infoComent:hover{
 color: #7c00cf;
 }
+
 #Avh4{
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
 color: #353535;
@@ -412,8 +415,10 @@ margin-top: 10px;
 float: left;
 font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
 }
-#lblInfo2{
+#avaliação #user-mensagem{
 font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
+font-weight: bold;
+color: rgb(136, 121, 37);
 }
 #listInfo label{
 color: rgb(82, 81, 81);
@@ -431,10 +436,14 @@ display: flex;
 align-items: center;
 cursor: pointer;
 }
-#divInfo2{
+#divInfo #divInfo2{
 margin-right: 10px;
 cursor: pointer;
 }
+#divInfo #lblInfo3{
+    color: rgb(90, 2, 2);
+}
+
 .my-custom_infoMSM{
 max-width: 390px;
 color: aliceblue;
@@ -520,6 +529,11 @@ color: #afce00;
 }
 #btnCad{
 color: #000000;
+}
+ #divInfo:hover {
+margin-right: 10px;
+cursor: pointer;
+font-weight: bold;
 }
 .my-custom_CadExCód{
 max-width: 390px;

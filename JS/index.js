@@ -385,7 +385,7 @@ label.textContent='🌟🌟🌟🌟🌟'
 label2.textContent= doc.nome
 if(doc.Mensagem){
 var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
-label3.textContent= `#${textoFormatado}`
+label3.textContent= `👉 ${textoFormatado}`
 }
 div2.appendChild(img)
 div3.appendChild(label)
@@ -398,7 +398,7 @@ div.appendChild(div3)
 list.appendChild(div)
 setTimeout(function(){
 //Swal.fire(`${coment}`,'','')
-document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
+document.getElementById('spanInfoNumero').innerHTML=`(${coment})`
 },2000)
 div.addEventListener('click',function(){
 if(doc.Mensagem){
@@ -421,7 +421,7 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';        
 }
 });
-document.getElementById('PComent').innerHTML=`${doc.Mensagem}`
+document.getElementById('PComent').innerHTML=`👉 ${doc.Mensagem}`
 document.getElementById('lblBtn2').addEventListener('click', function(){
 Swal.close()
 });
@@ -474,7 +474,7 @@ if(resp){
 localStorage.setItem('InfoMSM', resp)
 // alert(msm);
 var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
-document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+document.getElementById('user-mensagem').innerHTML = `${textoFormatado}`;
 setTimeout(function(){
 window.location.reload()
 },1500)
@@ -484,7 +484,7 @@ window.location.reload()
 }
 function ParagrafoMSM(){
 var msm= localStorage.getItem('InfoMSM')
-Swal.fire('Comentário!',`${msm}`,'success')
+//Swal.fire('Comentário!',`${msm}`,'success')
 }
 document.getElementById('div_listInfo').style.display='none'
 var span=document.getElementById('spanInfo');
