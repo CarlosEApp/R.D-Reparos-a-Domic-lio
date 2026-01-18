@@ -1,14 +1,17 @@
 
 // Pesquise por orçamento na lateral
 function psqOr(){
-var resp = document.getElementById('inputPesqCód').value; // use .value para pegar o texto digitado 
-if(resp.length === 11){ 
-   // alert("Você digitou exatamente 11 caracteres!");
-    window.open(`html/orcaserv.html?codigo=${resp}`, '_self');
-} else{
+    var resp = document.getElementById('inputPesqCód').value.toUpperCase(); 
+    // força o texto para maiúsculas
 
+    if(resp.length === 11){ 
+       // alert(resp);
+        window.open(`html/orcaserv.html?codigo=${resp}`, '_self');
+    } else {
+       // alert("O código precisa ter 11 caracteres.");
+    }
 }
-}
+
 
 //loja
 function Loja(){
@@ -16,10 +19,8 @@ function Loja(){
 title: `Ola, eu sou o RD`,
 html: `
 <div id='divrdzinho'>
-<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja RD-Utl </button>  
-<br><br>
+<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja RD-Utl </button> <br><br>
 <button id="mensagemRD" title=""><i class="fa-brands fa-whatsapp"></i> Mensagem </button>            
-<br><br><br>
 </div>
 `,
 imageUrl: `src/RDzinho.png `,

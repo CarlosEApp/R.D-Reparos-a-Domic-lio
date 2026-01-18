@@ -1086,6 +1086,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 flex-wrap: wrap;
+gap: 5px;
 }
 #divrdzinho button{
     margin: auto;
@@ -1149,6 +1150,7 @@ border: 2px solid rgba(23, 114, 0, 0);
       border: 0px #5e5e5e00;
       outline-color: rgba(255, 0, 0, 0);
       font-family: fantasy;
+      text-transform: uppercase;
       
 }
 #inputPesqCód::placeholder {
@@ -1162,8 +1164,8 @@ border: 2px solid rgba(23, 114, 0, 0);
     min-height: 20vh;
     background-color: #00b7ff00;
 }
-#divRecomendados label{
-       font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+#recEX{
+       font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 @media (max-width: 1620px) {
 #inputPesqCód{
