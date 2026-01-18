@@ -1,5 +1,3 @@
-
-
 *{
 margin: 0%;
 padding: 0%;
@@ -31,6 +29,7 @@ z-index: 999;
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #head1{
+ width: 100%;
 display: flex;
 justify-content:space-between;
 margin-top: 10px;
@@ -42,7 +41,7 @@ border: 0cap;
 background-color: rgba(240, 248, 255, 0);
 cursor: pointer;
 color: aliceblue;
-margin-right: 37px;
+margin-right: 10px;
 font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0900rem);
 }
 #divBody{
@@ -515,6 +514,8 @@ transform: translateY(-12px);
     transition: transform 0.7s ease;
 }
 }
+
+
 
 
 

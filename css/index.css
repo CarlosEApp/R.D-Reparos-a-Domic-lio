@@ -819,37 +819,43 @@ font-weight: bold;
 }
 .my-custom_compartilhar{
 width: 80%;
-max-width: 330px;
-border: 5px solid rgb(104, 104, 104);
+max-width: 280px;
+border: 5px solid rgb(223, 233, 255);
 border-radius: 40px;
 }
 .my-custom_compartilhar button{
 cursor: pointer;
 width: 73%;
-padding: 10px;
+padding: 7px;
 color: rgb(27, 21, 21);
-font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 border-radius: 7px;
 border: 2px solid #ffffff;
-background-color: rgb(190, 190, 221);
+background-color: rgb(227, 236, 255);
 font-weight: bolder;
 }
 .my-custom_compartilhar button:hover{
-background-color: #005713;
+background-color: #008d1f;
 color: #ffffff;
-border: 2px solid #009238;
+border: 2px solid #00923800;
 border-radius: 10px;
 }
 .my-custom_compartilhar #face:hover{
-background-color: #00265f;
+background-color: #0047b3;
 color: #ffffff;
-border: 2px solid #0047b1;
+border: 2px solid #0047b100;
 border-radius: 10px;
 }
+.my-custom_compartilhar #sair_{
+   width: 100px;
+   margin-top: 10px;
+   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+}
 .my-custom_compartilhar #sair_:hover{
-background-color: #460006;
+ 
+background-color: #97000d;
 color: #ffffff;
-border: 2px solid #b40000;
+border: 2px solid #b4000000;
 border-radius: 10px;
 }
 .my-custom_compartilhar h2{

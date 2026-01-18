@@ -47,7 +47,7 @@ html: `
 <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
 <br><br>
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-<br><br><button id='sair_'>Cancelar</button><br><br>
+<br><br><button id='sair_'>Cancelar</button><br>
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
