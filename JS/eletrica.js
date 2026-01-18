@@ -124,7 +124,7 @@ firebase.initializeApp(firebaseConfigure);
 
  Swal.fire('','Cadastro completo!','success')
    setTimeout(function(){
-    window.location.reload()
+ 
 Swal.close()
 var TelAD=`11995501463`
 var pagina =`https://rd-reparos-domicilio.netlify.app/`

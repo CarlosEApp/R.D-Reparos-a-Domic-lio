@@ -38,8 +38,10 @@ document.body.style.paddingRight = '0px';
 document.getElementById('mensagemRD').addEventListener('click',function(){
 falecom()
 })
+document.getElementById('Loja_RD').addEventListener('click',function(){
+Swal.fire('Em desenvolvimento','A página de utilitários está em fase de desenvolvimento. Em breve estará disponível!','warning')
+})
 }
-
 //Compartilhar
 function Comparltlhar(){
 Swal.fire({
