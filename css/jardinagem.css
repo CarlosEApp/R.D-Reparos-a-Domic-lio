@@ -1,3 +1,5 @@
+
+
 *{
 margin: 0%;
 padding: 0%;
@@ -83,10 +85,11 @@ background-color: #f8f8ff;
 padding-top: 10px;
 padding-bottom: 10px;
 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.541);
+border: 2px solid rgba(4, 129, 0, 0);
 }
 #div1:hover{
-border: 1px solid rgba(153, 0, 33, 0.973);
-border-radius: 20px;
+border: 2px solid rgba(4, 129, 0, 0.973);
+
 }
 #div2{
 width: 100%;
@@ -514,6 +517,7 @@ transform: translateY(-12px);
     transition: transform 0.7s ease;
 }
 }
+
 
 
 
