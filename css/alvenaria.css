@@ -22,10 +22,13 @@ margin: auto;
 width: 100%;
 max-width: 1920px;
 background-color:rgb(0, 46, 63);
-min-height: 6vh;
+min-height: 3vh;
 position: fixed;
 color: rgb(255, 255, 255);
 z-index: 999;
+}
+#divHead h2{
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #head1{
 display: flex;
@@ -40,7 +43,7 @@ background-color: rgba(240, 248, 255, 0);
 cursor: pointer;
 color: aliceblue;
 margin-right: 37px;
-font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0900rem);
 }
 #divBody{
 margin: auto;
@@ -258,7 +261,7 @@ position: fixed;
 display: flex;
 flex-direction: column;
 align-items: center;
-top: 45px;
+top: 35px;
 left: -105%;
 width: 100%;
 min-height: 100%;
@@ -489,7 +492,7 @@ border-radius: 5px;
 #folder img{
     margin: auto;
     max-height: 70vh;
-    padding-top: 52px;
+    padding-top: 46px;
     transition: transform 0.7s ease;
 }
 #folder img:hover{
@@ -500,7 +503,7 @@ transform: translateY(-12px);
 #folder img{
     margin: auto;
     max-height: 57vh;
-    padding-top: 52px;
+    padding-top: 43px;
     transition: transform 0.7s ease;
 }
 }
@@ -508,11 +511,10 @@ transform: translateY(-12px);
 #folder img{
     margin: auto;
     max-height: 46vh;
-    padding-top: 52px;
+    padding-top: 43px;
     transition: transform 0.7s ease;
 }
 }
-
 
 
 
