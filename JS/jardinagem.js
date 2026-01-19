@@ -302,21 +302,8 @@ var msm=` solicitação de contato\n\n`
 var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅  Página web: ${url} `;
 window.open(Url, "_blank");
 }
-//Orçamento
 function falecom(){
-var sev= 'Pintura'
-var telefone= sessionStorage.getItem('teladmin')
-gerarCodigo()
-setTimeout(function(){
-var pag = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
-var codigo= sessionStorage.getItem('codigo')
-var data= sessionStorage.getItem('data')
-var hora= sessionStorage.getItem('hora')
-var text=` 📝 Pedido de orçamento:\n👉 Serviço de ${sev}\n----------------------------------\n 👉 Data e Hora: ${data} - ${hora}\n\n`
-var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)}✅  Página web: ${pag}`;
-window.open(url, "_blank");
-},1000)
+ZAP()
 }
 function inicio(){
 document.getElementById('a_inicio').click()
