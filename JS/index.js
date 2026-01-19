@@ -6,6 +6,7 @@ function psqOr(){
 
     if(resp.length === 11){ 
        // alert(resp);
+       
         window.open(`html/orcaserv.html?codigo=${resp}`, '_self');
     } else {
        // alert("O código precisa ter 11 caracteres.");
@@ -82,7 +83,7 @@ title: '📝 Acesse seu Orçamento!',
 html: `
 <div class="menu-container">
 <p>Digite ou cole seu código</p>
-<input id='confirmaCódigo' type='text' placeholder='Digite o código e confirme'>
+<input id='confirmaCódigo'  type='text' onkeyup="psqOrr()"  placeholder='Digite o código '>
 <br>
 <button id="Swalstart" title="">Confirme</button>
 <button id="Sair" class="cancelar">Sair</button>
@@ -102,11 +103,11 @@ document.body.style.paddingRight = '0px';
 document.getElementById('Sair').addEventListener('click', function () {
 Swal.close();
 });
+
 document.getElementById('Swalstart').addEventListener('click', function () {
 // pega o valor do input
-var codigo = document.getElementById('confirmaCódigo').value;
-// remove todos os espaços
-codigo = codigo.replace(/\s+/g, "");
+var codigo = document.getElementById('confirmaCódigo').value.toUpperCase()
+
 // valida se está vazio
 if (!codigo || codigo === '') {
 Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
@@ -115,6 +116,18 @@ Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
 window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
 }
 });
+}
+function psqOrr(){
+    var resposta = document.getElementById('confirmaCódigo').value.toUpperCase(); 
+    // força o texto para maiúsculas
+
+    if(resposta.length === 11){ 
+       // alert(resp);
+       codigo = resposta.replace(/\s+/g, "");
+        window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
+    } else {
+       // alert("O código precisa ter 11 caracteres.");
+    }
 }
 // dados admim tel
 var telAdmim= 11995501463
