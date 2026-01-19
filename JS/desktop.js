@@ -1,4 +1,18 @@
 
+//limpar formulário
+function liparFormulario(){
+ document.getElementById('inputNome').value=''
+ document.getElementById('inputCPF').value=''
+ document.getElementById('inputTel').value=''
+ document.getElementById('Input_rua').value=''
+ document.getElementById('Input_numero').value=''
+ document.getElementById('Input_bairro').value=''
+ document.getElementById('Input_cidade').value=''
+ document.getElementById('Input_estado').value=''
+ document.getElementById('inputemail').value=''
+ document.getElementById('Input_cep').value=''
+ document.getElementById('Input_Ref').value=''
+}
 
 
 // format CPF cliente
@@ -134,6 +148,7 @@ var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n--------
 
 var whatsappLink = "https://wa.me/"+`${NTF}?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
+liparFormulario()
   },2000)
 }
 }

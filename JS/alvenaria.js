@@ -1,6 +1,24 @@
 
 
 
+
+
+//limpar formulário
+function liparFormulario(){
+ document.getElementById('inputNome').value=''
+ document.getElementById('inputCPF').value=''
+ document.getElementById('inputTel').value=''
+ document.getElementById('Input_rua').value=''
+ document.getElementById('Input_numero').value=''
+ document.getElementById('Input_bairro').value=''
+ document.getElementById('Input_cidade').value=''
+ document.getElementById('Input_estado').value=''
+ document.getElementById('inputemail').value=''
+ document.getElementById('Input_cep').value=''
+ document.getElementById('Input_Ref').value=''
+}
+
+
 // format CPF cliente
 function CPF_Cliente(event) {
 let input = event.target;
@@ -120,10 +138,8 @@ firebase.initializeApp(firebaseConfigure);
  Data:data,
  Hora:hora,
  })
-
  Swal.fire('','Cadastro completo!','success')
    setTimeout(function(){
-
 Swal.close()
 var TelAD=`11995501463`
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
@@ -134,6 +150,7 @@ var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n--------
 
 var whatsappLink = "https://wa.me/"+`${NTF}?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
+liparFormulario()
   },2000)
 }
 }

@@ -1,6 +1,19 @@
 
 
-
+//limpar formulário
+function liparFormulario(){
+ document.getElementById('inputNome').value=''
+ document.getElementById('inputCPF').value=''
+ document.getElementById('inputTel').value=''
+ document.getElementById('Input_rua').value=''
+ document.getElementById('Input_numero').value=''
+ document.getElementById('Input_bairro').value=''
+ document.getElementById('Input_cidade').value=''
+ document.getElementById('Input_estado').value=''
+ document.getElementById('inputemail').value=''
+ document.getElementById('Input_cep').value=''
+ document.getElementById('Input_Ref').value=''
+}
 
 // format CPF cliente
 function CPF_Cliente(event) {
@@ -121,10 +134,8 @@ firebase.initializeApp(firebaseConfigure);
  Data:data,
  Hora:hora,
  })
-
  Swal.fire('','Cadastro completo!','success')
    setTimeout(function(){
- 
 Swal.close()
 var TelAD=`11995501463`
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
@@ -132,9 +143,9 @@ var NTF = `+55${TelAD}`;
 //var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + inp9;
 var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n-----------------------------------\n👍 Cliente: ${inp1}\n👉 CPF: ${inp2}\n📞 Tel: ${inp3}\n👉 Emal: ${inp9} \n-------------------------------------\n
 📄 Endereço:\n--------------------------------\nRua: ${inp4}\nNº: ${inp5}\nBairro: ${inp6}\nCidade: ${inp7}\nEstado: ${inp8}\nCep: ${inp10}\n REF: ${inp11}\n\n✅ Pagina: ${pagina}\n\n`;
-
 var whatsappLink = "https://wa.me/"+`${NTF}?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
+liparFormulario()
   },2000)
 }
 }
