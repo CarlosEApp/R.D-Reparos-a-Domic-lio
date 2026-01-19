@@ -519,7 +519,7 @@ var telefone= sessionStorage.getItem('teladmin')
 function falecom(){
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var msm=` R.D - Reparos a Domicílio (pedido de contato) \n\n`
+var msm=`Solicitação de contato \n\n`
 var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)} Página web: ${url}`;
 window.open(Url,"_blank" );
 }
