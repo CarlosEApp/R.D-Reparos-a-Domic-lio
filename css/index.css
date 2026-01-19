@@ -5,8 +5,8 @@ margin: 0%;
 padding: 0%;
 }
 body{
-    margin:auto;
-    width: 100%;
+margin:auto;
+width: 100%;
 font-family: 'Poppins', sans-serif;
 background-color: rgb(255, 255, 255);
 color: aliceblue;
@@ -21,7 +21,7 @@ background-color: rgba(0, 46, 63, 0);
 min-height: 100vh;
 }
 #divRead{
-    margin:auto;
+margin:auto;
 position: fixed;
 width: 100%;
 max-width: 1920px;
@@ -156,7 +156,6 @@ max-width: 460px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
-
 overflow: hidden;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
@@ -311,7 +310,6 @@ margin: 0%;
 }
 #lblNotaAV{
 font-size: 2rem;
-
 }
 .estrelas input:checked ~ label {
 color: rgb(224, 240, 0);
@@ -333,7 +331,6 @@ max-width: 700px;
 min-width: 390px;
 text-align: center;
 border-radius: 20px;
-
 }
 #Stars h2{
 color: #818181;
@@ -377,12 +374,10 @@ display: none;
 }
 #infoComent{
 cursor: pointer;
-
 }
 #infoComent:hover{
 color: #7c00cf;
 }
-
 #Avh4{
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
 color: #353535;
@@ -441,9 +436,8 @@ margin-right: 10px;
 cursor: pointer;
 }
 #divInfo #lblInfo3{
-    color: rgb(90, 2, 2);
+color: rgb(90, 2, 2);
 }
-
 .my-custom_infoMSM{
 max-width: 390px;
 color: aliceblue;
@@ -508,7 +502,6 @@ font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 #verlistInfo:hover{
 background-color: #ffffff;
 border: 1px solid rgba(0, 0, 0, 0.171);
-
 }
 #spanInfo{
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
@@ -531,7 +524,7 @@ color: #afce00;
 #btnCad{
 color: #000000;
 }
- #divInfo:hover {
+#divInfo:hover {
 margin-right: 10px;
 cursor: pointer;
 font-weight: bold;
@@ -598,7 +591,6 @@ background-color: rgba(243, 245, 255, 0);
 border-radius: 10px;
 transform: translateY(-15px);
 }
-
 @media (max-width: 1400px) {
 #div_loja{
 float: right;
@@ -617,7 +609,6 @@ margin-right: 16%;
 #iconeLoja{
 width: 10%;
 }
-
 }
 @media (max-width: 900px) {
 #div_loja{
@@ -634,7 +625,6 @@ margin-right: 17%;
 #iconeLoja{
 width: 11%;
 }
-
 }
 @media (max-width: 700px) {
 #div_loja{
@@ -644,7 +634,6 @@ margin-right: 19%;
 #iconeLoja{
 width: 16%;
 }
-
 }
 @media (max-width: 500px) {
 #div_loja{
@@ -654,7 +643,6 @@ margin-right: 20%;
 #iconeLoja{
 width: 20%;
 }
-
 }
 @media (max-width: 400px) {
 #div_loja{
@@ -862,12 +850,12 @@ border: 2px solid #0047b100;
 border-radius: 10px;
 }
 .my-custom_compartilhar #sair_{
-   width: 100px;
-   margin-top: 10px;
-   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+width: 100px;
+margin-top: 10px;
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 .my-custom_compartilhar #sair_:hover{
- 
+
 background-color: #97000d;
 color: #ffffff;
 border: 2px solid #b4000000;
@@ -920,11 +908,11 @@ text-align: center;
 font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.500rem);
 }
 #ppOR{
- margin: auto;
- width: 90%;
- color: #000000;
- font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
- font-weight: bold;
+margin: auto;
+width: 90%;
+color: #000000;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.200rem);
+font-weight: bold;
 }
 @media (max-width: 1430px) {
 #mainn #divPesquisa{
@@ -932,11 +920,11 @@ width: 280px;
 padding: 10px;
 }
 #ppOR{
- margin: auto;
- width: 90%;
- color: #000000;
- font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
- font-weight: bold;
+margin: auto;
+width: 90%;
+color: #000000;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+font-weight: bold;
 }
 }
 @media (max-width: 1630px) {
@@ -1031,7 +1019,7 @@ transition: transform 0.7s ease;
 transform: translateY(-12px); 
 }
 #folder{
-    background-color:  #0183da;
+background-color:  #0183da;
 }
 @media (max-width: 1030px) {
 #folder img{
@@ -1066,8 +1054,8 @@ color: aliceblue;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 .my-custom_RDzinho{
- margin: 0%;
- padding: 0%;
+margin: 0%;
+padding: 0%;
 width: 100%;
 max-width: 430px;
 border: 7px solid rgb(255, 255, 255);
@@ -1089,10 +1077,9 @@ padding-bottom: 5px;
 padding-top: 5px;
 font-weight: bolder;
 color: rgb(255, 255, 255);
-
 }
 .my-custom_RDzinho button{
-    margin-bottom: 12px;
+margin-bottom: 12px;
 }
 #divrdzinho{
 width: 100%;
@@ -1104,7 +1091,7 @@ flex-wrap: wrap;
 gap: 5px;
 }
 #divrdzinho button{
-    margin: auto;
+margin: auto;
 width: 140px;
 border: 0cap;
 background-color: #007e11;
@@ -1125,110 +1112,155 @@ color: aliceblue;
 border: 2px solid rgba(23, 114, 0, 0);
 }
 #div_loja #lojaP{
-    color: #d60000;
-    font-size: 16px;
-    background-color: #007e11;
+color: #d60000;
+font-size: 16px;
+background-color: #007e11;
 }
-
 #divlTP_flex{
-    margin: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    background-color: #007e1100;
+margin: auto;
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 25px;
+background-color: #007e1100;
 }
 #divP_orçar{
-    margin: auto;
-    width: 98%;
-    min-height: 7vh;
-    background-color: #7c0e0e00;
-    padding-top:20px ;
-    border-radius: 10px;
-    padding-bottom: 30px;
-
+margin: auto;
+width: 98%;
+min-height: 7vh;
+background-color: #7c0e0e00;
+padding-top:20px ;
+border-radius: 10px;
+padding-bottom: 30px;
 }
 #ppOR{
-    margin: auto;
-    width: 99%;
-    color: #383838;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-
+margin: auto;
+width: 99%;
+color: #383838;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #inputPesqCód{
-    width: 80%;
-     margin: auto;
-      font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
-      padding: 7px;
-      cursor: pointer;
-      background-color: #0047b100;
-      margin-top: 5px;
-      margin-left: 7px;
-      border: 0px #5e5e5e00;
-      outline-color: rgba(255, 0, 0, 0);
-      font-family: fantasy;
-      text-transform: uppercase;
-      
+width: 80%;
+margin: auto;
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+padding: 7px;
+cursor: pointer;
+background-color: #0047b100;
+margin-top: 5px;
+margin-left: 7px;
+border: 0px #5e5e5e00;
+outline-color: rgba(255, 0, 0, 0);
+font-family: fantasy;
+text-transform: uppercase;
 }
 #inputPesqCód::placeholder {
-     color: rgba(73, 0, 0, 0.5); /* muda a cor do pré‑texto */ 
-    font-style: italic; /* opcional: deixa em itálico */ 
-    opacity: 1; /* garante que a cor fique forte */ 
- 
+color: rgba(73, 0, 0, 0.5); /* muda a cor do pré‑texto */ 
+font-style: italic; /* opcional: deixa em itálico */ 
+opacity: 1; /* garante que a cor fique forte */ 
+
 }
 #divRecomendados{
-        width: 100%;
-    min-height: 20vh;
-    background-color: #00b7ff00;
+width: 100%;
+min-height: 20vh;
+background-color: #00b7ff00;
 }
 #recEX{
-       font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
-       margin-left: 7px;
-        color: #383838;
-   
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
+margin-left: 7px;
+color: #383838;
 }
 #ppOR #codOR{
-    color: rgb(124, 0, 0);
-    font-weight: bold;
-    
+color: rgb(124, 0, 0);
+font-weight: bold;
+
 }
 @media (max-width: 1620px) {
 #inputPesqCód{
-    width: 90%;
-     margin: auto;
-      font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-      padding: 7px;
-      cursor: pointer;
-      background-color: #0047b100;
-      margin-top: 5px;
-      margin-left: 7px;
-      border: 0px #5e5e5e00;
-      outline-color: rgba(255, 0, 0, 0);
-      
+width: 90%;
+margin: auto;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+padding: 7px;
+cursor: pointer;
+background-color: #0047b100;
+margin-top: 5px;
+margin-left: 7px;
+border: 0px #5e5e5e00;
+outline-color: rgba(255, 0, 0, 0);
 }
 #divRecomendados label{
-       font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 #ppOR{
-    margin: auto;
-    width: 100%;
-    color: #383838;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    font-weight: bold;
+margin: auto;
+width: 100%;
+color: #383838;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
 }
 }
 @media (max-width: 1420px) {
 #inputPesqCód{
-    width: 95%;
-     margin: auto;
-      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-      padding: 7px;
-      cursor: pointer;
-      background-color: #0047b100;
-      margin-top: 5px;
-      margin-left: 7px;
-      border: 0px #5e5e5e00;
-      outline-color: rgba(255, 0, 0, 0);
-      
+width: 95%;
+margin: auto;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+padding: 7px;
+cursor: pointer;
+background-color: #0047b100;
+margin-top: 5px;
+margin-left: 7px;
+border: 0px #5e5e5e00;
+outline-color: rgba(255, 0, 0, 0);
 }
+}
+#myProgress {
+width: 90%;
+background-color:rgb(134, 130, 130);
+display: none;
+border-radius: 7px;
+margin-bottom: 3px;
+margin-left: 10%;
+margin-top: 10px;
+outline: none;
+}
+#myBar {
+width: 2%;
+/* Começa com 1% */
+height: 20px;
+background-color:rgba(0, 219, 18, 0.993);
+text-align: center;
+/* Centraliza horizontalmente */
+line-height: 20px;
+/* Centraliza verticalmente */
+color: rgb(78, 0, 0);
+border-radius: 20px;
+font-weight: bold;
+outline: none;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+}   
+.my-customTime{
+ margin: auto;
+width: 90%;
+max-width: 400px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.my-customTime #btnTime{
+text-align: center;
+border: 0cap;
+background-color: #007e1100;
+float: left;
+outline: none;
+animation: girar 7s linear infinite; /* já inicia girando */
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+@keyframes girar { from {
+transform: rotate(0deg); 
+} 
+to {
+transform: rotate(360deg); 
+} 
+}
+.my-customTime #divInit{
+    width: 100%;
+    min-height: 15vh;
 }

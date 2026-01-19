@@ -31,7 +31,7 @@ z-index: 999;
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #head1{
- width: 100%;
+width: 100%;
 display: flex;
 justify-content:space-between;
 margin-top: 10px;
@@ -89,7 +89,6 @@ border: 2px solid rgba(4, 129, 0, 0);
 }
 #div1:hover{
 border: 2px solid rgba(4, 129, 0, 0.973);
-
 }
 #div2{
 width: 100%;
@@ -492,42 +491,93 @@ background-color: #cf0101;
 border-radius: 5px;
 }
 #folder img{
-    margin: auto;
-    max-height: 70vh;
-    padding-top: 46px;
-    transition: transform 0.7s ease;
+margin: auto;
+max-height: 70vh;
+padding-top: 46px;
+transition: transform 0.7s ease;
 }
 #folder img:hover{
 transform: translateY(-12px); 
-  
 }
 @media (max-width: 1030px) {
 #folder img{
-    margin: auto;
-    max-height: 57vh;
-    padding-top: 43px;
-    transition: transform 0.7s ease;
+margin: auto;
+max-height: 57vh;
+padding-top: 43px;
+transition: transform 0.7s ease;
 }
 }
 @media (max-width: 730px) {
 #folder img{
-    margin: auto;
-    max-height: 46vh;
-    padding-top: 43px;
-    transition: transform 0.7s ease;
+margin: auto;
+max-height: 46vh;
+padding-top: 43px;
+transition: transform 0.7s ease;
 }
 }
-
 #divOrçar #limparF{
-    font-weight: bold;
-    font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
-    margin-top: 20px;
-    cursor: pointer;
+font-weight: bold;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+margin-top: 20px;
+cursor: pointer;
 }
 #i_limp{
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #divOrçar #limparF:hover{
-    color: #ca0000;
+color: #ca0000;
 }
+#myProgress {
+width: 90%;
+background-color:rgb(134, 130, 130);
+display: none;
+border-radius: 7px;
+margin-bottom: 3px;
+margin-left: 10%;
+margin-top: 10px;
+outline: none;
+}
+#myBar {
+width: 2%;
+/* Começa com 1% */
+height: 20px;
+background-color:rgba(0, 219, 18, 0.993);
+text-align: center;
+/* Centraliza horizontalmente */
+line-height: 20px;
+/* Centraliza verticalmente */
+color: rgb(78, 0, 0);
+border-radius: 20px;
+font-weight: bold;
+outline: none;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+}   
+.my-customTime{
+ margin: auto;
+width: 90%;
+max-width: 400px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.my-customTime #btnTime{
+text-align: center;
+border: 0cap;
+background-color: #007e1100;
+float: left;
+outline: none;
+animation: girar 7s linear infinite; /* já inicia girando */
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+@keyframes girar { from {
+transform: rotate(0deg); 
+} 
+to {
+transform: rotate(360deg); 
+} 
+}
+.my-customTime #divInit{
+    width: 100%;
+    min-height: 15vh;
+}
+
 

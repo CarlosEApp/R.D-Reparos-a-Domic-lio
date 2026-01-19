@@ -273,3 +273,53 @@ document.webkitCancelFullScreen();
    AlertaInicial()
 
    
+function initPage(){
+    Swal.fire({ 
+title: ``,
+text: ``, 
+html:`
+ <div id="divInit"> 
+ <button id='btnTime'>⏳</button>
+  <div id="myProgress" title="Progresso">
+   <div id="myBar">10%</div>
+     </div>
+ </div>
+`,
+imageUrl: ``,
+background: '#00325300',
+color: '#fff', // cor do texto });
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customTime' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';   
+}
+})
+document.getElementById('myProgress').style.display = 'block'
+var i = 0;
+if (i == 0){
+i = 1;
+var elem = document.getElementById("myBar");
+var width = 1;
+var id = setInterval(frame, 50);
+function frame() {
+if (width >= 100) {
+
+i = 0;
+document.getElementById('myProgress').style.display = 'none'
+ swalclose()
+//document.getElementById('imgcad').value = `${url_imagem}`
+} else {
+width++;
+elem.style.width = width + "%";
+elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+}
+}
+}
+}
+function swalclose(){
+    Swal.close()
+}
+initPage()

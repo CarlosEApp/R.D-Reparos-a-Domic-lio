@@ -13,8 +13,6 @@ function liparFormulario(){
  document.getElementById('Input_cep').value=''
  document.getElementById('Input_Ref').value=''
 }
-
-
 // format CPF cliente
 function CPF_Cliente(event) {
 let input = event.target;
@@ -45,11 +43,9 @@ sessionStorage.setItem('SERV','')
 function falecom_bt(){
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
-
 var inp1= document.getElementById('inputNome').value;
 var inp2= document.getElementById('inputCPF').value;
 var inp3= document.getElementById('inputTel').value;
-
 var inp4= document.getElementById('Input_rua').value;
 var inp5= document.getElementById('Input_numero').value;
 var inp6= document.getElementById('Input_bairro').value;
@@ -216,7 +212,6 @@ div2.appendChild(label4);
 div.appendChild(div2);
 div.appendChild(pr);
 listTab.appendChild(div)
-
 sessionStorage.setItem('SERV',doc.Lista)
 //setTimeout(function(){
 //Swal.fire(`${itens}`,`quantidade de serviços: ${itens} `,'')
@@ -294,9 +289,6 @@ Menu()
 function init(){
 Menu() 
 };
-//abrir tabela
-
-//fechar tabela
 var telefone= sessionStorage.getItem('teladmin')
 function ZAP(){
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
@@ -305,7 +297,6 @@ var msm=` solicitação de contato\n\n`
 var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅  Página web: ${url} `;
 window.open(Url, "_blank");
 }
-
 function falecom(){
 ZAP()
 }
@@ -382,3 +373,54 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 localStorage.setItem('data', data)
 localStorage.setItem('hora', timeString)
 }, 1000)
+
+function initPage(){
+    Swal.fire({ 
+title: ``,
+text: ``, 
+html:`
+ <div id="divInit"> 
+ <button id='btnTime'>⏳</button>
+  <div id="myProgress" title="Progresso">
+   <div id="myBar">10%</div>
+     </div>
+ </div>
+`,
+imageUrl: ``,
+background: '#00325300',
+color: '#fff', // cor do texto });
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customTime' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';   
+}
+})
+document.getElementById('myProgress').style.display = 'block'
+var i = 0;
+if (i == 0){
+i = 1;
+var elem = document.getElementById("myBar");
+var width = 1;
+var id = setInterval(frame, 50);
+function frame() {
+if (width >= 100) {
+
+i = 0;
+document.getElementById('myProgress').style.display = 'none'
+ swalclose()
+//document.getElementById('imgcad').value = `${url_imagem}`
+} else {
+width++;
+elem.style.width = width + "%";
+elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+}
+}
+}
+}
+function swalclose(){
+    Swal.close()
+}
+initPage()
