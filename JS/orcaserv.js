@@ -147,7 +147,7 @@ customClass: {
 popup: 'my-custom_alert' // Aplica a classe CSS personalizada
 },
 didOpen: () => {
-Swal.showLoading();
+
 document.body.style.paddingRight = '0px';        
 }
 }); 
@@ -278,7 +278,7 @@ function initPage(){
 title: ``,
 text: ``, 
 html:`
- <div id="divInit"> 
+ <div id="divInitTime"> 
  <button id='btnTime'>⏳</button>
   <div id="myProgress" title="Progresso">
    <div id="myBar">10%</div>
@@ -303,13 +303,14 @@ if (i == 0){
 i = 1;
 var elem = document.getElementById("myBar");
 var width = 1;
-var id = setInterval(frame, 50);
+var id = setInterval(frame, 70);
 function frame() {
 if (width >= 100) {
 
 i = 0;
 document.getElementById('myProgress').style.display = 'none'
  swalclose()
+ clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
 } else {
 width++;

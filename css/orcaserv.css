@@ -264,8 +264,20 @@ to {
 transform: rotate(360deg); 
 } 
 }
-.my-customTime #divInit{
+.my-customTime #divInitTime{
     width: 100%;
     min-height: 15vh;
 }
-
+.my-customTime #imgTime{
+ position: relative;
+ width: 30px;
+ animation: andar 10s linear infinite; /* duração e repetição */
+}
+  @keyframes andar {
+    from {
+      left: 0; /* começa na esquerda */
+    }
+    to {
+      left: 100px; /* termina 300px à direita */
+    }
+  }
