@@ -644,8 +644,8 @@ if (width >= 100) {
 i = 0;
 document.getElementById('myProgress').style.display = 'none'
  swalclose()
+ clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
-clearInterval(id)
 } else {
 width++;
 elem.style.width = width + "%";
