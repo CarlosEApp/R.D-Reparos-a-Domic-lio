@@ -637,6 +637,7 @@ var EmailColab= document.getElementById('inputColEmail').value;
 var RGColab= document.getElementById('rg').value;
 var CPFColab= document.getElementById('cpf').value;
 var TelColab= document.getElementById('inputColTel').value;
+var senhaColab=document.getElementById('inputColSenha').value;
 var data= localStorage.getItem('data')
 var hora= localStorage.getItem('hora')
 var FotoColab= document.getElementById('fotoCol').src 
@@ -675,6 +676,7 @@ Email:EmailColab,
 RG:RGColab,
 CPF:CPFColab,
 Telefone:TelColab,
+Senha:senhaColab,
 Foto:FotoColab,
 Data: data,
 Hora: hora,
@@ -795,6 +797,7 @@ document.getElementById('inputColEmail').value=''
 document.getElementById('rg').value=''
 document.getElementById('cpf').value=''
 document.getElementById('inputColTel').value=''
+document.getElementById('inputColSenha').value=''
 document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
 sessionStorage.setItem('data_cd','')
 sessionStorage.setItem('hora_cd','')
