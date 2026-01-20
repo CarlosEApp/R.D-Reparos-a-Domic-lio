@@ -165,7 +165,7 @@ document.getElementById('read2').style.display='none'
 };
 //logo click
 function imgLogo(){
-swal('R.D - reparos a domicílio','','src/rd_logo_png.png')
+swal('R.D - reparos a domicílio','','src/rd_logo_capacete_png.png')
 }
 //Colaboradores
 function Colab(){
