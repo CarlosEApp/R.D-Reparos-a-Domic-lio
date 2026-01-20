@@ -69,17 +69,24 @@
                         <label onclick="verPrest()" id="VerPret" for="">Ver mais <i id="I_prest" class="fa-solid fa-eye"></i></label>
                    </div>
                </div>
-
              <div id="body2">
              <h3 id="h3Servi">Serviço de ...</h3>
 
              <div id="div_list">
                <div id="header_list">
-                <button>botão 01</button>  <button>botão 02</button>  <button>botão 03</button>
+                <button onclick="OrçarServ()"><i class="fa-sharp-duotone fa-solid fa-lock"></i> Orçarmento </button>  <button>Breve</button>  <button onclick="finalizar()">Finalizar</button>
                </div>
-               <div id="listaserv">
+               <div id="divOrçar">
+                <div id="divOrçarHeader">
+                  <button onclick="addserv()">Add taréfa</button><button onclick="add()">Breve</button><button onclick="add2()">Bresve</button>
+                </div>
+               <div id="listaserv"></div>
+               </div>
+
+               <div id="divFinalizar">
 
                </div>
+
              </div>
             </div>
              </div>

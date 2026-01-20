@@ -196,6 +196,11 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
   color: aliceblue;
   font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
   font-weight: bold;
+
+}
+#header_list button:hover{
+
+ color: rgb(255, 217, 0);
 }
 @media (max-width: 1380px) {
 #divBody{
@@ -254,8 +259,8 @@ border: 0cap;
 background-color: #007e1100;
 float: left;
 outline: none;
-animation: girar 7s linear infinite; /* já inicia girando */
-font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.400rem);
+animation: girar 10s linear infinite; /* já inicia girando */
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
 }
 @keyframes girar { from {
 transform: rotate(0deg); 
@@ -265,19 +270,168 @@ transform: rotate(360deg);
 } 
 }
 .my-customTime #divInitTime{
-    width: 100%;
-    min-height: 15vh;
+width: 100%;
+min-height: 15vh;
 }
-.my-customTime #imgTime{
- position: relative;
- width: 30px;
- animation: andar 10s linear infinite; /* duração e repetição */
+#divOrçar{
+    margin: auto;
+width: 99%;
+min-height: 59vh;
+background-color: rgba(0, 255, 255, 0);
+display: none;
+ border:2px solid  blueviolet;
+ margin-top: 10px;
 }
-  @keyframes andar {
-    from {
-      left: 0; /* começa na esquerda */
-    }
-    to {
-      left: 100px; /* termina 300px à direita */
-    }
-  }
+#divFinalizar{
+width: 100%;
+min-height: 59vh;
+background-color: rgb(110, 109, 47);
+display: none;
+}
+.my-customAddServ{
+margin: auto;
+width: 100%;
+max-width: 400px;
+border-radius: 55px;
+border: 5px solid antiquewhite;
+}
+.my-customAddServ h2{
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+color: rgba(250, 235, 215, 0.753);
+}
+.my-customAddServ p{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+color: rgba(250, 235, 215, 0.753);
+}
+.my-customAddServ #inputTarefa{
+width: 92%;
+border: 0cap;
+background-color: rgba(237, 237, 255, 0);
+padding:10px;
+outline-color: rgb(128, 0, 0);
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+cursor: pointer;
+margin-right: 10px;
+outline: none;
+color: rgba(240, 248, 255, 0.829);
+}
+.my-customAddServ #valorTarefa{
+width: 33%;
+padding: 5px;
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+float: left;
+border: 0cap;
+text-align: center;
+background-color: rgba(240, 248, 255, 0);
+outline: none;
+color: rgb(13, 161, 0);
+margin-top: 7px;
+font-family: fantasy;
+}
+.menu-container{
+border: 1px solid rgba(240, 248, 255, 0.616);
+min-height: 9vh;
+padding: 10px;
+background-color: rgba(0, 8, 8, 0.925);
+border: 3px solid rgba(255, 255, 255, 0.329);
+border-radius: 20px;
+margin-top: 5px;
+padding-bottom: 25px;
+}
+.menu-container #bbtr{
+color: rgb(0, 187, 16);
+float: left;
+margin-top: 11px;
+}
+.menu-container  #addMauis{
+width: 37%;
+float: right;
+margin-right: 10px;
+margin-top: 10px;
+background-color: rgba(39, 59, 1, 0.445);
+color: rgb(5, 150, 0);
+font-weight: bold;
+border: 1px solid rgb(0, 160, 48);
+padding: 5px;
+border-radius: 10px;
+padding-left: 10px;
+padding-right: 10px;
+cursor: pointer;
+}
+.menu-container  #addMauis:hover{
+background-color: aqua;
+color: red;
+}
+.my-customAddServ button{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+border-radius: 10px;
+}
+.my-customAddServ button:hover{
+color: rgb(255, 255, 255);
+background-color: rgba(172, 0, 0, 0.705);
+}
+#divOrçarHeader {
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 7px;
+padding-bottom: 7px;
+background-color: blueviolet;
+color: aliceblue;
+
+}
+#divOrçarHeader button{
+margin-left: 10px;
+margin-right: 10px;
+border: 0cap;
+background-color: rgba(240, 248, 255, 0);
+cursor: pointer;
+color: aliceblue;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+text-decoration: underline 2px solid aliceblue;
+}
+#divOrçarHeader button:hover{
+color: rgb(224, 191, 0);
+text-decoration: underline  2px solid rgb(255, 217, 0);
+}
+#inputPassw{
+width: 55%;
+padding: 7px;
+border: 0cap;
+background-color: rgb(240, 243, 255);
+outline: none;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#inputPassw:hover{
+padding: 7px;
+
+background-color: rgb(0, 247, 255);
+outline: none;
+}
+#enterPassw{
+padding: 7px;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 0pc;
+border: 2px solid  beige;
+cursor: pointer;
+margin-top: 5px;
+}
+#enterPassw:hover{
+padding: 7px;
+padding-left: 10px;
+padding-right: 10px;
+background-color: aqua;
+color: red;
+border: 2px solid  rgb(0, 247, 255);
+}
+#ppo #verpassw{
+cursor: pointer;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+
+}
+#ppo:hover #verpassw:hover{
+color: rgb(0, 235, 20);
+}

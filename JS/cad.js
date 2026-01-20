@@ -1293,7 +1293,7 @@ if (i == 0){
 i = 1;
 var elem = document.getElementById("myBarr");
 var width = 1;
-var idd = setInterval(frame, 30);
+var idd = setInterval(frame, 40);
 function frame() {
 if (width >= 100) {
 
