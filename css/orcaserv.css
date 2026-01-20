@@ -291,7 +291,7 @@ display: none;
 .my-customAddServ{
 margin: auto;
 width: 100%;
-max-width: 600px;
+max-width: 500px;
 border-radius: 20px;
 border: 5px solid antiquewhite;
 margin-bottom: 250px;
@@ -490,7 +490,7 @@ color: rgb(0, 235, 20);
 }
 .my-customAddServ_{
     width: 100%;
-    max-width: 500px;
+    max-width: 430px;
     border-radius: 10px;
 }
 .my-customAddServ_ h2{

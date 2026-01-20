@@ -168,29 +168,44 @@ document.getElementById('divFinalizar').style.display='block'
 }
 }
 // botão add serviço
-function addserv(){
-Swal.fire({
-title: '<i class="fa-solid fa-pen-to-square"></i> Nova taréfa!',
-html: `
-<p>A adicione nova taréfa e valor!</p>
-<div class="menu-container">
-<input id='inputTarefa' type='text' placeholder='Nova taréfa'> 
-<input id='valorTarefa' type='text' placeholder='0000,00'> <b id='bbtr'>R$:</b>
-<button id="addMauis" title="">✅Add </button>
-</div>
-`,
-background: '#00253d',
-color: '#ffffffff',
-showCancelButton: true,
-showConfirmButton: false,
-customClass: {
-popup: 'my-customAddServ'
-},
-didOpen: () => {
-document.body.style.paddingRight = '0px';
-}
-});
-}
+function addserv() { Swal.fire({ title: '<i class="fa-solid fa-pen-to-square"></i> Nova tarefa!', 
+  html: ` <p>Adicione nova tarefa e valor!</p> <div class="menu-container">
+   <input id='inputTarefa' type='text' placeholder='Nova tarefa'>
+    <input id='valorTarefa' type='text' placeholder='0000,00'> 
+    <b id='bbtr'>R$:</b> 
+    <button id="addMauis" title="">✅Add </button> </div> `, 
+    background: '#00253d', 
+    color: '#ffffffff', 
+    showCancelButton: true, 
+    showConfirmButton: false, 
+    customClass: { popup: 'my-customAddServ' }, 
+    didOpen: () => { document.body.style.paddingRight = '0px'; 
+      const campoValor = document.getElementById("valorTarefa"); 
+      campoValor.addEventListener("input", () => { 
+        let valor = campoValor.value.replace(/\D/g, ""); 
+        if (valor) { 
+          let numero = (parseInt(valor, 10) / 100).toFixed(2);
+           campoValor.value = new Intl.NumberFormat("pt-BR", {
+             style: "currency", 
+             currency: "BRL" }).format(numero);
+             }
+             }); 
+             document.getElementById("addMauis").addEventListener("click", () => { 
+              const tarefa = document.getElementById("inputTarefa").value; 
+              const valorFormatado = campoValor.value; 
+               let valor = valorFormatado ; 
+               let apenasNumeros = valor.split('').filter(c => /\d/.test(c)).join('');
+                console.log(apenasNumeros); 
+                // "1200000" 
+                let numero = parseFloat(apenasNumeros) / 100;
+                 console.log(numero); // 12000.00
+              Swal.fire(`${numero}`,`${valorFormatado}`,`success`)
+              console.log("Tarefa:", tarefa); 
+              console.log("Valor formatado:", valorFormatado); 
+            }); 
+          }
+         }); 
+        }
 //pretador iniciar
 function verPrest_(){
 var RE_Prest_= sessionStorage.getItem('REE')
