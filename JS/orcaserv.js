@@ -12,6 +12,7 @@ Swal.fire({
 title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
+<div id='myFlex'>
 <input id='inputPassw' type='password' placeholder='password...'> 
 <button id="enterPassw" title="">✅Enter </button>
 </div>
