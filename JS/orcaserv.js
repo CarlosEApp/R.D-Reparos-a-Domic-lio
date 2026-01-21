@@ -25,7 +25,6 @@ messagingSenderId: "2081562439",
 appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
-
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 db.collection("Orçamentos").doc(orcamento).get().then((doc) => {
@@ -57,10 +56,7 @@ sessionStorage.setItem('REE',dados.NRE)
 document.getElementById("Tel_Clob").innerHTML = `Contato (Whats): <b id='BB2'> ${dados.Tel_Prestador}</b>`;
 document.getElementById('Tel_Clob').value=dados.Tel_Prestador
 document.getElementById('h3Servi').innerHTML=`Serviço de  <b id='BBb'> ${dados.Serviço}</b>`
-
-
 document.getElementById('divGeral').style.display='block';
-
 } else {
 document.getElementById('divGeral').style.display='none';
 Swal.fire({ 
@@ -75,21 +71,31 @@ popup: 'popup-class',
 title: 'title-class', 
 htmlContainer: 'text-class' }
 })
-
 setTimeout(function(){
 window.open('../index.html', '_self')
 // document.getElementById('divInit').style.display='none';
 },4000)
-
 }
 });
 }, 2000);
 };
-
+// lista de orçamento para cliente
+document.getElementById('divOrçar').style.display='none';
+function list(){
+  clientelist()
+var resp=document.getElementById('divOrçar').style.display;
+if(resp=='none'){
+document.getElementById('divOrçar').style.display='block';
+document.getElementById('divOrçarHeader').style.display='none';
+}else{
+document.getElementById('divOrçar').style.display='none';
+document.getElementById('divOrçarHeader').style.display='none';
+}
+}
 // botão orçar
-
 sessionStorage.setItem('Tranca','');
 function OrçarServ(){
+  
 var NomeP=sessionStorage.getItem('PresNome')
 var passw=sessionStorage.getItem('PresSenha')
 var REP= sessionStorage.getItem('PresRE')
@@ -97,6 +103,7 @@ var imagemP= sessionStorage.getItem('imgPrest')
 var tranca= sessionStorage.getItem('Tranca');
 var cadeado=document.getElementById('cadeado');
 if(!tranca|| tranca==''){
+  document.getElementById('divOrçar').style.display='none';
 Swal.fire({
 title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
 html: `
@@ -136,7 +143,7 @@ swal(`RE: ${REP}`,`Prestador: ${NomeP}`,`${imagemP}`)
 setTimeout(function(){
 Swal.close()
 novoOrçamento()
-
+clientelist()
 sessionStorage.setItem('Tranca','logado');
 },3000)
 }else{
@@ -149,6 +156,7 @@ novoOrçamento()
 }
 }
 function novoOrçamento(){
+  document.getElementById('divOrçarHeader').style.display='block';
 document.getElementById('divFinalizar').style.display='none'
 var resp_=document.getElementById('divOrçar').style.display;
 if(resp_=='block'){
@@ -168,34 +176,183 @@ document.getElementById('divFinalizar').style.display='block'
 }
 }
 // botão add serviço
-
 document.addEventListener("DOMContentLoaded", () => {
-const campoValorEl = document.getElementById("valorTarefa");
-const btnAddMais = document.getElementById("addMais");
-const inputTarefa = document.getElementById("inputTarefa");
-// restaura valor salvo ao recarregar
-if (sessionStorage.getItem('campoV')) {
-campoValorEl.value = sessionStorage.getItem('campoV');
-} //adiciona listener uma única vez 
-campoValorEl.addEventListener("input", () => {
-let valor = campoValorEl.value.replace(/\D/g, "");
-if (valor) { let numero = (parseInt(valor, 10) / 100).toFixed(2);
-campoValorEl.value = new Intl.NumberFormat("pt-BR", { 
-style: "currency", currency: "BRL" }).format(numero); 
-} sessionStorage.setItem('campoV', campoValorEl.value); });
-// botão AddMais 
-btnAddMais.addEventListener("click", () => { 
-const valorFormatado = sessionStorage.getItem('campoV');
-const tarefa = inputTarefa.value; 
-let apenasNumeros = valorFormatado.split('').filter(c => /\d/.test(c)).join('');
-let numero = parseFloat(apenasNumeros) / 100; 
-Swal.fire(`${numero}`, `${valorFormatado}`, 
-`success`); console.log("Tarefa:", tarefa);
+  const campoValorEl = document.getElementById("valorTarefa");
+  const btnAddMais = document.getElementById("addMais");
+  const inputTarefa = document.getElementById("inputTarefa");
+  // restaura valor salvo ao recarregar
+  if (sessionStorage.getItem('campoV')) {
+    campoValorEl.value = sessionStorage.getItem('campoV');
+  }
+  // adiciona listener uma única vez
+  campoValorEl.addEventListener("input", () => {
+    let valor = campoValorEl.value.replace(/\D/g, "");
+    if (valor) {
+      let numero = (parseInt(valor, 10) / 100).toFixed(2);
+      campoValorEl.value = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      }).format(numero);
+    }
+    sessionStorage.setItem('campoV', campoValorEl.value);
+  });
+  // botão AddMais
+  btnAddMais.addEventListener("click", () => {
+    const valorFormatado = sessionStorage.getItem('campoV');
+    const tarefa = inputTarefa.value;
+    let apenasNumeros = valorFormatado.replace(/\D/g, "");
+    let numero = parseFloat(apenasNumeros) / 100;
+    Swal.fire(`${numero}`, `${valorFormatado}`, `success`);
+    // pega subtotal do h2
+    let subT = document.getElementById('h2ValorTotal').innerText.replace(/\D/g, "");
+    subT = subT ? parseFloat(subT) / 100 : 0;
+    let TotalValor = subT + numero;
+    // salva no Firebase
+    var data = localStorage.getItem('data');
+    var hora = localStorage.getItem('hora');
+    var IDd = document.getElementById("codigoCliente").value;
+    var NovaTarefa=document.getElementById('inputTarefa').value;
+    var firebaseConfigure = {
+      apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+      authDomain: "reparos-a-domicilio.firebaseapp.com",
+      projectId: "reparos-a-domicilio",
+      storageBucket: "reparos-a-domicilio.firebasestorage.app",
+      messagingSenderId: "2081562439",
+      appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+      measurementId: "G-M7YCZXPYGM"
+    };
+    firebase.initializeApp(firebaseConfigure);
+    var dbl = firebase.firestore();
+    dbl.collection(`${IDd}`).doc(`${IDd}-${hora}`).set({
+      Valor: valorFormatado,
+      Tarefa:NovaTarefa,
+      valorTotal:subT,
+      ID: hora,
+      Cód: IDd,
+    });
+    // atualiza subtotal formatado
+     var dblV = firebase.firestore();
+    dblV.collection(`OrçamentoValorTotal`).doc(`${IDd}`).set({
+      Valor: valorFormatado,
+      Tarefa:NovaTarefa,
+      valorTotal:TotalValor,
+      ID: hora,
+      Cód: IDd,
+    });
+        document.getElementById('inputTarefa').value='';
+        document.getElementById('valorTarefa').value='';
+        var list= document.getElementById('listaserv');
+        list.innerHTML='';
+        var firebaseConfigure = {
+        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+        authDomain: "reparos-a-domicilio.firebaseapp.com",
+        projectId: "reparos-a-domicilio",
+        storageBucket: "reparos-a-domicilio.firebasestorage.app",
+        messagingSenderId: "2081562439",
+        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+        measurementId: "G-M7YCZXPYGM"
+        };
+        firebase.initializeApp(firebaseConfigure);
+        var db = firebase.firestore();
+        var produtosRef = db.collection(`${IDd}`);
+        produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+        var doc = doc.data();
+        var li=document.createElement('div')
+        var div=document.createElement('div')
+         var div2=document.createElement('div')
+        var label=document.createElement('label')
+        var label2=document.createElement('label')
+        var botão=document.createElement('button')
+        li.id='listadiv'
+        div.id='div1l'
+        div2.id='div2_L'
+        label.id='labelV';
+        label2.id='label_v2';
+        botão.id='btnV';
+        label.textContent=`${doc.Tarefa}`;
+        label2.textContent=`${doc.Valor}`
+        botão.className='fa-solid fa-trash'
+        div.appendChild(label)
+        div2.appendChild(document.createElement('br'));
+         div.appendChild(label2)
+         div2.appendChild(botão)
+         li.appendChild(div)
+         li.appendChild(div2)
+         list.appendChild(li)      
+          document.getElementById('h2ValorTotal').innerText =
+      new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
+   });
+  })
+ })
 })
-})
+function clientelist(){
+   var código= document.getElementById('codigoCliente').value;
+     var list= document.getElementById('listaserv');
+        list.innerHTML='';
+        var firebaseConfigure = {
+        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+        authDomain: "reparos-a-domicilio.firebaseapp.com",
+        projectId: "reparos-a-domicilio",
+        storageBucket: "reparos-a-domicilio.firebasestorage.app",
+        messagingSenderId: "2081562439",
+        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+        measurementId: "G-M7YCZXPYGM"
+        };
+        firebase.initializeApp(firebaseConfigure);
+        var db = firebase.firestore();
+        var produtosRef = db.collection(`${código}`);
+        produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+        var doc = doc.data();
+        var li=document.createElement('div')
+        var div=document.createElement('div')
+         var div2=document.createElement('div')
+        var label=document.createElement('label')
+        var label2=document.createElement('label')
+        var botão=document.createElement('button')
+        li.id='listadiv'
+        div.id='div1l'
+        div2.id='div2_L'
+        label.id='labelV';
+        label2.id='label_v2';
+        botão.id='btnV';
+        label.textContent=`${doc.Tarefa}`;
+        label2.textContent=`${doc.Valor}`
+        botão.className='fa-solid fa-trash'
+        div.appendChild(label)
+        div2.appendChild(document.createElement('br'));
+         div.appendChild(label2)
+         div2.appendChild(botão)
+         li.appendChild(div)
+         li.appendChild(div2)
+         list.appendChild(li)
+   });
+        var firebaseConfigi = {
+        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+        authDomain: "reparos-a-domicilio.firebaseapp.com",
+        projectId: "reparos-a-domicilio",
+        storageBucket: "reparos-a-domicilio.firebasestorage.app",
+        messagingSenderId: "2081562439",
+        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+        measurementId: "G-M7YCZXPYGM"
+        };
+        firebase.initializeApp(firebaseConfigi);
+        var dbcc = firebase.firestore();
+        dbcc.collection("OrçamentoValorTotal").doc(código).get().then((doc) => {
+        if (doc.exists) {
+        var dados = doc.data();
+        document.getElementById('h2ValorTotal').innerText =
+        new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(dados.valorTotal);
+        }
+        })
+      })
+}
+
 
 //pretador iniciar
 function verPrest_(){
+  clientelist()
 var RE_Prest_= sessionStorage.getItem('REE')
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -219,7 +376,6 @@ sessionStorage.setItem('imgPrest',dados.Foto)
 setTimeout(function(){
 verPrest_()
 },3000)
-
 // ver mais prestador
 function verPrest(){
 var RE_Prest= document.getElementById('RE_Clob').value;
@@ -426,3 +582,21 @@ function swalclose(){
 Swal.close()
 }
 initPage()
+
+//Data e Hora
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+// const lbl_data = document.getElementById('lbl-data');
+// lbl_data.innerHTML = `${data}`
+localStorage.setItem('data', data)
+localStorage.setItem('hora', timeString)
+}, 1000)

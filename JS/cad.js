@@ -779,7 +779,6 @@ if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
 let formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
 input.value = formattedValue;
 }
-
 // format Tel
 document.getElementById('inputColTel').addEventListener('input', function (e) {
 let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
