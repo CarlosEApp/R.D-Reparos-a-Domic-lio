@@ -52,6 +52,7 @@ background-color: rgb(0, 25, 26);
     background-color: rgb(0, 52, 68);
     color: aliceblue;
     padding-bottom: 10px;
+   
 }
 #head1{
       display: flex;
@@ -177,18 +178,17 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 #div_list{
     width: 100%;
     min-height: 70vh;
+     border:2px solid rgb(0, 88, 22) ;
 }
 #header_list{
     margin: auto;
-    background-color:rgb(1, 114, 99) ;
+    background-color:rgb(0, 88, 22) ;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 5vh;
-
 }
-
 #header_list button{
   border: 0cap;
   background-color: rgba(0, 0, 0, 0);
@@ -196,15 +196,12 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
   color: aliceblue;
   font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
   font-weight: bold;
-
 }
 #header_list button:hover{
-
  color: rgb(255, 217, 0);
 }
 @media (max-width: 1380px) {
 #divBody{
- 
   margin: auto;
   width: 80%;
   max-width: 1920px;
@@ -274,13 +271,11 @@ width: 100%;
 min-height: 15vh;
 }
 #divOrçar{
-    margin: auto;
-width: 99%;
+ margin: auto;
+width: 100%;
 min-height: 59vh;
-background-color: rgba(0, 255, 255, 0);
+background-color: rgba(11, 156, 156, 0);
 display: none;
- border:2px solid  blueviolet;
- margin-top: 10px;
 }
 #divFinalizar{
 width: 100%;
@@ -288,99 +283,73 @@ min-height: 59vh;
 background-color: rgb(110, 109, 47);
 display: none;
 }
-.my-customAddServ{
-margin: auto;
-width: 100%;
-max-width: 500px;
-border-radius: 20px;
-border: 5px solid antiquewhite;
-margin-bottom: 250px;
-}
-.my-customAddServ h2{
-font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-color: rgba(250, 235, 215, 0.753);
-}
-.my-customAddServ p{
-font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
-color: rgba(250, 235, 215, 0.753);
-}
-.my-customAddServ #inputTarefa{
-width: 92%;
+#inputTarefa{
+    margin: auto;
+width:80%;
+max-width: 600px;
+min-width: 210px;
 border: 0cap;
-background-color: rgba(237, 237, 255, 0);
-padding:10px;
+background-color: rgb(237, 237, 255);
+padding:12px;
 outline-color: rgb(128, 0, 0);
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 cursor: pointer;
 margin-right: 10px;
+margin-left: 10px;
 outline: none;
-color: rgba(240, 248, 255, 0.829);
+color: rgb(0, 0, 0);
+border-radius: 12px;
 }
-.my-customAddServ #valorTarefa{
-width: 33%;
-padding: 5px;
+ #valorTarefa{
+max-width: 200px;
+padding: 7px;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
 float: left;
 border: 0cap;
 text-align: center;
-background-color: rgba(240, 248, 255, 0);
+background-color: rgb(237, 237, 255);
 outline: none;
-color: rgb(13, 161, 0);
+color: rgb(0, 0, 0);
 margin-top: 7px;
 font-family: fantasy;
+border-radius: 12px;
+margin-bottom: 10px;
 }
-.menu-container{
-border: 1px solid rgba(240, 248, 255, 0.616);
-min-height: 9vh;
-padding: 10px;
-background-color: rgba(0, 8, 8, 0.925);
-border: 3px solid rgba(255, 255, 255, 0.329);
-border-radius: 20px;
-margin-top: 5px;
-padding-bottom: 25px;
-}
-.menu-container #bbtr{
-color: rgb(0, 187, 16);
-float: left;
-margin-top: 11px;
-}
-.menu-container #addMauis{
-width: 37%;
-float: right;
-margin-right: 10px;
-margin-top: 10px;
-background-color: rgba(39, 59, 1, 0.445);
-color: rgb(5, 150, 0);
+#orçarFlex #addMais{
+background-color: rgba(114, 114, 114, 0);
+color: rgb(0, 0, 0);
 font-weight: bold;
-border: 1px solid rgb(0, 160, 48);
-padding: 5px;
+padding: 8px;
 border-radius: 10px;
 padding-left: 10px;
 padding-right: 10px;
 cursor: pointer;
+border: 1px solid rgb(105, 105, 105);
+margin-left: 30px;
 }
-.menu-container  #addMauis:hover{
-background-color: aqua;
-color: red;
-}
-.my-customAddServ button{
-font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
-border-radius: 10px;
-}
-.my-customAddServ button:hover{
+#orçarFlex #addMais:hover{
+background-color: rgb(0, 155, 77);
 color: rgb(255, 255, 255);
-background-color: rgba(172, 0, 0, 0.705);
 }
 #divOrçarHeader {
 width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
 padding-top: 7px;
 padding-bottom: 7px;
-background-color: blueviolet;
+background-color:  rgba(2, 86, 94, 0);
 color: aliceblue;
-
+text-align: center;
+ border-bottom: 7px solid rgb(70, 70, 70);
+ padding-bottom: 10px;
+ padding-top: 20px;
+}
+#orçarFlex{
+    margin: auto;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 7px;
 }
 #divOrçarHeader button{
 margin-left: 10px;
@@ -391,11 +360,10 @@ cursor: pointer;
 color: aliceblue;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
-text-decoration: underline 2px solid aliceblue;
+
 }
 #divOrçarHeader button:hover{
 color: rgb(224, 191, 0);
-text-decoration: underline  2px solid rgb(255, 217, 0);
 }
 #inputPassw{
 width: 60%;
@@ -418,56 +386,8 @@ padding-right: 10px;
 border-radius: 1px;
 cursor: pointer;
 }
-@media (max-width: 1600px) {
-#enterPassw{
-width: 30%;
-padding: 8.3px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 1px;
-cursor: pointer;
-}
-}
-@media (max-width: 1400px) {
-#enterPassw{
-width: 30%;
-padding: 8.5px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 1px;
-cursor: pointer;
-}
-}
-@media (max-width: 1100px) {
-#enterPassw{
-width: 30%;
-padding: 8.7px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 1px;
-cursor: pointer;
-}
-}
-@media (max-width: 1900px) {
-#enterPassw{
-width: 30%;
-padding: 8.9px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 1px;
-cursor: pointer;
-}
-}
-@media (max-width: 700px) {
-#enterPassw{
-width: 30%;
-padding: 9px;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 1px;
-cursor: pointer;
-}
-}
+
+
 #enterPassw:hover{
 padding-left: 10px;
 padding-right: 10px;
@@ -492,6 +412,7 @@ color: rgb(0, 235, 20);
     width: 100%;
     max-width: 430px;
     border-radius: 10px;
+    margin-bottom: 170px;
 }
 .my-customAddServ_ h2{
     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
