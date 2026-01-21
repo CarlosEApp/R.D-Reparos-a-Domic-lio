@@ -46,176 +46,176 @@ background-position: center;
 background-color: rgb(0, 25, 26);
 }
 #divHeader{
-    margin: auto;
-    width: 100%;
-    max-width: 1920px;
-    background-color: rgb(0, 52, 68);
-    color: aliceblue;
-    padding-bottom: 10px;
-   
+margin: auto;
+width: 100%;
+max-width: 1920px;
+background-color: rgb(0, 52, 68);
+color: aliceblue;
+padding-bottom: 10px;
+
 }
 #head1{
-      display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
 }
 #head2{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-left: 10px;
+margin-right: 10px;
 }
 #divBody{
-    margin: auto;
-    width: 100%;
-    max-width: 1920px;
+margin: auto;
+width: 100%;
+max-width: 1920px;
 }
 #BB{
-    color: rgb(255, 217, 0);
-    font-weight: bold;
-    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem)
+color: rgb(255, 217, 0);
+font-weight: bold;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem)
 }
 #BB2{
-    color: rgb(26, 25, 25);
-    font-weight: bold;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem)
+color: rgb(26, 25, 25);
+font-weight: bold;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem)
 }
 #body1{
-    margin: auto;
-    width: 97%;
-    max-width: 1200px;
-    display: flex;
-    background-color: rgba(0, 255, 255, 0);
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 5px;
-    margin-top: 20px;
-    
+margin: auto;
+width: 97%;
+max-width: 1200px;
+display: flex;
+background-color: rgba(0, 255, 255, 0);
+justify-content: space-between;
+flex-wrap: wrap;
+padding: 5px;
+margin-top: 20px;
 }
 #body1 h3{
-    color: rgb(255, 255, 255);
-    background-color: rgb(196, 143, 0);
-    padding: 5px;
-    margin-bottom: 10px;
-       font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+color: rgb(255, 255, 255);
+background-color: rgb(196, 143, 0);
+padding: 5px;
+margin-bottom: 10px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #dadosCliente{
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    margin-bottom: 30px;
+width: 100%;
+max-width: 500px;
+padding: 10px;
+margin-bottom: 30px;
 }
 #divColab{
-    margin-top: 10px;
-    margin-left: 10px;
+margin-top: 10px;
+margin-left: 10px;
 }
 #i_Tel{
-    margin-left: 20px;
-    font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
-    cursor: pointer;
-    font-weight: bold;
-    
+margin-left: 20px;
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+cursor: pointer;
+font-weight: bold;
+
 }
 #i_Tel:hover{
-    color: rgb(0, 94, 8);
-     font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+color: rgb(0, 94, 8);
+font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 }
 #body2{
-    margin: auto;
-    width: 97%;
-    max-width: 1200px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+margin: auto;
+width: 97%;
+max-width: 1200px;
+margin-top: 30px;
+margin-bottom: 50px;
 }
- #h3Servi{
-      color: rgb(255, 255, 255);
-    background-color: rgb(0, 52, 68);
-    padding: 5px;
-    margin-bottom: 5px;
-    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+#h3Servi{
+color: rgb(255, 255, 255);
+background-color: rgb(0, 52, 68);
+padding: 5px;
+margin-bottom: 5px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #BBb{
-    color:rgb(255, 187, 0) ;
-      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+color:rgb(255, 187, 0) ;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #footerh1{
-    color: black;
-    background-color: brown;
-    width: 100%;
-    min-height: 70vh;
-    bottom: 3px;
+color: black;
+background-color: brown;
+width: 100%;
+min-height: 70vh;
+bottom: 3px;
 }
 .my-custom{
-    border-radius: 20px;
-    max-width: 400px;
+border-radius: 20px;
+max-width: 400px;
 }
 .my-custom img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+width: 150px;
+height: 150px;
+border-radius: 50%;
 }
 .my-custom h2{
-     color:rgb(255, 187, 0) ;
-      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+color:rgb(255, 187, 0) ;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #VerPret{
-    cursor: pointer;
-    color: rgb(0, 67, 99);
-    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
-    font-weight: bolder;
+cursor: pointer;
+color: rgb(0, 67, 99);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+font-weight: bolder;
 }
 #VerPret:hover {
-      color:rgb(228, 167, 0) ;
+color:rgb(228, 167, 0) ;
 }
 #VerPret:hover #I_prest{
 color:rgb(0, 116, 25) ;
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 #div_list{
-    width: 100%;
-    min-height: 70vh;
-     border:2px solid rgb(0, 88, 22) ;
+margin: auto;
+width: 99%;
+min-height: 85vh;
+border:3px solid rgb(0, 88, 22) ;
 }
 #header_list{
-    margin: auto;
-    background-color:rgb(0, 88, 22) ;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 5vh;
+margin: auto;
+background-color:rgb(0, 88, 22) ;
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 5vh;
 }
 #header_list button{
-  border: 0cap;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  color: aliceblue;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
-  font-weight: bold;
+border: 0cap;
+background-color: rgba(0, 0, 0, 0);
+cursor: pointer;
+color: aliceblue;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+font-weight: bold;
 }
 #header_list button:hover{
- color: rgb(255, 217, 0);
+color: rgb(255, 217, 0);
 }
 @media (max-width: 1380px) {
 #divBody{
-  margin: auto;
-  width: 80%;
-  max-width: 1920px;
-  min-height: 100vh;
-  color: black;
+margin: auto;
+width: 80%;
+max-width: 1920px;
+min-height: 100vh;
+color: black;
 }
 }
 @media (max-width: 1170px) {
 #divBody{
-  margin: auto;
-  width: 100%;
-  max-width: 1920px;
-  min-height: 100vh;
-  color: black;
+margin: auto;
+width: 100%;
+max-width: 1920px;
+min-height: 100vh;
+color: black;
 }
 }
 #myProgress {
@@ -244,7 +244,7 @@ outline: none;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }   
 .my-customTime{
- margin: auto;
+margin: auto;
 width: 90%;
 max-width: 400px;
 padding-top: 20px;
@@ -271,7 +271,7 @@ width: 100%;
 min-height: 15vh;
 }
 #divOrçar{
- margin: auto;
+margin: auto;
 width: 100%;
 min-height: 59vh;
 background-color: rgba(11, 156, 156, 0);
@@ -284,7 +284,7 @@ background-color: rgb(110, 109, 47);
 display: none;
 }
 #inputTarefa{
-    margin: auto;
+margin: auto;
 width:80%;
 max-width: 600px;
 min-width: 210px;
@@ -300,14 +300,14 @@ outline: none;
 color: rgb(0, 0, 0);
 border-radius: 12px;
 }
- #valorTarefa{
+#valorTarefa{
 max-width: 200px;
-padding: 7px;
+padding: 10px;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
 float: left;
 border: 0cap;
 text-align: center;
-background-color: rgb(237, 237, 255);
+background-color: rgb(245, 243, 255);
 outline: none;
 color: rgb(0, 0, 0);
 margin-top: 7px;
@@ -316,12 +316,12 @@ border-radius: 12px;
 margin-bottom: 10px;
 }
 #orçarFlex #addMais{
-background-color: rgba(114, 114, 114, 0);
-color: rgb(0, 0, 0);
+background-color: rgb(0, 82, 129);
+color: rgb(255, 255, 255);
 font-weight: bold;
-padding: 8px;
-border-radius: 10px;
-padding-left: 10px;
+padding: 10px;
+border-radius: 30px;
+padding-left: 20px;
 padding-right: 10px;
 cursor: pointer;
 border: 1px solid rgb(105, 105, 105);
@@ -335,21 +335,27 @@ color: rgb(255, 255, 255);
 width: 100%;
 padding-top: 7px;
 padding-bottom: 7px;
-background-color:  rgba(2, 86, 94, 0);
+background-color:  rgba(73, 71, 62, 0);
 color: aliceblue;
 text-align: center;
- border-bottom: 7px solid rgb(70, 70, 70);
- padding-bottom: 10px;
- padding-top: 20px;
+border-bottom: 5px solid rgba(70, 70, 70, 0.329);
+border-top: 5px solid  rgba(70, 70, 70, 0.329);
+padding-bottom: 10px;
+padding-top: 20px;
 }
 #orçarFlex{
-    margin: auto;
-    width: 99%;
-    display: flex;
-    justify-content: center;
+margin: auto;
+width: 99%;
+display: flex;
+justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 margin-top: 7px;
+}
+#divOrçarHeader P{
+    font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
+    color: black;
+    margin-bottom: 5px;
 }
 #divOrçarHeader button{
 margin-left: 10px;
@@ -360,7 +366,6 @@ cursor: pointer;
 color: aliceblue;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
-
 }
 #divOrçarHeader button:hover{
 color: rgb(224, 191, 0);
@@ -372,22 +377,19 @@ border: 0cap;
 background-color: rgb(240, 243, 255);
 outline: none;
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-
 }
 #inputPassw:hover{
 background-color: rgb(0, 247, 255);
 outline: none;
 }
 #enterPassw{
-    width: 30%;
+width: 30%;
 padding: 8px;
 padding-left: 10px;
 padding-right: 10px;
 border-radius: 1px;
 cursor: pointer;
 }
-
-
 #enterPassw:hover{
 padding-left: 10px;
 padding-right: 10px;
@@ -397,24 +399,26 @@ color: red;
 #ppo #verpassw{
 cursor: pointer;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
-
 }
 #ppo:hover #verpassw:hover{
 color: rgb(0, 235, 20);
 }
 #myFlex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 5px;
 }
 .my-customAddServ_{
-    width: 100%;
-    max-width: 430px;
-    border-radius: 10px;
-    margin-bottom: 170px;
+width: 100%;
+max-width: 430px;
+border-radius: 10px;
+margin-bottom: 170px;
 }
 .my-customAddServ_ h2{
-    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#valorTotal{
+    width: 100%;
+    text-align: center;
 }

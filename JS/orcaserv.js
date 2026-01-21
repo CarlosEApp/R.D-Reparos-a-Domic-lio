@@ -170,31 +170,30 @@ document.getElementById('divFinalizar').style.display='block'
 // botão add serviço
 
 document.addEventListener("DOMContentLoaded", () => {
-   const campoValorEl = document.getElementById("valorTarefa");
-    const btnAddMais = document.getElementById("addMais");
-     const inputTarefa = document.getElementById("inputTarefa");
-      // restaura valor salvo ao recarregar
-       if (sessionStorage.getItem('campoV')) {
-         campoValorEl.value = sessionStorage.getItem('campoV');
-         } //adiciona listener uma única vez 
-         campoValorEl.addEventListener("input", () => {
-           let valor = campoValorEl.value.replace(/\D/g, "");
-            if (valor) { let numero = (parseInt(valor, 10) / 100).toFixed(2);
-               campoValorEl.value = new Intl.NumberFormat("pt-BR", { 
-                style: "currency", currency: "BRL" }).format(numero); 
-              } sessionStorage.setItem('campoV', campoValorEl.value); });
-               // botão AddMais 
-               btnAddMais.addEventListener("click", () => { 
-                const valorFormatado = sessionStorage.getItem('campoV');
-                 const tarefa = inputTarefa.value; 
-                 let apenasNumeros = valorFormatado.split('').filter(c => /\d/.test(c)).join('');
-                  let numero = parseFloat(apenasNumeros) / 100; 
-                  Swal.fire(`${numero}`, `${valorFormatado}`, 
-                    `success`); console.log("Tarefa:", tarefa);
-                  })
-                })
-                  
-        
+const campoValorEl = document.getElementById("valorTarefa");
+const btnAddMais = document.getElementById("addMais");
+const inputTarefa = document.getElementById("inputTarefa");
+// restaura valor salvo ao recarregar
+if (sessionStorage.getItem('campoV')) {
+campoValorEl.value = sessionStorage.getItem('campoV');
+} //adiciona listener uma única vez 
+campoValorEl.addEventListener("input", () => {
+let valor = campoValorEl.value.replace(/\D/g, "");
+if (valor) { let numero = (parseInt(valor, 10) / 100).toFixed(2);
+campoValorEl.value = new Intl.NumberFormat("pt-BR", { 
+style: "currency", currency: "BRL" }).format(numero); 
+} sessionStorage.setItem('campoV', campoValorEl.value); });
+// botão AddMais 
+btnAddMais.addEventListener("click", () => { 
+const valorFormatado = sessionStorage.getItem('campoV');
+const tarefa = inputTarefa.value; 
+let apenasNumeros = valorFormatado.split('').filter(c => /\d/.test(c)).join('');
+let numero = parseFloat(apenasNumeros) / 100; 
+Swal.fire(`${numero}`, `${valorFormatado}`, 
+`success`); console.log("Tarefa:", tarefa);
+})
+})
+
 //pretador iniciar
 function verPrest_(){
 var RE_Prest_= sessionStorage.getItem('REE')
