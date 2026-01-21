@@ -169,29 +169,31 @@ document.getElementById('divFinalizar').style.display='block'
 }
 // botão add serviço
 
-function addserv() { 
-  var campoValorEl = document.getElementById("valorTarefa");
-   campoValorEl.addEventListener("input", () => { 
-    let valor = campoValorEl.value.replace(/\D/g, "");
-    if (valor) { 
-    let numero = (parseInt(valor, 10) / 100).toFixed(2); campoValorEl.value = new Intl.NumberFormat("pt-BR", { 
-    style: "currency", currency: "BRL" }).format(numero); } 
-    // salva apenas o valor formatado 
-    sessionStorage.setItem('campoV', campoValorEl.value);
-   });
-   } document.getElementById("addMais").addEventListener("click", () => {
-     var valorFormatado = sessionStorage.getItem('campoV');
-      // ✅ já é string 
-      var tarefa = document.getElementById("inputTarefa").value; 
-      let apenasNumeros = valorFormatado.split('').filter(c => /\d/.test(c)).join(''); console.log(apenasNumeros); 
-      // "1200000" 
-      let numero = parseFloat(apenasNumeros) / 100; console.log(numero); 
-      // 12000.00 
-      Swal.fire(`${numero}`, `${valorFormatado}`, `success`); 
-      console.log("Tarefa:", tarefa); console.log("Valor formatado:", valorFormatado);
-     });
-          document.getElementById('valorTarefa').value=''
-         
+document.addEventListener("DOMContentLoaded", () => {
+   const campoValorEl = document.getElementById("valorTarefa");
+    const btnAddMais = document.getElementById("addMais");
+     const inputTarefa = document.getElementById("inputTarefa");
+      // restaura valor salvo ao recarregar
+       if (sessionStorage.getItem('campoV')) {
+         campoValorEl.value = sessionStorage.getItem('campoV');
+         } //adiciona listener uma única vez 
+         campoValorEl.addEventListener("input", () => {
+           let valor = campoValorEl.value.replace(/\D/g, "");
+            if (valor) { let numero = (parseInt(valor, 10) / 100).toFixed(2);
+               campoValorEl.value = new Intl.NumberFormat("pt-BR", { 
+                style: "currency", currency: "BRL" }).format(numero); 
+              } sessionStorage.setItem('campoV', campoValorEl.value); });
+               // botão AddMais 
+               btnAddMais.addEventListener("click", () => { 
+                const valorFormatado = sessionStorage.getItem('campoV');
+                 const tarefa = inputTarefa.value; 
+                 let apenasNumeros = valorFormatado.split('').filter(c => /\d/.test(c)).join('');
+                  let numero = parseFloat(apenasNumeros) / 100; 
+                  Swal.fire(`${numero}`, `${valorFormatado}`, 
+                    `success`); console.log("Tarefa:", tarefa);
+                  })
+                })
+                  
         
 //pretador iniciar
 function verPrest_(){
