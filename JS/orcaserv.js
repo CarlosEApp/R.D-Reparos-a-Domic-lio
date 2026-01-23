@@ -1,5 +1,5 @@
 
-
+sessionStorage.setItem('TValor', 0)
 window.onload = function () {
 // Captura o parâmetro da URL
 var params = new URLSearchParams(window.location.search);
@@ -177,179 +177,273 @@ document.getElementById('divFinalizar').style.display='block'
 }
 // botão add serviço
 document.addEventListener("DOMContentLoaded", () => {
-  const campoValorEl = document.getElementById("valorTarefa");
-  const btnAddMais = document.getElementById("addMais");
-  const inputTarefa = document.getElementById("inputTarefa");
-  // restaura valor salvo ao recarregar
-  if (sessionStorage.getItem('campoV')) {
-    campoValorEl.value = sessionStorage.getItem('campoV');
+const campoValorEl = document.getElementById("valorTarefa");
+const btnAddMais = document.getElementById("addMais");
+const inputTarefa = document.getElementById("inputTarefa");
+// restaura valor salvo ao recarregar
+if (sessionStorage.getItem('campoV')) {
+campoValorEl.value = sessionStorage.getItem('campoV');
+}
+// adiciona listener uma única vez
+campoValorEl.addEventListener("input", () => {
+let valor = campoValorEl.value.replace(/\D/g, "");
+if (valor) {
+let numero = (parseInt(valor, 10) / 100).toFixed(2);
+campoValorEl.value = new Intl.NumberFormat("pt-BR", {
+style: "currency",
+currency: "BRL"
+}).format(numero);
+}
+sessionStorage.setItem('campoV', campoValorEl.value);
+});
+// botão AddMais
+btnAddMais.addEventListener("click", () => {
+const valorFormatado = sessionStorage.getItem('campoV');
+const tarefa = inputTarefa.value;
+let apenasNumeros = valorFormatado.replace(/\D/g, "");
+let numero = parseFloat(apenasNumeros) / 100;
+Swal.fire(`${numero}`, `${valorFormatado}`, `success`);
+// pega subtotal do h2
+let subT = document.getElementById('h2ValorTotal').innerText.replace(/\D/g, "");
+subT = subT ? parseFloat(subT) / 100 : 0;
+let TotalValor = subT + numero;
+// salva no Firebase
+var data = localStorage.getItem('data');
+var hora = localStorage.getItem('hora');
+var IDd = document.getElementById("codigoCliente").value;
+var NovaTarefa=document.getElementById('inputTarefa').value;
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var dbl = firebase.firestore();
+dbl.collection(`${IDd}`).doc(`${IDd}-${hora}`).set({
+Valor: valorFormatado,
+Tarefa:NovaTarefa,
+valorItem:numero,
+ID: `${IDd}-${hora}`,
+Data:data,
+Hora:hora,
+Cód: IDd,
+});
+// atualiza subtotal formatado
+var dblV = firebase.firestore();
+dblV.collection(`OrçamentoValorTotal`).doc(`${IDd}`).set({
+Valor: valorFormatado,
+Tarefa:NovaTarefa,
+valorTotal:TotalValor,
+ID: `${IDd}-${hora}`,
+Data:data,
+Hora:hora,
+Cód: IDd,
+});
+document.getElementById('inputTarefa').value='';
+document.getElementById('valorTarefa').value='';
+var list= document.getElementById('listaserv');
+list.innerHTML='';
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var db = firebase.firestore();
+var produtosRef = db.collection(`${IDd}`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var li=document.createElement('div')
+var div=document.createElement('div')
+var div2=document.createElement('div')
+var label=document.createElement('label')
+var label2=document.createElement('label')
+var botão=document.createElement('button')
+li.id='listadiv'
+div.id='div1l'
+div2.id='div2_L'
+label.id='labelV';
+label2.id='label_v2';
+botão.id='btnV';
+label.textContent=`${doc.Tarefa}`;
+label2.textContent=`${doc.Valor}`
+botão.className='fa-solid fa-trash'
+div.appendChild(label)
+div2.appendChild(document.createElement('br'));
+div2.appendChild(label2)
+div2.appendChild(botão)
+li.appendChild(div)
+li.appendChild(div2)
+list.appendChild(li)     
+document.getElementById('h2ValorTotal').innerText =
+new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
+sessionStorage.setItem('TValor',TotalValor)
+botão.addEventListener('click',function(){
+  var passw=sessionStorage.getItem('PresSenha')
+  var REP= sessionStorage.getItem('PresRE')
+  Swal.fire({
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+html: `
+<p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
+<div id='myFlex'>
+<input id='inputPassw' type='password' placeholder='password...'> 
+<button id="enterPassw" title="senha">✅OK </button>
+</div>
+`,
+background: '#003153',
+color: '#ffffffff',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customAddServ_'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('enterPassw').addEventListener('click',function(){
+  var respp= document.getElementById('inputPassw').value
+  if(respp==passw){
+
+var valor_= sessionStorage.getItem('1Valor_V')
+var tarefa_=sessionStorage.getItem('2tarefa_V')
+var id_= sessionStorage.getItem('3ID_V')
+var cod_= sessionStorage.getItem('4cod_V')
+var data_=sessionStorage.getItem('5data_V')
+var hora_ =sessionStorage.getItem('6hora_V')
+var valortt= sessionStorage.getItem('TValor')
+var result=valortt- doc.valorItem
+alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
+var dblEx = firebase.firestore();
+dblEx.collection(doc.Cód).doc(doc.ID).delete();
+var dblx = firebase.firestore();
+dblx.collection(`OrçamentoValorTotal`).doc(`${cod_}`).set({
+Valor: valor_,
+Tarefa:tarefa_,
+valorTotal:result,
+ID: id_,
+Data:data_,
+Hora:hora_,
+Cód: cod_,
+});
+setTimeout(function(){
+novoOrçamento()
+clientelist()
+},1000)
+  } else{
+    Swal.fire('error','A senha dígitada não confere!','error')
   }
-  // adiciona listener uma única vez
-  campoValorEl.addEventListener("input", () => {
-    let valor = campoValorEl.value.replace(/\D/g, "");
-    if (valor) {
-      let numero = (parseInt(valor, 10) / 100).toFixed(2);
-      campoValorEl.value = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      }).format(numero);
-    }
-    sessionStorage.setItem('campoV', campoValorEl.value);
-  });
-  // botão AddMais
-  btnAddMais.addEventListener("click", () => {
-    const valorFormatado = sessionStorage.getItem('campoV');
-    const tarefa = inputTarefa.value;
-    let apenasNumeros = valorFormatado.replace(/\D/g, "");
-    let numero = parseFloat(apenasNumeros) / 100;
-    Swal.fire(`${numero}`, `${valorFormatado}`, `success`);
-    // pega subtotal do h2
-    let subT = document.getElementById('h2ValorTotal').innerText.replace(/\D/g, "");
-    subT = subT ? parseFloat(subT) / 100 : 0;
-    let TotalValor = subT + numero;
-    // salva no Firebase
-    var data = localStorage.getItem('data');
-    var hora = localStorage.getItem('hora');
-    var IDd = document.getElementById("codigoCliente").value;
-    var NovaTarefa=document.getElementById('inputTarefa').value;
-    var firebaseConfigure = {
-      apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-      authDomain: "reparos-a-domicilio.firebaseapp.com",
-      projectId: "reparos-a-domicilio",
-      storageBucket: "reparos-a-domicilio.firebasestorage.app",
-      messagingSenderId: "2081562439",
-      appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-      measurementId: "G-M7YCZXPYGM"
-    };
-    firebase.initializeApp(firebaseConfigure);
-    var dbl = firebase.firestore();
-    dbl.collection(`${IDd}`).doc(`${IDd}-${hora}`).set({
-      Valor: valorFormatado,
-      Tarefa:NovaTarefa,
-      valorTotal:subT,
-      ID: hora,
-      Cód: IDd,
-    });
-    // atualiza subtotal formatado
-     var dblV = firebase.firestore();
-    dblV.collection(`OrçamentoValorTotal`).doc(`${IDd}`).set({
-      Valor: valorFormatado,
-      Tarefa:NovaTarefa,
-      valorTotal:TotalValor,
-      ID: hora,
-      Cód: IDd,
-    });
-        document.getElementById('inputTarefa').value='';
-        document.getElementById('valorTarefa').value='';
-        var list= document.getElementById('listaserv');
-        list.innerHTML='';
-        var firebaseConfigure = {
-        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-        authDomain: "reparos-a-domicilio.firebaseapp.com",
-        projectId: "reparos-a-domicilio",
-        storageBucket: "reparos-a-domicilio.firebasestorage.app",
-        messagingSenderId: "2081562439",
-        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-        measurementId: "G-M7YCZXPYGM"
-        };
-        firebase.initializeApp(firebaseConfigure);
-        var db = firebase.firestore();
-        var produtosRef = db.collection(`${IDd}`);
-        produtosRef.get().then((querySnapshot) => {
-        querySnapshot.forEach(doc => {
-        var doc = doc.data();
-        var li=document.createElement('div')
-        var div=document.createElement('div')
-         var div2=document.createElement('div')
-        var label=document.createElement('label')
-        var label2=document.createElement('label')
-        var botão=document.createElement('button')
-        li.id='listadiv'
-        div.id='div1l'
-        div2.id='div2_L'
-        label.id='labelV';
-        label2.id='label_v2';
-        botão.id='btnV';
-        label.textContent=`${doc.Tarefa}`;
-        label2.textContent=`${doc.Valor}`
-        botão.className='fa-solid fa-trash'
-        div.appendChild(label)
-        div2.appendChild(document.createElement('br'));
-         div.appendChild(label2)
-         div2.appendChild(botão)
-         li.appendChild(div)
-         li.appendChild(div2)
-         list.appendChild(li)      
-          document.getElementById('h2ValorTotal').innerText =
-      new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
-   });
-  })
- })
+})
+});
+})
+});
+})
 })
 function clientelist(){
-   var código= document.getElementById('codigoCliente').value;
-     var list= document.getElementById('listaserv');
-        list.innerHTML='';
-        var firebaseConfigure = {
-        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-        authDomain: "reparos-a-domicilio.firebaseapp.com",
-        projectId: "reparos-a-domicilio",
-        storageBucket: "reparos-a-domicilio.firebasestorage.app",
-        messagingSenderId: "2081562439",
-        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-        measurementId: "G-M7YCZXPYGM"
-        };
-        firebase.initializeApp(firebaseConfigure);
-        var db = firebase.firestore();
-        var produtosRef = db.collection(`${código}`);
-        produtosRef.get().then((querySnapshot) => {
-        querySnapshot.forEach(doc => {
-        var doc = doc.data();
-        var li=document.createElement('div')
-        var div=document.createElement('div')
-         var div2=document.createElement('div')
-        var label=document.createElement('label')
-        var label2=document.createElement('label')
-        var botão=document.createElement('button')
-        li.id='listadiv'
-        div.id='div1l'
-        div2.id='div2_L'
-        label.id='labelV';
-        label2.id='label_v2';
-        botão.id='btnV';
-        label.textContent=`${doc.Tarefa}`;
-        label2.textContent=`${doc.Valor}`
-        botão.className='fa-solid fa-trash'
-        div.appendChild(label)
-        div2.appendChild(document.createElement('br'));
-         div.appendChild(label2)
-         div2.appendChild(botão)
-         li.appendChild(div)
-         li.appendChild(div2)
-         list.appendChild(li)
-   });
-        var firebaseConfigi = {
-        apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
-        authDomain: "reparos-a-domicilio.firebaseapp.com",
-        projectId: "reparos-a-domicilio",
-        storageBucket: "reparos-a-domicilio.firebasestorage.app",
-        messagingSenderId: "2081562439",
-        appId: "1:2081562439:web:ea76d63f3e320c8577f662",
-        measurementId: "G-M7YCZXPYGM"
-        };
-        firebase.initializeApp(firebaseConfigi);
-        var dbcc = firebase.firestore();
-        dbcc.collection("OrçamentoValorTotal").doc(código).get().then((doc) => {
-        if (doc.exists) {
-        var dados = doc.data();
-        document.getElementById('h2ValorTotal').innerText =
-        new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(dados.valorTotal);
-        }
-        })
-      })
+var código= document.getElementById('codigoCliente').value;
+var list= document.getElementById('listaserv');
+list.innerHTML='';
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+var db = firebase.firestore();
+var produtosRef = db.collection(`${código}`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var li=document.createElement('div')
+var div=document.createElement('div')
+var div2=document.createElement('div')
+var label=document.createElement('label')
+var label2=document.createElement('label')
+var botão=document.createElement('button')
+li.id='listadiv'
+div.id='div1l'
+div2.id='div2_L'
+label.id='labelV';
+label2.id='label_v2';
+botão.id='btnV';
+label.textContent=`${doc.Tarefa}`;
+label2.textContent=`${doc.Valor}`
+botão.className='fa-solid fa-trash'
+div.appendChild(label)
+div2.appendChild(document.createElement('br'));
+div2.appendChild(label2)
+div2.appendChild(botão)
+li.appendChild(div)
+li.appendChild(div2)
+list.appendChild(li)
+botão.addEventListener('click',function(){
+var valor_= sessionStorage.getItem('1Valor_V')
+var tarefa_=sessionStorage.getItem('2tarefa_V')
+var id_= sessionStorage.getItem('3ID_V')
+var cod_= sessionStorage.getItem('4cod_V')
+var data_=sessionStorage.getItem('5data_V')
+var hora_ =sessionStorage.getItem('6hora_V')
+var valortt= sessionStorage.getItem('TValor')
+var result=valortt- doc.valorItem
+alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
+var dblEx = firebase.firestore();
+dblEx.collection(doc.Cód).doc(doc.ID).delete();
+var dblx = firebase.firestore();
+dblx.collection(`OrçamentoValorTotal`).doc(`${cod_}`).set({
+Valor: valor_,
+Tarefa:tarefa_,
+valorTotal:result,
+ID: id_,
+Data:data_,
+Hora:hora_,
+Cód: cod_,
+});
+setTimeout(function(){
+novoOrçamento()
+clientelist()
+},1000)
+})
+});
+var firebaseConfigi = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigi);
+var dbcc = firebase.firestore();
+dbcc.collection("OrçamentoValorTotal").doc(código).get().then((doc) => {
+if (doc.exists) {
+var dados = doc.data();
+document.getElementById('h2ValorTotal').innerText =
+new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(dados.valorTotal);
+sessionStorage.setItem('TValor',dados.valorTotal)
+sessionStorage.setItem('1Valor_V',dados.valor)
+sessionStorage.setItem('2tarefa_V',dados.Tarefa)
+sessionStorage.setItem('3ID_V',dados.ID)
+sessionStorage.setItem('4cod_V',dados.Cód)
+sessionStorage.setItem('5data_V',dados.Data)
+sessionStorage.setItem('6hora_V',dados.Hora)
 }
-
-
+})
+})
+}
 //pretador iniciar
 function verPrest_(){
   clientelist()
@@ -421,11 +515,11 @@ Swal.fire({
 title: `Contato Cliente  <i class="fa-brands fa-whatsapp"></i>`,
 html: `
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-<br><br><button id='sair_'>Cancelar</button><br><br>
+
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
-showCancelButton: false,
+showCancelButton: true,
 showConfirmButton: false,
 customClass: {
 popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
@@ -433,9 +527,6 @@ popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
 didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
-});
-document.getElementById('sair_').addEventListener('click',function(){
-Swal.close()
 });
 document.getElementById('whats').addEventListener('click',function(){
 var url=encodeURIComponent(`https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=${código}`) ;
@@ -457,14 +548,13 @@ var RE_Prest= document.getElementById('RE_Clob').value;
 var código= document.getElementById('codigoCliente').value;
 //alert(Tel_Cliente)
 Swal.fire({
-title: `Contato Cliente  <i class="fa-brands fa-whatsapp"></i>`,
+title: `Contato prestador  <i class="fa-brands fa-whatsapp"></i>`,
 html: `
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-<br><br><button id='sair_'>Cancelar</button><br><br>
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
-showCancelButton: false,
+showCancelButton: true,
 showConfirmButton: false,
 customClass: {
 popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
@@ -473,9 +563,7 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('sair_').addEventListener('click',function(){
-Swal.close()
-});
+
 document.getElementById('whats').addEventListener('click',function(){
 var url=encodeURIComponent(`https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=${código}`) ;
 var Pagina = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");

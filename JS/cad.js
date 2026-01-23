@@ -539,7 +539,7 @@ var hora_=doc.Hora;
 sessionStorage.setItem('hora_cd',doc.Hora_Cd)
 var hora_=doc.Hora_Cd;
 }
-swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nCPF:\n${doc.CPF}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
+swal(`R.E = ${doc.RE}`,`Nome:\n${doc.Nome}\n-------------------------\nEmail:\n${doc.Email}\n-------------------------\nRG:\n${doc.RG}\n-------------------------\nCPF:\n${doc.CPF}\n-------------------------\nTelefone:\n${doc.Telefone}\n-------------------------\nServiços:\n${doc.Serviços}\n-------------------------\nSenha:\n ${doc.Senha}\n-------------------------\nData e hora (editado por ultimo)\n${doc.Data} - ${doc.Hora}\n\n-------------------------\nData e hora de Inscrição:\n${data_} - ${hora_}\n\n`,`success`)
 });
 img.addEventListener('click',function(){
 swal(`R.E= ${doc.RE}`,'',`${doc.Foto}`)
@@ -549,6 +549,7 @@ document.getElementById('inputR_E').value=doc.RE
 document.getElementById('inputServ').value=doc.Serviços
 document.getElementById('inputColnome').value= doc.Nome
 document.getElementById('inputColEmail').value=doc.Email
+document.getElementById('inputColSenha').value=doc.Senha
 document.getElementById('rg').value=doc.RG
 document.getElementById('cpf').value=doc.CPF
 document.getElementById('inputColTel').value=doc.Telefone
@@ -623,10 +624,13 @@ document.getElementById('inputR_E').value=''
 document.getElementById('inputServ').value=''
 document.getElementById('inputColnome').value=''
 document.getElementById('inputColEmail').value=''
+document.getElementById('inputColSenha').value=''
 document.getElementById('rg').value=''
 document.getElementById('cpf').value=''
 document.getElementById('inputColTel').value=''
 document.getElementById('fotoCol').src='../src/Profile-PNG-Images.png'
+
+
 }
 //Salvar cadastro de colaborador
 function SalvarCadColaborador(){

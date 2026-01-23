@@ -141,11 +141,11 @@ font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 color:rgb(255, 187, 0) ;
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
-#footerh1{
-color: black;
-background-color: brown;
+#footer1{
+color: rgb(255, 255, 255);
+background-color:rgb(0, 25, 26);
 width: 100%;
-min-height: 70vh;
+min-height: 40vh;
 bottom: 3px;
 }
 .my-custom{
@@ -177,8 +177,8 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 #div_list{
 margin: auto;
 width: 99%;
-min-height: 85vh;
-border:3px solid rgb(0, 88, 22) ;
+min-height: 185vh;
+border:3px solid rgba(0, 88, 22, 0) ;
 }
 #header_list{
 margin: auto;
@@ -290,7 +290,7 @@ max-width: 600px;
 min-width: 210px;
 border: 0cap;
 background-color: rgb(237, 237, 255);
-padding:12px;
+padding:7px;
 outline-color: rgb(128, 0, 0);
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 cursor: pointer;
@@ -298,11 +298,11 @@ margin-right: 10px;
 margin-left: 10px;
 outline: none;
 color: rgb(0, 0, 0);
-border-radius: 12px;
+border-radius: 7px;
 }
 #valorTarefa{
 max-width: 200px;
-padding: 10px;
+padding: 7px;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
 float: left;
 border: 0cap;
@@ -312,36 +312,39 @@ outline: none;
 color: rgb(0, 0, 0);
 margin-top: 7px;
 font-family: fantasy;
-border-radius: 12px;
+border-radius: 7px;
 margin-bottom: 10px;
 }
 #orçarFlex #addMais{
-background-color: rgb(0, 82, 129);
+background-color: rgb(242, 254, 255);
 color: rgb(255, 255, 255);
 font-weight: bold;
-padding: 10px;
-border-radius: 30px;
+padding: 7px;
+border-radius: 10px;
 padding-left: 20px;
-padding-right: 10px;
+padding-right: 20px;
 cursor: pointer;
 border: 1px solid rgb(105, 105, 105);
 margin-left: 30px;
+color: rgb(0, 0, 0);
 }
 #orçarFlex #addMais:hover{
-background-color: rgb(0, 155, 77);
-color: rgb(255, 255, 255);
+background-color: rgb(0, 227, 235);
+color: rgb(131, 0, 0);
 }
 #divOrçarHeader {
 width: 100%;
-padding-top: 7px;
-padding-bottom: 7px;
-background-color:  rgba(73, 71, 62, 0);
+padding-top: 10px;
+padding-bottom: 10px;
+background-color:  rgb(0, 88, 22) ;
 color: aliceblue;
 text-align: center;
-border-bottom: 5px solid rgba(70, 70, 70, 0.329);
-border-top: 5px solid  rgba(70, 70, 70, 0.329);
+border-bottom: 5px solid rgb(248, 247, 247);
+border-top: 5px solid  rgb(165, 165, 165);
 padding-bottom: 10px;
-padding-top: 20px;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+
 }
 #orçarFlex{
 margin: auto;
@@ -354,7 +357,7 @@ margin-top: 7px;
 }
 #divOrçarHeader P{
     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
-    color: black;
+    color: rgb(231, 229, 229);
     margin-bottom: 5px;
 }
 #divOrçarHeader button{
@@ -421,7 +424,65 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 #valorTotal{
     width: 100%;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #h2ValorTotal_{
 display: none;
+}
+.my-custom_compartilhar{
+    width: 90%;
+    max-width: 300px;
+    border-radius: 40px;
+    border: 5px solid rgb(240, 243, 255);
+}
+.my-custom_compartilhar h2{
+    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+.my-custom_compartilhar button{
+    width: 80px;
+    padding: 5px;
+    cursor: pointer;
+}
+.my-custom_compartilhar  #whats{
+    width: 90%;
+ font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+ padding: 7px;
+ padding-left: 30px;
+ padding-right: 30px;
+ border-radius: 10px;
+  cursor: pointer;
+  border: 0cap;
+  box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
+  background-color: rgb(240, 243, 255);
+}
+
+.my-custom_compartilhar #whats:hover{
+ background-color: rgb(0, 143, 12);
+ color: azure;
+}
+.my-custom_compartilhar button:hover{
+    background-color: rgb(184, 0, 0);
+    color: aliceblue;
+}
+
+#listaserv{
+    margin: auto;
+    width: 98%;
+    max-width: 900px;
+    max-height: 180vh;
+    min-height: 40vh;
+    overflow: auto;
+}
+#listadiv{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(129, 129, 129);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+#div2_L{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

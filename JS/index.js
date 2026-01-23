@@ -118,16 +118,16 @@ window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
 });
 }
 function psqOrr(){
-    var resposta = document.getElementById('confirmaCódigo').value.toUpperCase(); 
-    // força o texto para maiúsculas
+var resposta = document.getElementById('confirmaCódigo').value.toUpperCase(); 
+// força o texto para maiúsculas
 
-    if(resposta.length === 11){ 
-       // alert(resp);
-       codigo = resposta.replace(/\s+/g, "");
-        window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
-    } else {
-       // alert("O código precisa ter 11 caracteres.");
-    }
+if(resposta.length === 11){ 
+// alert(resp);
+codigo = resposta.replace(/\s+/g, "");
+window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
+} else {
+// alert("O código precisa ter 11 caracteres.");
+}
 }
 // dados admim tel
 var telAdmim= 11995501463
@@ -669,5 +669,11 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 }
 function swalclose(){
     Swal.close()
+}
+
+
+function ColaboradorEntrar(){
+
+   swal('Em desenvolvimento','A página de Colaboradores está em fase de desenvolvimento. Em breve estará disponível!','warning')
 }
 initPage()
