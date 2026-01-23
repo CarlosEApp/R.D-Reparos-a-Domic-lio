@@ -71,7 +71,7 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 });
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app/`
-var whatsappMessage =`✅Visite nossa Página\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para sua casa!\n----------------------------------------------\n✅ Pagina: 👉  ${pagina}`;
+var whatsappMessage =`✅Visite nossa Página\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: 👉  ${pagina}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
