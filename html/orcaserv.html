@@ -25,6 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+     
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/orcaserv.css">
@@ -69,6 +72,7 @@
                         <label id="Tel_Clob" for="">Contato (WhatsApp)</label>  <i id="i_Tel" onclick="telPrestador()" class="fa-brands fa-whatsapp"></i><br>
                         <label onclick="verPrest()" id="VerPret" for="">Ver mais <i id="I_prest" class="fa-solid fa-eye"></i></label>
                    </div>
+                   <img id="imgFinalize" src="../src/RDzinho.png" alt="">
                </div>
              <div id="body2">
              <h3 id="h3Servi">Serviço de ...</h3>
@@ -78,6 +82,7 @@
                 <button onclick="OrçarServ()"><i id="cadeado" class="fa-sharp-duotone fa-solid fa-lock"></i> Orçarmento </button>  <button onclick="list()">Lista de Orçamento</button>  <button onclick="finalizar()">Finalizar</button>
                </div>
                <div id="divOrçar">
+                
                 <div id="divOrçarHeader">
                   <p>Digite a taréfa e o valor corespondente!</p>
                      <input id='inputTarefa' type='text' placeholder='Nova tarefa'>
@@ -88,12 +93,21 @@
                 <div id="valorTotal">
                   <label for="">Valor total</label> <h2 id="h2ValorTotal" for="">R$ 00,00</h2> 
                 </div>
-            
                <div id="listaserv"></div>
                </div>
-
+                 <br>
                <div id="divFinalizar">
-                       
+                <h3>Finalizar orçamento/<br>Abrir orddem de Serviço</h3>
+                <div id="FinalInput">
+                  <div id="divContratante">
+                  <p>CPF do contratante</p>
+                  <label id="FinalCPFClie" for="">CPF Cliente</label>
+                  <br>
+                  <p onclick="TernosCont()">Termos de contrato</p>
+                </div>
+
+              </div>
+                       <button onclick="gerarPDF()">Salvar em PDF</button>
                </div></div>
               
              </div>
@@ -105,6 +119,30 @@
     </div>
 
  <script src="../JS/orcaserv.js"></script>
+  
+<script>
+ async function gerarPDF() {
+   document.getElementById('imgFinalize').style.display='block';
+ const { jsPDF } = window.jspdf; const doc = new jsPDF("p", "mm", "a4"); 
+const pageWidth = doc.internal.pageSize.getWidth();
+ // Função auxiliar para capturar div e adicionar ao PDF 
+async function addDivToPDF(divId, addPage = false) { 
+const elemento = document.getElementById(divId); 
+const canvas = await html2canvas(elemento, { scale: 2 }); 
+const imgData = canvas.toDataURL("image/png"); 
+const imgWidth = pageWidth; 
+const imgHeight = canvas.height * imgWidth / 
+canvas.width; if (addPage) doc.addPage();
+ doc.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight); } 
+// Captura cada div
+ await addDivToPDF("body1");
+ await addDivToPDF("divOrçar", true); 
+await addDivToPDF("divFinalizar", true); // Faz download
+ doc.save("tres_divs.pdf"); 
+ setTimeout(() => {
+    document.getElementById('imgFinalize').style.display='none';
+ }, 1000);
+ } </script>
  
   
 </body>

@@ -554,7 +554,6 @@ var resp1= sessionStorage.getItem('PassW01')
 var resp2= sessionStorage.getItem('PassW02')
 var pass = document.getElementById('inputAD').value;
 if(pass== resp1|| pass== resp2){
-//alert(`${resp2}`)
 swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
 setTimeout(function(){
 window.open('html/cad.html','_self')
@@ -614,8 +613,9 @@ var doc = doc.data();
 var coment = querySnapshot.size
 sessionStorage.setItem('PassW01', doc.Passw01)
 sessionStorage.setItem('PassW02', doc.Passw02)
+
 setTimeout(function(){
-//Swal.fire(`${coment}`,`${doc.Passw01},__${doc.Passw02},`,'')
+
 },2000)
 })
 })

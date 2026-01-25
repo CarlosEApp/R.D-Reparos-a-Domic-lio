@@ -19,6 +19,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/eletrica.css">
@@ -99,7 +101,7 @@
   <footer> 
          <div id="divFooter">
             <div id="foote1">           
-            <p id="pOrçamento">Fale agora conosco! </p><br>
+            <p id="pOrçamento">Fale agora conosco! </p><br><button onclick="gerarPDF()">Salvar em PDF</button>
            <div id="divFaleCom">
       <button id="btnFalecom" onclick="falecom()"><i id="zap" class="fa-brands fa-whatsapp"></i> Mensagem</button> <button onclick="inicio()" id="homee"> <i class="fa-solid fa-house"></i> Inicio</button>
     </div>
@@ -108,6 +110,7 @@
  </footer>
  
      <script src="../JS/eletrica.js"></script>
+     
 </body>
 
 </html>

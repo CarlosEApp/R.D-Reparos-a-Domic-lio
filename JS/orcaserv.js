@@ -167,7 +167,7 @@ document.getElementById('divOrçar').style.display='block'
 }
 // botão finalizar
 function finalizar(){
-document.getElementById('divOrçar').style.display='none';
+
 var resp=document.getElementById('divFinalizar').style.display;
 if(resp=='block'){
 document.getElementById('divFinalizar').style.display='none'
@@ -288,8 +288,10 @@ document.getElementById('h2ValorTotal').innerText =
 new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
 sessionStorage.setItem('TValor',TotalValor)
 botão.addEventListener('click',function(){
+ 
   var passw=sessionStorage.getItem('PresSenha')
   var REP= sessionStorage.getItem('PresRE')
+  
   Swal.fire({
 title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
 html: `
@@ -339,6 +341,7 @@ setTimeout(function(){
 novoOrçamento()
 clientelist()
 },1000)
+Swal.fire('Sucesso!','Taréfa e valor excluidos!','success')
   } else{
     Swal.fire('error','A senha dígitada não confere!','error')
   }
@@ -390,6 +393,34 @@ li.appendChild(div)
 li.appendChild(div2)
 list.appendChild(li)
 botão.addEventListener('click',function(){
+
+ var passw=sessionStorage.getItem('PresSenha')
+  var REP= sessionStorage.getItem('PresRE')
+  
+  Swal.fire({
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+html: `
+<p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
+<div id='myFlex'>
+<input id='inputPassw' type='password' placeholder='password...'> 
+<button id="enterPassw" title="senha">✅OK </button>
+</div>
+`,
+background: '#003153',
+color: '#ffffffff',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customAddServ_'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('enterPassw').addEventListener('click',function(){
+  var respp= document.getElementById('inputPassw').value
+  if(respp==passw){
+
 var valor_= sessionStorage.getItem('1Valor_V')
 var tarefa_=sessionStorage.getItem('2tarefa_V')
 var id_= sessionStorage.getItem('3ID_V')
@@ -415,6 +446,11 @@ setTimeout(function(){
 novoOrçamento()
 clientelist()
 },1000)
+Swal.fire('Sucesso!','Taréfa e valor excluidos!','success')
+}else{
+   Swal.fire('error','A senha dígitada não confere!','error')
+}
+})
 })
 });
 var firebaseConfigi = {

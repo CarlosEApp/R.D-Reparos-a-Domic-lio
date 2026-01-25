@@ -279,9 +279,18 @@ display: none;
 }
 #divFinalizar{
 width: 100%;
-min-height: 59vh;
-background-color: rgb(110, 109, 47);
+min-height: 70vh;
+background-color: rgba(110, 109, 47, 0);
 display: none;
+}
+#divFinalizar button{
+cursor: pointer;
+border: 0cap;
+background-color: antiquewhite;
+width: 40%;
+color: black;
+
+
 }
 #inputTarefa{
 margin: auto;
@@ -478,13 +487,45 @@ display: none;
 #listadiv{
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgb(129, 129, 129);
+    border-top: 2px solid rgb(190, 190, 190);
     gap: 5px;
     margin-bottom: 10px;
       outline: none;
 }
 #div2_L{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+#labelV{
+   font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+   font-weight: bold;
+   color: rgb(70, 54, 173);
+
+}
+#label_v2{
+       font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+       font-weight: bold;
+}
+#btnV{
+    float: right;
+    border: 0cap;
+    background-color: rgba(168, 2, 38, 0.479);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+   cursor: pointer;
+}
+#btnV:hover{
+    background-color: red;
+     color: rgb(255, 255, 255);
+}
+#imgFinalize{
+    margin: auto;
+    margin-top: 70px;
+    width: 50%;
+    min-width: 300px;
+    display: none;
 }
