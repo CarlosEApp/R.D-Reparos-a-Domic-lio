@@ -175,6 +175,45 @@ document.getElementById('divFinalizar').style.display='none'
 document.getElementById('divFinalizar').style.display='block'
 }
 }
+function finalizerOrçamento(){
+   var passw=sessionStorage.getItem('PresSenha')
+  var REP= sessionStorage.getItem('PresRE')
+   var resp1= sessionStorage.getItem('PassW01')
+var resp2= sessionStorage.getItem('PassW02')
+ Swal.fire({
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+html: `
+<p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
+<div id='myFlex'>
+<input id='inputPassw' type='password' placeholder='password...'> 
+<button id="enterPassw" title="senha">✅OK </button>
+</div>
+`,
+background: '#003153',
+color: '#ffffffff',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customAddServ_'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('enterPassw').addEventListener('click',function(){
+
+var pass = document.getElementById('inputPassw').value;
+if(pass== resp1|| pass== resp2){
+swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
+setTimeout(function(){
+gerarPDF()
+},2000)
+}else{
+swal('Senha incorreta!','','error');
+}
+
+})
+}
 // botão add serviço
 document.addEventListener("DOMContentLoaded", () => {
 const campoValorEl = document.getElementById("valorTarefa");

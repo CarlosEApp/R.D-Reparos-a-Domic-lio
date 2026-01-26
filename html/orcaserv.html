@@ -38,6 +38,7 @@
    <div id="divInit"></div>
 
     <div id="divGeral">
+    
       <header>
          <div id="divHeader">
             <div id="head1">
@@ -50,7 +51,10 @@
          </header>
          <main>
          <div id="divBody">
+            <div id="contrato">
+              <h2>Orçamento/Contrato</h2>
             <div id="body1">
+             
             <div id="dadosCliente">
              <h3>Dados do clientes</h3>
             <label id="nomeCliente" for="">Cliente</label><br>
@@ -73,7 +77,7 @@
                         <label onclick="verPrest()" id="VerPret" for="">Ver mais <i id="I_prest" class="fa-solid fa-eye"></i></label>
                    </div>
                    <img id="imgFinalize" src="../src/RDzinho.png" alt="">
-               </div>
+               </div></div>
              <div id="body2">
              <h3 id="h3Servi">Serviço de ...</h3>
 
@@ -91,13 +95,15 @@
                      <button id="addMais" title="">Add✅  </button></div> </div>
               
                 <div id="valorTotal">
+                  <h3>Lista de Serviços</h3>
                   <label for="">Valor total</label> <h2 id="h2ValorTotal" for="">R$ 00,00</h2> 
                 </div>
                <div id="listaserv"></div>
                </div>
                  <br>
                <div id="divFinalizar">
-                <h3>Finalizar orçamento/<br>Abrir orddem de Serviço</h3>
+                <h3>Contrato prestaçãode Serviço</h3>
+                <p></p>
                 <div id="FinalInput">
                   <div id="divContratante">
                   <p>CPF do contratante</p>
@@ -107,7 +113,11 @@
                 </div>
 
               </div>
-                       <button onclick="gerarPDF()">Salvar em PDF</button>
+                       <button onclick="finalizerOrçamento()">Salvar em PDF</button>
+                       <a href="../public/Contrato_RD_Reparos.pdf" download>
+                    Baixar Contrato em PDF
+                    </a>
+
                </div></div>
               
              </div>
@@ -120,29 +130,30 @@
 
  <script src="../JS/orcaserv.js"></script>
   
-<script>
- async function gerarPDF() {
+<script> 
+async function gerarPDF() { 
    document.getElementById('imgFinalize').style.display='block';
- const { jsPDF } = window.jspdf; const doc = new jsPDF("p", "mm", "a4"); 
-const pageWidth = doc.internal.pageSize.getWidth();
- // Função auxiliar para capturar div e adicionar ao PDF 
-async function addDivToPDF(divId, addPage = false) { 
-const elemento = document.getElementById(divId); 
-const canvas = await html2canvas(elemento, { scale: 2 }); 
-const imgData = canvas.toDataURL("image/png"); 
-const imgWidth = pageWidth; 
-const imgHeight = canvas.height * imgWidth / 
-canvas.width; if (addPage) doc.addPage();
- doc.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight); } 
-// Captura cada div
- await addDivToPDF("body1");
- await addDivToPDF("divOrçar", true); 
-await addDivToPDF("divFinalizar", true); // Faz download
- doc.save("tres_divs.pdf"); 
- setTimeout(() => {
-    document.getElementById('imgFinalize').style.display='none';
- }, 1000);
- } </script>
+  const { jsPDF } = window.jspdf; 
+  const doc = new jsPDF("p", "mm", "a4");
+   const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+     async function addDivToPDF(divId, addPage = false) { 
+      const elemento = document.getElementById(divId); 
+      const canvas = await html2canvas(elemento, { scale: 2 }); 
+      const imgData = canvas.toDataURL("image/png"); 
+      const imgWidth = pageWidth;
+       const imgHeight = canvas.height * imgWidth / canvas.width; let heightLeft = imgHeight; 
+       let position = 0; if (addPage) doc.addPage(); 
+       // Quebra automática em várias páginas 
+       while (heightLeft > 0) { doc.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight; position -= pageHeight; 
+        if (heightLeft > 0) { doc.addPage(); 
+        } } } 
+        // Captura cada div
+         await addDivToPDF("contrato"); await addDivToPDF("divOrçar", true);
+          await addDivToPDF("divFinalizar", true);
+           // Faz download 
+           doc.save("Contrato_RD.pdf"); } </script>
  
   
 </body>
