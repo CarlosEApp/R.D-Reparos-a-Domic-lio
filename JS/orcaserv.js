@@ -34,10 +34,12 @@ var dados = doc.data();
 document.getElementById("codigoCliente").innerHTML =`Código: <b id='BB'>${dados.Código}</b>`
 document.getElementById('codigoCliente').value=dados.Código;
 document.getElementById("nomeCliente").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
+document.getElementById("FinalnomeClie").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
 document.getElementById("nomeCliente").value=dados.Cliente;
 document.getElementById("telCliente").innerHTML = `Contato (Whats): <b id='BB2'>${dados.Tel_Cliente}</b>`;
 document.getElementById("telCliente").value=dados.Tel_Cliente
 document.getElementById("cpfCliente").innerHTML = `CPF: <b id='BB2'>${dados.CPF_Cliente}</b>`;
+document.getElementById("FinalCPFClie").innerHTML = `CPF: <b id='BB2'>${dados.CPF_Cliente}</b>`;
 document.getElementById('cpfCliente').value=dados.CPF_Cliente
 document.getElementById("rua").innerHTML = `Rua: <b id='BB2'>${dados.Rua}</b>`;
 document.getElementById("numero").innerHTML = `Nº: <b id='BB2'> ${dados.Número}</b>`;
