@@ -49,6 +49,8 @@
             </div>
          </div>
          </header>
+         <a id="a_init" href="#" title="Inicio"></a>
+            <a id="a_hedermeio" href="#header_list" title="Botões"></a>
          <main>
          <div id="divBody">
             <div id="contrato">
@@ -85,8 +87,7 @@
                <div id="header_list">
                 <button onclick="OrçarServ()"><i id="cadeado" class="fa-sharp-duotone fa-solid fa-lock"></i> Orçarmento </button>  <button onclick="list()">Lista de Orçamento</button>  <button onclick="finalizar()">Finalizar</button>
                </div>
-               <div id="divOrçar">
-                
+               <div id="divOrçar">   
                 <div id="divOrçarHeader">
                   <p>Digite a taréfa e o valor corespondente!</p>
                      <input id='inputTarefa' type='text' placeholder='Nova tarefa'>
@@ -102,7 +103,7 @@
                </div>
                  <br>
                <div id="divFinalizar">
-                <h3>Contrato prestaçãode Serviço</h3>
+                <h3>Contrato de prestação de Serviço</h3>
                 <p></p>
                 <div id="FinalInput">
                   <div id="divContratante">
@@ -112,15 +113,15 @@
                   <br><br>
                   <p onclick="TernosCont()">Termos de contrato</p>
                 </div>
-
-              </div>
-                      
-                       <a id="aPDF" href="../public/Contrato_RD_Reparos.pdf" download> Baixar Contrato em PDF
-                    </a>
-                             <br><br>
-                                   <button onclick="finalizerOrçamento()">Salvar em PDF</button>
+              </div>          
+                  <a id="aPDF" href="../public/Contrato_RD_Reparos.pdf" download> Baixar Contrato em PDF
+                  </a><br>
+                    <input type="checkbox" id="aceite" name="aceite"> <label for="aceite">Eu aceito os termos contratuais e política de privacidade</label><br><br>
+                     <button onclick="AceitarContrato()" >Aceitar/Ordem de Serviço</button>
+                       <br><br>
+                       <button id="PDF_Final" onclick="finalizerOrçamento()">Salvar em PDF</button>
                </div></div>
-              
+               <a id="a_finalit" href="#aceite" title="a Finalizar"></a>
              </div>
             </div>
              </div>

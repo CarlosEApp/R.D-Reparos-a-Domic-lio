@@ -558,3 +558,17 @@ display: none;
 #aPDF{
     text-align: center;
 }
+#PDF_Final{
+    display: none;
+}
+#divFinalizar button{
+    padding: 10px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+    cursor: pointer;
+}
+#divFinalizar button:hover{
+    background-color: rgb(0, 156, 34);
+    color: rgb(255, 255, 255);
+}

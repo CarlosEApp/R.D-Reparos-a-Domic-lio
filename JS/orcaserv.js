@@ -33,6 +33,7 @@ var dados = doc.data();
 //alert("Orçamento encontrado:\nCódigo: " + dados.Codigo + "\nCliente: " + dados.Cliente);
 document.getElementById("codigoCliente").innerHTML =`Código: <b id='BB'>${dados.Código}</b>`
 document.getElementById('codigoCliente').value=dados.Código;
+sessionStorage.setItem('Codigo_Orc',dados.Código)
 document.getElementById("nomeCliente").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
 document.getElementById("FinalnomeClie").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
 document.getElementById("nomeCliente").value=dados.Cliente;
@@ -175,6 +176,7 @@ if(resp=='block'){
 document.getElementById('divFinalizar').style.display='none'
 }else{
 document.getElementById('divFinalizar').style.display='block'
+document.getElementById('a_finalit').click()
 }
 }
 function finalizerOrçamento(){
@@ -206,12 +208,13 @@ document.getElementById('enterPassw').addEventListener('click',function(){
 
 var pass = document.getElementById('inputPassw').value;
 if(pass== resp1|| pass== resp2){
-swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
-setTimeout(function(){
-gerarPDF()
-},2000)
+swal('Sucesso',')','success');
+document.getElementById('PDF_Final').style.display='block';
+document.getElementById('divGeral').style.display='block'
 }else{
 swal('Senha incorreta!','','error');
+document.getElementById('PDF_Final').style.display='none';
+document.getElementById('divGeral').style.display='none'
 }
 
 })
@@ -238,12 +241,12 @@ currency: "BRL"
 sessionStorage.setItem('campoV', campoValorEl.value);
 });
 // botão AddMais
-btnAddMais.addEventListener("click", () => {
+btnAddMais.addEventListener("click", () => { 
 const valorFormatado = sessionStorage.getItem('campoV');
 const tarefa = inputTarefa.value;
 let apenasNumeros = valorFormatado.replace(/\D/g, "");
 let numero = parseFloat(apenasNumeros) / 100;
-Swal.fire(`${numero}`, `${valorFormatado}`, `success`);
+
 // pega subtotal do h2
 let subT = document.getElementById('h2ValorTotal').innerText.replace(/\D/g, "");
 subT = subT ? parseFloat(subT) / 100 : 0;
@@ -253,6 +256,7 @@ var data = localStorage.getItem('data');
 var hora = localStorage.getItem('hora');
 var IDd = document.getElementById("codigoCliente").value;
 var NovaTarefa=document.getElementById('inputTarefa').value;
+Swal.fire(`${valorFormatado}`, `${NovaTarefa}`, `success`);
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -365,7 +369,7 @@ var data_=sessionStorage.getItem('5data_V')
 var hora_ =sessionStorage.getItem('6hora_V')
 var valortt= sessionStorage.getItem('TValor')
 var result=valortt- doc.valorItem
-alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
+//alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
 var dblEx = firebase.firestore();
 dblEx.collection(doc.Cód).doc(doc.ID).delete();
 var dblx = firebase.firestore();
@@ -470,7 +474,7 @@ var data_=sessionStorage.getItem('5data_V')
 var hora_ =sessionStorage.getItem('6hora_V')
 var valortt= sessionStorage.getItem('TValor')
 var result=valortt- doc.valorItem
-alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
+//alert(`valortt ${valortt}__valorDoc ${doc.valorItem}__Resultado: ${result}`)
 var dblEx = firebase.firestore();
 dblEx.collection(doc.Cód).doc(doc.ID).delete();
 var dblx = firebase.firestore();
@@ -765,3 +769,98 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 localStorage.setItem('data', data)
 localStorage.setItem('hora', timeString)
 }, 1000)
+
+document.getElementById("aPDF").addEventListener("click", function() {
+var paragrafo=`
+
+1. Objeto do Contrato  
+   O presente contrato tem como objeto a prestação de serviços residenciais pela empresa RD – Reparos a Domicílio, conforme orçamento previamente aprovado pelo cliente.<br><br>
+
+
+2. Execução dos Serviços  
+   - Os serviços serão realizados por colaboradores devidamente designados pela empresa.  
+   - O prazo de execução será informado no momento da abertura da ordem de serviço.  .<br><br>
+
+3. Obrigações da Empresa  
+   - Executar os serviços com qualidade e dentro das normas técnicas aplicáveis.  
+   - Garantir a segurança dos colaboradores durante a execução.  
+   - Informar previamente ao cliente sobre qualquer necessidade adicional ou alteração no orçamento.  .<br><br>
+
+4. Obrigações do Cliente*  
+   - Fornecer acesso adequado ao local de execução dos serviços.  
+   - Cumprir com o pagamento acordado no orçamento aprovado.  
+   - Informar corretamente seus dados pessoais (nome completo e CPF).  .<br><br>
+
+5. Pagamento 
+   O pagamento será realizado conforme condições estabelecidas no orçamento aceito pelo cliente, podendo incluir sinal, parcelamento ou pagamento integral após a conclusão do serviço.
+   .<br><br>
+
+6. Garantia  
+   Os serviços realizados possuem garantia de 90 (noventa) dias, limitada à execução do serviço contratado. Materiais utilizados seguem a garantia do fabricante.
+.<br><br>
+7. Rescisão 
+   O contrato poderá ser rescindido por qualquer das partes em caso de descumprimento das obrigações aqui estabelecidas, mediante comunicação prévia.
+.<br><br>
+8. Aceite Eletrônico  
+   O cliente declara ter lido e compreendido todas as cláusulas deste contrato e concorda com sua integralidade ao marcar o campo *“Aceito os termos”* na página da empresa.
+   .<br><br>
+`
+Swal.fire('Cláusulas Contratuais',`${paragrafo}`,'info')
+
+});
+
+function AceitarContrato(){
+  var resp=sessionStorage.getItem('Codigo_Orc')
+  var data = localStorage.getItem('data');
+var hora = localStorage.getItem('hora');
+  const checkbox = document.getElementById("aceite");
+   if (!checkbox.checked) {
+    swal("Você precisa aceitar os termos para continuar.",'','error');
+     
+  } else {
+    Swal.fire('Ordem de serviço aberta!','Obrigado pela preferencia e confiança.','success');
+    var firebaseConfig = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfig);
+var dbf = firebase.firestore();
+dbf.collection('Orçamentos_Finalizados').doc(`${resp}`).set({
+Aceite:'Sim',
+Cód: resp,
+Data:data,
+Hora:hora,
+})
+}}
+
+setTimeout(function(){
+    var resp=sessionStorage.getItem('Codigo_Orc')
+ 
+  var firebaseConfig = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfig);
+var dbf = firebase.firestore();
+dbf.collection('Orçamentos_Finalizados').doc(`${resp}`).get().then((doc)=>{
+var dados= doc.data()
+if( dados.Aceite=='Sim'){
+document.getElementById('divBody').style.display='none';
+swal('Orçamento APROVADO!',`Data e Hora: ${dados.Data} às ${dados.Hora}`,'success')
+  
+}else{
+  document.getElementById('divBody').style.display='Block';
+  
+}
+})
+},5000);
