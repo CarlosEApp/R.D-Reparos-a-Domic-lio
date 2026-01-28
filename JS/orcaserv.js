@@ -914,7 +914,7 @@ swal('Orçamento APROVADO!',`Data e Hora: ${dados.Data} às ${dados.Hora}`,'succ
   
 }
 })
-},5000);
+},7000);
 
 function gerarPDF_(){
 document.getElementById('PDF_Final').style.display='none';

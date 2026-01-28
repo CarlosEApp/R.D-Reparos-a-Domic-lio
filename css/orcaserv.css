@@ -561,8 +561,11 @@ display: none;
 }
 #PDF_Final{
     display: none;
+    margin: auto;
 }
 #divFinalizar button{
+    width: 80%;
+    max-width: 400px;
     padding: 10px;
     font-weight: bolder;
     color: rgb(0, 0, 0);
