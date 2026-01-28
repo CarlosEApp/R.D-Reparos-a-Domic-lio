@@ -33,7 +33,6 @@ var dados = doc.data();
 //alert("Orçamento encontrado:\nCódigo: " + dados.Codigo + "\nCliente: " + dados.Cliente);
 document.getElementById("codigoCliente").innerHTML =`Código: <b id='BB'>${dados.Código}</b>`
 document.getElementById('codigoCliente').value=dados.Código;
-sessionStorage.setItem('Codigo_Orc',dados.Código)
 document.getElementById("nomeCliente").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
 document.getElementById("FinalnomeClie").innerHTML = `Cliente: <b id='BB2'>${dados.Cliente}</b>`;
 document.getElementById("nomeCliente").value=dados.Cliente;
@@ -179,7 +178,7 @@ document.getElementById('divFinalizar').style.display='block'
 document.getElementById('a_finalit').click()
 }
 }
-function finalizerOrçamento(){
+function ADM(){
    var passw=sessionStorage.getItem('PresSenha')
   var REP= sessionStorage.getItem('PresRE')
    var resp1= sessionStorage.getItem('PassW01')
@@ -204,17 +203,28 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
+document.getElementById('verpassw').addEventListener('click',function() {
+var btn= document.getElementById('inputPassw');
+var visão= document.getElementById('verpassw');
+if(btn.type=='text'){
+btn.type='password'
+visão.className='fa-solid fa-eye'
+} else{
+btn.type='text'
+visão.className='fa-solid fa-eye-low-vision'
+}
+})
 document.getElementById('enterPassw').addEventListener('click',function(){
 
 var pass = document.getElementById('inputPassw').value;
 if(pass== resp1|| pass== resp2){
-swal('Sucesso',')','success');
+swal('Sucesso','','success');
 document.getElementById('PDF_Final').style.display='block';
-document.getElementById('divGeral').style.display='block'
+ document.getElementById('divBody').style.display='Block';
+    document.getElementById('finalitDiv').style.display='none';
 }else{
 swal('Senha incorreta!','','error');
-document.getElementById('PDF_Final').style.display='none';
-document.getElementById('divGeral').style.display='none'
+
 }
 
 })
@@ -333,7 +343,7 @@ document.getElementById('h2ValorTotal').innerText =
 new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
 sessionStorage.setItem('TValor',TotalValor)
 botão.addEventListener('click',function(){
- 
+
   var passw=sessionStorage.getItem('PresSenha')
   var REP= sessionStorage.getItem('PresRE')
   
@@ -357,6 +367,17 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
+document.getElementById('verpassw').addEventListener('click',function() {
+var btn= document.getElementById('inputPassw');
+var visão= document.getElementById('verpassw');
+if(btn.type=='text'){
+btn.type='password'
+visão.className='fa-solid fa-eye'
+} else{
+btn.type='text'
+visão.className='fa-solid fa-eye-low-vision'
+}
+})
 document.getElementById('enterPassw').addEventListener('click',function(){
   var respp= document.getElementById('inputPassw').value
   if(respp==passw){
@@ -462,6 +483,17 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
+document.getElementById('verpassw').addEventListener('click',function() {
+var btn= document.getElementById('inputPassw');
+var visão= document.getElementById('verpassw');
+if(btn.type=='text'){
+btn.type='password'
+visão.className='fa-solid fa-eye'
+} else{
+btn.type='text'
+visão.className='fa-solid fa-eye-low-vision'
+}
+})
 document.getElementById('enterPassw').addEventListener('click',function(){
   var respp= document.getElementById('inputPassw').value
   if(respp==passw){
@@ -810,9 +842,12 @@ Swal.fire('Cláusulas Contratuais',`${paragrafo}`,'info')
 });
 
 function AceitarContrato(){
-  var resp=sessionStorage.getItem('Codigo_Orc')
+  var resp=sessionStorage.getItem("MeuOrçamento");
   var data = localStorage.getItem('data');
-var hora = localStorage.getItem('hora');
+  var hora = localStorage.getItem('hora');
+  var nomeCliente= document.getElementById('nomeCliente').value;
+  var Tel_Cliente= document.getElementById('telCliente').value.replace(/\D/g, '');
+  var cpfCliente=document.getElementById('cpfCliente').value;
   const checkbox = document.getElementById("aceite");
    if (!checkbox.checked) {
     swal("Você precisa aceitar os termos para continuar.",'','error');
@@ -835,11 +870,19 @@ Aceite:'Sim',
 Cód: resp,
 Data:data,
 Hora:hora,
+Cliente:nomeCliente,
+Tel_Cliente:Tel_Cliente,
+CPF_Cliente:cpfCliente,
+LinkPDF:'',
+Contrato:'',
 })
+setTimeout(function(){
+window.location.reload()
+},1000)
 }}
 
 setTimeout(function(){
-    var resp=sessionStorage.getItem('Codigo_Orc')
+    var resp=sessionStorage.getItem("MeuOrçamento");
  
   var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -854,13 +897,29 @@ firebase.initializeApp(firebaseConfig);
 var dbf = firebase.firestore();
 dbf.collection('Orçamentos_Finalizados').doc(`${resp}`).get().then((doc)=>{
 var dados= doc.data()
+document.getElementById("vigentNome").innerHTML=`Cliente: ${dados.Cliente}`
+document.getElementById("vigentID").innerHTML=`ID: ${dados.Cód}`
+document.getElementById("vigentCPF").innerHTML=`CPF: ${dados.CPF_Cliente}`
+document.getElementById("aPDFvigente").href=` ${dados.LinkPDF}`
 if( dados.Aceite=='Sim'){
+   document.getElementById('finalitDiv').style.display='block';
 document.getElementById('divBody').style.display='none';
+document.getElementById('btnMenu').style.display='block';
 swal('Orçamento APROVADO!',`Data e Hora: ${dados.Data} às ${dados.Hora}`,'success')
   
 }else{
   document.getElementById('divBody').style.display='Block';
+    document.getElementById('finalitDiv').style.display='none';
+    document.getElementById('btnMenu').style.display='none';
   
 }
 })
 },5000);
+
+function gerarPDF_(){
+document.getElementById('PDF_Final').style.display='none';
+document.getElementById('btnAceitar').style.display='none';
+  setTimeout(function(){
+gerarPDF()
+  },1000);
+}

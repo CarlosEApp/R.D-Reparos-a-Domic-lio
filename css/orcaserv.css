@@ -143,9 +143,9 @@ font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #footer1{
 color: rgb(255, 255, 255);
-background-color:rgb(0, 25, 26);
+background-color:rgba(255, 255, 255, 0);
 width: 100%;
-min-height: 40vh;
+min-height: 20vh;
 bottom: 3px;
 }
 .my-custom{
@@ -555,8 +555,9 @@ display: none;
     width: 100%;
     max-width: 1000px;
 }
-#aPDF{
+#aPDF,#aPDF{
     text-align: center;
+    cursor: pointer;
 }
 #PDF_Final{
     display: none;
@@ -571,4 +572,16 @@ display: none;
 #divFinalizar button:hover{
     background-color: rgb(0, 156, 34);
     color: rgb(255, 255, 255);
+}
+#finalitDiv{
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 10px;
+    border: 3px solid rgb(121, 121, 121);
+    display: none;
+    margin-top: 120px;
+}
+#btnMenu{
+    display: none;
 }
