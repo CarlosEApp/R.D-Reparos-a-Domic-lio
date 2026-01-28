@@ -923,3 +923,4 @@ document.getElementById('btnAceitar').style.display='none';
 gerarPDF()
   },1000);
 }
+//forma de pagamento

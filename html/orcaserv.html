@@ -51,7 +51,7 @@
          </div>
          </header>
           <div id="finalitDiv">
-          <h2>Contrato vigente!</h2>
+          <h2>Contrato vigênte!</h2>
           <label id="vigentNome" for="">Nome</label><br>
            <label id="vigentCPF" for="">CPF</label><br>
            <label id="vigentID" for="">ID</label><br>
@@ -62,8 +62,7 @@
             <a id="a_hedermeio" href="#header_list" title="Botões"></a>
          <main>
          <div id="divBody">
-            <div id="contrato">
-              <h2>Orçamento/Contrato</h2>
+              <h2 id="h2Body">Orçamento/Contrato</h2>
             <div id="body1">
              
             <div id="dadosCliente">
@@ -88,7 +87,7 @@
                         <label onclick="verPrest()" id="VerPret" for="">Ver mais <i id="I_prest" class="fa-solid fa-eye"></i></label>
                    </div>
                    <img id="imgFinalize" src="../src/RDzinho.png" alt="">
-               </div></div>
+               </div>
              <div id="body2">
              <h3 id="h3Servi">Serviço de ...</h3>
 
@@ -111,6 +110,34 @@
                <div id="listaserv"></div>
                </div>
                  <br>
+                 <div id="pdfFinal">
+                  <div id="dataEpagamentor">
+                    <h3>Data de inicio e termino </h3>
+                    <div id="intServ">
+                    <input type="text" name="" id="inicioServ" placeholder="Início do Serviço"> <input type="text" name="" id="terminoServ" placeholder="Término do Serviço">
+                    </div>
+                      <h3>Forma de pagamento</h3>
+                    <div id="Divpagamento">
+                      <div>
+                      <input type="text" id="entradaPag" placeholder="Entrada"> 
+                      <select name="" id="selectParcelas" title="Parcelas">
+                        <option value="" disabled selected>Parcelas</option>
+                        <option value="1x">1x</option>
+                        <option value="2x">2x</option>
+                        <option value="3x">3x</option>
+                        <option value="4x">4x</option>
+                        <option value="5x">5x</option>
+                        <option value="6x">6x</option>
+                        <option value="7x">7x</option>
+                        <option value="8x">8x</option>
+                        <option value="9x">9x</option>
+                        <option value="10x">10x</option>
+                        <option value="11x">11x</option>
+                        <option value="12x">12x</option>
+                      </select></div>
+                     <div><input type="text" id="parcelasPag" placeholder="Parcelas"> <input type="text" id="totalPag" placeholder="Total">
+                    </div>
+                  </div>
                <div id="divFinalizar">
                 <h3>Contrato de prestação de Serviço</h3>
                 <p></p>
@@ -128,7 +155,7 @@
                      <button id="btnAceitar" onclick="AceitarContrato()" >Aceitar/Ordem de Serviço</button>
                        <br><br>
                        <button id="PDF_Final" onclick="gerarPDF_()">Salvar em PDF</button>
-               </div></div>
+               </div></div></div>
                <a id="a_finalit" href="#aceite" title="a Finalizar"></a>
              </div>
             </div>
@@ -160,8 +187,10 @@ async function gerarPDF() {
         if (heightLeft > 0) { doc.addPage(); 
         } } } 
         // Captura cada div
-         await addDivToPDF("contrato"); await addDivToPDF("divOrçar", true);
-          await addDivToPDF("divFinalizar", true);
+         await addDivToPDF("divBody");
+         await addDivToPDF("body1", true);
+          await addDivToPDF("divOrçar", true);
+          await addDivToPDF("pdfFinal", true);
            // Faz download 
            doc.save("Contrato_RD.pdf"); } </script>
  
