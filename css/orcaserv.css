@@ -277,15 +277,12 @@ min-height: 30vh;
 background-color: rgba(11, 156, 156, 0);
 display: none;
 }
-
 #divFinalizar button{
 cursor: pointer;
 border: 0cap;
 background-color: antiquewhite;
 width: 40%;
 color: black;
-
-
 }
 #inputTarefa{
 margin: auto;
@@ -348,7 +345,6 @@ border-top: 5px solid  rgb(165, 165, 165);
 padding-bottom: 10px;
 border-bottom-left-radius: 50px;
 border-bottom-right-radius: 50px;
-
 }
 #orçarFlex{
 margin: auto;
@@ -360,9 +356,9 @@ flex-wrap: wrap;
 margin-top: 7px;
 }
 #divOrçarHeader P{
-    font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
-    color: rgb(231, 229, 229);
-    margin-bottom: 5px;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
+color: rgb(231, 229, 229);
+margin-bottom: 5px;
 }
 #divOrçarHeader button{
 margin-left: 10px;
@@ -426,226 +422,259 @@ margin-bottom: 170px;
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 #valorTotal{
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+width: 100%;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 #h2ValorTotal_{
 display: none;
 }
 .my-custom_compartilhar{
-    width: 90%;
-    max-width: 300px;
-    border-radius: 40px;
-    border: 5px solid rgb(240, 243, 255);
+width: 90%;
+max-width: 300px;
+border-radius: 40px;
+border: 5px solid rgb(240, 243, 255);
 }
 .my-custom_compartilhar h2{
-    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-      outline: none;
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+outline: none;
 }
 .my-custom_compartilhar button{
-    width: 80px;
-    padding: 5px;
-    cursor: pointer;
-    outline: none;
+width: 80px;
+padding: 5px;
+cursor: pointer;
+outline: none;
 }
 .my-custom_compartilhar #whats{
-    width: 90%;
- font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
- padding: 7px;
- padding-left: 30px;
- padding-right: 30px;
- border-radius: 10px;
-  cursor: pointer;
-  border: 0cap;
-  box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
-  outline: none;
-  background-color: rgb(240, 243, 255);
+width: 90%;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+padding: 7px;
+padding-left: 30px;
+padding-right: 30px;
+border-radius: 10px;
+cursor: pointer;
+border: 0cap;
+box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
+outline: none;
+background-color: rgb(240, 243, 255);
 }
 .my-custom_compartilhar #whats:hover{
- background-color: rgb(0, 143, 12);
- color: azure;
+background-color: rgb(0, 143, 12);
+color: azure;
 }
 .my-custom_compartilhar button:hover{
-    background-color: rgb(184, 0, 0);
-    color: aliceblue;
+background-color: rgb(184, 0, 0);
+color: aliceblue;
 }
 #listaserv{
-    margin: auto;
-    width: 98%;
-    max-width: 900px;
-    min-height: 40vh;
-    overflow: auto;
+margin: auto;
+width: 98%;
+max-width: 900px;
+min-height: 40vh;
+overflow: auto;
 }
 #listadiv{
-    display: flex;
-    flex-direction: column;
-    border-top: 2px solid rgb(190, 190, 190);
-    gap: 5px;
-    margin-bottom: 10px;
-      outline: none;
+display: flex;
+flex-direction: column;
+border-top: 2px solid rgb(190, 190, 190);
+gap: 5px;
+margin-bottom: 10px;
+outline: none;
 }
 #div2_L{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 #labelV{
-   font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-   font-weight: bold;
-   color: rgb(70, 54, 173);
-
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+color: rgb(70, 54, 173);
 }
 #label_v2{
-       font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
-       font-weight: bold;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+font-weight: bold;
 }
 #btnV{
-    float: right;
-    border: 0cap;
-    background-color: rgba(168, 2, 38, 0.479);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: rgb(255, 255, 255);
-   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
-   cursor: pointer;
+float: right;
+border: 0cap;
+background-color: rgba(168, 2, 38, 0.479);
+width: 25px;
+height: 25px;
+border-radius: 50%;
+color: rgb(255, 255, 255);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+cursor: pointer;
 }
 #btnV:hover{
-    background-color: red;
-     color: rgb(255, 255, 255);
+background-color: red;
+color: rgb(255, 255, 255);
 }
 #imgFinalize{
-    margin: auto;
-    margin-top: 70px;
-    width: 50%;
-    min-width: 300px;
-    display: none;
+margin: auto;
+margin-top: 70px;
+width: 50%;
+min-width: 300px;
+display: none;
 }
 #contrato h2{
-    text-align: center;
-    font-weight: bolder;
-    margin-top: 15px;
+text-align: center;
+font-weight: bolder;
+margin-top: 15px;
 }
 #contrato{
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
+margin: auto;
+width: 100%;
+max-width: 1200px;
 }
 #divFinalizar{
-    margin: auto;
-    gap: 10px;
-    width: 100%;
-    max-width: 1200px;
-    min-height: 40vh;
-    margin-top: 100px;
-    display: none;
-    text-align: center;
+margin: auto;
+gap: 10px;
+width: 100%;
+max-width: 1200px;
+min-height: 40vh;
+margin-top: 100px;
+display: none;
+text-align: center;
 }
 #divFinalizar h3{
-    text-align: center;
-    margin-bottom: 20px;
+text-align: center;
+margin-bottom: 20px;
 }
 #FinalInput{
-        display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    width: 100%;
-    max-width: 1000px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: auto;
+width: 100%;
+max-width: 1000px;
 }
 #aPDF,#aPDF{
-    text-align: center;
-    cursor: pointer;
+text-align: center;
+cursor: pointer;
 }
 #PDF_Final{
-    display: none;
-    margin: auto;
+display: none;
+margin: auto;
 }
 #divFinalizar button{
-    width: 80%;
-    max-width: 400px;
-    padding: 10px;
-    font-weight: bolder;
-    color: rgb(0, 0, 0);
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    cursor: pointer;
+width: 80%;
+max-width: 400px;
+padding: 10px;
+font-weight: bolder;
+color: rgb(0, 0, 0);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
 }
 #divFinalizar button:hover{
-    background-color: rgb(0, 156, 34);
-    color: rgb(255, 255, 255);
+background-color: rgb(0, 156, 34);
+color: rgb(255, 255, 255);
 }
 #finalitDiv{
-    margin: auto;
-    width: 90%;
-    max-width: 800px;
-    padding: 10px;
-    border: 3px solid rgb(121, 121, 121);
-    display: none;
-    margin-top: 120px;
+margin: auto;
+width: 90%;
+max-width: 800px;
+padding: 10px;
+border: 3px solid rgb(121, 121, 121);
+display: none;
+margin-top: 120px;
 }
 #btnMenu{
-    display: none;
+display: none;
 }
 #dataEpagamentor{
-    margin: auto;
-    width: 100%;
-    max-width:800px;
-    margin-bottom: 50px;
-      flex-wrap: wrap;
-      margin-top: 70px;
-      border-top: 5px solid rgba(128, 128, 128, 0.596);
+margin: auto;
+width: 100%;
+max-width:1100px;
+margin-bottom: 50px;
+flex-wrap: wrap;
+margin-top: 70px;
+border-top: 5px solid rgba(128, 128, 128, 0.596);
 }
 #dataEpagamentor h3{
-    margin-bottom: 5px;
-    margin-top: 20px;
-    color: rgb(75, 75, 75);
+margin-bottom: 5px;
+margin-top: 20px;
+color: rgb(75, 75, 75);
 }
 #Divpagamento{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-     flex-wrap: wrap;
-     gap: 10px;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
 }
 #intServ input{
-    width: 180px;
-    padding: 7px;
-    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-    border: 0cap;
-    cursor: pointer;
-    background-color:rgb(236, 241, 255);
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 7px;
-    outline-color: red;
+margin: auto;
+width: 160px;
+padding: 7px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+border: 0cap;
+cursor: pointer;
+background-color:rgb(236, 241, 255);
+margin-right: 10px;
+margin-left: 10px;
+border-radius: 7px;
+outline-color: red;
+margin-bottom: 15px;
+border: 1px solid rgb(78, 78, 78);
 }
 #Divpagamento input{
-    width: 150px;
-    padding: 7px;
-    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-    border: 0cap;
-     background-color:rgb(236, 241, 255);
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 7px;
-    border-radius: 7px;
-    outline-color: red;
-     cursor: pointer;
+margin: auto;
+width: 160px;
+padding: 7px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+border: 0cap;
+background-color:rgb(236, 241, 255);
+margin-right: 10px;
+margin-left: 10px;
+border-radius: 7px;
+border-radius: 7px;
+outline-color: red;
+cursor: pointer;
+margin-bottom: 10px;
+border: 1px solid rgb(78, 78, 78);
 }
 #selectParcelas{
-        width: 170px;
-    padding: 7px;
-    font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
-    border: 0cap;
-    outline: none;
-     background-color:rgb(236, 241, 255);
-    margin-right: 10px;
-    margin-left: 10px;
-    border-radius: 7px;
+margin: auto;
+width: 160px;
+padding: 7px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+border: 0cap;
+outline: none;
+background-color:rgb(236, 241, 255);
+margin-right: 10px;
+margin-left: 10px;
+border-radius: 7px;
+border: 1px solid rgb(78, 78, 78);
 }
 #h2Body{
-    text-align: center;
-    margin-top: 20px;
+text-align: center;
+margin-top: 20px;
+}
+#divOBS{
+width: 100%;
+max-width: 1100px;
+margin-top: 20px;
+margin-bottom: 30px;
+border-bottom: 5px solid rgba(128, 128, 128, 0.596);
+}
+#divOBS input{
+margin: auto;
+width: 85%;
+max-width: 800px;
+padding: 10px;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+border: 0cap;
+background-color:rgb(236, 241, 255);
+margin-right: 10px;
+margin-left: 10px;
+border-radius: 7px;
+border-radius: 7px;
+outline-color: red;
+cursor: pointer;
+margin-bottom: 10px;
+border: 1px solid rgb(78, 78, 78);
+}
+#divOBS p{
+margin-left: 10px;
 }

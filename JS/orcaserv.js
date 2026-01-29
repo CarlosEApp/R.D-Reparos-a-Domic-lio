@@ -97,7 +97,6 @@ document.getElementById('divOrçarHeader').style.display='none';
 // botão orçar
 sessionStorage.setItem('Tranca','');
 function OrçarServ(){
-  
 var NomeP=sessionStorage.getItem('PresNome')
 var passw=sessionStorage.getItem('PresSenha')
 var REP= sessionStorage.getItem('PresRE')
@@ -169,7 +168,11 @@ document.getElementById('divOrçar').style.display='block'
 }
 // botão finalizar
 function finalizar(){
-
+var resp1=document.getElementById('inicioServ').value;//`2000-01-01`
+ var resp2=document.getElementById('terminoServ').value;//`2000-01-01`
+ if(!resp1|| resp1==`0000-00-00`||!resp2|| resp2==`0000-00-00`){
+    swal('Atenção!','Preencha os campos "data inicial e data de tèrmino"')
+   }else{
 var resp=document.getElementById('divFinalizar').style.display;
 if(resp=='block'){
 document.getElementById('divFinalizar').style.display='none'
@@ -177,6 +180,7 @@ document.getElementById('divFinalizar').style.display='none'
 document.getElementById('divFinalizar').style.display='block'
 document.getElementById('a_finalit').click()
 }
+ }
 }
 function ADM(){
    var passw=sessionStorage.getItem('PresSenha')
@@ -215,7 +219,6 @@ visão.className='fa-solid fa-eye-low-vision'
 }
 })
 document.getElementById('enterPassw').addEventListener('click',function(){
-
 var pass = document.getElementById('inputPassw').value;
 if(pass== resp1|| pass== resp2){
 swal('Sucesso','','success');
@@ -224,9 +227,7 @@ document.getElementById('PDF_Final').style.display='block';
     document.getElementById('finalitDiv').style.display='none';
 }else{
 swal('Senha incorreta!','','error');
-
 }
-
 })
 }
 // botão add serviço
@@ -342,11 +343,12 @@ list.appendChild(li)
 document.getElementById('h2ValorTotal').innerText =
 new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
 sessionStorage.setItem('TValor',TotalValor)
+document.getElementById('totalPag').innerHTML=
+new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
+document.getElementById('totalPag').value=new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(TotalValor);
 botão.addEventListener('click',function(){
-
   var passw=sessionStorage.getItem('PresSenha')
   var REP= sessionStorage.getItem('PresRE')
-  
   Swal.fire({
 title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
 html: `
@@ -381,7 +383,6 @@ visão.className='fa-solid fa-eye-low-vision'
 document.getElementById('enterPassw').addEventListener('click',function(){
   var respp= document.getElementById('inputPassw').value
   if(respp==passw){
-
 var valor_= sessionStorage.getItem('1Valor_V')
 var tarefa_=sessionStorage.getItem('2tarefa_V')
 var id_= sessionStorage.getItem('3ID_V')
@@ -546,6 +547,7 @@ if (doc.exists) {
 var dados = doc.data();
 document.getElementById('h2ValorTotal').innerText =
 new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(dados.valorTotal);
+document.getElementById('totalPag').value=new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(dados.valorTotal);
 sessionStorage.setItem('TValor',dados.valorTotal)
 sessionStorage.setItem('1Valor_V',dados.valor)
 sessionStorage.setItem('2tarefa_V',dados.Tarefa)
@@ -798,6 +800,9 @@ const seconds = now.getSeconds().toString().padStart(2, '0');
 const timeString = `${hours}:${minutes}:${seconds}`;
 // const lbl_data = document.getElementById('lbl-data');
 // lbl_data.innerHTML = `${data}`
+
+//lert(resp)
+
 localStorage.setItem('data', data)
 localStorage.setItem('hora', timeString)
 }, 1000)
@@ -848,6 +853,13 @@ function AceitarContrato(){
   var nomeCliente= document.getElementById('nomeCliente').value;
   var Tel_Cliente= document.getElementById('telCliente').value.replace(/\D/g, '');
   var cpfCliente=document.getElementById('cpfCliente').value;
+  var Adiatamento= document.getElementById('entradaPag').value
+  var dataInicio= document.getElementById('inicioServ').value;
+  var dataFim= document.getElementById('terminoServ').value
+  var Parcelas= document.getElementById('selectParcelas').value
+  var valorParcelas= document.getElementById('parcelasPag').value
+  var ValorServ=document.getElementById('totalPag').value;
+  var Obs=document.getElementById('OBSFinal').value;
   const checkbox = document.getElementById("aceite");
    if (!checkbox.checked) {
     swal("Você precisa aceitar os termos para continuar.",'','error');
@@ -875,6 +887,13 @@ Tel_Cliente:Tel_Cliente,
 CPF_Cliente:cpfCliente,
 LinkPDF:'',
 Contrato:'',
+valorServiço:ValorServ,
+Adiantamento:Adiatamento,
+Data_inicio:dataInicio,
+Data_fim:dataFim,
+Parcelas:Parcelas,
+Valor_Parcelas:valorParcelas,
+OBS:Obs,
 })
 setTimeout(function(){
 window.location.reload()
@@ -901,6 +920,13 @@ document.getElementById("vigentNome").innerHTML=`Cliente: ${dados.Cliente}`
 document.getElementById("vigentID").innerHTML=`ID: ${dados.Cód}`
 document.getElementById("vigentCPF").innerHTML=`CPF: ${dados.CPF_Cliente}`
 document.getElementById("aPDFvigente").href=` ${dados.LinkPDF}`
+document.getElementById('entradaPag').value= dados.Adiantamento
+document.getElementById('inicioServ').value=dados.Data_inicio
+document.getElementById('terminoServ').value=dados.Data_fim
+document.getElementById('selectParcelas').value=dados.Parcelas
+document.getElementById('parcelasPag').value=dados.Valor_Parcelas
+document.getElementById('totalPag').value=dados.valorServiço
+document.getElementById('OBSFinal').value=dados.OBS
 if( dados.Aceite=='Sim'){
    document.getElementById('finalitDiv').style.display='block';
 document.getElementById('divBody').style.display='none';
@@ -924,3 +950,5 @@ gerarPDF()
   },1000);
 }
 //forma de pagamento
+document.getElementById('inicioServ').value=`0000-00-00`
+document.getElementById('terminoServ').value=`2000-00-00`
