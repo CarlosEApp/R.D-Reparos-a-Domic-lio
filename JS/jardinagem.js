@@ -134,11 +134,11 @@ firebase.initializeApp(firebaseConfigure);
    setTimeout(function(){
 Swal.close()
 var TelAD=`11995501463`
-var pagina =`https://rd-reparos-domicilio.netlify.app/`
+var pagina =`https://rd-reparos-domicilio.netlify.app`;
 var NTF = `+55${TelAD}`;
 //var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + inp9;
-var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n-----------------------------------\n👍 Cliente: ${inp1}\n👉 CPF: ${inp2}\n📞 Tel: ${inp3}\n👉 Emal: ${inp9} \n-------------------------------------\n
-📄 Endereço:\n--------------------------------\nRua: ${inp4}\nNº: ${inp5}\nBairro: ${inp6}\nCidade: ${inp7}\nEstado: ${inp8}\nCep: ${inp10}\n REF: ${inp11}\n\n✅ Pagina: ${pagina}\n\n`;
+var whatsappMessage =`📝Pedido de Orçamento:\n🛠️ Serv: ${serv}\n-----------------------------------\n👍 Cliente: ${inp1}\n👉 CPF: ${inp2}\n📞 Tel: ${inp3}\n👉 Emal: ${inp9}\n-------------------------------------\n
+📄 Endereço:\n--------------------------------\nRua: ${inp4}\nNº: ${inp5}\nBairro: ${inp6}\nCidade: ${inp7}\nEstado: ${inp8}\nCep: ${inp10}\n REF: ${inp11}\n\n✅ Pagina: ${pagina}`;
 var whatsappLink = "https://wa.me/"+`${NTF}?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 liparFormulario()
@@ -245,9 +245,9 @@ var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/jard
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n\n`
+var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url} `  ;
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
 })
 })
@@ -291,7 +291,7 @@ function ZAP(){
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var msm=` solicitação de contato\n\n`
-var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅  Página web: ${url} `;
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅  Página web: ${url}`;
 window.open(Url, "_blank");
 }
 function falecom(){

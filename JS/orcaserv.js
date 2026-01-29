@@ -601,7 +601,7 @@ dbc.collection('Colaboradores').doc(`${RE_Prest}`).get().then((doc)=>{
 var doc= doc.data()
 Swal.fire({ title: `Nº: ${doc.ID}`,
 text: ``, 
-html:`Nome do Prestador: <br> ${doc.Nome}<br> --------------------------------<br> <br> Telefone (whatsApp)<br> ${doc.Telefone}<br> ---------------------------<br> <br> `,
+html:`Nome do Prestador: <br> ${doc.Nome}<br> --------------------------------<br> <br> Telefone (whatsApp)<br> ${doc.Telefone}<br> ---------------------------<br> <br>`,
 imageUrl: `${doc.Foto}`,
 background: '#003253',
 color: '#fff', // cor do texto });
@@ -643,10 +643,10 @@ document.body.style.paddingRight = '0px';
 });
 document.getElementById('whats').addEventListener('click',function(){
 var url=encodeURIComponent(`https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=${código}`) ;
-var Pagina = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
+var Pagina = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${Tel_Cliente}`; // Substitua pelo número de destino, incluindo o código do país
 var msm=`📞(pedido de contato) \n\n👨‍💼 Nosso prestador de serviço ${nomePrest}\n Nº de registro ${RE_Prest}\nGostaria de estabelecer contato referente ao orçamento ou serviço solicitado\n------------------------------------------------\n🛠️RD- Serviço com qualidade e segurança para sua casa!\n\n`;
-var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅link: 👉 ${url} `;
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅link: 👉 ${url}`;
 window.open(Url,"_blank" );
 });
 }
@@ -678,11 +678,11 @@ document.body.style.paddingRight = '0px';
 });
 
 document.getElementById('whats').addEventListener('click',function(){
-var url=encodeURIComponent(`https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=${código}`) ;
-var Pagina = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
+var url=encodeURIComponent(`https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=${código}`);
+var Pagina = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${Tel_Prestador}`; // Substitua pelo número de destino, incluindo o código do país
 var msm=`📞(pedido de contato) \n\n👨‍💼 Nosso Cliente ${nomeCliente}\n CPF ${cpfCliente}\nGostaria de estabelecer contato referente ao orçamento ou serviço solicitado\n------------------------------------------------\n🛠️RD- Serviço com qualidade e segurança para sua casa!\n\n`;
-var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅link: 👉 ${url} `;
+var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)}✅link: 👉 ${url}`;
 window.open(Url,"_blank" );
 });
 }

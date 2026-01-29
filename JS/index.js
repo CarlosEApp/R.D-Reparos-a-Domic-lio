@@ -66,11 +66,11 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-var pagina =`https://rd-reparos-domicilio.netlify.app/`
+var pagina =`https://rd-reparos-domicilio.netlify.app`
 var whatsappMessage =`✅Visite nossa Página\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: 👉  ${pagina}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
@@ -528,7 +528,7 @@ window.open('html/cad.html', '_self');
 //fale conosco
 var telefone= sessionStorage.getItem('teladmin')
 function falecom(){
-var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/");
+var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var msm=`Solicitação de contato \n\n`
 var Url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(msm)} Página web: ${url}`;
