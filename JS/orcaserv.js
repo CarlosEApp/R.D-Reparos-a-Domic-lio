@@ -106,7 +106,7 @@ var cadeado=document.getElementById('cadeado');
 if(!tranca|| tranca==''){
   document.getElementById('divOrçar').style.display='none';
 Swal.fire({
-title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Password do Prestador!',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
 <div id='myFlex'>
@@ -188,7 +188,7 @@ function ADM(){
    var resp1= sessionStorage.getItem('PassW01')
 var resp2= sessionStorage.getItem('PassW02')
  Swal.fire({
-title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passworddo Prestador!',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
 <div id='myFlex'>
@@ -350,7 +350,7 @@ botão.addEventListener('click',function(){
   var passw=sessionStorage.getItem('PresSenha')
   var REP= sessionStorage.getItem('PresRE')
   Swal.fire({
-title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passworddo Prestador!',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
 <div id='myFlex'>
@@ -465,7 +465,7 @@ botão.addEventListener('click',function(){
   var REP= sessionStorage.getItem('PresRE')
   
   Swal.fire({
-title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passwod do Prestador!',
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Password do Prestador!',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
 <div id='myFlex'>
