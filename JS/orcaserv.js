@@ -952,3 +952,28 @@ gerarPDF()
 //forma de pagamento
 document.getElementById('inicioServ').value=`0000-00-00`
 document.getElementById('terminoServ').value=`2000-00-00`
+
+var firebaseConfig = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfig);
+var adbb = firebase.firestore();
+var produtosRef = adbb.collection(`Admin`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var coment = querySnapshot.size
+sessionStorage.setItem('PassW01', doc.Passw01)
+sessionStorage.setItem('PassW02', doc.Passw02)
+sessionStorage.setItem('teladmin',doc.Telefone)
+//alert(doc.Telefone)
+setTimeout(function(){
+},2000)
+})
+})

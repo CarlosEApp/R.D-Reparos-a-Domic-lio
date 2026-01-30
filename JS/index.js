@@ -103,11 +103,9 @@ document.body.style.paddingRight = '0px';
 document.getElementById('Sair').addEventListener('click', function () {
 Swal.close();
 });
-
 document.getElementById('Swalstart').addEventListener('click', function () {
 // pega o valor do input
 var codigo = document.getElementById('confirmaCódigo').value.toUpperCase()
-
 // valida se está vazio
 if (!codigo || codigo === '') {
 Swal.fire('Atenção!', 'Por favor, insira um código válido.', 'warning');
@@ -120,7 +118,6 @@ window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
 function psqOrr(){
 var resposta = document.getElementById('confirmaCódigo').value.toUpperCase(); 
 // força o texto para maiúsculas
-
 if(resposta.length === 11){ 
 // alert(resp);
 codigo = resposta.replace(/\s+/g, "");
@@ -129,12 +126,6 @@ window.open(`html/orcaserv.html?codigo=${codigo}`, '_self');
 // alert("O código precisa ter 11 caracteres.");
 }
 }
-// dados admim tel
-var telAdmim= 11995501463
-sessionStorage.setItem('teladmin', telAdmim)
-var resp = sessionStorage.setItem('senha','gat980')
-var resp2=sessionStorage.setItem('RecPasswor','Carlos@gat@gmail');
-
 //btn alvenaria
 function alvenaria(){
 window.open('html/alvenaria.html','_self')
@@ -337,7 +328,6 @@ document.getElementById('avisoinfo').style.display='none'
 localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
-
 var dbb = firebase.firestore();
 dbb.collection("UsersPag").doc(user.uid).set({
 nome: user.displayName,
@@ -348,7 +338,6 @@ Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
 })
-
 //var itens1= 0
 var list = document.getElementById('listInfo');
 list.innerHTML = ''
@@ -595,6 +584,7 @@ document.webkitCancelFullScreen();
 }
 }
 }
+//Adiministrador Geral
 var firebaseConfig = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -613,9 +603,9 @@ var doc = doc.data();
 var coment = querySnapshot.size
 sessionStorage.setItem('PassW01', doc.Passw01)
 sessionStorage.setItem('PassW02', doc.Passw02)
-
+sessionStorage.setItem('teladmin',doc.Telefone)
+//alert(doc.Telefone)
 setTimeout(function(){
-
 },2000)
 })
 })
@@ -650,10 +640,8 @@ i = 1;
 var elem = document.getElementById("myBar");
 var width = 1;
 var id = setInterval(frame, 37);
-
 function frame() {
 if (width >= 100) {
-
 i = 0;
 document.getElementById('myProgress').style.display = 'none'
  swalclose()
@@ -670,8 +658,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 function swalclose(){
     Swal.close()
 }
-
-
 function ColaboradorEntrar(){
 
    swal('Em desenvolvimento','A página de Colaboradores está em fase de desenvolvimento. Em breve estará disponível!','warning')

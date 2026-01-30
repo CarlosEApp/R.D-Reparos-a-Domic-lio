@@ -138,7 +138,7 @@ firebase.initializeApp(firebaseConfigure);
  Swal.fire('','Cadastro completo!','success')
    setTimeout(function(){
 Swal.close()
-var TelAD=`11995501463`
+var TelAD=sessionStorage.getItem('teladmin')
 var pagina =`https://rd-reparos-domicilio.netlify.app`;
 var NTF = `+55${TelAD}`;
 //var url = "https://rd-reparos-domicilio.netlify.app/html/orcaserv.html?codigo=" + inp9;
@@ -245,7 +245,7 @@ Swal.close()
 document.getElementById('btnnbt1').addEventListener('click',function(){
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
-  var telefone='11995501463'
+  var telefone=sessionStorage.getItem('teladmin')
 }
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/pintura.html");
 var codigo= sessionStorage.getItem('codigo')
@@ -426,3 +426,28 @@ function swalclose(){
     Swal.close()
 }
 initPage()
+
+var firebaseConfig = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfig);
+var adbb = firebase.firestore();
+var produtosRef = adbb.collection(`Admin`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var coment = querySnapshot.size
+sessionStorage.setItem('PassW01', doc.Passw01)
+sessionStorage.setItem('PassW02', doc.Passw02)
+sessionStorage.setItem('teladmin',doc.Telefone)
+//alert(doc.Telefone)
+setTimeout(function(){
+},2000)
+})
+})
