@@ -450,3 +450,6 @@ setTimeout(function(){
 },2000)
 })
 })
+function ClickAnyDesk(){
+window.open('https://anydesk.com/pt/downloads/windows','_blank')
+}
