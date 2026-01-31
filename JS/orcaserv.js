@@ -977,3 +977,14 @@ setTimeout(function(){
 },2000)
 })
 })
+// forma de pagamento
+function calcularentrada(){
+  var valor1= document.getElementById('entradaPag').value.replace(/\D/g, "");
+  valor1= parseFloat(valor1)/100;
+  document.getElementById('entradaPag').value=new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(valor1);
+};
+function calcularParcelas(){
+   var valor2= document.getElementById('parcelasPag').value.replace(/\D/g, "");
+  valor2= parseFloat(valor2)/100;
+  document.getElementById('parcelasPag').value=new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(valor2);
+}

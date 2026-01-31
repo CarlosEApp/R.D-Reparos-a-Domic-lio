@@ -119,7 +119,7 @@
                       <h3>Forma de pagamento</h3>
                     <div id="Divpagamento">
                       <div>
-                      <input type="text" id="entradaPag" placeholder="Entrada"> 
+                      <input type="text" id="entradaPag" onkeyup="calcularentrada()"  placeholder="Entrada"> 
                       <select name="" id="selectParcelas" title="Parcelas">
                         <option value="" disabled selected>Parcelas</option>
                         <option value="1x">1x</option>
@@ -135,7 +135,7 @@
                         <option value="11x">11x</option>
                         <option value="12x">12x</option>
                       </select></div>
-                     <div><input type="text" id="parcelasPag" placeholder="Parcelas"> <input type="text" id="totalPag" placeholder="Total">
+                     <div><input type="text" id="parcelasPag" placeholder="Parcelas" onkeyup="calcularParcelas()"  > <input type="text" id="totalPag" placeholder="Total">
                     </div>
                   </div>
                     <div id="divOBS">
