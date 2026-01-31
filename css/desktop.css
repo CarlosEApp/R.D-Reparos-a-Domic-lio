@@ -582,8 +582,8 @@ transform: rotate(360deg);
 }
 #anydesk{
     margin: auto;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 500px;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.541);
     cursor: pointer;
     margin-top: 50px;
