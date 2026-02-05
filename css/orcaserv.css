@@ -645,8 +645,8 @@ border: 1px solid rgb(78, 78, 78);
 }
 #selectParcelas{
 margin: auto;
-min-width: 100px;
-max-width: 110px;
+min-width:70;
+max-width: 90px;
 padding: 7px;
 font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
 border: 0cap;
