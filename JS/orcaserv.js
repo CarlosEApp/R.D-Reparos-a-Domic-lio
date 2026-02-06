@@ -188,7 +188,7 @@ function ADM(){
    var resp1= sessionStorage.getItem('PassW01')
 var resp2= sessionStorage.getItem('PassW02')
  Swal.fire({
-title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Passworddo Prestador!',
+title: '<i class="fa-sharp-duotone fa-solid fa-lock"></i> Administração!👨‍💼',
 html: `
 <p id='ppo'>Password <i id='verpassw' class="fa-solid fa-eye"></i></p>
 <div id='myFlex'>
@@ -196,7 +196,7 @@ html: `
 <button id="enterPassw" title="senha">✅OK </button>
 </div>
 `,
-background: '#003153',
+background: '#3d0055',
 color: '#ffffffff',
 showCancelButton: true,
 showConfirmButton: false,

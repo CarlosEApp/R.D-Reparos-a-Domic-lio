@@ -26,27 +26,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>   
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/orcaserv.css">
-
 </head>
 <body>
-   
    <div id="divInit"></div>
-
-
-
     <div id="divGeral">
       <header>
          <div id="divHeader">
             <div id="head1">
-              <h2>Orçamento</h2>  <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button id="btnMenu" onclick="ADM()" type=""> ADM</button>
+              <h2>Orçamento</h2>  <i id="telaCheia" onclick="toggleFullScreen()" class="fa-solid fa-desktop"></i>  <button id="MenuAdmin" onclick="ADM()" type=""> 👨‍💼adm</button>
             </div>
             <div id="head2">
-                <h4  id="codigoCliente">0000000</h4> <button id="annalizeOrçar" onclick="AnnalizeOrçamento()" type=""> Annalize</button>
+                <h4  id="codigoCliente">0000000</h4> <button id="analizeOrçar" onclick="AnnalizeOrçamento()" type=""> Analize</button>
             </div>
          </div>
          </header>
@@ -62,11 +56,10 @@
             <a id="a_hedermeio" href="#header_list" title="Botões"></a>
          <main>
          <div id="divBody">
-              <h2 id="h2Body">Orçamento/Contrato</h2>
-            <div id="body1">
-             
-            <div id="dadosCliente">
-             <h3>Dados do clientes</h3>
+          <h2 id="h2Body">Orçamento/Contrato</h2>
+          <div id="body1">
+          <div id="dadosCliente">
+           <h3>Dados do clientes</h3>
             <label id="nomeCliente" for="">Cliente</label><br>
             <label id="telCliente" for="">Tel:</label>  <i id="i_Tel" onclick="telCliente()" class="fa-brands fa-whatsapp"></i><br>
              <label id="cpfCliente" for="">CPF:</label><br><br>
@@ -120,8 +113,7 @@
                     <div id="Divpagamento">
                       <div>
                      Sinal:<input type="text" id="entradaPag" onkeyup="calcularentrada()"  placeholder="Entrada"> 
-                     X:<select name="" id="selectParcelas" title="Parcelas">
-                        <option value="" disabled selected>Parcelas</option>
+                     X:<select name="" id="selectParcelas" title="Parcelas">                
                         <option value="1x">1x</option>
                         <option value="2x">2x</option>
                         <option value="3x">3x</option>
