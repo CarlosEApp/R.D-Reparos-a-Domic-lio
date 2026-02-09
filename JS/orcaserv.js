@@ -920,6 +920,7 @@ document.getElementById("vigentNome").innerHTML=`Cliente: ${dados.Cliente}`
 document.getElementById("vigentID").innerHTML=`ID: ${dados.Cód}`
 document.getElementById("vigentCPF").innerHTML=`CPF: ${dados.CPF_Cliente}`
 document.getElementById("aPDFvigente").href=` ${dados.LinkPDF}`
+document.getElementById('vigentValor').innerHTML=`Total:  ${dados.valorServiço}`
 document.getElementById('entradaPag').value= dados.Adiantamento
 document.getElementById('inicioServ').value=dados.Data_inicio
 document.getElementById('terminoServ').value=dados.Data_fim
@@ -927,6 +928,7 @@ document.getElementById('selectParcelas').value=dados.Parcelas
 document.getElementById('parcelasPag').value=dados.Valor_Parcelas
 document.getElementById('totalPag').value=dados.valorServiço
 document.getElementById('OBSFinal').value=dados.OBS
+
 if( dados.Aceite=='Sim'){
    document.getElementById('finalitDiv').style.display='block';
 document.getElementById('divBody').style.display='none';
@@ -941,7 +943,26 @@ swal('Orçamento APROVADO!',`Data e Hora: ${dados.Data} às ${dados.Hora}`,'succ
 }
 })
 },7000);
-
+function divclick(){
+  var nome = document.getElementById('vigentNome').innerText;
+  var id = document.getElementById('vigentID').innerText;
+  var cpf = document.getElementById('vigentCPF').innerText;
+  var valor = document.getElementById('vigentValor').innerText;
+  var dataInicio= document.getElementById('inicioServ').value;
+  var dataFim= document.getElementById('terminoServ').value;
+  
+  Swal.fire({
+    title: `Detalhes do Orçamento`,
+    html: `${nome}<br>${id}<br>${cpf}<br>${valor}<br><br>Inicio: ${dataInicio}<br>Termino: ${dataFim}`,
+    background: '#003253',
+    color: '#fff', // cor do texto
+    allowOutsideClick: true,
+    showConfirmButton: true,
+    customClass: {
+      popup: 'my-custom' // Aplica a classe CSS personalizada
+}
+  });
+}
 function gerarPDF_(){
 document.getElementById('PDF_Final').style.display='none';
 document.getElementById('btnAceitar').style.display='none';

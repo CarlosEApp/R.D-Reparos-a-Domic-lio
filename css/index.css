@@ -1264,3 +1264,6 @@ transform: rotate(360deg);
     width: 100%;
     min-height: 15vh;
 }
+#divCol{
+    display: none;
+}

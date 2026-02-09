@@ -48,9 +48,11 @@
           <h2>Contrato vigênte!</h2>
           <label id="vigentNome" for="">Nome</label><br>
            <label id="vigentCPF" for="">CPF</label><br>
+           <label id="vigentValor" for="">R$</label><br>
            <label id="vigentID" for="">ID</label><br>
            <a id="aPDFvigente" href="#">PDF</a><br>
            <a id="aPDF_" href="../public/Contrato_RD_Reparos.pdf" download> Baixar Contrato em PDF</a><br>
+           <button id="btnVermais" onclick="divclick()">Ver Mais!</button>
          </div>
          <a id="a_init" href="#" title="Inicio"></a>
             <a id="a_hedermeio" href="#header_list" title="Botões"></a>
@@ -183,9 +185,8 @@ async function gerarPDF() {
         if (heightLeft > 0) { doc.addPage(); 
         } } } 
         // Captura cada div
-         await addDivToPDF("divBody");
-         await addDivToPDF("body1", true);
-          await addDivToPDF("divOrçar", true);
+         await addDivToPDF("body1");
+         await addDivToPDF("body2", true);
           await addDivToPDF("pdfFinal", true);
            // Faz download 
            doc.save("Contrato_RD.pdf"); } </script>
