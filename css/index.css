@@ -42,7 +42,7 @@ border: 0cap;
 background-color: rgba(1, 101, 189, 0);
 cursor: pointer;
 margin-right: 10px;
-font-size: clamp(0.700rem, 0.3vw + 0.5rem, 0.900rem);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 outline: none;
 color: rgb(255, 255, 255);
 }
