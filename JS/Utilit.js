@@ -129,7 +129,8 @@ setTimeout(function(){
 if(!itens|| itens==''|| itens==0){
 //Swal.fire('Lista vazia!')
 document.getElementById('lblItens').style.display='block'
-listaInicial()
+ //listaInicial()
+ 
 } else{
 document.getElementById('lblItens').style.display='none'
 Swal.close()
@@ -144,7 +145,7 @@ Swal.close()
 // lista inicial
 function listaInicial(){
 var list= document.getElementById('list');
-list.innerHTML = '';
+list.innerHTML ='';
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -225,7 +226,7 @@ var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/util
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor}\n------------------------------\n$ Promoção: ${doc.Desconto}\n------------------------------\n📝Lista: ${doc.Desconto}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor}\n------------------------------\n$ Promoção: ${doc.Desconto}\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
