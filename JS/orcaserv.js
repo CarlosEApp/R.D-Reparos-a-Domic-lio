@@ -630,7 +630,6 @@ Swal.fire({
 title: `Contato Cliente  <i class="fa-brands fa-whatsapp"></i>`,
 html: `
 <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
@@ -930,16 +929,16 @@ document.getElementById('parcelasPag').value=dados.Valor_Parcelas
 document.getElementById('totalPag').value=dados.valorServiço
 document.getElementById('OBSFinal').value=dados.OBS
 
-if( dados.Aceite=='Sim'){
+if(dados.Aceite=='Sim'){
    document.getElementById('finalitDiv').style.display='block';
 document.getElementById('divBody').style.display='none';
-document.getElementById('btnMenu').style.display='block';
+document.getElementById('MenuAdmin').style.display='block';
 swal('Orçamento APROVADO!',`Data e Hora: ${dados.Data} às ${dados.Hora}`,'success')
   
 }else{
   document.getElementById('divBody').style.display='Block';
     document.getElementById('finalitDiv').style.display='none';
-    document.getElementById('btnMenu').style.display='none';
+    document.getElementById('MenuAdmin').style.display='none';
   
 }
 })

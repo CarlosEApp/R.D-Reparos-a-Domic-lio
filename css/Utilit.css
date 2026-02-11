@@ -10,8 +10,8 @@ margin-top: 5px;
 cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
-margin-left: 5px;
-background-color: rgba(0, 28, 46, 0.486);
+margin-left: 3px;
+background-color: rgba(0, 62, 100, 0.932);
 /* Cor do polegar da barra de rolagem */
 margin-top: 5px;
 border-radius: 5px;
