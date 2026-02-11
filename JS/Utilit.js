@@ -226,7 +226,7 @@ lis.appendChild(div4);
 list.appendChild(lis);
 
 button.addEventListener('click', function(){
-    swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis!','../src/RD_NA_lOJA.png')
+    swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis pra vc!','../src/RD_NA_lOJA.png')
 })
 
 })
