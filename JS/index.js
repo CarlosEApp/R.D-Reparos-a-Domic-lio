@@ -596,7 +596,7 @@ appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfig);
-var adbb = firebase.firestore();
+var adbb = firebase.firestore();0
 var produtosRef = adbb.collection(`Admin`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {

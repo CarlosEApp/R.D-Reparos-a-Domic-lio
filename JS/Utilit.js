@@ -6,9 +6,9 @@ title: ``,
 html: `
 <button id="SSair" title="">X</button>  <br>   
 <div id='divSwP'>
-<p>selecione uma opção</p>
+<p>Selecione uma opção</p>
          <select name=""  id="Input_add1" >
-           <option value=''>Selecione:</option>
+           <option value=''>Oque você procura?</option>
             <option value="Eletrica">⚡Elétrica</option>
              <option value="Hidraulica">🚿Hidraulica</option>
               <option value="Pintura">🖌️Pintura</option>
@@ -36,7 +36,6 @@ document.body.style.paddingRight = '0px';
  document.getElementById('SSair').addEventListener('click', function(){
 Swal.close()
  });
-
 document.getElementById('Input_add1').addEventListener('change', function() {
      var resp = document.getElementById('Input_add1').value; 
     // alert(resp);
@@ -46,7 +45,6 @@ document.getElementById('Input_add1').addEventListener('change', function() {
   setTimeout(function(){
 Swal.close()
 },2000)
-
 } else{
   var itens=0
 var list= document.getElementById('list');
@@ -123,11 +121,9 @@ lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
-
 button.addEventListener('click', function(){
     swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis!','../src/RD_NA_lOJA.png')
 })
-
 } else{
 setTimeout(function(){
 if(!itens|| itens==''|| itens==0){
@@ -137,17 +133,14 @@ listaInicial()
 } else{
 document.getElementById('lblItens').style.display='none'
 Swal.close()
-
 }
 },2000)
 }
-
 })
 })
  }
   });
  }
-
 // lista inicial
 function listaInicial(){
 var list= document.getElementById('list');
@@ -179,7 +172,6 @@ var label4 = document.createElement('label');
 var label5 = document.createElement('label');
 var img = document.createElement('img');
 var button = document.createElement('button');
-
 lis.id = 'lis';
 div.id = 'div';
 div2.id = 'div2';
@@ -206,9 +198,7 @@ label4.textContent=``;
 label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
-
 button.textContent='Comprar';
-
 div.appendChild(img);
 div2.appendChild(label);
 div2.appendChild(document.createElement('br'));
@@ -226,18 +216,27 @@ lis.appendChild(div4);
 list.appendChild(lis);
 
 button.addEventListener('click', function(){
-    swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis pra vc!','../src/RD_NA_lOJA.png')
-})
+   // swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis pra vc!','../src/RD_NA_lOJA.png')
+    var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+  var telefone=sessionStorage.getItem('teladmin')
+}
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+var codigo= sessionStorage.getItem('codigo')
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor}\n------------------------------\n$ Promoção: ${doc.Desconto}\n------------------------------\n📝Lista: ${doc.Desconto}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
+window.open(url, "_blank");
+});
+
 
 })
 })
 }
 
-
 listaInicial()
-
-
-
 //logo title
 function initPage(){
     Swal.fire({ 
@@ -245,12 +244,12 @@ title: ``,
 text: ``, 
 html:`
 <img src="../src/RD_NA_lOJA.png" alt="Logo RD Reparos a Domicílio" class="logo-swal" width="70%">
- <div id="divInit"> 
- <button id='btnTime'>⏳</button>
-  <div id="myProgress" title="Progresso">
-   <div id="myBar">10%</div>
-     </div>
- </div>
+<div id="divInit"> 
+<button id='btnTime'>⏳</button>
+<div id="myProgress" title="Progresso">
+<div id="myBar">10%</div>
+</div>
+</div>
 `,
 imageUrl: ``,
 background: '#00325300',
@@ -292,3 +291,25 @@ function swalclose(){
     Swal.close()
 }
 initPage()
+
+// Tela Cheia
+function toggleFullScreen() {
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+(!document.mozFullScreen && !document.webkitIsFullScreen)) {
+if (document.documentElement.requestFullScreen) {
+document.documentElement.requestFullScreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullScreen) {
+document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+}
