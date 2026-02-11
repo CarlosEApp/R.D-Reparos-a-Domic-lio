@@ -18,7 +18,7 @@ function Loja(){
 title: `Ola, eu sou o RD`,
 html: `
 <div id='divrdzinho'>
-<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> UT-RD </button> <br><br>
+<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja-RD </button> <br><br>
 <button id="mensagemRD" title=""><i class="fa-brands fa-whatsapp"></i> Mensagem </button>            
 </div>
 `,
@@ -38,7 +38,8 @@ document.getElementById('mensagemRD').addEventListener('click',function(){
 falecom()
 })
 document.getElementById('Loja_RD').addEventListener('click',function(){
-Swal.fire('Em desenvolvimento','A página de utilitários está em fase de desenvolvimento. Em breve estará disponível!','warning')
+    window.open('html/Utilit.html','_self')
+//Swal.fire('Em desenvolvimento','A página de utilitários está em fase de desenvolvimento. Em breve estará disponível!','warning')
 })
 }
 //Compartilhar
@@ -614,6 +615,7 @@ function initPage(){
 title: ``,
 text: ``, 
 html:`
+<img src="../src/RDzinho.png" alt="Logo RD Reparos a Domicílio" class="logo-swal" width="70%">
  <div id="divInit"> 
  <button id='btnTime'>⏳</button>
   <div id="myProgress" title="Progresso">

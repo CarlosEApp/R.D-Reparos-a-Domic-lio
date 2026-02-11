@@ -1274,6 +1274,7 @@ function initPage(){
 title: ``,
 text: ``, 
 html:`
+<img src="../src/RDzinho.png" alt="Logo RD Reparos a Domicílio" class="logo-swal" width="61%">
  <div id="divInity"> 
  <button id='btnTime'>⏳</button>
   <div id="myProgresss" title="Progresso">
