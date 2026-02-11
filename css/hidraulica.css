@@ -272,10 +272,10 @@ transition: left 0.3s ease;
 z-index: 99;
 padding: 0px;
 border-right: 1px solid rgb(0, 0, 0);
-margin-top: 10px;
+margin-top: 2px;
 overflow: auto;
 padding-top: 30px;
-border-top: 30px solid rgb(76, 80, 80);
+
 }
 #menu_lateral ul {
 list-style: none;

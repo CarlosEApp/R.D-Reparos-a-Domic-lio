@@ -336,10 +336,10 @@ Menu()
 function init(){
 Menu() 
 };
-document.getElementById('a_inicio').addEventListener('click', function(){
-    alert('oK')
-    Menu() 
-})
+
 function Returpag(){
 window.open('../index.html','_self')
+}
+function inicio_(){
+Menu()
 }
