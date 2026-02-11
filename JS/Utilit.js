@@ -314,3 +314,32 @@ document.webkitCancelFullScreen();
 }
 }
 }
+
+//Menu lateral
+sessionStorage.setItem('MENULateral','')
+function Menu() {
+var BTN=document.getElementById('IMenu');
+var MENU_= sessionStorage.getItem('MENULateral')
+if(!MENU_|| MENU_==''){
+BTN.className='fa-solid fa-delete-left'
+sessionStorage.setItem('MENULateral','Aberto')
+document.getElementById("menu_lateral").classList.add("menu-ativo");
+}else{
+BTN.className='fa-solid fa-bars'
+sessionStorage.setItem('MENULateral','')
+document.getElementById("menu_lateral").classList.remove("menu-ativo");
+}
+};
+function fecharMenu() {
+Menu() 
+};
+function init(){
+Menu() 
+};
+document.getElementById('a_inicio').addEventListener('click', function(){
+    alert('oK')
+    Menu() 
+})
+function Returpag(){
+window.open('../index.html','_self')
+}
