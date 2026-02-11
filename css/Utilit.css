@@ -344,6 +344,7 @@ footer{
     outline: none;
      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
      font-weight: bold;
+     background-color: #ffffff;
 }
 .my-custom p{
     color: #ffffff;
