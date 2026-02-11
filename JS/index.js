@@ -615,7 +615,7 @@ function initPage(){
 title: ``,
 text: ``, 
 html:`
-<img src="../src/RDzinho.png" alt="Logo RD Reparos a Domicílio" class="logo-swal" width="70%">
+<img src="src/RDzinho.png" alt="Logo RD Reparos a Domicílio" class="logo-swal" width="70%">
  <div id="divInit"> 
  <button id='btnTime'>⏳</button>
   <div id="myProgress" title="Progresso">
