@@ -9,9 +9,8 @@ html: `
 <p>Selecione uma opção</p>
          <select name=""  id="Input_add1" >
            <option value=''>Oque você procura?</option>
-            <option value=''>Serviços de:</option>
              <option value="Elétrica">⚡Elétrica</option>
-              <option value="Hidráulica">🚿Hidraulica</option>
+              <option value="Hidráulica">🚿Hidráulica</option>
                <option value="Pintura">🖌️Pintura</option>
                 <option value="Desktop">💻M.Desktop</option>
                  <option value="Alvenaria">🔨Alvenaria</option>
