@@ -10,14 +10,13 @@ html: `
          <select name=""  id="Input_add1" >
            <option value=''>Oque você procura?</option>
             <option value=''>Serviços de:</option>
-                     <option value="Eletrica">⚡Elétrica</option>
-                      <option value="Hidraulica">🚿Hidraulica</option>
-                       <option value="Pintura">🖌️Pintura</option>
-                        <option value="Desktop">💻M.Desktop</option>
-                         <option value="Alvenaria">🔨Alvenaria</option>
-                          <option value="Jardinagem">🌿Jardinagem</option>
-                          <option value="Utilitarios">👉Utilitários</option>
-                  <option value="Diversos">🛍️Diversos</option>
+             <option value="Elétrica">⚡Elétrica</option>
+              <option value="Hidráulica">🚿Hidraulica</option>
+               <option value="Pintura">🖌️Pintura</option>
+                <option value="Desktop">💻M.Desktop</option>
+                 <option value="Alvenaria">🔨Alvenaria</option>
+                  <option value="Jardinagem">🌿Jardinagem</option>
+                   <option value="Diversos">🛍️Diversos</option>
     </select>
     <br> <br>       
     <label id='lblItens'>Não há itens nessa lista!</label>      
