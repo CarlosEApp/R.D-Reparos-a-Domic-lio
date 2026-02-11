@@ -42,11 +42,11 @@ document.getElementById('Input_add1').addEventListener('change', function() {
     if(resp== 'Diversos'){
   listaInicial()
   document.getElementById('lblItens').style.display='none'
-  setTimeout(function(){
+setTimeout(function(){
 Swal.close()
 },2000)
 } else{
-  var itens=0
+ var itens=0
 var list= document.getElementById('list');
 list.innerHTML = '';
 var firebaseConfigure = {
@@ -122,7 +122,18 @@ lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
 button.addEventListener('click', function(){
-    swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis!','../src/RD_NA_lOJA.png')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+var codigo= sessionStorage.getItem('codigo')
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor}\n------------------------------\n$ Promoção: ${doc.Desconto}\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
+window.open(url, "_blank");
 })
 } else{
 setTimeout(function(){
@@ -130,7 +141,6 @@ if(!itens|| itens==''|| itens==0){
 //Swal.fire('Lista vazia!')
 document.getElementById('lblItens').style.display='block'
  //listaInicial()
- 
 } else{
 document.getElementById('lblItens').style.display='none'
 Swal.close()
@@ -215,12 +225,11 @@ lis.appendChild(div2);
 lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
-
 button.addEventListener('click', function(){
    // swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis pra vc!','../src/RD_NA_lOJA.png')
-    var telefone= sessionStorage.getItem('teladmin')
+var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
-  var telefone=sessionStorage.getItem('teladmin')
+var telefone=sessionStorage.getItem('teladmin')
 }
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
@@ -231,16 +240,13 @@ var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
 });
-
-
 })
 })
 }
-
 listaInicial()
 //logo title
 function initPage(){
-    Swal.fire({ 
+Swal.fire({ 
 title: ``,
 text: ``, 
 html:`
