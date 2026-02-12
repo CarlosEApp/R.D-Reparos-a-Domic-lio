@@ -121,6 +121,9 @@ lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
+img.addEventListener('click', function(){
+swal('','',`${doc.Imagem}`)
+})
 button.addEventListener('click', function(){
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
