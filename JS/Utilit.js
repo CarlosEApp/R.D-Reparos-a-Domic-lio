@@ -228,8 +228,11 @@ lis.appendChild(div2);
 lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
+img.addEventListener('click', function(){
+swal('','',`${doc.Imagem}`)
+});
+
 button.addEventListener('click', function(){
-   // swal('Desculpe-me','Estamos Atualizando os intens da loja RD. Em Breve novos produtos e promoções incriveis pra vc!','../src/RD_NA_lOJA.png')
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
 var telefone=sessionStorage.getItem('teladmin')
