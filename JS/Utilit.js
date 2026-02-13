@@ -37,6 +37,7 @@ document.body.style.paddingRight = '0px';
 Swal.close()
  });
 document.getElementById('Input_add1').addEventListener('change', function() {
+  document.getElementById('a_init').click()
      var resp = document.getElementById('Input_add1').value; 
     // alert(resp);
     if(resp== 'Diversos'){
