@@ -445,3 +445,15 @@ setTimeout(function(){
 },2000)
 })
 })
+//sair da pagina dois clicks
+let primeiraTentativa = false;
+
+window.addEventListener("beforeunload", function (event) {
+  if (!primeiraTentativa) {
+    primeiraTentativa = true;
+    event.preventDefault();
+    event.returnValue = "Confirme novamente para sair da página.";
+    return "Confirme novamente para sair da página.";
+  }
+  // Na segunda tentativa, o navegador permite sair normalmente
+});

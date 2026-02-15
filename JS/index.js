@@ -665,3 +665,14 @@ function ColaboradorEntrar(){
    swal('Em desenvolvimento','A página de Colaboradores está em fase de desenvolvimento. Em breve estará disponível!','warning')
 }
 initPage()
+
+//instagran
+function instagran(){
+    window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
+}
+
+// Gmail
+function gmail(){
+     window.open('https://rd.reparosadomicilio@gmail.com','_blank')
+}
+

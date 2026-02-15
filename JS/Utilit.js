@@ -377,7 +377,8 @@ sessionStorage.setItem('PassW01', doc.Passw01)
 sessionStorage.setItem('PassW02', doc.Passw02)
 sessionStorage.setItem('teladmin',doc.Telefone)
 //alert(doc.Telefone)
-setTimeout(function(){
+setTimeout(function()
+{
 },2000)
 })
 })
