@@ -122,6 +122,7 @@ lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
+document.getElementById('lblListaHead').innerHTML=`📝${resp}  🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })
@@ -144,6 +145,7 @@ setTimeout(function(){
 if(!itens|| itens==''|| itens==0){
 //Swal.fire('Lista vazia!')
 document.getElementById('lblItens').style.display='block'
+document.getElementById('lblListaHead').innerHTML=`📝Não há itens na lista`
  //listaInicial()
 } else{
 document.getElementById('lblItens').style.display='none'
@@ -175,6 +177,7 @@ firebase.initializeApp(firebaseConfigure);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
+var itens= querySnapshot.size
 var lis = document.createElement('div');
 var div = document.createElement('div');
 var div2 = document.createElement('div');
@@ -229,6 +232,7 @@ lis.appendChild(div2);
 lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
+document.getElementById('lblListaHead').innerHTML=`📝Diversos  🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 });
