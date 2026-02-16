@@ -675,3 +675,6 @@ function insta(){
      instagran()
 }
 
+function inicio(){
+document.getElementById('a_inicio').click()
+}
