@@ -30,7 +30,7 @@ cursor: pointer;
 body{
 font-family: 'Poppins', sans-serif;
 background-color: rgb(255, 255, 255);
-color: aliceblue;
+color: rgb(73, 73, 73);
 text-rendering: geometricPrecision;
 }
 #divGeral{
@@ -614,6 +614,9 @@ transform: rotate(360deg);
 }
 #anydesk:hover{
     box-shadow: 0 5px 12px rgba(124, 0, 0, 0.741);
+}
+#pOrçamento{
+    color: #e6e6e6;
 }
 
 

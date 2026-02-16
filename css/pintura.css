@@ -30,7 +30,7 @@ cursor: pointer;
 body{
 font-family: 'Poppins', sans-serif;
 background-color: rgb(255, 255, 255);
-color: aliceblue;
+color: rgb(73, 73, 73);
 text-rendering: geometricPrecision;
 }
 #divGeral{
@@ -600,6 +600,9 @@ transform: rotate(360deg);
 .my-customTime #divInit{
     width: 100%;
     min-height: 15vh;
+}
+#pOrçamento{
+    color: #e6e6e6;
 }
 
 

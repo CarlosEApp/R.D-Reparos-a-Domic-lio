@@ -30,8 +30,8 @@ cursor: pointer;
 body{
 font-family: 'Poppins', sans-serif;
 background-color: rgb(255, 255, 255);
-color: aliceblue;
 text-rendering: geometricPrecision;
+color: rgb(73, 73, 73);
 }
 #divGeral{
 margin: auto;
@@ -604,7 +604,9 @@ transform: rotate(360deg);
     width: 100%;
     min-height: 15vh;
 }
-
+#pOrçamento{
+    color: #e6e6e6;
+}
 
 
 
