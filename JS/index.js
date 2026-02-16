@@ -672,7 +672,11 @@ function instagran(){
 }
 
 // Gmail
-function gmail(){
-     window.open('https://rd.reparosadomicilio@gmail.com','_blank')
+function gmail() {
+    window.open(
+        'https://mail.google.com/mail/?view=cm&fs=1&to=rd.reparosadomicilio@gmail.com&su=Solicitação%20de%20Orçamento&body=Olá,%20gostaria%20de%20mais%20informações.',
+        '_blank'
+    );
 }
+
 
