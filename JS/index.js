@@ -671,5 +671,7 @@ function instagran(){
     window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
 }
 
-
+function insta(){
+     instagran()
+}
 
