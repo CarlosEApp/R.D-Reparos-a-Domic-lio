@@ -223,7 +223,7 @@ label4.textContent=``;
 label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
-pr.textContent=`✅`;
+pr.textContent=`👆`;
 div.appendChild(img)
 div2.appendChild(label);
 div2.appendChild(document.createElement('br'));
