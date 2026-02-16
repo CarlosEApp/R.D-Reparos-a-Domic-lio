@@ -671,9 +671,5 @@ function instagran(){
     window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
 }
 
-// Gmail
-function gmail() {
- falecom()
-}
 
 

@@ -1295,41 +1295,48 @@ transform: rotate(360deg);
     display: none;
 }
 
-#folder #divSociais{
-    width: 40%;
+#divSociais{
+    width: 33%;
     position: absolute;
     top: 61px;
      display: flex;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
-     max-width: 210px;
+     max-width: 170px;
      z-index: 99;
-     background-color: #00316870;
-     margin-left: 5px;
-     padding: 8px;
+     background-color: #0031688e;
+     margin-left: 10px;
+     padding: 9px;
      border-radius: 7px;
+       cursor: pointer;
 
 }
-#btnInstagran, #btnGmail{
+#divSociais:hover i{
+     border-color: rgb(233, 0, 0);
+}
+#btnInstagran{
     border: 0cap;
     cursor: pointer;
     background-color: #00000000;
-    color: rgb(231, 231, 231);
+    color: rgb(0, 255, 255);
     font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
          font-weight: bolder;
          text-align: center;
          align-items: center;
+         cursor: pointer;
       
 }
-#btnInstagran i, #btnGmail i{
-         color: rgb(255, 255, 255);
-      font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+
+#btnInstagran i{
+              color: rgb(0, 255, 255);
+      font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
       font-weight: bolder;
       margin-right: 2px;
 }
-#btnInstagran:hover, #btnGmail:hover{
+#btnInstagran:hover{
     color: rgb(0, 195, 255);
 }
-#btnInstagran:hover i, #btnGmail:hover i{
+#btnInstagran:hover i{
     color: rgb(255, 145, 0);
+   
 }
