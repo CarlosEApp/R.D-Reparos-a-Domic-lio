@@ -72,7 +72,8 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 });
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app`
-var whatsappMessage =`✅Visite nossa Página\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: 👉  ${pagina}`;
+var loja=`https://rd-reparos-domicilio.netlify.app/html/utilit`
+var whatsappMessage =`✅Visite nossa Página e 🛍️Loja\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: ${pagina}\n----------------------------------------------\n🛍️ Nova Loja RD ${loja}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -661,58 +662,50 @@ function swalclose(){
     Swal.close()
 }
 function ColaboradorEntrar(){
-
    swal('Em desenvolvimento','A página de Colaboradores está em fase de desenvolvimento. Em breve estará disponível!','warning')
 }
 initPage()
-
 //instagran
 function instagran(){
     window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
 }
-
 function insta(){
      instagran()
 }
-
 function inicio(){
 document.getElementById('a_inicio').click()
 }
-
 // lista loja RD inicial
 sessionStorage.setItem('Iitens', '')
- function MItens(){
+function MItens(){
 
-    setTimeout(function(){
-         var itens=sessionStorage.getItem('Iitens')
-        // alert(itens)
- if(!itens||itens==''||itens==0){
-  Swal.fire('',"Ainda não há itens para venda na lista que você escolheu.",'')
- }else{
-
- }
+setTimeout(function(){
+var itens=sessionStorage.getItem('Iitens')
+// alert(itens)
+if(!itens||itens==''||itens==0){
+Swal.fire('',"Ainda não há itens para venda na lista que você escolheu.",'')
+}else{
+}
 },1500)
- }
-
+}
 // select
 sessionStorage.setItem('selectRD', ``)
 function selectLoja(){
-    sessionStorage.setItem('Iitens', '')
-    var resp= document.getElementById('selectRD').value;
-    sessionStorage.setItem('selectRD', `${resp}`)
-    setTimeout(function(){
-        if(resp=='Diversos'){
-          listaInicial()
-        } else{
-              listalojaInicial()
-        }
-  
-    },500)
+sessionStorage.setItem('Iitens', '')
+var resp= document.getElementById('selectRD').value;
+sessionStorage.setItem('selectRD', `${resp}`)
+setTimeout(function(){
+if(resp=='Diversos'){
+listaInicial()
+} else{
+ listalojaInicial()
+}
+},500)
 }
 function listalojaInicial(){
-    MItens()
-    var resp= sessionStorage.getItem('selectRD')
-  var itens=0
+MItens()
+var resp= sessionStorage.getItem('selectRD')
+var itens=0
 var list= document.getElementById('list');
 
 list.innerHTML ='';
@@ -726,13 +719,13 @@ appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigur);
- var db=firebase.firestore();
- var produtosRef = db.collection(`Utilitarios`);
+var db=firebase.firestore();
+var produtosRef = db.collection(`Utilitarios`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 if(resp==doc.ADD1){
-      // alert(resp)
+// alert(resp)
 itens++
 var lis = document.createElement('div');
 var div = document.createElement('div');
@@ -811,8 +804,7 @@ window.open(url, "_blank");
 }
 })
 })
- }
-
+}
 // lista inicial
 function listaInicial(){
 var list= document.getElementById('list');
@@ -827,8 +819,8 @@ appId: "1:2081562439:web:ea76d63f3e320c8577f662",
 measurementId: "G-M7YCZXPYGM"
 };
 firebase.initializeApp(firebaseConfigure);
- var db=firebase.firestore();
- var produtosRef = db.collection(`Utilitarios`);
+var db=firebase.firestore();
+var produtosRef = db.collection(`Utilitarios`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
