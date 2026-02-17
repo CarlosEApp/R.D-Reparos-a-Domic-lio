@@ -287,7 +287,7 @@ font-weight: bold;
 #list #label2{
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.700rem);
 }
-#list #label4{
+#list #label3{
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 color: rgb(59, 59, 59);
 font-weight: bold;
@@ -344,10 +344,13 @@ float: right;
 top: 10px;
 border: 0cap;
 background-color: #ffffff00;
-color: #ffffff;
+color: #979797;
 cursor: pointer;
 font-weight: bold;
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#SSair:hover{
+    color: #c9006e;
 }
 .my-custom {
 width: 90%;
@@ -356,15 +359,19 @@ border-radius: 20px;
 }
 .my-custom select{
 width: 80%;
-padding: 7px;
+padding: 10px;
 cursor: pointer;
 outline: none;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
-background-color: #ffffff;
+background-color: #e7f6ff;
+outline: none;
+border: 0cap;
+color: #333333;
+border-radius: 7px;
 }
 .my-custom p{
-color: #ffffff;
+color: #474747;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 margin-top: 20px;
 margin-bottom: 5px;
@@ -376,7 +383,7 @@ margin-top: 20px;
 }
 #lblItens{
 display: none;
-color: rgb(255, 145, 0);
+color: rgb(206, 110, 0);
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 font-weight: bold;
 }

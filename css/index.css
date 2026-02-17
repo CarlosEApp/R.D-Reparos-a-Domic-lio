@@ -241,6 +241,7 @@ overflow: hidden;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 margin-bottom: 70px;
+
 }
 #Fflex{
 margin: auto;
@@ -1020,10 +1021,10 @@ width: 360px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
-margin-left: 15px;
+margin-left: 35px;
 }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1300px) {
 #mainn #divPesquisa{
 display: none;
 }
@@ -1032,6 +1033,7 @@ width: 390px;
 background-color: rgba(0, 0, 0, 0);
 margin-bottom: 70px;
 color: #ffffff;
+margin-left: 25px;
 }
 }
 @media (max-width: 940px) {
@@ -1379,5 +1381,106 @@ color: rgb(149, 0, 168);
 }
 #btnInstagran:hover i{
 color: rgb(255, 0, 242);
+}
+#selectRD{
+width: 84%;
+outline: none;
+border: 0cap;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+color: #3b3b3b;
+background-color: rgb(239, 242, 255);
+padding: 7px;
+border-radius: 7px;
+margin-left: 15px;
 
+}
+#divRecomendados{
+width: 100%;
+}
+#divRecomendados p{
+width: 97%;
+text-align: center;
+color: #272727;
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+font-weight: bold;
+}
+#list{
+margin: auto;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgba(122, 63, 11, 0);
+margin-bottom: 10px;
+margin-top: 20px;
+max-height: 77vh;
+overflow: auto;
+}
+#img{
+max-width: 100px;
+max-height: 100px;
+cursor: pointer;
+transition: transform 0.7s ease;
+}
+#div, #div2{
+text-align: center;
+margin-bottom: 10px;
+}
+#img:hover{
+transform: translateY(-12px);
+}
+#lis{
+width: 100%;
+max-width: 250px;
+background-color: rgba(78, 0, 0, 0);
+margin-bottom: 10px;
+margin-right: 20px;
+margin-top: 20px;
+}
+#label3{
+color: rgba(0, 0, 0, 0.836);
+text-decoration: line-through;
+}
+#div3{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+#div4{
+text-align: center;
+margin-top: 20px;
+margin-bottom: 50px;
+}
+#button{
+cursor: pointer;
+width: 60%;
+padding: 7px;
+background-color: rgba(5, 124, 74, 0.993);
+color: #ffffff;
+border: 0cap;
+border-radius: 10px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+}
+#button:hover{
+background-color: rgba(0, 216, 0, 0.993);
+color: #ffffff;
+}
+#list #label{
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+font-weight: bold;
+}
+#list #label2{
+font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.700rem);
+}
+#list #label3{
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
+color: rgb(59, 59, 59);
+font-weight: bold;
+}
+#list #label4{
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
+color: rgb(0, 161, 27);
+font-weight: bold;
 }

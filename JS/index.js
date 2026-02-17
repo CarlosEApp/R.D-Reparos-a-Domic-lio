@@ -678,3 +678,221 @@ function insta(){
 function inicio(){
 document.getElementById('a_inicio').click()
 }
+
+// lista loja RD inicial
+
+// select
+sessionStorage.setItem('selectRD', ``)
+function selectLoja(){
+    var resp= document.getElementById('selectRD').value;
+    sessionStorage.setItem('selectRD', `${resp}`)
+    setTimeout(function(){
+        if(resp=='Diversos'){
+          listaInicial()
+        } else{
+              listalojaInicial()
+        }
+  
+    },500)
+}
+function listalojaInicial(){
+    var resp= sessionStorage.getItem('selectRD')
+  var itens=0
+var list= document.getElementById('list');
+list.innerHTML ='';
+var firebaseConfigur = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigur);
+ var db=firebase.firestore();
+ var produtosRef = db.collection(`Utilitarios`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+if(resp==doc.ADD1){
+      // alert(resp)
+itens++
+var lis = document.createElement('div');
+var div = document.createElement('div');
+var div2 = document.createElement('div');
+var div3 = document.createElement('div');
+var div4 = document.createElement('div');
+var label = document.createElement('label');
+var label2 = document.createElement('label');
+var label3 = document.createElement('label');
+var label4 = document.createElement('label');
+var label5 = document.createElement('label');
+var img = document.createElement('img');
+var button = document.createElement('button');
+lis.id = 'lis';
+div.id = 'div';
+div2.id = 'div2';
+div3.id = 'div3';
+div4.id = 'div4';
+label.id = 'label';
+label2.id = 'label2';
+label3.id = 'label3';
+label4.id = 'label4';
+label5.id = 'label5';
+img.id = 'img';
+button.id = 'button';
+img.src = doc.Imagem;
+label.textContent=`${doc.Titulo}`;
+if(!doc.SubT||doc.SubT==''){
+label2.textContent=``;
+}else{
+label2.textContent=`${doc.SubT}`;
+}
+label3.textContent=`R$: ${doc.Valor}`;
+if(!doc.Desconto||doc.Desconto==''){
+label4.textContent=``;
+}else{
+label3.id='label3'
+label4.textContent=`Promoção: R$: ${doc.Desconto}`;
+}
+button.textContent='Comprar';
+div.appendChild(img);
+div2.appendChild(label);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(label2);
+div3.appendChild(label3);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label4);
+div3.appendChild(document.createElement('br'));
+//div3.appendChild(label5);
+div4.appendChild(button);
+lis.appendChild(div);
+lis.appendChild(div2);
+lis.appendChild(div3);
+lis.appendChild(div4);
+list.appendChild(lis);
+
+img.addEventListener('click', function(){
+swal('','',`${doc.Imagem}`)
+})
+button.addEventListener('click', function(){
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+var codigo= sessionStorage.getItem('codigo')
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
+window.open(url, "_blank");
+})
+} else{
+
+}
+})
+})
+ }
+
+ 
+
+// lista inicial
+function listaInicial(){
+var list= document.getElementById('list');
+list.innerHTML ='';
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+ var db=firebase.firestore();
+ var produtosRef = db.collection(`Utilitarios`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var itens= querySnapshot.size
+var lis = document.createElement('div');
+var div = document.createElement('div');
+var div2 = document.createElement('div');
+var div3 = document.createElement('div');
+var div4 = document.createElement('div');
+var label = document.createElement('label');
+var label2 = document.createElement('label');
+var label3 = document.createElement('label');
+var label4 = document.createElement('label');
+var label5 = document.createElement('label');
+var img = document.createElement('img');
+var button = document.createElement('button');
+lis.id = 'lis';
+div.id = 'div';
+div2.id = 'div2';
+div3.id = 'div3';
+div4.id = 'div4';
+label.id = 'label';
+label2.id = 'label2';
+label3.id = 'label3';
+label4.id = 'label4';
+label5.id = 'label5';
+img.id = 'img';
+button.id = 'button';
+img.src = doc.Imagem;
+label.textContent=`${doc.Titulo}`;
+if(!doc.SubT||doc.SubT==''){
+label2.textContent=``;
+}else{
+label2.textContent=`${doc.SubT}`;
+}
+label3.textContent=`R$: ${doc.Valor}`;
+if(!doc.Desconto||doc.Desconto==''){
+label4.textContent=``;
+}else{
+label3.id='label3'
+label4.textContent=`Promoção: R$: ${doc.Desconto}`;
+}
+button.textContent='Comprar';
+div.appendChild(img);
+div2.appendChild(label);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(label2);
+div3.appendChild(label3);
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label4);
+div3.appendChild(document.createElement('br'));
+//div3.appendChild(label5);
+div4.appendChild(button);
+lis.appendChild(div);
+lis.appendChild(div2);
+lis.appendChild(div3);
+lis.appendChild(div4);
+list.appendChild(lis);
+
+img.addEventListener('click', function(){
+swal('','',`${doc.Imagem}`)
+});
+
+button.addEventListener('click', function(){
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+var codigo= sessionStorage.getItem('codigo')
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
+var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
+window.open(url, "_blank");
+});
+})
+})
+}
+selectLoja()

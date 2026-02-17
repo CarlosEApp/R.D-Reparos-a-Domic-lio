@@ -22,7 +22,7 @@ html: `
 </div>
 `,
 imageUrl: `../src/RD_NA_lOJA.png`,
-background: 'rgb(0, 87, 75)', // Cor de fundo
+background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'black', // Cor do texto// Cor do texto
 showCancelButton: false,
 showConfirmButton: false,
