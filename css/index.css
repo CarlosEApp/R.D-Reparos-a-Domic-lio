@@ -35,7 +35,6 @@ background-color: rgb(255, 255, 255);
 color: aliceblue;
 text-rendering: geometricPrecision;
 max-width: 1920px;
-
 }
 #divGeral{
 margin: auto;
@@ -213,6 +212,11 @@ font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.800rem);
 font-weight: bold;
 }
 }
+#lblServ{
+color: #830148;
+font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+}
 @media (max-width: 795px) {
 #menu_lateral li {
 margin: 7px 0;
@@ -351,7 +355,6 @@ background-color: rgb(11, 165, 0);
 color: rgb(244, 235, 235);
 border-radius: 30px;
 box-shadow: 0 3px 7px rgba(20, 20, 20, 0.678);
-
 }
 #btnFalecom:hover{
 background-color: rgb(1, 194, 17);
