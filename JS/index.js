@@ -680,10 +680,24 @@ document.getElementById('a_inicio').click()
 }
 
 // lista loja RD inicial
+sessionStorage.setItem('Iitens', '')
+ function MItens(){
+
+    setTimeout(function(){
+         var itens=sessionStorage.getItem('Iitens')
+        // alert(itens)
+ if(!itens||itens==''||itens==0){
+  Swal.fire('',"Ainda não há itens para venda na lista que você escolheu.",'')
+ }else{
+
+ }
+},1500)
+ }
 
 // select
 sessionStorage.setItem('selectRD', ``)
 function selectLoja(){
+    sessionStorage.setItem('Iitens', '')
     var resp= document.getElementById('selectRD').value;
     sessionStorage.setItem('selectRD', `${resp}`)
     setTimeout(function(){
@@ -696,9 +710,11 @@ function selectLoja(){
     },500)
 }
 function listalojaInicial(){
+    MItens()
     var resp= sessionStorage.getItem('selectRD')
   var itens=0
 var list= document.getElementById('list');
+
 list.innerHTML ='';
 var firebaseConfigur = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
@@ -772,7 +788,7 @@ lis.appendChild(div2);
 lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
-
+sessionStorage.setItem('Iitens', itens)
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })
@@ -796,8 +812,6 @@ window.open(url, "_blank");
 })
 })
  }
-
- 
 
 // lista inicial
 function listaInicial(){
