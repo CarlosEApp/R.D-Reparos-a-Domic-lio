@@ -314,7 +314,7 @@ border: 0cap;
 background-color: rgb(237, 237, 255);
 padding:7px;
 outline-color: rgb(128, 0, 0);
-font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 cursor: pointer;
 margin-right: 10px;
 margin-left: 10px;
@@ -324,8 +324,8 @@ border-radius: 7px;
 }
 #valorTarefa{
 max-width: 200px;
-padding: 7px;
-font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+padding: 5px;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 float: left;
 border: 0cap;
 text-align: center;
@@ -341,7 +341,7 @@ margin-bottom: 10px;
 background-color: rgb(242, 254, 255);
 color: rgb(255, 255, 255);
 font-weight: bold;
-padding: 7px;
+padding: 5px;
 border-radius: 10px;
 padding-left: 20px;
 padding-right: 20px;
@@ -356,16 +356,15 @@ color: rgb(131, 0, 0);
 }
 #divOrçarHeader {
 width: 100%;
-padding-top: 10px;
-padding-bottom: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
 background-color:  rgb(0, 88, 22) ;
 color: aliceblue;
 text-align: center;
 border-bottom: 5px solid rgb(248, 247, 247);
 border-top: 5px solid  rgb(165, 165, 165);
 padding-bottom: 10px;
-border-bottom-left-radius: 50px;
-border-bottom-right-radius: 50px;
+
 }
 #orçarFlex{
 margin: auto;
@@ -450,10 +449,12 @@ margin-bottom: 20px;
 }
 #h2ValorTotal{
 color: rgb(70, 54, 173);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 #h2ValorTotal_{
 display: none;
 color: rgb(70, 54, 173);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 .my-custom_compartilhar{
 width: 90%;
