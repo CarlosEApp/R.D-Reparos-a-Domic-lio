@@ -73,7 +73,7 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 document.getElementById('whats').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app`
 var loja=`https://rd-reparos-domicilio.netlify.app/html/utilit`
-var whatsappMessage =`✅Visite nossa Página e 🛍️Loja\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: ${pagina}\n----------------------------------------------\n🛍️ Nova Loja RD ${loja}`;
+var whatsappMessage =`✅Visite nossa Página e 🛍️Loja\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: ${pagina}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
