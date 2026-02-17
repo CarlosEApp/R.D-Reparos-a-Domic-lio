@@ -946,8 +946,8 @@ color: rgb(29, 29, 29);
 }
 #mainn #divPesquisa{
 background-color: #0047b100;
-width: 300px;
-padding: 5px;
+width: 320px;
+padding: 3px;
 display: block;
 border-right: 5px solid rgb(240, 240, 240);
 border-bottom: 2px solid rgb(240, 240, 240);
@@ -995,7 +995,7 @@ font-weight: bold;
 }
 @media (max-width: 1430px) {
 #mainn #divPesquisa{
-width: 280px;
+width: 300px;
 padding: 10px;
 }
 #ppOR{
@@ -1383,7 +1383,7 @@ color: rgb(149, 0, 168);
 color: rgb(255, 0, 242);
 }
 #selectRD{
-width: 84%;
+width: 86%;
 outline: none;
 border: 0cap;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
@@ -1399,7 +1399,7 @@ margin-left: 15px;
 width: 100%;
 }
 #divRecomendados p{
-width: 97%;
+width: 99%;
 text-align: center;
 color: #272727;
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
@@ -1432,7 +1432,7 @@ transform: translateY(-12px);
 }
 #lis{
 width: 100%;
-max-width: 250px;
+max-width: 300px;
 background-color: rgba(78, 0, 0, 0);
 margin-bottom: 10px;
 margin-right: 20px;
@@ -1483,4 +1483,33 @@ font-weight: bold;
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
 color: rgb(0, 161, 27);
 font-weight: bold;
+}
+@media (max-width: 1600px) {
+#list #label{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.700rem);
+font-weight: bold;
+}
+#list #label2{
+font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.600rem);
+}
+#list #label3{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.700rem);
+color: rgb(59, 59, 59);
+font-weight: bold;
+}
+#list #label4{
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.700rem);
+color: rgb(0, 161, 27);
+font-weight: bold;
+}
+#button{
+cursor: pointer;
+width: 60%;
+padding: 5px;
+background-color: rgba(5, 124, 74, 0.993);
+color: #ffffff;
+border: 0cap;
+border-radius: 10px;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+}
 }
