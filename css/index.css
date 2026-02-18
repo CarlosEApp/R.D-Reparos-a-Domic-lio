@@ -13,7 +13,7 @@ cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
 margin-left: 3px;
-background-color: rgba(0, 62, 100, 0.932);
+background-color: rgba(0, 62, 100, 0);
 /* Cor do polegar da barra de rolagem */
 margin-top: 5px;
 border-radius: 5px;
@@ -946,12 +946,15 @@ color: rgb(29, 29, 29);
 }
 #mainn #divPesquisa{
 background-color: #0047b100;
-width: 320px;
+width: 300px;
 padding: 3px;
 display: block;
 border-right: 5px solid rgb(240, 240, 240);
 border-bottom: 2px solid rgb(240, 240, 240);
 padding-top: 2px;
+max-height: 250vh;
+overflow: hidden;
+
 }
 #mainn #divPesquisa h2{
 text-align: center;
@@ -997,6 +1000,7 @@ font-weight: bold;
 #mainn #divPesquisa{
 width: 300px;
 padding: 10px;
+overflow: hidden;
 }
 #ppOR{
 margin: auto;
@@ -1159,12 +1163,12 @@ font-weight: bolder;
 color: rgb(255, 255, 255);
 }
 .my-custom_RDzinho button{
-    padding: 7px;
-    margin-bottom: 10px;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+padding: 7px;
+margin-bottom: 10px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 .my-custom_RDzinho button:hover{
-    background-color: rgb(189, 0, 0);
+background-color: rgb(189, 0, 0);
 }
 #divrdzinho{
 width: 100%;
@@ -1414,8 +1418,9 @@ align-items: center;
 background-color: rgba(122, 63, 11, 0);
 margin-bottom: 10px;
 margin-top: 20px;
-max-height: 170vh;
+max-height: 200vh;
 overflow: auto;
+
 }
 #img{
 max-width: 100px;

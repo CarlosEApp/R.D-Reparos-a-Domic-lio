@@ -707,7 +707,6 @@ MItens()
 var resp= sessionStorage.getItem('selectRD')
 var itens=0
 var list= document.getElementById('list');
-
 list.innerHTML ='';
 var firebaseConfigur = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
