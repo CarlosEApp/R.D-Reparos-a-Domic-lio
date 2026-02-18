@@ -1,0 +1,43 @@
+           <label id='lblServ'>Serviços Prestados</label>
+          <li><ahref="../html/Utilit.html" onclick="init()"><i class="fa-solid fa-shop"></i>  Loja RD</a></li>     
+           <li><a  href="../" onclick="init()">⚡  Elétrica</a></li>
+            <li><a href="../" onclick="init()">💻 Manutenção de Desktop </a></li>
+             <li><a href="../" onclick="init()">🚿 Hidráulica </a></li>
+              <li><a href="../" onclick="init()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+               <li><a href="../" onclick="init()">🔨 Alvenaria</a></li>
+                <li><a href="../" onclick="init()">🌿Jardinagem </a></li>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+         <li><l id='lblServ'>Serviços Prestados</label></li>
+          <li><a href="../html/Utilit.html"  onclick="inicio_()"><i class="fa-solid fa-shop"></i>  Loja RD</a></li>     
+           <li><a  href="../html/eletrica.html"  onclick="inicio_()">⚡  Elétrica</a></li>
+            <li><a href="../html/desktop.html"  onclick="inicio_()">💻 Manutenção de Desktop </a></li>
+             <li><a href="../html/hidraulica.html" onclick="inicio_()">🚿 Hidráulica </a></li>
+              <li><a href="../html/pintura.html"  onclick="inicio_()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+               <li><a href="../html/alvenaria.html"  onclick="inicio_()">🔨 Alvenaria</a></li>
+                <li><a href="../html/jardinagem.html"  onclick="inicio_()">🌿Jardinagem </a></li>
+                <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fechar </a></li> 
+xxxxxxxxxxxxxxxxxxxxxxxxx
+
+       <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
+         <li><a  href="#" onclick="inicio_()"><i class="fa-solid fa-house"></i> Início</a></li>
+          <li><a  id="RetorPag"  onclick="Returpag()"><i class="fa-solid fa-left-long"></i> Retornar a pagiina Inicial </a></li> 
+           <li><a onclick=" ZAP()"><img src="#" alt="" width="20"><i class="fa-brands fa-whatsapp"></i> Fale conosco</a></li>
+            <li><a  id="Orçamento" href="#inputNome" onclick="Orçamento()"> <i class="fa-solid fa-pen-to-square"></i> Orçamento </a></li> 
+             <li><l id='lblServ'>Serviços Prestados</label></li>
+              <li><a href="../html/Utilit.html"  onclick="inicio_()"><i class="fa-solid fa-shop"></i>  Loja RD</a></li>     
+               <li><a  href="../html/eletrica.html"  onclick="inicio_()">⚡  Elétrica</a></li>
+                <li><a href="../html/desktop.html"  onclick="inicio_()">💻 Manutenção de Desktop </a></li>
+                 <li><a href="../html/hidraulica.html" onclick="inicio_()">🚿 Hidráulica </a></li>
+                  <li><a href="../html/pintura.html"  onclick="inicio_()"><i class="fa-solid fa-paint-roller"></i> Pintura </a></li>
+                   <li><a href="../html/alvenaria.html"  onclick="inicio_()">🔨 Alvenaria</a></li>
+                    <li><a href="../html/jardinagem.html"  onclick="inicio_()">🌿Jardinagem </a></li>
+                     <li><a id="exitMenu" onclick="fecharMenu() "><i class="fa-solid fa-delete-left"></i> Fechar </a></li> 
+xxxxxxxxxxxxxxxxxxx
+#lblServ{
+color: #830148;
+font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+}
+
+var whatsappMessage =`✅Visite nossa Página e 🛍️Loja\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: ${pagina}\n----------------------------------------------\n🛍️ Nova Loja RD ${loja}`;
