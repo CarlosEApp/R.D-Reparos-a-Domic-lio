@@ -18,7 +18,7 @@ html: `
                    <option value="Diversos">🛍️ Itens Diversos</option>
     </select>
     <br> <br>       
-    <label id='lblItens'>Não há itens nessa lista!</label>      
+    <label id='lblItens'>Não há itens à venda nessa lista!</label>      
 </div>
 `,
 imageUrl: `../src/RD_NA_lOJA.png`,

@@ -685,7 +685,7 @@ var itens=sessionStorage.getItem('Iitens')
 // alert(itens)
 if(!itens||itens==''||itens==0){
     var resp= sessionStorage.getItem('selectRD')
-Swal.fire('',`Ainda não há itens de ${resp} a venda.`,'')
+Swal.fire('',`Ainda não há itens de ${resp} disponiveis para venda.`,'')
 var select =document.getElementById('selectRD');
 select.value='Diversos'
 selectLoja()
