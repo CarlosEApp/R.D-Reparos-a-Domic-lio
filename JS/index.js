@@ -18,7 +18,7 @@ function Loja(){
 title: `Ola, eu sou o RD`,
 html: `
 <div id='divrdzinho'>
-<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja-RD </button> <br><br>
+<button id="Loja_RD" title=""><i class="fa-solid fa-shop"></i> Loja RD </button> <br><br>
 <button id="mensagemRD" title=""><i class="fa-brands fa-whatsapp"></i> Mensagem </button>            
 </div>
 `,
