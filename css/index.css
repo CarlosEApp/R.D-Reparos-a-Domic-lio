@@ -1483,7 +1483,7 @@ font-size: clamp(0.600rem, 0.3vw  + 0.5rem, 0.700rem);
 #list #label3{
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
 color: rgb(59, 59, 59);
-font-weight: bold;
+
 }
 #list #label4{
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
