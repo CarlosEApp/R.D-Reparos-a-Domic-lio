@@ -1402,6 +1402,9 @@ border-radius: 7px;
 margin-left: 15px;
 cursor: pointer;
 }
+#divRecomendados select option{
+    font-weight: bold;
+}
 
 #divRecomendados{
 width: 100%;

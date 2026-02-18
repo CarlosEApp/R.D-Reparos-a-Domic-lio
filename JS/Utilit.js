@@ -9,13 +9,13 @@ html: `
 <p>Selecione uma opção</p>
          <select name=""  id="Input_add1" >
            <option value=''>Oque você procura?</option>
-             <option value="Elétrica">⚡Elétrica</option>
-              <option value="Hidráulica">🚿Hidráulica</option>
-               <option value="Pintura">🖌️Pintura</option>
-                <option value="Desktop">💻M.Desktop</option>
-                 <option value="Alvenaria">🔨Alvenaria</option>
-                  <option value="Jardinagem">🌿Jardinagem</option>
-                   <option value="Diversos">🛍️Diversos</option>
+             <option value="Elétrica">⚡Itensd de Elétrica</option>
+              <option value="Hidráulica">🚿 Itens de Hidráulica</option>
+               <option value="Pintura">🖌️ Itens de Pintura</option>
+                <option value="Desktop">💻 Itens de Desktop PC</option>
+                 <option value="Alvenaria">🔨 Itens de Alvenaria</option>
+                  <option value="Jardinagem">🌿 Itens de Jardinagem</option>
+                   <option value="Diversos">🛍️ Itens Diversos</option>
     </select>
     <br> <br>       
     <label id='lblItens'>Não há itens nessa lista!</label>      
@@ -37,6 +37,7 @@ document.body.style.paddingRight = '0px';
 Swal.close()
  });
 document.getElementById('Input_add1').addEventListener('change', function() {
+   document.getElementById('lblItens').style.display='none'
   document.getElementById('a_init').click()
      var resp = document.getElementById('Input_add1').value; 
     // alert(resp);
@@ -122,7 +123,7 @@ lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
-document.getElementById('lblListaHead').innerHTML=`📝${resp}  🛍️${itens}`
+document.getElementById('lblListaHead').innerHTML=`📝Itens de ${resp}  🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })

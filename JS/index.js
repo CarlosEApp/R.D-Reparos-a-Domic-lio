@@ -658,6 +658,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 }
 }
 }
+
 function swalclose(){
     Swal.close()
 }
@@ -683,10 +684,14 @@ setTimeout(function(){
 var itens=sessionStorage.getItem('Iitens')
 // alert(itens)
 if(!itens||itens==''||itens==0){
-Swal.fire('',"Ainda não há itens para venda na lista que você escolheu.",'')
+    var resp= sessionStorage.getItem('selectRD')
+Swal.fire('',`Ainda não há itens de ${resp} a venda.`,'')
+var select =document.getElementById('selectRD');
+select.value='Diversos'
+selectLoja()
 }else{
 }
-},1500)
+},2000)
 }
 // select
 sessionStorage.setItem('selectRD', ``)
@@ -900,4 +905,6 @@ window.open(url, "_blank");
 })
 })
 }
+var select =document.getElementById('selectRD');
+select.value='Diversos'
 selectLoja()
