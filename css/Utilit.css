@@ -192,7 +192,7 @@ text-align: center;
 margin-bottom: 10px;
 }
 #img:hover{
-    transform: translateY(-12px);
+ transform: translateY(-12px);
 }
 #lis{
 width: 100%;
@@ -239,7 +239,6 @@ max-width: 350px;
 background-color: rgba(78, 0, 0, 0);
 margin-bottom: 10px;
 margin-right: 20px;
-
 }
 #list{
 display: flex;
@@ -248,7 +247,6 @@ flex-wrap: wrap;
 align-items: center;
 background-color: rgba(122, 63, 11, 0);
 margin-bottom: 10px;
-
 }
 }
 #label3{
@@ -350,7 +348,7 @@ font-weight: bold;
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 #SSair:hover{
-    color: #c9006e;
+color: #c9006e;
 }
 .my-custom {
 width: 90%;
@@ -371,7 +369,7 @@ color: #333333;
 border-radius: 7px;
 }
 .my-custom select option{
-    font-weight: bold;
+font-weight: bold;
 }
 .my-custom p{
 color: #474747;
@@ -513,4 +511,5 @@ color: #830148;
 font-size: clamp( 1rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
 }
+
 

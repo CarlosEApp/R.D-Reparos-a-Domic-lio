@@ -1402,9 +1402,8 @@ margin-left: 15px;
 cursor: pointer;
 }
 #divRecomendados select option{
-    font-weight: bold;
+font-weight: bold;
 }
-
 #divRecomendados{
 width: 100%;
 }
@@ -1426,7 +1425,6 @@ margin-bottom: 10px;
 margin-top: 20px;
 max-height: 200vh;
 overflow: auto;
-
 }
 #img{
 max-width: 100px;
@@ -1442,7 +1440,7 @@ margin-bottom: 10px;
 transform: translateY(-12px);
 }
 #lis{
-    margin: auto;
+ margin: auto;
 width: 93%;
 max-width: 300px;
 background-color: rgba(78, 0, 0, 0);
@@ -1522,4 +1520,10 @@ border: 0cap;
 border-radius: 10px;
 font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
 }
+}
+#divFooter #divFaleCom #btnInstagran{
+    background-color: #f7f9ff;
+}
+#footer2 h3,#footer2 h4{
+    font-weight: normal;
 }
