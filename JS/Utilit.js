@@ -123,7 +123,7 @@ lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
-document.getElementById('lblListaHead').innerHTML=`📝Itens de ${resp}  🛍️${itens}`
+document.getElementById('lblListaHead').innerHTML=`📝${resp}  🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })
@@ -233,7 +233,7 @@ lis.appendChild(div2);
 lis.appendChild(div3);
 lis.appendChild(div4);
 list.appendChild(lis);
-document.getElementById('lblListaHead').innerHTML=`📝Diversos  🛍️${itens}`
+document.getElementById('lblListaHead').innerHTML=`📝Diversos 🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 });
