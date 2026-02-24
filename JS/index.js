@@ -809,7 +809,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
- document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto} 🚚 frete gratis - Chega amankã!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto}  frete gratis - 🚚 Chega amanhã!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 /*
@@ -927,7 +927,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
- document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto} 🚚 frete gratis - Chega amankã!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto}  frete gratis - 🚚 Chega amanhã!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 /*var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
@@ -949,12 +949,11 @@ function selectcidade(){
    var VLPM =sessionStorage.getItem('VLMP')
   var resp = document.getElementById('Input_cidade').value;
   if(resp=='Itanhaém'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM} 🚚 frete gratis - Chega amankã!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
   }else if(resp=='Peruíbe') {
-  document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  🚚 frete gratis - Chega amankã!`;
+  document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
   } else if(resp=='Mongaguá'){
-     document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  🚚 frete gratis - Chega amankã!`;
-    
+    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
   }
 }
 function verfCad(){
@@ -974,7 +973,7 @@ firebase.initializeApp(firebaseConfigure);
 
   if(doc.data()){
     var doc=doc.data()
-     Swal.fire('Cadastro','Encontramos seu cadastro!','success')
+     Swal.fire('Cadastro','','success')
        document.getElementById('inputNome').value=doc.Nome;
   document.getElementById('inputTel').value= doc.Tel;
   document.getElementById('Input_rua').value=doc.Rua;
