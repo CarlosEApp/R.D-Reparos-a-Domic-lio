@@ -1,4 +1,149 @@
 
+
+function selectcidade(){
+   var VLPM =sessionStorage.getItem('VLMP')
+  var resp = document.getElementById('Input_cidade').value;
+  if(resp=='Itanhaém'){
+    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM} frete gratis `;
+  }else if(resp=='Peruíbe') {
+ document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM} frete gratis `;
+  } else if(resp=='Mongaguá'){
+     document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM} frete gratis `;
+    
+  }
+
+}
+
+function verfCad(){
+var emailPM=localStorage.getItem('EmalUser');
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+ var dbcd=firebase.firestore();
+ dbcd.collection('EndereçoMP').doc(`${emailPM}`).get().then((doc)=>{
+
+  if(doc.data()){
+     var doc=doc.data()
+     Swal.fire('Tem Cadastro','','success')
+  document.getElementById('inputNome').value=doc.Nome;
+  document.getElementById('inputTel').value= doc.Tel;
+  document.getElementById('Input_rua').value=doc.Rua;
+  document.getElementById('Input_numero').value=doc.Numero;
+  document.getElementById('Input_bairro').value=doc.Bairro;
+  document.getElementById('Input_cidade').value=doc.Cidade;
+  document.getElementById('Input_estado').value=doc.Estado;
+  document.getElementById('inputemail').value=doc.Email
+  document.getElementById('Input_cep').value=doc.Cep;
+  document.getElementById('Input_Ref').value=doc.Ref;
+  }else{
+// Swal.fire('Não tem Cadastro','','warning')
+   document.getElementById('inputNome').value='';
+  document.getElementById('inputTel').value='';
+  document.getElementById('Input_rua').value='';
+  document.getElementById('Input_numero').value='';
+  document.getElementById('Input_bairro').value='';
+  document.getElementById('Input_cidade').value='';
+  document.getElementById('Input_estado').value='';
+  document.getElementById('inputemail').value='';
+  document.getElementById('Input_cep').value='';
+  document.getElementById('Input_Ref').value='';
+  }
+ })
+}
+// Comprar PM pag
+function comprarMP(){
+
+   //var idMP=sessionStorage.getItem('IDMP')
+ var cód=sessionStorage.getItem('MPpag')
+ var titulo=sessionStorage.getItem('TituloMP')
+ var idRD=sessionStorage.getItem('IDRD')
+ var listRD=sessionStorage.getItem('listaRD')
+ var data= localStorage.getItem('data')
+ var hora= localStorage.getItem('hora')
+ var inp2= document.getElementById('inputNome').value;
+ var inp3= document.getElementById('inputTel').value;
+ var inp4= document.getElementById('Input_rua').value;
+ var inp5= document.getElementById('Input_numero').value;
+ var inp6= document.getElementById('Input_bairro').value;
+ var inp7= document.getElementById('Input_cidade').value;
+ var inp8= document.getElementById('Input_estado').value;
+ var inp9= document.getElementById('inputemail').value;
+ var inp10= document.getElementById('Input_cep').value;
+ var inp11= document.getElementById('Input_Ref').value;
+ var VLPM =sessionStorage.getItem('VLMP')
+if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||inp6==''||!inp7||inp7==''||!inp8||inp8==''||!inp9||inp9==''){
+ Swal.fire('Preencha todos os campos!')
+} else{
+  if(!cód||cód==''){
+      Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
+  }else{
+
+var firebaseConfigure = {
+apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
+authDomain: "reparos-a-domicilio.firebaseapp.com",
+projectId: "reparos-a-domicilio",
+storageBucket: "reparos-a-domicilio.firebasestorage.app",
+messagingSenderId: "2081562439",
+appId: "1:2081562439:web:ea76d63f3e320c8577f662",
+measurementId: "G-M7YCZXPYGM"
+};
+firebase.initializeApp(firebaseConfigure);
+ var dbmpend=firebase.firestore();
+ dbmpend.collection('EndereçoMP').doc(`${inp9}`).set({
+  Nome: inp2,
+  Tel:inp3,
+  Email:inp9,
+  Rua:inp4,
+  Numero:inp5,
+  Bairro:inp6,
+  Cidade:inp7,
+  Estado:inp8,
+  Cep:inp10,
+  Ref:inp11,
+  Data:data,
+  Hora:hora,
+  ID:inp9,
+ })
+ var dbmp=firebase.firestore();
+ dbmp.collection('CompraMP').doc(`${inp9}_${hora}`).set({
+  Nome: inp2,
+  Email:inp9,
+  Tel:inp3,
+  CódMP:cód,
+  Titulo:titulo,
+  IDRD:idRD,
+  ListRD:listRD,
+  Valor:VLPM,
+  Data:data,
+  Hora:hora,
+ })
+setTimeout(function(){
+ Swal.fire('sucesso!',`Cadastro de entrega completado. Em caso de problemas com o pagamento ou algo relacionado entre em contato conosco a qualquer hora do dia.`,'success')
+    window.open(`${cód}`,'_blank')
+    voltarPG()
+},1500)
+
+  }
+}
+}
+
+sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+// voltar pg
+function voltarPG(){
+var pag=document.getElementById('pagamentos');
+pag.className='pagamentos-fechar'
+}
 // pesquisa 
 function pesquisa(){
     Swal.fire({
@@ -128,18 +273,38 @@ img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })
 button.addEventListener('click', function(){
+  var rep=document.getElementById('Input_cidade');
+rep.value=''
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
 var telefone=sessionStorage.getItem('teladmin')
 }
-var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+  verfCad()
+const prefId = doc.ADD2;
+sessionStorage.setItem('MPpag',`${prefId}`)
+sessionStorage.setItem('TituloMP', doc.Titulo)
+sessionStorage.setItem('IDRD', doc.ID)
+sessionStorage.setItem('listaRD', doc.ADD1)
+sessionStorage.setItem('IDMP', doc.ADD2)
+sessionStorage.setItem('VLMP', doc.Desconto)
+ document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto}`
+var pag=document.getElementById('pagamentos');
+pag.className='pagamentos-ativo'
+ // window.open(`${prefId}`,'_blank')
+ //window.open('../html/pagamentos.html','_blank')
+/*var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
-window.open(url, "_blank");
+window.open(url, "_blank");*/
 })
 } else{
 setTimeout(function(){
@@ -237,20 +402,38 @@ document.getElementById('lblListaHead').innerHTML=`📝Diversos 🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 });
-
 button.addEventListener('click', function(){
+  var rep=document.getElementById('Input_cidade');
+rep.value=''
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
 var telefone=sessionStorage.getItem('teladmin')
 }
-var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+  verfCad()
+const prefId = doc.ADD2;
+sessionStorage.setItem('MPpag',`${prefId}`)
+sessionStorage.setItem('TituloMP', doc.Titulo)
+sessionStorage.setItem('IDRD', doc.ID)
+sessionStorage.setItem('listaRD', doc.ADD1)
+sessionStorage.setItem('IDMP', doc.ADD2)
+sessionStorage.setItem('VLMP', doc.Desconto)
+ document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto} `
+var pag=document.getElementById('pagamentos');
+pag.className='pagamentos-ativo'
+ // window.open(`${prefId}`,'_blank')
+/*var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
-window.open(url, "_blank");
+window.open(url, "_blank");*/
 });
 })
 })

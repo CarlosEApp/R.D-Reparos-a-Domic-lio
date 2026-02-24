@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentos</title>
+       <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+
+ <div id="divGera">
+    <div id="cad">
+        <div id='divreceb'>
+                    <label for="">Nome  <br>
+                       <input type="text" id="inputNome" placeholder="Nome:">
+                        </label><br>    
+                            <label for="">Tel:<br>
+                             <input type="text" id="inputTel" placeholder="Telefone:">
+                              </label><br>
+                               <label for="">Email <br>
+                               <input type="email" id="inputemail" placeholder="Email:">
+                               </label><br>
+                                <label for="">Rua <br>
+                                 <input id="Input_rua" type="text" placeholder="Rua"></label> <br>
+                                  <label for="">Nº <br>
+                                   <input id="Input_numero" type="text" placeholder="nº"></label> <br>
+                                    <label for="">Bairro <br>
+                                     <input id="Input_bairro" type="text" placeholder="Bairro"></label> <br>
+                                      <label for="">Cidade <br>
+                                       <input id="Input_cidade" type="text" placeholder="Cidade"></label> <br>
+                                        <label for="">Estado <br>
+                                         <input id="Input_estado" type="text" placeholder="Estado"></label> <br>
+                                          <label for="">CEP <br>
+                                            <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="00000-000"></label> <br>
+                                             <label for="">Referência <br>
+<button id="mensagemRD" title=""><i class="fa-brands fa-whatsapp"></i> Mensagem </button>            
+</div>
+
+    </div>
+ </div>
+
+    
+</body>
+</html>

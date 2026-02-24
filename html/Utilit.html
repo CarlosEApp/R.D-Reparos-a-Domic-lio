@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🛍️ Loja RD</title>
+    <script src="https://sdk.mercadopago.com/js/v1"></script>
     <link rel="shortcut icon" href="https://rd-reparos-domicilio.netlify.app/src/rd_logo_capacete_png.png" type="image/x-icon">
     <meta property="og:title" content="RD Reparos a Domicílio!">
     <meta name="description" content="Soluções práticas, rápidas e confiáveis para sua casa, loja, escritório ou empresa. Atendemos em Itanhaém-SP e região. 'Elétrica, Hidráulica, Alvenaria, Manutenção de Desktop, Pintura, Jardinagem...'">
@@ -39,6 +40,47 @@
             <div id="heaadflex"><img src="../src/RD_NA_lOJA.png" alt="" width=" 50"> <h2>Loja RD </h2></div> <label id="lblListaHead" for="">Lista</label>  <button onclick="Menu()" id="btnMenu">Menu <i id="IMenu" class="fa-solid fa-bars"></i></button>
         </div>  
     </header>
+          <div id="pagamentos">
+            <div id="cad">
+                <h2>Pagamentos RD</h2> 
+            <label id="lblValtarPG" onclick="voltarPG()" for=""> <i class="fa-solid fa-left-long"></i> Voltar</label>
+               <div id='divreceb'>
+              <label  id="lblTTMP"></label> <br>
+            
+                <p>Dados de endereço para Recebimentos do Produto</p> <br>
+                    <label for="">
+                       <input type="text" id="inputNome" placeholder="Nome:">
+                        </label>
+                            <label for="">
+                             <input type="text" id="inputTel" placeholder="Telefone:">
+                              </label>
+                               <label for=""> 
+                               <input type="email" id="inputemail" placeholder="Email:">
+                               </label>
+                                <label for="">
+                                 <input id="Input_rua" type="text" placeholder="Rua"></label> 
+                                  <label for="">
+                                   <input id="Input_numero" type="text" placeholder="Nº"></label> 
+                                    <label for="">
+                                     <input id="Input_bairro" type="text" placeholder="Bairro"></label>
+                                      <label for="">                                   
+                                       <select name="cidade" id="Input_cidade" onchange="selectcidade()" title="Cidade">
+                                        ]  <option value="">Cidade</option>
+                                        <option value="Itanhaém">Itanhaém-SP</option>
+                                        <option value="Peruíbe">Peruíbe-SP</option>
+                                        <option value="Mongaguá">Mongagua-SP</option>                                
+                                       </select>
+                                        <label for="">
+                                         <input id="Input_estado" type="text" placeholder="Estado"></label> 
+                                          <label for="">
+                                            <input id="Input_cep" type="text" oninput="aplicarMascaraCEP(event)" maxlength="9" placeholder="CEP"></label>  
+                                            <input id="Input_Ref" type="text" placeholder="Referencia..."></label> 
+                                            <br>
+                                             
+<button id="PagamentoRD" onclick="comprarMP()" title=""> <img src="../src/MP.png" alt="" width="40"> Seguir com compra</button>            
+</div>
+    </div>
+          </div> 
       <nav id="menu_lateral">
         <ul>
        <li><a id="a_inicio" class="a_inicio" href="#" title="aa"></a></li>
