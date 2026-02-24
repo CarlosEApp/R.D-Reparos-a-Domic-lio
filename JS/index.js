@@ -1086,3 +1086,13 @@ function voltarPG(){
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-fechar'
 }
+
+// format cep
+function formatarCEP(cep) {
+cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
+return cep;
+}
+function aplicarMascaraCEP(event) {
+event.target.value = formatarCEP(event.target.value);
+}
