@@ -31,7 +31,7 @@ firebase.initializeApp(firebaseConfigure);
 
   if(doc.data()){
      var doc=doc.data()
-     Swal.fire('Tem Cadastro','','success')
+    Swal.fire('Cadastro','Encontramos seu cadastro!','success')
   document.getElementById('inputNome').value=doc.Nome;
   document.getElementById('inputTel').value= doc.Tel;
   document.getElementById('Input_rua').value=doc.Rua;
@@ -125,7 +125,7 @@ firebase.initializeApp(firebaseConfigure);
   Hora:hora,
  })
 setTimeout(function(){
- Swal.fire('sucesso!',`Cadastro de entrega completado. Em caso de problemas com o pagamento ou algo relacionado entre em contato conosco a qualquer hora do dia.`,'success')
+ //Swal.fire('sucesso!',``,'success')
     window.open(`${cód}`,'_blank')
     voltarPG()
 },1500)
