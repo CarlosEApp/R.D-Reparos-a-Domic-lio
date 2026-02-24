@@ -620,6 +620,7 @@ left: 0 !important;
 }
 #lblTTMP{
     color: #363636;
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #cad h2{
       color: #242424;
