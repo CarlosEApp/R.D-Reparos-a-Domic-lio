@@ -568,13 +568,12 @@ setTimeout(function()
 })
 })
 
-// format cep
+/// format cep
 function formatarCEP(cep) {
   cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
   cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen XXXXX-XXX
   return cep;
 }
-
 function aplicarMascaraCEP(event) {
   event.target.value = formatarCEP(event.target.value);
     var cep8 = document.getElementById("Input_cep")
@@ -583,23 +582,20 @@ function aplicarMascaraCEP(event) {
     return;
   }
 }
-
-
 function buscarCEP() {
   var cep = document.getElementById("Input_cep").value.replace(/\D/g, ""); // só números
 
   if (cep.length !== 8) {
-    alert("CEP inválido. Digite 8 números.");
+    Swal.fire("CEP inválido. Digite 8 números.");
     return;
   }
-
   var url = `https://viacep.com.br/ws/${cep}/json/`;
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
       if (data.erro) {
-        alert("CEP não encontrado.");
+        Swal.fire("CEP não encontrado.",'Mas não se preocupe, preencha os campos manualmente.','warning');
         return;
       }
       document.getElementById("Input_rua").value = data.logradouro;
@@ -609,7 +605,13 @@ function buscarCEP() {
     })
     .catch(error => {
       console.error("Erro ao buscar CEP:", error);
-      alert("Não foi possível buscar o CEP.");
+      Swal.fire("Não foi possível buscar o CEP.",'Tente novamente mais tarde.','error');
     });
 }
-
+document.getElementById('inputTel').addEventListener('input', function (e) {
+let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+   .replace(/(\d{4})(\d{4})$/, '$1-$2');
+e.target.value = formattedValue;
+});
