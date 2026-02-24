@@ -4,16 +4,13 @@ function selectcidade(){
    var VLPM =sessionStorage.getItem('VLMP')
   var resp = document.getElementById('Input_cidade').value;
   if(resp=='Itanhaém'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM}</b> - frete gratis <br> 🚚 Chega amanhã!`;
   }else if(resp=='Peruíbe') {
-  document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM}</b> - frete gratis <br> 🚚 Chega amanhã!`;
   } else if(resp=='Mongaguá'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará ${VLPM}  frete gratis - 🚚 Chega amanhã!`;
-    
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM}</b> - frete gratis <br> 🚚 Chega amanhã!`;
   }
-
 }
-
 function verfCad(){
 var emailPM=localStorage.getItem('EmalUser');
 var firebaseConfigure = {
@@ -292,7 +289,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
- document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto}  frete gratis - 🚚 Chega amanhã!`;
+document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto}</b> - frete gratis <br> 🚚 Chega amanhã!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
  // window.open(`${prefId}`,'_blank')
@@ -422,7 +419,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
- document.getElementById('lblTTMP').innerHTML=`Você pagará ${doc.Desconto}  frete gratis - 🚚 Chega amanhã!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto}</b> - frete gratis <br> 🚚 Chega amanhã!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
  // window.open(`${prefId}`,'_blank')
