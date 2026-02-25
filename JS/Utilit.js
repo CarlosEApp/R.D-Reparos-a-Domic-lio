@@ -126,11 +126,9 @@ setTimeout(function(){
     window.open(`${cód}`,'_blank')
     voltarPG()
 },1500)
-
   }
 }
 }
-
 sessionStorage.setItem('MPpag','')
 sessionStorage.setItem('TituloMP','')
 sessionStorage.setItem('IDRD','')
@@ -151,7 +149,7 @@ html: `
 <p>Selecione uma opção</p>
          <select name=""  id="Input_add1" >
            <option value=''>Oque você procura?</option>
-             <option value="Elétrica">⚡Itensd de Elétrica</option>
+             <option value="Elétrica">⚡Itens de Elétrica</option>
               <option value="Hidráulica">🚿 Itens de Hidráulica</option>
                <option value="Pintura">🖌️ Itens de Pintura</option>
                 <option value="Desktop">💻 Itens de Desktop PC</option>
