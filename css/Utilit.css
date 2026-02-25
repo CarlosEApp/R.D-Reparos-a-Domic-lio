@@ -557,7 +557,7 @@ margin-top: 10px;
 #divreceb input{
 margin: auto;
 width: 43%;
-min-width: 333px;
+min-width: 343px;
 padding: 12px;
 margin-right: 7px;
 margin-bottom: 10px;
@@ -571,8 +571,8 @@ margin-left: 5px;
 }
 #Input_cidade{
 margin: auto;
-width: 45%;
-min-width: 353px;
+width: 46%;
+min-width: 370px;
 padding: 11px;
 margin-right: 7px;
 margin-bottom: 10px;
@@ -594,7 +594,7 @@ font-weight: bold;
 #PagamentoRD{
 margin: auto;
 cursor: pointer;
-width: 85%;
+width: 88%;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -628,5 +628,5 @@ left: 0 !important;
 #ppc{
   color: #00a57c;
   font-weight: bolder;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
 }
