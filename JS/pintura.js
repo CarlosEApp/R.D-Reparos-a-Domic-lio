@@ -222,7 +222,7 @@ sessionStorage.setItem('SERV',doc.Lista)
 div.addEventListener('click', function(){
 Swal.fire({ title: ` ${doc.Titulo}`,
 text: ``, 
-html:`Valor prod: ${doc.Valor} R$<br>Promoção: ${doc.Desconto} R$<br> -----------------------<br><br>
+html:`Valor Serv: ${doc.Valor} R$<br>Promoção: ${doc.Desconto} R$<br> -----------------------<br><br>
 <button id='btnnbt1'> <i class="fa-brands fa-whatsapp"></i> Peça já </button>
 <label id='sairnnlbl'>Sair, Exit</label>
 <br> <br><br>Nº: ${doc.ID}
