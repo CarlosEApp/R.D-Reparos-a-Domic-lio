@@ -1023,8 +1023,8 @@ firebase.initializeApp(firebaseConfigure);
 
   if(doc.data()){
     var doc=doc.data()
-     Swal.fire('','Encontramos seu cadastro de endereço','success')
-       document.getElementById('inputNome').value=doc.Nome;
+  Swal.fire('','<b id="bbtb">Encontramos seu cadastro de endereço</b>','success')
+  document.getElementById('inputNome').value=doc.Nome;
   document.getElementById('inputTel').value= doc.Tel;
   document.getElementById('Input_rua').value=doc.Rua;
   document.getElementById('Input_numero').value=doc.Numero;
@@ -1163,7 +1163,7 @@ function buscarCEP() {
     .then(response => response.json())
     .then(data => {
       if (data.erro) {
-        Swal.fire("CEP não encontrado.",'Mas não se preocupe, preencha os campos manualmente.','warning');
+         Swal.fire("",'<b id="bbtb">CEP não encontrado</b>.<br>Mas não se preocupe, preencha os campos manualmente.','warning');
         return;
       }
       document.getElementById("Input_rua").value = data.logradouro;

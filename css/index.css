@@ -1665,3 +1665,6 @@ left: 0 !important;
   font-weight: bolder;
   font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
 }
+#bbtb{
+  color: #000000;
+}
