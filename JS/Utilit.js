@@ -250,7 +250,7 @@ label4.textContent=``;
 label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
-button.textContent='Comprar';
+button.textContent='Compra Mercado Pago';
  whats.className='fa-brands fa-whatsapp'
 
 button2.appendChild(whats); 
@@ -400,7 +400,7 @@ label4.textContent=``;
 label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
-button.textContent='Comprar';
+button.textContent='Compra Mercado Pago';
  whats.className='fa-brands fa-whatsapp'
 
 button2.appendChild(whats); 
