@@ -32,7 +32,7 @@ firebase.initializeApp(firebaseConfigure);
 
   if(doc.data()){
      var doc=doc.data()
-   Swal.fire('','Encontramos seu cadastros de endereço','success')
+   Swal.fire('','Encontramos seu cadastro de endereço','success')
   document.getElementById('inputNome').value=doc.Nome;
   document.getElementById('inputTel').value= doc.Tel;
   document.getElementById('Input_rua').value=doc.Rua;
