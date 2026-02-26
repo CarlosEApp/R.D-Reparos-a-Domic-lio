@@ -220,6 +220,8 @@ var label4 = document.createElement('label');
 var label5 = document.createElement('label');
 var img = document.createElement('img');
 var button = document.createElement('button');
+var button2 = document.createElement('button');
+var whats= document.createElement('i');
 lis.id = 'lis';
 div.id = 'div';
 div2.id = 'div2';
@@ -230,8 +232,10 @@ label2.id = 'label2';
 label3.id = 'label3';
 label4.id = 'label4';
 label5.id = 'label5';
+whats.id='whats'
 img.id = 'img';
 button.id = 'button';
+button2.id = 'button2';
 img.src = doc.Imagem;
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
@@ -247,6 +251,10 @@ label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
 button.textContent='Comprar';
+ whats.className='fa-brands fa-whatsapp'
+
+button2.appendChild(whats); 
+button2.appendChild(document.createTextNode(' Compra por WhatsApp'));
 div.appendChild(img);
 div2.appendChild(label);
 div2.appendChild(document.createElement('br'));
@@ -257,6 +265,8 @@ div3.appendChild(label4);
 div3.appendChild(document.createElement('br'));
 //div3.appendChild(label5);
 div4.appendChild(button);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(button2);
 lis.appendChild(div);
 lis.appendChild(div2);
 lis.appendChild(div3);
@@ -264,6 +274,15 @@ lis.appendChild(div4);
 list.appendChild(lis);
 document.getElementById('lblItens').style.display='none'
 document.getElementById('lblListaHead').innerHTML=`📝${resp}  🛍️${itens}`
+sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 })
@@ -290,16 +309,16 @@ sessionStorage.setItem('VLMP', doc.Desconto)
 document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
- // window.open(`${prefId}`,'_blank')
- //window.open('../html/pagamentos.html','_blank')
-/*var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+})
+button2.addEventListener('click', function(){
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
-window.open(url, "_blank");*/
+window.open(url, "_blank");
 })
 } else{
 setTimeout(function(){
@@ -351,6 +370,8 @@ var label4 = document.createElement('label');
 var label5 = document.createElement('label');
 var img = document.createElement('img');
 var button = document.createElement('button');
+var button2 = document.createElement('button');
+var whats= document.createElement('i');
 lis.id = 'lis';
 div.id = 'div';
 div2.id = 'div2';
@@ -361,8 +382,10 @@ label2.id = 'label2';
 label3.id = 'label3';
 label4.id = 'label4';
 label5.id = 'label5';
+whats.id='whats'
 img.id = 'img';
 button.id = 'button';
+button2.id = 'button2';
 img.src = doc.Imagem;
 label.textContent=`${doc.Titulo}`;
 if(!doc.SubT||doc.SubT==''){
@@ -378,6 +401,10 @@ label3.id='label3'
 label4.textContent=`Promoção: R$: ${doc.Desconto}`;
 }
 button.textContent='Comprar';
+ whats.className='fa-brands fa-whatsapp'
+
+button2.appendChild(whats); 
+button2.appendChild(document.createTextNode(' Compra por WhatsApp'));
 div.appendChild(img);
 div2.appendChild(label);
 div2.appendChild(document.createElement('br'));
@@ -388,6 +415,8 @@ div3.appendChild(label4);
 div3.appendChild(document.createElement('br'));
 //div3.appendChild(label5);
 div4.appendChild(button);
+div4.appendChild(document.createElement('br'));
+div4.appendChild(button2);
 lis.appendChild(div);
 lis.appendChild(div2);
 lis.appendChild(div3);
@@ -397,9 +426,6 @@ document.getElementById('lblListaHead').innerHTML=`📝Diversos 🛍️${itens}`
 img.addEventListener('click', function(){
 swal('','',`${doc.Imagem}`)
 });
-button.addEventListener('click', function(){
-  var rep=document.getElementById('Input_cidade');
-rep.value=''
   sessionStorage.setItem('MPpag','')
 sessionStorage.setItem('TituloMP','')
 sessionStorage.setItem('IDRD','')
@@ -409,6 +435,9 @@ var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
 var telefone=sessionStorage.getItem('teladmin')
 }
+button.addEventListener('click', function(){
+  var rep=document.getElementById('Input_cidade');
+rep.value=''
   verfCad()
 const prefId = doc.ADD2;
 sessionStorage.setItem('MPpag',`${prefId}`)
@@ -420,16 +449,18 @@ sessionStorage.setItem('VLMP', doc.Desconto)
  document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
- // window.open(`${prefId}`,'_blank')
-/*var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
+ 
+});
+button2.addEventListener('click', function(){
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
 var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n$ Valor: ${doc.Valor} R$\n------------------------------\n$ Promoção: ${doc.Desconto} R$\n------------------------------\n📝Lista: ${doc.ADD1}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
-window.open(url, "_blank");*/
-});
+window.open(url, "_blank");
+})
 })
 })
 }

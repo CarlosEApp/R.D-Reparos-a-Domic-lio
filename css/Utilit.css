@@ -267,15 +267,30 @@ margin-bottom: 50px;
 #button{
 cursor: pointer;
 width: 80%;
-padding: 7px;
-background-color: rgba(5, 124, 74, 0.993);
+padding: 10px;
+background-color: rgba(0, 91, 151, 0.993);
 color: #ffffff;
 border: 0cap;
-border-radius: 10px;
+border-radius: 5px;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 }
 #button:hover{
-background-color: rgba(0, 216, 0, 0.993);
+background-color: rgba(3, 141, 233, 0.993);
+color: #ffffff;
+}
+#button2{
+  cursor: pointer;
+width: 80%;
+padding: 7px;
+background-color: rgba(0, 124, 72, 0.993);
+color: #ffffff;
+border: 0cap;
+border-radius: 5px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+ margin-top: 7px;
+}
+#button2:hover{
+background-color: rgba(0, 197, 0, 0.993);
 color: #ffffff;
 }
 #list #label{
