@@ -1,1 +1,1 @@
-R.D Reparos em geral para domicílios
+R.D Reparos a domicílios, diverços serviços e produtos
