@@ -13,6 +13,10 @@ function selectcidade(){
 }
 function verfCad(){
 var emailPM=localStorage.getItem('EmalUser');
+if(!emailPM || emailPM==''){
+var emailPM=localStorage.getItem('EmalMP');
+} else{
+}
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -28,7 +32,7 @@ firebase.initializeApp(firebaseConfigure);
 
   if(doc.data()){
      var doc=doc.data()
-    Swal.fire('Cadastro','Encontramos seu cadastro!','success')
+   Swal.fire('','Encontramos seu cadastros de endereço','success')
   document.getElementById('inputNome').value=doc.Nome;
   document.getElementById('inputTel').value= doc.Tel;
   document.getElementById('Input_rua').value=doc.Rua;
@@ -80,6 +84,7 @@ if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||in
   if(!cód||cód==''){
       Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
   }else{
+    localStorage.setItem('EmalMP',`${inp9}`);
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
