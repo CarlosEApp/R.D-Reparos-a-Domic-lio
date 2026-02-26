@@ -521,6 +521,7 @@ window.open('html/cad.html', '_self');
 //fale conosco
 var telefone= sessionStorage.getItem('teladmin')
 function falecom(){
+var telefone=sessionStorage.getItem('teladmin')
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var msm=`Solicitação de contato \n\n`
