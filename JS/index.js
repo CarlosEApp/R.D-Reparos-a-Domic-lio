@@ -823,6 +823,15 @@ var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 })
 button2.addEventListener('click', function(){
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
@@ -958,6 +967,15 @@ var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 });
 button2.addEventListener('click', function(){
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')

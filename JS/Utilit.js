@@ -56,7 +56,6 @@ firebase.initializeApp(firebaseConfigure);
 }
 // Comprar PM pag
 function comprarMP(){
-
    //var idMP=sessionStorage.getItem('IDMP')
  var cód=sessionStorage.getItem('MPpag')
  var titulo=sessionStorage.getItem('TituloMP')
@@ -81,7 +80,6 @@ if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||in
   if(!cód||cód==''){
       Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
   }else{
-
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -289,15 +287,6 @@ swal('','',`${doc.Imagem}`)
 button.addEventListener('click', function(){
   var rep=document.getElementById('Input_cidade');
 rep.value=''
-  sessionStorage.setItem('MPpag','')
-sessionStorage.setItem('TituloMP','')
-sessionStorage.setItem('IDRD','')
-sessionStorage.setItem('listaRD','')
-sessionStorage.setItem('IDMP','')
-var telefone= sessionStorage.getItem('teladmin')
-if(!telefone || telefone==''){
-var telefone=sessionStorage.getItem('teladmin')
-}
   verfCad()
 const prefId = doc.ADD2;
 sessionStorage.setItem('MPpag',`${prefId}`)
@@ -311,6 +300,15 @@ var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 })
 button2.addEventListener('click', function(){
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
@@ -452,6 +450,15 @@ pag.className='pagamentos-ativo'
  
 });
 button2.addEventListener('click', function(){
+  sessionStorage.setItem('MPpag','')
+sessionStorage.setItem('TituloMP','')
+sessionStorage.setItem('IDRD','')
+sessionStorage.setItem('listaRD','')
+sessionStorage.setItem('IDMP','')
+var telefone= sessionStorage.getItem('teladmin')
+if(!telefone || telefone==''){
+var telefone=sessionStorage.getItem('teladmin')
+}
 var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/utilit");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
@@ -590,7 +597,7 @@ var coment = querySnapshot.size
 sessionStorage.setItem('PassW01', doc.Passw01)
 sessionStorage.setItem('PassW02', doc.Passw02)
 sessionStorage.setItem('teladmin',doc.Telefone)
-//alert(doc.Telefone)
+
 setTimeout(function()
 {
 },2000)

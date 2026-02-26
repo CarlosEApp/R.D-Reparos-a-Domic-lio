@@ -1491,6 +1491,10 @@ border-radius: 5px;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
  margin-top: 7px;
 }
+#button2:hover{
+background-color: rgba(0, 197, 0, 0.993);
+color: #ffffff;
+}
 #list #label{
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 font-weight: bold;
@@ -1534,6 +1538,7 @@ border: 0cap;
 border-radius: 10px;
 font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
 }
+
 }
 #divFooter #divFaleCom #btnInstagran{
     background-color: #ffffff;
