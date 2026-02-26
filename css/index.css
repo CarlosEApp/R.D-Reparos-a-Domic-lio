@@ -501,8 +501,8 @@ color: rgb(82, 81, 81);
 cursor: pointer;
 }
 #listInfo img{
-max-width: 40px;
-max-height: 40px;
+max-width: 35px;
+max-height: 35px;
 min-width: 30px;
 min-height: 30px;
 border-radius: 50%;
@@ -558,6 +558,7 @@ cursor: pointer;
 }
 #lblInfo2{
 float: left;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 #lblInfo3{
 cursor: pointer;

@@ -216,7 +216,6 @@ estrelas.forEach((estrela, index) => {
 estrela.addEventListener('change', () => {
 const nota = (index + 1) * 2;
 localStorage.setItem('AvaliaçãoStar', nota);
-
 labels.forEach((label, i) => {
 label.style.color = i <= index ? '#fc0' : '#ccc';
 });
@@ -386,7 +385,10 @@ label.textContent='🌟🌟🌟🌟'
 }else if(doc.Stars==10){
 label.textContent='🌟🌟🌟🌟🌟'
 }
-label2.textContent= doc.nome
+if(doc.nome){
+var textoFormatado_ =  doc.nome.length > 15 ?  doc.nome.substring(0, 37) + '...' : doc.nome;
+label2.textContent= ` ${textoFormatado_}`
+}
 if(doc.Mensagem){
 var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
 label3.textContent= `👉 ${textoFormatado}`
@@ -503,7 +505,7 @@ setTimeout(function(){
 document.getElementById('div_listInfo').style.display='none'
 span.className=`fa-solid fa-eye`
 //document.getElementById('a_stars').click()
-},70000)
+},700000)
 } else{
 document.getElementById('div_listInfo').style.display='none'
 span.className=`fa-solid fa-eye`
@@ -658,7 +660,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 }
 }
 }
-
 function swalclose(){
     Swal.close()
 }
@@ -668,7 +669,7 @@ function ColaboradorEntrar(){
 initPage()
 //instagran
 function instagran(){
-    window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
+window.open('https://www.instagram.com/rd.reparosdomiciliar/','_blank')
 }
 function insta(){
      instagran()
@@ -679,12 +680,11 @@ document.getElementById('a_inicio').click()
 // lista loja RD inicial
 sessionStorage.setItem('Iitens', '')
 function MItens(){
-
 setTimeout(function(){
 var itens=sessionStorage.getItem('Iitens')
 // alert(itens)
 if(!itens||itens==''||itens==0){
-    var resp= sessionStorage.getItem('selectRD')
+var resp= sessionStorage.getItem('selectRD')
 Swal.fire('',`Ainda não há itens de ${resp} disponiveis para venda.`,'')
 var select =document.getElementById('selectRD');
 select.value='Diversos'
@@ -1051,7 +1051,6 @@ firebase.initializeApp(firebaseConfigure);
 }
 // Comprar PM pag
 function comprarMP(){
-
    //var idMP=sessionStorage.getItem('IDMP')
  var cód=sessionStorage.getItem('MPpag')
  var titulo=sessionStorage.getItem('TituloMP')
