@@ -305,6 +305,28 @@ var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 })
 button2.addEventListener('click', function(){
+  Swal.fire({
+title: ``,
+html: `
+<div id='mpdflex'>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+
+`,
+imageUrl: `src/RDzinho.png `,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'blackrgb(250, 253, 255)exto// Cor do texto',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_mpw' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Gerente_RD').addEventListener('click', function(){
   sessionStorage.setItem('MPpag','')
 sessionStorage.setItem('TituloMP','')
 sessionStorage.setItem('IDRD','')
@@ -322,6 +344,7 @@ var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
+})
 })
 } else{
 setTimeout(function(){
@@ -455,6 +478,28 @@ pag.className='pagamentos-ativo'
  
 });
 button2.addEventListener('click', function(){
+  Swal.fire({
+title: ``,
+html: `
+<div id='mpdflex'>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+
+`,
+imageUrl: `src/RDzinho.png `,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'blackrgb(250, 253, 255)exto// Cor do texto',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_mpw' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Gerente_RD').addEventListener('click', function(){
   sessionStorage.setItem('MPpag','')
 sessionStorage.setItem('TituloMP','')
 sessionStorage.setItem('IDRD','')
@@ -472,6 +517,7 @@ var text=`Loja RD utilitário:\n------------------------------\n👉 Produto: ${
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
+})
 })
 })
 })
