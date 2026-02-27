@@ -49,7 +49,7 @@ title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"><
 html: `
 <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
 <br><br>
-<button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+<button id="whats_a" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
 <br><br><button id='sair_'>Cancelar</button><br>
 `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
@@ -70,7 +70,7 @@ document.getElementById('face').addEventListener('click',function(){
 var url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
-document.getElementById('whats').addEventListener('click',function(){
+document.getElementById('whats_a').addEventListener('click',function(){
 var pagina =`https://rd-reparos-domicilio.netlify.app`
 var loja=`https://rd-reparos-domicilio.netlify.app/html/utilit`
 var whatsappMessage =`✅Visite nossa Página e 🛍️Loja\n--------------------------------------------\n🛠️ Serviço com qualidade e segurança para seu lar!\n----------------------------------------------\n✅ Pagina: ${pagina}`;
