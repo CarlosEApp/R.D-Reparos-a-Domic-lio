@@ -237,18 +237,40 @@ document.getElementById('sairnnlbl').addEventListener('click',function(){
 Swal.close()
 })
 document.getElementById('btnnbt1').addEventListener('click',function(){
+   Swal.fire({
+title: ``,
+html: `
+<div id='mpdflex'>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+`,
+imageUrl: ` `,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'blackrgb(250, 253, 255)exto// Cor do texto',
+showCancelButton: true,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_mpw' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Gerente_RD').addEventListener('click', function(){
 var telefone= sessionStorage.getItem('teladmin')
 if(!telefone || telefone==''){
   var telefone=sessionStorage.getItem('teladmin')
 }
-var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/hidraulica.html");
+var Url = encodeURIComponent("https://rd-reparos-domicilio.netlify.app/html/alvenaria.html");
 var codigo= sessionStorage.getItem('codigo')
 var data= sessionStorage.getItem('data')
 var hora= sessionStorage.getItem('hora')
-var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
+var text=`🛠️ Serviço de: ${doc.Lista}\n------------------------------\n👉 Produto: ${doc.Titulo}\n------------------------------\n👉 Valor com desconto: ${doc.Desconto}\n------------------------------\n✅ Código: ${doc.ID}\n------------------------------\n\n`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(text)} ✅ Link: ${Url}`;
 window.open(url, "_blank");
+})
 })
 })
 })
@@ -288,16 +310,15 @@ Menu()
 };
 var telefone= sessionStorage.getItem('teladmin')
 function ZAP(){
-  Swal.fire({
+ Swal.fire({
 title: ``,
 html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
-<div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
-
+<div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 `,
-imageUrl: `src/RDzinho.png `,
+imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'blackrgb(250, 253, 255)exto// Cor do texto',
 showCancelButton: true,

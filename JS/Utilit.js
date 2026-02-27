@@ -314,7 +314,7 @@ html: `
 </div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 
 `,
-imageUrl: `src/RDzinho.png `,
+imageUrl: ``,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'blackrgb(250, 253, 255)exto// Cor do texto',
 showCancelButton: true,
@@ -487,7 +487,7 @@ html: `
 </div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 
 `,
-imageUrl: `src/RDzinho.png `,
+imageUrl: ``,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'blackrgb(250, 253, 255)exto// Cor do texto',
 showCancelButton: true,
