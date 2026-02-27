@@ -310,11 +310,10 @@ title: ``,
 html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
-<div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
-
+<div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 `,
-imageUrl: ``,
+imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'blackrgb(250, 253, 255)exto// Cor do texto',
 showCancelButton: true,
@@ -478,16 +477,15 @@ pag.className='pagamentos-ativo'
  
 });
 button2.addEventListener('click', function(){
-  Swal.fire({
+ Swal.fire({
 title: ``,
 html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
-<div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
-
+<div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 `,
-imageUrl: ``,
+imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
 color: 'blackrgb(250, 253, 255)exto// Cor do texto',
 showCancelButton: true,
