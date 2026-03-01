@@ -4,11 +4,11 @@ function selectcidade(){
    var VLPM =sessionStorage.getItem('VLMP')
   var resp = document.getElementById('Input_cidade').value;
   if(resp=='Itanhaém'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   }else if(resp=='Peruíbe') {
- document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   } else if(resp=='Mongaguá'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   }
 }
 function verfCad(){
@@ -300,7 +300,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
-document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 })
@@ -471,7 +471,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
- document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
  

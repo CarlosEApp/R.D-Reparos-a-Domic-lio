@@ -249,7 +249,7 @@ html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar no seu orçamento!
 `,
 imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
@@ -323,7 +323,7 @@ html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para te ajudar e tirar suas dúvidas!
 `,
 imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo

@@ -525,9 +525,9 @@ function falecom(){
 title: ``,
 html: `
 <div id='mpdflex'>
-<div id='mpdimg'> <img src="src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para te ajudar e tirar suas dúvidas!
 `,
 imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
@@ -841,7 +841,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
-document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 })
@@ -850,7 +850,7 @@ button2.addEventListener('click', function(){
 title: ``,
 html: `
 <div id='mpdflex'>
-<div id='mpdimg'> <img src="src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
 </div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 
@@ -1008,7 +1008,7 @@ sessionStorage.setItem('IDRD', doc.ID)
 sessionStorage.setItem('listaRD', doc.ADD1)
 sessionStorage.setItem('IDMP', doc.ADD2)
 sessionStorage.setItem('VLMP', doc.Desconto)
-document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${doc.Desconto} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
 var pag=document.getElementById('pagamentos');
 pag.className='pagamentos-ativo'
 });
@@ -1017,7 +1017,7 @@ button2.addEventListener('click', function(){
 title: ``,
 html: `
 <div id='mpdflex'>
-<div id='mpdimg'> <img src="src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
+<div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div><button id="Gerente_RD" title=""><i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
 </div><p><b id='gvendas'>Gerente de vendas RD, Carlos Eduardo</b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 
@@ -1064,11 +1064,11 @@ function selectcidade(){
    var VLPM =sessionStorage.getItem('VLMP')
   var resp = document.getElementById('Input_cidade').value;
   if(resp=='Itanhaém'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   }else if(resp=='Peruíbe') {
- document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+ document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   } else if(resp=='Mongaguá'){
-    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 3 Três dias!`;
+    document.getElementById('lblTTMP').innerHTML=`Você pagará <b id='ppc'>${VLPM} R$</b> - frete gratis <br> 🚚 Chega em até 2 dois dias!`;
   }
 }
 function verfCad(){
