@@ -1139,7 +1139,7 @@ function comprarMP(){
  var inp11= document.getElementById('Input_Ref').value;
  var VLPM =sessionStorage.getItem('VLMP')
 if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||inp6==''||!inp7||inp7==''||!inp8||inp8==''||!inp9||inp9==''){
- Swal.fire('Preencha todos os campos!')
+ Swal.fire('','Para prosseguir com sua compra, preencha <br>os campos de endereço e contato!','')
 } else{
   if(!cód||cód==''){
      Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
