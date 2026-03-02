@@ -79,7 +79,7 @@ function comprarMP(){
  var inp11= document.getElementById('Input_Ref').value;
  var VLPM =sessionStorage.getItem('VLMP')
 if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||inp6==''||!inp7||inp7==''||!inp8||inp8==''||!inp9||inp9==''){
-  Swal.fire('','Para prosseguir com sua compra, preencha <br>os campos de endereço e contato!','')
+  swal('','Para prosseguir, preencha o cadastro!','')
 } else{
   if(!cód||cód==''){
       Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
@@ -311,7 +311,7 @@ html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo,</b><br> está disponível para tirar suas dúvidas e ajudar na sua compra!
 `,
 imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
@@ -483,7 +483,7 @@ html: `
 <div id='mpdflex'>
 <div id='mpdimg'> <img src="../src/Carlos foto.jpg" alt="Falar com Carlos Eduardo, gerente de vendas RD" class="logo-swal" width="100%"></div>
 <div> <button id="Gerente_RD" title=""> <i class="fa-brands fa-whatsapp"></i> Fale conosco </button> </div> <br>
-</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo </b>,<br> está disponível para tirar suas dúvidas e ajudar na sua compra!
+</div><p><b id='gvendas'> Gerente de vendas RD, Carlos Eduardo,</b><br>está disponível para tirar suas dúvidas e ajudar na sua compra!
 `,
 imageUrl: ` `,
 background: 'rgb(255, 255, 255)', // Cor de fundo
