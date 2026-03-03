@@ -85,6 +85,7 @@ if(!inp2||inp2==''||!inp3||inp3==''||!inp4||inp4==''||!inp5||inp5==''||!inp6||in
       Swal.fire('Tente mais tarde!','O Item que vc clicou pode não estar disponivel no momento!','warning')
   }else{
     localStorage.setItem('EmalMP',`${inp9}`);
+  
 var firebaseConfigure = {
 apiKey: "AIzaSyBCvQECt03lGjQv6rMCPnP19uI8inxgKxQ",
 authDomain: "reparos-a-domicilio.firebaseapp.com",
@@ -116,6 +117,13 @@ firebase.initializeApp(firebaseConfigure);
   Nome: inp2,
   Email:inp9,
   Tel:inp3,
+   Rua:inp4,
+  Numero:inp5,
+  Bairro:inp6,
+  Cidade:inp7,
+  Estado:inp8,
+  Cep:inp10,
+  Ref:inp11,
   CódMP:cód,
   Titulo:titulo,
   IDRD:idRD,
@@ -700,3 +708,21 @@ let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
    .replace(/(\d{4})(\d{4})$/, '$1-$2');
 e.target.value = formattedValue;
 });
+
+//Data e Hora
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+// const lbl_data = document.getElementById('lbl-data');
+// lbl_data.innerHTML = `${data}`
+localStorage.setItem('data', data)
+localStorage.setItem('hora', timeString)
+}, 1000)
